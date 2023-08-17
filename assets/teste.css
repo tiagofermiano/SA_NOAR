@@ -1,16 +1,111 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Adicionado para melhorar o cálculo do tamanho */
   }
   
   body {
     width: 100%;
     min-height: 100vh;
-    background-color: #001e44;
-    background-image: linear-gradient(to bottom, #001024, #001e44);
+    background-color: #E5E6E7;
+    /* background-image: linear-gradient(to bottom, #001024, #001e44); */
     background-repeat: no-repeat;
+    font-family: 'Open Sans', sans-serif; /* Definir uma fonte padrão */
+  }
+  
+  .container {
+    max-width: 1230px; /* Alterado de width para max-width para melhor responsividade */
+    margin: 0 auto;
+    padding: 0 15px; /* Adicionado um espaçamento interno */
+  }
+  
+  header {
+    display: flex;
+    align-items: center; /* Centralizar verticalmente */
+    height: 12vh;
+    background: #030060;
+  }
+  
+  .logo {
+    width: 8%;
+    margin: 0 auto; /* Centralizar horizontalmente */
+  }
+  
+  .title {
+    font-size: 1.5rem; /* Alterado para unidade de rem para melhor escalabilidade */
+    color: #030060;
+    text-align: center;
+    font-weight: bold;
+    margin: 2rem 0;
+    font-family: 'Open Sans', sans-serif;
+     /* Adicionado espaçamento superior e inferior */
+  }
+  
+  .firstbox {
+    background-color: #fff;
+    width: 90%; /* Alterado para largura relativa */
+    max-width: 400px; /* Definir uma largura máxima */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+  }
+  
+  .form {
+    margin-top: 1rem;
+  }
+  
+  .input-caixatexto label {
+    display: block;
+    color: #030060;
+    margin-bottom: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .input-caixatexto input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1.5px solid #C7BEBE;
+    outline: 0;
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
+  }
+  
+  .input-caixatexto input:focus {
+    border-color: blue;
+    transition: 0.5s;
   }
 
-header{
-    height: ;
+  .sexo{
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    color: #030060;
+    width: 35%; 
+    /* margin-top: 40px; */
+    /* margin-left: 3vh; */
+    letter-spacing: 0.05em;
+    background-color: white;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #C7BEBE;
+    border-radius: 5px;
+}
+
+.textosexo{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #030060;
+    /* width: 100%;  */
+    display: flex;
+    font-weight: bold;
+    margin-top: 1rem;
 }
