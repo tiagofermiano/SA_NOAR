@@ -1,6 +1,5 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
 * {
     margin: 0;
@@ -45,7 +44,17 @@
      /* Adicionado espaçamento superior e inferior */
   }
   
-  .firstbox {
+  .boxinfopaciente {
+    background-color: #fff;
+    width: 90%; /* Alterado para largura relativa */
+    max-width: 400px; /* Definir uma largura máxima */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+  }
+
+  .boxinfoocorrencia {
     background-color: #fff;
     width: 90%; /* Alterado para largura relativa */
     max-width: 400px; /* Definir uma largura máxima */
@@ -84,6 +93,9 @@
     transition: 0.5s;
   }
 
+
+
+
   .sexo{
     font-size: 17px;
     font-family: 'Poppins', sans-serif;
@@ -108,4 +120,27 @@
     display: flex;
     font-weight: bold;
     margin-top: 1rem;
+}
+
+.hr1 {
+  border: 0.1rem solid #030060;
+  margin: auto;
+  width: 80%;
+  margin-top: 2rem;
+}
+
+.textbox-n {
+  width: 100%;
+    border-radius: 0.375rem;
+    border: 1.5px solid #C7BEBE;
+    outline: 0;
+    background-color: #fff;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
+}
+
+#checkbox{
+  display: flex;
+  left: 90%;
 }
