@@ -144,3 +144,22 @@
   display: flex;
   left: 90%;
 }
+
+.subtitulo{
+  background-color: #030060;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: 1rem;
+  height: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.texto{
+  font-size: 1rem;
+  margin-top: -1.8rem;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+}
