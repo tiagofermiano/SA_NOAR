@@ -146,14 +146,16 @@
 }
 
 .subtitulo{
-  background-color: #030060;
-  font-size: 1rem;
-  margin-top: 1rem;
-  color: #fff;
-  border-radius: 1rem;
-  height: 2rem;
-  text-align: center;
-  justify-content: center;
+    background-color: #030060;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #fff;
+    /* border-radius: 1rem; */
+    height: 2rem;
+    width: 25rem;
+    text-align: center;
+    justify-content: center;
+    margin-left: -1rem;
 }
 
 .texto{
