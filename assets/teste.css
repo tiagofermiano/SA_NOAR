@@ -165,3 +165,25 @@
   text-align: center;
   justify-content: center;
 }
+
+.checkbox{
+  color: #030060;
+  margin-left: 1rem;
+}
+
+.checkbox-texto{
+  color: #030060;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+}
+
+.input-consciencia label {
+  display: block;
+  color: #030060;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  margin-top: 3rem;
+}
