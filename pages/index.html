@@ -1,288 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOAR</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOAR</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/assets/teste.css">
+  <link rel="stylesheet" type="text/css" href="/assets/teste.css">
 
 </head>
+
 <body>
 
-        <header>
-            <div class="container">
-                <img class="logo" alt="LOGO NOAR" src="SA_NOAR/images/logo_socorro_top.png">
-            </div>
-          </header>
-
+  <header>
     <div class="container">
-        <h1 class="title">Informações do paciente:</h1></div>
-        <div class="boxinfopaciente">
-          <form class="form">
-            <div class="input-caixatexto">
-              <label for="username">Nome do paciente</label>
-              <input type="text" id="username" name="username" placeholder="Digite...">
-            </div>
-          </form>
-
-            <form class="form">
-                <div class="input-caixatexto">
-                  <label for="username">Idade</label>
-                  <input type="text" id="username" name="username" placeholder="Digite...">
-                </div>
-            <!-- Adicione mais campos de formulário conforme necessário -->
-          </form>
-
-          <div class ="textosexo">Sexo
-            <select class="sexo">
-              <option  selected="selected" ></option>
-              <option  >Feminino</option>
-              <option  >Masculino</option>
-              </select>
-        </div>
-
-        <form class="form">
-          <div class="input-caixatexto">
-            <label for="username">RG/CPF do pacinte:</label>
-            <input type="text" id="username" name="username" placeholder="Digite...">
-          </div>
-        </form>
-
-
-<form class="form">
-  <div class="input-caixatexto">
-    <label for="username">Fone:</label>
-    <input type="text" id="username" name="username" placeholder="(**) *****-****">
-  </div>
-</form>
-
-<form class="form">
-  <div class="input-caixatexto">
-    <label for="username">Nome do acompanhante:</label>
-    <input type="text" id="username" name="username" placeholder="Digite...">
-  </div>
-</form>
-
-<form class="form">
-  <div class="input-caixatexto">
-    <label for="username">Idade do acompanhante:</label>
-    <input type="text" id="username" name="username" placeholder="Digite...">
-  </div>
-</form>
-<br>
-    <label for="username">Vítima era:</label>
-<br>
-<div class="table_vitima">
-  <input type="checkbox" id="scales" name="scales" checked />
-  <label for="scales">Ciclista</label>
-  <input type="checkbox" id="horns" name="horns" />
-  <label for="horns">Horns</label>
-  <input type="checkbox" id="scales" name="scales" checked />
-  <label for="scales">Scales</label>
-  <input type="checkbox" id="horns" name="horns" />
-  <label for="horns">Horns</label>
-  <input type="checkbox" id="horns" name="horns" />
-  <label for="horns">Horns</label>
-</div>
-
-<div class ="textosexo">Forma de Condução:
-  <select class="sexo">
-    <option  selected="selected" ></option>
-    <option  >Deitada</option>
-    <option  >Semi-sentada</option>
-    <option  >Sentada</option>
-    </select>
-  </div>
-</div>
-
-<hr class="hr1">
+      <img class="logo" alt="LOGO NOAR" src="SA_NOAR/images/logo_socorro_top.png">
+    </div>
+  </header>
 
   <div class="container">
-    <h1 class="title">Informações da ocorrência:</h1></div>
+    <h1 class="title">Informações do paciente:</h1>
+  </div>
+  <div class="boxinfopaciente">
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Nome do paciente</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Idade</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+      <!-- Adicione mais campos de formulário conforme necessário -->
+    </form>
+
+    <div class="textosexo">Sexo
+      <select class="sexo">
+        <option selected="selected"></option>
+        <option>Feminino</option>
+        <option>Masculino</option>
+      </select>
+    </div>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">RG/CPF do paciente:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
 
 
-    <div class="boxinfoocorrencia">
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Fone:</label>
+        <input type="text" id="username" name="username" placeholder="(**) *****-****">
+      </div>
+    </form>
 
-      <form class="form">
-        <div class="input-caixatexto">
-      <label for="username">Data:</label>
-      <input class="textbox-n" placeholder="XX/XX/20XX" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-    </div>
-  </form>
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Nome do acompanhante:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">local da ocorrência:</label>
-      <input type="text" id="username" name="username" placeholder="(**) *****-****">
-    </div>
-  </form>
-  
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">Nome do hospital:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
-    </div>
-  </form>
-  
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">N° USB.:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
-    </div>
-  </form>
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Idade do acompanhante:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">N° Ocorr.:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
-    </div>
-  </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">Despacho:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
+    <div class="input-vitimaera">
+      <div class="input-caixatexto">
+        <label for="username">Vítima era:</label>
+      </div>
     </div>
-  </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">H. CH.:</label>
-      <input type="time" id="appt" name="appt" min="01:00" max="00:00" required />
-    </div>
-  </form>
+    <div class="grid_vitima">
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">KM Final:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
-    </div>
-  </form>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Ciclista</label>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">CÓD. IR:</label>
-      <input type="checkbox" id="username" name="username" placeholder="Digite...">
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Condutor moto</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Gestante</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Pas.Bco.Frente</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Pas.Moto</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Condutor moto</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Clínico</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Trauma</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Pas.Bco.Trás</label>
+        </div>
+      </div>
+      <div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Pedestre</label>
+        </div>
+      </div>
     </div>
-  </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">CÓD. PS:</label>
-      <input type="checkbox" id="username" name="username" placeholder="Digite...">
+    <div class="textosexo">Forma de Condução:
+      <select class="sexo">
+        <option selected="selected"></option>
+        <option>Deitada</option>
+        <option>Semi-sentada</option>
+        <option>Sentada</option>
+      </select>
     </div>
-  </form>
+  </div>
+  </div>
 
-  <form class="form">
-    <div class="input-caixatexto">
-      <label for="username">CÓD. SIA/SUS:</label>
-      <input type="text" id="username" name="username" placeholder="Digite...">
-    </div>
-  </form>
+  <hr class="hr1">
+
+  <div class="container">
+    <h1 class="title">Informações da ocorrência:</h1>
+  </div>
+
+
+  <div class="boxinfoocorrencia">
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Data:</label>
+        <input class="textbox-n" placeholder="XX/XX/20XX" type="text" onfocus="(this.type='date')"
+          onblur="(this.type='text')" />
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">local da ocorrência:</label>
+        <input type="text" id="username" name="username" placeholder="(**) *****-****">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Nome do hospital:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">N° USB.:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">N° Ocorr.:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Despacho:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">H. CH.:</label>
+        <input type="time" id="appt" name="appt" min="01:00" max="00:00" required />
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">KM Final:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">CÓD. IR:</label>
+        <input type="checkbox" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">CÓD. PS:</label>
+        <input type="checkbox" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">CÓD. SIA/SUS:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
 
 
     <div class="subtitulo"></div>
-      <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
-
-
-    
-      
-
-      <div class="subtitulo"></div>
-      <div class="texto">Avaliação de cinemática: </div>  
- 
-
-
+    <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
+    <br>
+    <div class="grid_ocorrencia">
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Afogamento</label>
       </div>
-      <hr class="hr1">
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Agressão</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Atropelamento</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Choque elétrico</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Desabamento</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Doméstico</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Esportivo</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Causado por animais</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Com meio de transp.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Desmor./Desliz.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Intoxicação</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Queda bicicleta</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Queda moto</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Queda nível <2M</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Trabalho</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Transferência</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Emergência Médica</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Queda de altura 2M</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Tentativa de suicídio</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">Queda própria altura</label>
+      </div>
 
-      <div class="container">
-        <h1 class="title">Situação do paciente:</h1></div>
-    
-    
-        <div class="boxinfoocorrencia">
-    
-          <form class="form">
-            <div class="input-caixatexto">
-          <label for="username">Pressã arterial:</label>
-          <input class="textbox-n" placeholder="____x____mmHg" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-        </div>
-      </form>
-
-        <form class="form">
-            <div class="input-caixatexto">
-      <label for="username">Pulso:</label>
-      <input class="textbox-n" placeholder="_____B.C.P.M." type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
     </div>
-  </form>
-
-  <form class="form">
-    <div class="input-caixatexto">
-  <label for="username">Respiração:</label>
-  <input class="textbox-n" placeholder="_____M.R.M." type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-</div>
-</form>
-
-<form class="form">
-  <div class="input-caixatexto">
-<label for="username">Saturação:</label>
-<input class="textbox-n" placeholder="_____%" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-</div>
-</form>
-
-<form class="form">
-  <div class="input-caixatexto">
-<label for="username">HGT:</label>
-<input class="textbox-n" placeholder="____" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-</div>
-</form>
-
-<form class="form">
-  <div class="input-caixatexto">
-<label for="username">Temperatura:</label>
-<input class="textbox-n" placeholder="_____°C" type="text" onfocus="(this.type='date')"  onblur="(this.type='text')"  />
-</div>
-</form>
+    <br>
 
 
-<form class="form">
-  <div class="input-caixatexto">
-    <label for="username">Perfusão:</label></div>
 
-<div class="checkbox">
-  <input type="checkbox" id="scales" name="scales" />
-  <label for="scales">>2 SEG</label>
+    <div class="subtitulo"></div>
+    <div class="texto">Avaliação de cinemática: </div>
 
-  
-  <input type="checkbox" id="horns" name="horns" />
-  <label for="horns">2 SEG</label>
+    <br>
+
+    <div class="grid_cinematica">
+
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Ciclista</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Condutor moto</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Gestante</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Pas.Bco.Frente</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Pas.Moto</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Condutor moto</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Clínico</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Trauma</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Pas.Bco.Trás</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+        <label for="checkbox-id-1">Pedestre</label>
+      </div>
+    </div>
+
+    <br>
+
+  </div>
+  <hr class="hr1">
+
+  <div class="container">
+    <h1 class="title">Situação do paciente:</h1>
   </div>
 
 
-<div class="checkbox-texto">
-  <input type="checkbox" id="scales" name="scales" />
-  <label for="scales">NORMAL</label>
+  <div class="boxinfoocorrencia">
 
-  
-  <input type="checkbox" id="horns" name="horns" />
-  <label for="horns">ANORMAL</label>
-  </div>
-</form>
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Pressã arterial:</label>
+        <input type="text" id="username" name="username" placeholder="____x____mmHg">
+      </div>
+    </form>
 
-<div class="subtitulo"></div>
-      <div class="texto">Nível de consciência - Maiores de 5 anos </div>  
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Pulso:</label>
+      <input type="text" id="username" name="username" placeholder="_____B.C.P.M.">
+      </div>
+    </form>
 
 
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Respiração:</label>   
+    <input type="text" id="username" name="username" placeholder="_____M.R.M.">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Saturação:</label>
+        <input type="text" id="username" name="username" placeholder="_____%">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">HGT:</label>  
+        <input type="text" id="username" name="username" placeholder="_____">
+      </div>
+    </form>
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Temperatura:</label>
+        <input type="text" id="username" name="username" placeholder="_____°C">
+      </div>
+    </form>
+
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Perfusão:</label>
+      </div>
+
+      <div class="checkbox-subtitleperfusão">
+        <input type="checkbox" id="scales" name="scales" />
+        <label for="scales">>2 SEG</label>
+
+
+        <input type="checkbox" id="horns" name="horns" />
+        <label for="horns">2 SEG</label>
+      </div>
+
+
+      <div class="checkbox-texto">
+        <input type="checkbox" id="scales" name="scales" />
+        <label for="scales">NORMAL</label>
+
+
+        <input type="checkbox" id="horns" name="horns" />
+        <label for="horns">ANORMAL</label>
+      </div>
+    </form>
+
+    <div class="subtitulo"></div>
+    <div class="texto">Nível de consciência - Maiores de 5 anos </div>
+<br>
+    <div class="grid_ocular">
       <div class="input-consciencia">
-        <label for="username">ABERTURA<br>OCULAR</label></div>
-    
+        <label for="username">ABERTURA<br>OCULAR</label>
+      </div>
+      <div class="check_ocular">
+
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Espontânea</label><div class="numeros_niveis"><p>4</p></div>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Comando verbal</label><div class="numeros_niveis"><p>3</p></div>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Estímulo doloroso</label><div class="numeros_niveis"><p>2</p></div>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Nenhuma</label><div class="numeros_niveis"><p>1</p></div>
+        </div>
+      </div>
+
+
+<br>
+    <div class="grid_ocular">
+      <div class="input-consciencia">
+        <label for="username">ABERTURA<br>OCULAR</label>
+      </div>
+      <div class="check_ocular">
+
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Condutor moto</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Gestante</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Pas.Bco.Frente</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Gestante</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Gestante</label>
+        </div>
+      </div>
+
+      <div class="numeros_niveis">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+      </div>
+    </div>
 
 </body>
+
 </html>
-
-

@@ -187,3 +187,118 @@
   font-weight: bold;
   margin-top: 3rem;
 }
+
+.input-vitimaera input{
+  display: block;
+}
+
+.input-vitimaera input{
+  display: block;
+}
+
+.grid_vitima{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1%;
+}
+
+.grid_ocorrencia{
+  display: grid ;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1%;
+}
+
+.grid_cinematica{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1%;
+}
+
+.grid_ocular{
+  display : grid;
+  grid-template-columns: 1fr 2fr 0.2fr;
+}
+
+.input-consciencia{
+  margin: auto;
+}
+
+.check_ocular{
+  margin: auto;
+}
+
+.checkbox{
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+.cont {
+  display: flex;
+  align-items: center;
+  transform: scale(1);
+ }
+ 
+
+.checkmark {
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: 5px;
+  display: inline-block;
+  appearance: none;
+  position: relative;
+  background-color: #F2ECFF;
+  border-radius: 15%;
+  cursor: pointer;
+  overflow: hidden;
+ }
+ 
+.checkmark ::after {
+  content: '';
+  display: block;
+  height: 0.9rem;
+  width: .4rem;
+  border-bottom: .31rem solid #a0ffe7;
+  border-right: .31rem solid #a0ffe7;
+  opacity: 0;
+  transform: rotate(45deg) translate(-50%, -50%);
+  position: absolute;
+  top: 45%;
+  left: 21%;
+  transition: .25s ease;
+ }
+ 
+.checkmark ::before {
+  content: '';
+  display: block;
+  height: 0;
+  width: 0;
+  background-color: #00C896;
+  border-radius: 50%;
+  opacity: .5;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: .3s ease;
+ }
+ 
+.checkmark :checked::before {
+  height: 130%;
+  width: 130%;
+  opacity: 100%;
+ }
+ 
+.checkmark :checked::after {
+  opacity: 100%;
+ }
+ 
+ span {
+  font-size: 2rem;
+ }.
