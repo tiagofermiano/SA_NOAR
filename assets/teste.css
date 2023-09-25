@@ -116,6 +116,114 @@ header {
   transition: 0.5s;
 }
 
+.fundo-anamnese{
+  background-color: #E5E6E7;
+  width: 90%;
+  height: 20%;
+  margin: auto;
+  padding: 5%;
+  border-radius: 1rem;
+}
+
+.input-anamnese label {
+  display: block;
+  color: #030060;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.actu label {
+  display: block;
+  color: #030060;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input-anamnese input {
+  width: 80%;
+  border-radius: 0.375rem;
+  outline: 0;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  height: 5rem;
+  border: none;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.input-anamnese input::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.5rem;
+  color: #444343;
+  opacity: 0.6;
+}
+
+.fundo-input{
+  background-color: #E5E6E7;
+  width: 70%;
+  height: 10%;
+  margin: auto;
+  padding: 1%;
+  border-radius: 1rem;
+}
+
+.input-ss {
+  display: flex;
+  align-items: center;
+  color: #030060;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+
+}
+
+.input-ss label {
+  margin: auto;
+  display: flex;
+  margin-left: 1.8rem;
+}
+
+.input-ss input {
+  width: 60%; 
+  height: 8%;
+  border: none;
+  outline: 0;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+  background-color: #E5E6E7;
+  font-size: 15px;
+}
+
+.input-anme_sn {
+  display: flex;
+  align-items: center;
+  color: #030060;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn label {
+  margin: auto;
+  display: flex;
+}
+
+.input-anme_sn input {
+  display: flex;
+  width: 43%; 
+  height: 8%;
+  border: none;
+  outline: 0;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 .sexo {
   font-size: 17px;
   font-family: 'Poppins', sans-serif;
@@ -228,7 +336,6 @@ header {
 .checkbox-textocontainer2 {
   margin-left: 10px;
 }
-
 
 .input-consciencia label {
   display: block;
@@ -346,14 +453,16 @@ header {
 
 #resp{
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
 }
 
 #sub_resp {
   display: inline-block;
   padding: 0.3rem;
+  width: 100%;
 }
 
 #sub_resp label {
   padding: 0.3rem;
+  width: 90%;
 }
