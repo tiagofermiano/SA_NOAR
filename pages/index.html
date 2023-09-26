@@ -43,13 +43,17 @@
       <!-- Adicione mais campos de formulário conforme necessário -->
     </form>
 
-    <div class="textosexo">Sexo
+    <div class="textosexo">Sexo</div>
+    <div class="custom-select">
       <select class="sexo">
         <option selected="selected"></option>
         <option>Feminino</option>
         <option>Masculino</option>
       </select>
+      <div class="custom-arrow"></div>
     </div>
+    
+    
 
     <form class="form">
       <div class="input-caixatexto">
@@ -152,14 +156,16 @@
       </div>
     </div>
 
-    <div class="textosexo">Forma de Condução:
-      <select class="sexo">
-        <option selected="selected"></option>
-        <option>Deitada</option>
-        <option>Semi-sentada</option>
-        <option>Sentada</option>
-      </select>
-    </div>
+    <div class="textosexo">Forma de Condução:</div>
+      <div class="custom-select">
+        <select class="sexo">
+          <option selected="selected"></option>
+          <option>Deitada</option>
+          <option>Semi-sentada</option>
+          <option>Sentada</option>
+        </select>
+        <div class="custom-arrow"></div>
+      </div>
   </div>
 
   <hr class="hr1">
@@ -231,14 +237,14 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">CÓD. IR:</label>
-        <input type="checkbox" id="username" name="username" placeholder="Digite...">
+        <input type="text" id="username" name="username" placeholder="Digite...">
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">CÓD. PS:</label>
-        <input type="checkbox" id="username" name="username" placeholder="Digite...">
+        <input type="text" id="username" name="username" placeholder="Digite...">
       </div>
     </form>
 
@@ -1132,7 +1138,7 @@
         </div>
         </div>
       </div>
-
+      
         <form class="form">
           <div class="input-anme_sn">
             <label for="username">A quanto tempo aconteceu?</label>
@@ -1157,7 +1163,7 @@
               <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
               <label for="checkbox-id-1">Sim</label>
             </div>
-          </div>
+           </div>
       
             <div class="grid_checkbox_nao_cinematica">
               <div>
@@ -1169,23 +1175,187 @@
       
               <form class="form">
                 <div class="input-anme_sn">
-                  <label for="username">A quanto tempo aconteceu?</label>
+                  <label for="username">Quais?</label>
                   <input type="text" id="username" name="username" placeholder="________________">
                 </div>
                 
               </form>
 
 
+              <div class="grid_cinematica">
+                <!-- TEXTOS DAS CHECKBOX -->
+            
+                <div class="grid_txt_cinematica">
+                <div class="txt_cinematica">
+                  <p>Faz uso de medicação</p>
+                </div>
+                </div>
+            
+            
+                <!-- CHECKBOX SIM -->
+                <div class="grid_checkbox_sim_cinematica">
+                  <div>
+                    <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+                    <label for="checkbox-id-1">Sim</label>
+                  </div>
+                </div>
+            
+                  <div class="grid_checkbox_nao_cinematica">
+                    <div>
+                      <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+                      <label for="checkbox-id-8">Não</label>
+                    </div>
+                    </div>
+                  </div>
+            
+                    <form class="form">
+                      <div class="input-anme_sn">
+                        <label for="username">Horário da ultima medicação:</label>
+                        <input type="time" id="username" name="username" placeholder="________________">
+                      </div>
+                      
+                      <form class="form">
+                        <div class="input-anme_sn">
+                          <label for="username">Quais?</label>
+                          <input type="text" id="username" name="username" placeholder="________________">
+                        </div>
+                      </form>
+                    </form>
 
-    </form>
+                    <div class="grid_cinematica">
+                      <!-- TEXTOS DAS CHECKBOX -->
+                  
+                      <div class="grid_txt_cinematica">
+                      <div class="txt_cinematica">
+                        <p>Alérgico a alguma coisa?</p>
+                      </div>
+                      </div>
+                  
+                  
+                      <!-- CHECKBOX SIM -->
+                      <div class="grid_checkbox_sim_cinematica">
+                        <div>
+                          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+                          <label for="checkbox-id-1">Sim</label>
+                        </div>
+                      </div>
+                  
+                        <div class="grid_checkbox_nao_cinematica">
+                          <div>
+                            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+                            <label for="checkbox-id-8">Não</label>
+                          </div>
+                          </div>
+                        </div>
+                  
+                          <form class="form">
+                            <div class="input-anme_sn">
+                              <label for="username">Se sim, especifique</label>
+                              <input type="text" id="username" name="username" placeholder="________________">
+                            </div>
+                          </form>
+
+
+                          <div class="grid_cinematica">
+                            <!-- TEXTOS DAS CHECKBOX -->
+                        
+                            <div class="grid_txt_cinematica">
+                            <div class="txt_cinematica">
+                              <p>Inseriu alimento ou líquido≥6h</p>
+                            </div>
+                            </div>
+                        
+                        
+                            <!-- CHECKBOX SIM -->
+                            <div class="grid_checkbox_sim_cinematica">
+                              <div>
+                                <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+                                <label for="checkbox-id-1">Sim</label>
+                              </div>
+                            </div>
+                        
+                              <div class="grid_checkbox_nao_cinematica">
+                                <div>
+                                  <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+                                  <label for="checkbox-id-8">Não</label>
+                                </div>
+                                </div>
+                              </div>
+                        
+                                <form class="form">
+                                  <div class="input-anme_sn">
+                                    <label for="username">Se sim, especifique</label>
+                                    <input type="text" id="username" name="username" placeholder="________________">
+                                  </div>
+                                  
+                                </form>
+
+                                <form class="form">
+                                  <div class="input-anme_sn">
+                                    <label for="username">Que horas?</label>
+                                    <input type="time" id="username" name="username" placeholder="________________">
+                                  </div>
+
+  </div>                                
+
+
+  <hr class="hr1">
+
+  <div class="container">
+    <h1 class="title">Atendimento:</h1>
   </div>
 
+  <div class="boxatendimento">
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">M:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">S1:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">S2:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">S3:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Demandante:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
 
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Equipe:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </form>
+
+    <div class="subtitulo"></div>
+    <div class="texto">Procedimentos efetuados: </div>
+
+    
+
+    </form>
+  
 
 </body>
 
