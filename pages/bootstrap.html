@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - S.A. Bombeiros</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <!-- Link necessário para o Bootstrap funcionar! -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- O menu a seguir se comporta de duas formas diferentes:
+        Quando em telas maiores que 992px, temos um menu de navegação padrão, ocupando o cabeçalho superior da página.
+        Já em dispositivos móveis e tablets, o menu se torna offcanvas, ou seja, fora da tela, para economizar espaço.
+        Caso desejar diminuir mais ainda o uso do menu, é possível eliminar aquele ícone de hambúrger (as três barras que clicamos para chamar o offcanvas).
+        Contudo, o controle de chamada do menu deverá ser feito de alguma outra forma.
+    -->
+
+    <!-- Breve explicação das classes da div
+        - container-fluid: Indica para o contâiner criado pelo Bootstrap ocupar o espaço máximo em tela (mas mantendo as margens e padding padrão).
+        - m-0: Indica ao Bootstrap para zerar a margem.
+        - p-0: Indica ao Bootstrap para zerar o padding.
+    -->
+    <div class="container-fluid m-0 p-0">
+        <header>
+            <!-- Menu padrão -->
+            <!-- Breve explicação das classes
+                - navbar: Cria uma barra de navegação padrão.
+                - navbar-expand-lg: Indica ao Bootstrap que a barra de navegação utilizará toda a tela somente em resoluções maiores que 992px.
+                Caso contrário, o menu é colapsado para um ícone de hambúrguer em telas menores.
+                - navbar-light: Esquema de cores claro (texto preto em fundo branco) para a barra de navegação.
+                - bg-light: Indica que o plano de fundo da barra de navegação será claro (branco).
+                - d-none: Indica ao Bootstrap para esconder o menu de navegação padrão em qualquer resolução de tela.
+                - d-lg-block: Indica que o menu de navegação padrão só irá aparecer em telas acima de 992px.
+                - nav-brand: Classe que define comportamento de logotipo ou nome da marca.
+                - mb-0: Indica ao Bootstrap que a margem inferior é 0 (mb é de margin-bottom).
+                - h1: Indica que o nome da marca terá comportamento de título ao invés de link.
+                - navbar-nav: Indica ao Bootstrap a criação de uma lista de elementos de menu horizontal.
+                - ml-auto: Indica que a margem esquerda é automática (ml é de margin-left).
+                - nav-item: Itens do menu de navegação.
+                - nav-link: Link dos itens do menu de navegação.
+            -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light d-none d-lg-block">
+                <div class="container">
+                    <a class="navbar-brand mb-0 h1" href="#">S.A. Bombeiros</a>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Página Inicial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Menu em offcanvas -->
+            <!-- Breve explicação das classes
+                - d-lg-none: Indica ao Bootstrap que este menu offcanvas não irá aparecer em telas maiores que 992px.
+                - navbar-toggler: Indica ao Bootstrap que este é um botão de alternância.
+                - data-bs-toggle: Indica que este botão será utilizado para alternar a visibilidade do offcanvas.
+                - data-bs-target: Indica qual elemento terá sua visibilidade alternada.
+                - offcanvas-start: Indica que o menu offcanvas deve começar com seus elementos alinhados à esquerda da tela.
+                - aria-label: É utilizado para melhorar a acessibilidade da página da web.
+            -->
+            <div class="d-lg-none">
+
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">S.A. Bombeiros</a>
+                    </div>
+                </nav>
+
+                <div class="offcanvas offcanvas-start" id="offcanvasNav">
+
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Fechar"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Página Inicial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sobre</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </header>
+    </div>
+
+    <!-- Breve explicação das classes
+        - row: Cria uma linha com doze colunas.
+        - col: Cria uma coluna onde será armazenado conteúdo.
+        - col-md: Vide documentação no site oficial do Bootstrap sobre Breakpoints.
+        - bloco: Vide arquivo .css. Utilizado para criar uma moldura em torno dos exemplos.
+    -->
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col-lg">
+                <p class="h2">Tabelas</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6 bloco">
+
+                <table class="table table-striped border-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Primeiro</th>
+                            <th scope="col">Último</th>
+                            <th scope="col">Identificador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Draculaura</td>
+                            <td>Ferenczy</td>
+                            <td>@drac</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Fred</td>
+                            <td>Estrada</td>
+                            <td>@fest</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Jedediah Skagondo</td>
+                            <td>@ska</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-lg-6 bloco">
+
+                <table class="table border-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Classe</th>
+                            <th scope="col">Cabeçalho</th>
+                            <th scope="col">Cabeçalho</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Padrão</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+
+                        <tr class="table-primary">
+                            <th scope="row">Primário</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th scope="row">Secundário</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-success">
+                            <th scope="row">Sucesso</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-danger">
+                            <th scope="row">Perigo</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <th scope="row">Aviso</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">Informacional</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-light">
+                            <th scope="row">Claro</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <th scope="row">Escuro</th>
+                            <td>Célula</td>
+                            <td>Célula</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Breve explicação das classes
+        - img-fluid: Indica ao Bootstrap que a imagem irá sempre ter a largura máxima possível (preservando a proporção).
+    -->
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col-lg">
+                <p class="h2">Imagens responsivas</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 bloco">
+                <img src="assets/chubby_bubble_girl_churassic_park.jpeg"
+                    alt="Menina de jaqueta amarela fofinha correndo com um sinalizador em sua mão de um Tiranossauro Rex."
+                    class="img-fluid">
+            </div>
+
+            <div class="col-lg-3 bloco">
+                <img src="assets/chubby_bubble_girl_guerra_dos_mundos.png"
+                    alt="Menina de jaqueta amarela fofinha correndo com uma lanterna na mão para fugir de máquinas alienígenas."
+                    class="img-fluid">
+            </div>
+
+            <div class="col-lg-3 bloco">
+                <img src="assets/chubby_bubble_girl_sith.jpg"
+                    alt="Menina de jaqueta amarela fofinha correndo com um sabre de luz vermelho em sua mão para fugir dos Jedis."
+                    class="img-fluid">
+            </div>
+
+            <div class="col-lg-3 bloco">
+                <img src="assets/chubby_bubble_girl_oppenheimer.jpg"
+                    alt="Menina de jaqueta amarela fofinha correndo da explosão da bomba atômica de Oppenheimer."
+                    class="img-fluid">
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+            <div class="col-lg bloco">
+                <img src="assets/chubby_bubble_girl_ladra_de_sanduíche.jpeg"
+                    alt="Menina de jaqueta amarela fofinha correndo com um sanduíche na mão para fugir da Polícia do Sanduíche."
+                    class="img-fluid">
+            </div>
+        </div>
+
+    </div>
+
+    <!--
+        Estes exemplos estão todos disponíveis no website do Bootstrap!
+    -->
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col">
+                <p class="h2">Formulários e Classes</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 bloco">
+
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">Nós não compartilhamos seus dados pessoais com terceiros.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Me seleciona!</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+
+                <select class="form-select mb-3" aria-label="Seletor padrão">
+                    <option selected>Clique para ver as opções</option>
+                    <option value="1">Um</option>
+                    <option value="2">Dois</option>
+                    <option value="3">Três</option>
+                </select>
+
+                <select class="form-select mb-3" multiple aria-label="Seletor de múltiplas opções">
+                    <option selected>Opção selecionada</option>
+                    <option value="1">Um</option>
+                    <option value="2">Dois</option>
+                    <option value="3">Três</option>
+                </select>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Checkbox padrão
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Checkbox circular
+                    </label>
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Interruptor padrão</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-3">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-3">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-3">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">3</label>
+                </div>
+
+                <div class="form-check form-check-inline mb-3">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">4</label>
+                </div>
+
+                <br />
+
+                <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                <label class="btn btn-primary mb-3" for="btn-check">Alternante</label>
+
+                <br />
+
+                <input type="checkbox" class="btn-check" id="btn-check-4" autocomplete="off">
+                <label class="btn mb-3" for="btn-check-4">Alternante</label>
+
+                <br />
+
+                <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" checked>
+                <label class="btn mb-3" for="option5">Opção 1</label>
+                <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off">
+                <label class="btn mb-3" for="option6">Opção 2</label>
+
+                <br />
+
+                <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                <label class="btn btn-outline-primary mb-3" for="btn-check-outlined">Alternante</label>
+
+                <br />
+
+                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+                    checked>
+                <label class="btn btn-outline-success mb-3" for="success-outlined">Sucesso</label>
+                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                <label class="btn btn-outline-danger mb-3" for="danger-outlined">Perigo</label>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário"
+                        aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Nome do usuário" aria-label="Nome do usuário"
+                        aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">@exemplo.com</span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="basic-url" class="form-label">URL</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">https://exemplo.com/usuarios/</span>
+                        <input type="text" class="form-control" id="basic-url"
+                            aria-describedby="basic-addon3 basic-addon4">
+                    </div>
+                    <div class="form-text" id="basic-addon4">Exemplo de texto de ajuda que transborda para além do grupo
+                        de Input.</div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">R$</span>
+                    <input type="text" class="form-control" aria-label="Quantia (em reais)">
+                    <span class="input-group-text">.00</span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Servidor" aria-label="Servidor">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Área de Texto</span>
+                    <textarea class="form-control" aria-label="Área de texto"></textarea>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" aria-label="Entrada de texto com botão dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Dropdown</button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 2</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 3</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Link separado</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row text-center">
+            <div class="col">
+                <p class="h2">Componentes</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-3 bloco">
+                <button type="button" class="btn btn-outline-primary mb-3">Primário</button>
+                <button type="button" class="btn btn-outline-secondary mb-3">Secundário</button>
+                <button type="button" class="btn btn-outline-success mb-3">Sucesso</button>
+                <button type="button" class="btn btn-outline-danger mb-3">Perigo</button>
+                <button type="button" class="btn btn-outline-warning mb-3">Atenção</button>
+                <button type="button" class="btn btn-outline-info mb-3">Informacional</button>
+                <button type="button" class="btn btn-outline-light mb-3">Claro</button>
+                <button type="button" class="btn btn-outline-dark mb-3">Escuro</button>
+
+                <br />
+
+                <div class="btn-group mb-3" role="group" aria-label="Grupo de botões estilo checkbox padrão">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">Opção 1</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck2">Opção 2</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck3">Opção 3</label>
+                </div>
+
+                <br />
+
+                <div class="btn-group mb-3" role="group" aria-label="Grupo de botões estilo checkbox circular">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Opção 1</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Opção 2</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Opção 3</label>
+                </div>
+
+                <br />
+
+                <div class="btn-group-vertical mb-3" role="group"
+                    aria-label="Grupo vertical de botões estilo checkbox circular">
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-danger" for="vbtn-radio1">Opção 1</label>
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="vbtn-radio2">Opção 2</label>
+                    <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="vbtn-radio3">Opção 3</label>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+
+                <p class="d-inline-flex gap-1">
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                        aria-expanded="false" aria-controls="Exemplo de texto colapsado">
+                        Botão de link
+                    </a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseExample" aria-expanded="false"
+                        aria-controls="Exemplo de texto colapsado">
+                        Botão com data-bs-target
+                    </button>
+                </p>
+
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        Conteúdo colapsado. Este painel fica oculto por padrão, mas é revelado quando o usuário ativa o
+                        gatilho do botão.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+
+                <div class="dropdown mb-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Botão de dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 2</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 3</a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Ação</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Botão de dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Opção 1</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 2</a></li>
+                        <li><a class="dropdown-item" href="#">Opção 3</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Link separado</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 bloco">
+                
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Chamar o modal
+                </button>
+
+                
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Título do modal</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                Aqui vai o conteúdo.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-primary">Salvar alterações</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Breve explicação das classes
+        - bg-dark: Define o plano de fundo do rodapé como escuro.
+        - text-light: Define a cor do texto como claro (branco).
+        - mt-5: Define o espaçamento da margem superior (mt é de margin-top).
+        - py-3: Define o padding do eixo y (eixo das ordenadas).
+        - text-center: Centraliza o conteúdo.
+    -->
+    <footer class="bg-dark text-light mt-5 py-3">
+        <div class="container-fluid text-center">
+            <p class="mb-0">Professores Djennifer Caroline Machado, Ícaro Caldeira Botelho e Éwerton de Oliveira Cercal
+            </p>
+        </div>
+    </footer>
+
+    <!-- Link necessário para o Bootstrap funcionar! -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
