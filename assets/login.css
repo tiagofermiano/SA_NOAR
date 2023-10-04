@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Adicionado para melhorar o cálculo do tamanho */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E5E6E7;
+  /* background-image: linear-gradient(to bottom, #001024, #001e44); */
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  /* Definir uma fonte padrão */
+}
+
+.container {
+  max-width: 1230px;
+  /* Alterado de width para max-width para melhor responsividade */
+  margin: 0 auto;
+  padding: 0 15px;
+  /* Adicionado um espaçamento interno */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  /* Centralizar verticalmente */
+  height: 12vh;
+  background: #030060;
+}
+
+.logo {
+  width: 8%;
+  margin: 0 auto;
+  /* Centralizar horizontalmente */
+}
+
+
+
+
+/*caixa de fundo do login*/
+.form-caixa {
+    background-color: #fff;
+    width: 90%;
+    /* Alterado para largura relativa */
+    max-width: 400px;
+    /* Definir uma largura máxima */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+/*titulo "Login"*/
+.titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  color:#030060;
+  margin-top: 4rem;
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+/*caixa de texto usuário*/
+.input-caixatexto label {
+    display: block;
+    color: #030060;
+    margin-bottom: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .input-caixatexto input {
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    outline: 0;
+    background-color: #E5E6E7;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
+  }
+  
+  .input-caixatexto input:focus {
+    border-color: blue;
+    transition: 0.5s;
+  }
+
+/*caixa de texto senha*/
+.esqueciasenha {
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(37, 37, 37);
+  margin: 8px 0 14px 0;
+
+}
+
+/*caixa de texto usuário*/
+.esqueciasenha  a,
+.entrar a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*caixa de texto usuário*/
+.esqueciasenha  a:hover,
+.entrar a:hover {
+  text-decoration: underline rgb(37, 37, 37);
+}
+
+/*botão entrar*/
+.entrar1 {
+  display: block;
+  width: 100%;
+  background-color: #030060;
+  padding: 0.75rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+/*div com a mensagem e a linha*/
+
+
+.semconta {
+padding-left: 35.5%;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(37, 37, 37);
+  font-family: 'Poppins', sans-serif;
+}
+
+.semconta a {
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgb(37, 37, 37);
+  /* margin-left: 2vh; */
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+:root {
+  --button-background: #e5e6e7;
+  --button-color: rgb(0, 0, 0);
+  --dropdown-highlight: dodgerblue;
+  --dropdown-width: 160px;
+  --dropdown-background: white;
+  --dropdown-color: black;
+}
+
+
+
+/* Boring button styles */
+a.button {
+  /* Frame */
+  display: inline-block;
+  padding: 20px 28px;
+  border-radius: 50px;
+  box-sizing: border-box;
+  display: flex;
+  /* gap: 2rem; */
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  border-radius: 15px;
+  padding-bottom: 4.5px;
+  padding-top: 4.5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  /* Style */
+  border: none;
+  background: var(--button-background);
+  color: var(--button-color);
+  font-size: 2.7vh;
+  cursor: pointer;
+  margin-left: 2vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+a.button:active {
+  filter: brightness(75%);
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  padding: 0;
+  margin-right: 1em;
+  
+  border: none;
+}
+
+.dropdown summary {
+  list-style: none;
+  list-style-type: none;
+}
+
+.dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown summary:focus a.button {
+  border: 2px solid white;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown ul {
+  position: absolute;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  width: var(--dropdown-width);
+  left: 50%;
+  margin-left: calc((var(--dropdown-width) / 2)  * -1);
+  box-sizing: border-box;
+  z-index: 2;
+  
+  background: var(--dropdown-background);
+  border-radius: 6px;
+  list-style: none;
+}
+
+.dropdown ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li a:link, .dropdown ul li a:visited {
+  display: inline-block;
+  padding: 10px 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dropdown-color);
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  background-color: var(--dropdown-highlight);
+  color: var(--dropdown-background);
+}
+
+/* Dropdown triangle */
+.dropdown ul::before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--dropdown-background) transparent;
+}
+
+
+/* Close the dropdown with outside clicks */
+.dropdown > summary::before {
+  display: none;
+}
+
+.dropdown[open] > summary::before {
+    content: ' ';
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
