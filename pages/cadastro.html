@@ -42,34 +42,22 @@
 
 
       <div class="input-caixatexto">
-        <label for="campoTexto">Digite apenas números (limite de 11 caracteres):</label>
-        <input type="text" id="campoTexto" name="campoTexto" oninput="validarInput(this)" oninput="limitarCaracteres(this, 11);" placeholder="Digite o CPF...">
-        <p id="mensagemErro" style="color: red;"></p>
-        <div id="contadorCaracteres">11 caracteres restantes</div>
-    </div>
+       <label for="numero">Digite seu CPF</label>
+    <input type="text" id="campoTexto" name="campoTexto" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF...">
+    <p id="mensagemErro" style="color: red;"></p>
 
     <script>
-        function validarInput(input) {
-            // Expressão regular para verificar se a entrada contém apenas números
-            var regex = /^[0-9]+$/;
+        function validarNumero(input) {
+            var numero = input.value;
+            var mensagemErro = document.getElementById("mensagemErro");
 
-            if (!regex.test(input.value)) {
-                // Se a entrada não contiver apenas números, mostre uma mensagem de erro
-                document.getElementById("mensagemErro").textContent = "Por favor, insira apenas números.";
-                // Limpe o valor inserido pelo usuário
-                input.value = input.value.replace(/[^0-9]/g, '');
+            // Verifica se o valor inserido contém caracteres que não são números
+            if (/[^0-9]/.test(numero)) {
+                mensagemErro.textContent = "Digite apenas números.";
+                input.value = numero.replace(/[^0-9]/g, ''); // Remove caracteres não numéricos
             } else {
-                // Se a entrada for válida, limpe a mensagem de erro
-                document.getElementById("mensagemErro").textContent = "";
+                mensagemErro.textContent = "";
             }
-        }
-
-        function limitarCaracteres(elemento, limite) {
-            if (elemento.value.length > limite) {
-                elemento.value = elemento.value.substring(0, limite); // Truncate o texto para o limite máximo
-            }
-            const caracteresRestantes = limite - elemento.value.length;
-            document.getElementById("contadorCaracteres").textContent = caracteresRestantes + " caracteres restantes";
         }
     </script>
 
@@ -86,6 +74,8 @@
 <!-- botão de entrar -->      
       <button type="submit" class="entrar1">Entrar</button>
     </form>
+
+    
     
 
 

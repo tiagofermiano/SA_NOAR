@@ -59,7 +59,7 @@ header {
 /*titulo "Login"*/
 .titulo {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 2rem;
   font-weight: 600;
   color: black;
@@ -137,17 +137,18 @@ header {
   font-weight: 600;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
 }
 
 /*div com a mensagem e a linha*/
 
 
 .semconta {
-padding-left: 35.5%;
   font-size: 0.75rem;
   line-height: 1rem;
   color: rgb(37, 37, 37);
   font-family: 'Poppins', sans-serif;
+  margin-left: 35.8%;
 }
 
 .semconta a {
@@ -155,7 +156,6 @@ padding-left: 35.5%;
   font-size: 0.75rem;
   line-height: 1rem;
   color: rgb(37, 37, 37);
-  /* margin-left: 2vh; */
   font-family: 'Poppins', sans-serif;
 }
 
@@ -298,4 +298,13 @@ a.button:active {
     left: 0;
     bottom: 0;
     z-index: 1;
+}
+
+#input-senha > * {
+  height: 1.3em;
+  float: left;
+}
+
+#input-senha img {
+  cursor: pointer;
 }

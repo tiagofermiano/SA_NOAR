@@ -34,26 +34,46 @@
     
     
   
-    <form class="form" action="/login" method="post">
+    <form class="form" action="/login" method="post" onsubmit="return validateForm()">
       <div class="input-caixatexto">
         <label for="username">Nome do atendente</label>
         <input type="text" name="username" id="username" placeholder="Digite o nome...">
       </div>
-
-
+    
       <div class="input-caixatexto">
         <label for="password">Senha</label>
         <input type="password" name="password" id="password" placeholder="Digite a senha...">
-        
-        
-        <div class="esqueciasenha">
-          <a rel="noopener noreferrer" href="esqueciasenha.html">Esqueceu a senha?</a>
-        </div>
       </div>
-      
-<!-- botão de entrar -->      
+        
+      <!-- botão de entrar -->      
       <button type="submit" class="entrar1">Entrar</button>
+      
+      <!-- Mensagem de erro -->
+      <p id="error-message" style="color: red; display: none; text-align: center; margin-top: 1rem; font-weight: bold">Por favor, preencha todos os campos.</p>
     </form>
+    
+    <script>
+    function validateForm() {
+      // Obtenha os valores dos campos de entradaa
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+    
+      // Obtém a referência ao elemento da mensagem de erro
+      var errorMessage = document.getElementById("error-message");
+    
+      // Verifique se os campos estão vazios
+      if (username === "" || password === "") {
+        errorMessage.style.display = "block"; // Exibe a mensagem de erro
+        return false; // Impede o envio do formulário
+      }
+    
+      // Se os campos não estiverem vazios, oculta a mensagem de erro
+      errorMessage.style.display = "none";
+    
+      // Se ambos os campos estiverem preenchidos, o formulário será enviado
+      return true;
+    }
+    </script>
     
 
 <!-- div para cadastro -->

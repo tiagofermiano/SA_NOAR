@@ -497,12 +497,12 @@ header {
 
 .prob{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   margin-top: 1.5rem;
   border-radius: 1rem;
   background-color: #E5E6E7;
-  padding: 0.8rem;
-  align-items: center;
+  padding: 0.3rem;
+  justify-content: center;
   text-decoration: #030060;
 }
 
@@ -525,4 +525,28 @@ header {
 #sub_resp label {
   padding: 0.3rem;
   width: 90%;
+}
+
+.main-checkbox {
+  margin-bottom: 10px;
+}
+
+.sub-checkbox {
+  margin-left: 20px;
+}
+
+.resp .item-psiquiatrico{
+  display: flex;
+  padding: 1.5rem ;
+}
+
+#other-text input {
+  width: 100%;
+  border-radius: 2rem;
+  border: none;
+  outline: 0;
+  background-color: #E5E6E7;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
 }

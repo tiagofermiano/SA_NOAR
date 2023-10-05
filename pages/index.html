@@ -793,30 +793,49 @@
     <div class="subtitulo"></div>
     <div class="texto">Problemas Encontrados</div>
 
-    <div class="prob">
-    <div class="checkbox_prob" id="psiq">
-      <label for="scales">Psiquiátrico</label>
-      <input type="checkbox" id="scales" name="scales">
-    </div>
-  </div>
 
-  <div class="prob" id="resp">
-    <div class="checkbox_prob">
-      <label for="scales">Respiratório</label>
-      <input type="checkbox" id="scales" name="scales">
-    </div>
-    <div class="checkbox_prob" id="sub_resp">
-      <div id="checks_subresp">
-      <label for="scales">Inalação de fumaça</label>
-      <input type="checkbox" id="scales" name="scales">
-    </div>
-      <div id="checks_subresp">
-      <label for="scales">DPOC</label>    
-      <input type="checkbox" id="scales" name="scales">
-      </div>
-    </div>
+    <div class="prob">
+
+    <label class="item-psiquiatrico">
+      <input type="checkbox" class="main-checkbox"> Psiquiátrico
+  </label>
 </div>
 
+    <div class="prob">
+
+    <label class="item-respiratorio">
+      <input type="checkbox" class="main-checkbox-resp"> Respiratório
+  </label>
+  <label class="sub-item">
+      <input type="checkbox" class="sub-checkbox" disabled> Inalação de fumaça
+  </label>
+  <label class="sub-item">
+      <input type="checkbox" class="sub-checkbox" disabled> DPOC
+  </label>
+</div>
+
+<div class="prob">
+
+  <label class="item-respiratorio">
+    <input type="checkbox" class="main-checkbox-resp"> Diabetes
+</label>
+<label class="sub-item">
+    <input type="checkbox" class="sub-checkbox" disabled> Hiperglicemia
+</label>
+<label class="sub-item">
+    <input type="checkbox" class="sub-checkbox" disabled> Hipoglicemia
+</label>
+<label>
+  <input type="checkbox" id="other-checkbox" onchange="toggleOtherText()"> Outros
+</label>
+<input type="text" id="other-text" style="display: none;" placeholder="Por favor, especifique">
+
+</div>
+
+<div class="prob">
+
+
+</div>
 
     <div class="subtitulo"></div>
     <div class="texto">Localização dos traumas</div>
@@ -1363,6 +1382,33 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
+
+    <script>
+      // Selecionar a checkbox principal
+      const mainCheckbox = document.querySelector('.main-checkbox-resp');
+
+      // Selecionar todas as subcheckboxes
+      const subCheckboxes = document.querySelectorAll('.sub-checkbox');
+
+      // Adicionar um ouvinte de eventos para a checkbox principal
+      mainCheckbox.addEventListener('change', function() {
+          const isChecked = mainCheckbox.checked;
+
+          // Habilitar ou desabilitar todas as subcheckboxes com base na checkbox principal
+          subCheckboxes.forEach(function(subCheckbox) {
+              subCheckbox.disabled = !isChecked;
+          });
+      });
+  </script>
+
+<script>
+  function toggleOtherText() {
+      const otherCheckbox = document.getElementById('other-checkbox');
+      const otherText = document.getElementById('other-text');
+
+      otherText.style.display = otherCheckbox.checked ? 'block' : 'none';
+  }
+</script>
 </body>
 
 </html>

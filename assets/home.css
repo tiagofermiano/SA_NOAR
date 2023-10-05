@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Adicionado para melhorar o cálculo do tamanho */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E5E6E7;
+  /* background-image: linear-gradient(to bottom, #001024, #001e44); */
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  /* Definir uma fonte padrão */
+}
+
+.logo{
+    size: 30%;
+}
