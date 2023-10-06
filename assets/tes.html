@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOAR</title>
+    <style>
+        #canvas-container {
+            position: relative;
+            display: block;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #imagem-corpo {
+            width: 100%;
+        }
+    </style>
+
+<body>
+    <div id="canvas-container">
+        <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="imagem_corpo"
+            id="imagem-corpo">
+        <canvas id="canvas"></canvas>
+        <button id="undo-button">Desfazer Última Alteração</button>
+        <img src="https://i.pinimg.com/originals/8f/a4/37/8fa437a485ee3e5e62506cb5e4daef67.png" alt="imagem_corpo"
+            id="imagem-corpo">
+    </div>
+    <script>
+        // Variável para armazenar o histórico das ações de desenho
+        const drawingHistory = []
+                // Adicione um botão para desfazer ação com um evento de clique
+                const undoButton = document.getElementById('undo-button');
+        undoButton.addEventListener('click', undoDrawing);
+        // Obtenha o elemento canvas e seu contexto 2D
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Obtenha o elemento da imagem de fundo
+        const backgroundImage = document.getElementById('background-image');
+
+        // Configure as dimensões do canvas para corresponder à imagem de fundo
+        canvas.width = backgroundImage.width;
+        canvas.height = backgroundImage.height;
+
+        // Configure o estilo de desenho
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 5;
+
+        let drawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Função para começar a desenhar
+        function startDrawing(e) {
+            drawing = true;
+            const { left, top } = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.touches[0].clientX) - left;
+            const y = (e.clientY || e.touches[0].clientY) - top;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            lastX = x;
+            lastY = y;
+        }
+
+        // Função para parar de desenhar
+        function stopDrawing() {
+            drawing = false;
+        }
+
+        // Função para desenhar enquanto o toque ou o mouse se move
+        function draw(e) {
+            if (!drawing) return;
+            const { left, top } = canvas.getBoundingClientRect();
+            const x = (e.clientX || e.touches[0].clientX) - left;
+            const y = (e.clientY || e.touches[0].clientY) - top;
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            lastX = x;
+            lastY = y;
+        }
+
+        // Adicione os ouvintes de eventos de toque
+        canvas.addEventListener('touchstart', startDrawing);
+        canvas.addEventListener('touchend', stopDrawing);
+        canvas.addEventListener('touchmove', draw);
+
+        // Adicione os ouvintes de eventos de mouse (opcional)
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mousemove', draw);
+
+        // Variável para armazenar o histórico das ações de desenho
+        const drawingHistory = [];
+
+        // Variável para controlar o número máximo de ações que podem ser desfeitas
+        const maxUndoSteps = 10;
+
+        // Variável para controlar o número de ações a serem desfeitas de uma vez
+        let undoSteps = 1;
+
+        // Função para desenhar enquanto o mouse se move
+        function draw(e) {
+            if (!drawing) return;
+
+            const x = e.clientX - canvas.getBoundingClientRect().left;
+            const y = e.clientY - canvas.getBoundingClientRect().top;
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            [lastX, lastY] = [x, y];
+
+            // Adiciona as coordenadas ao histórico, limitando o tamanho do histórico
+            drawingHistory.push({ x, y });
+            if (drawingHistory.length > maxUndoSteps) {
+                drawingHistory.shift(); // Remove a ação mais antiga se exceder o limite
+            }
+        }
+
+        // Função para desfazer as últimas ações
+        function undoDrawing() {
+            if (drawingHistory.length > 0) {
+                // Remove o número de ações definido por undoSteps do histórico
+                drawingHistory.splice(-undoSteps, undoSteps);
+                clearCanvas();
+                redrawDrawingHistory();
+            }
+        }
+
+        // Função para limpar o canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // Função para redesenhar o histórico atual
+        function redrawDrawingHistory() {
+            clearCanvas();
+            ctx.strokeStyle = 'red';
+            ctx.lineWidth = 5;
+
+            for (let i = 0; i < drawingHistory.length - 1; i++) {
+                const { x: startX, y: startY } = drawingHistory[i];
+                const { x: endX, y: endY } = drawingHistory[i + 1];
+
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.stroke();
+            }
+        }
+
+        // Adicione um botão para desfazer ação com um evento de clique
+        const undoButton = document.getElementById('undo-button');
+        undoButton.addEventListener('click', undoDrawing);
+    </script>
+</body>
+
+</html>

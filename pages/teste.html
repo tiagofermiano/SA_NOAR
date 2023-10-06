@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenhar sobre uma Imagem</title>
+    <style>
+        #canvas-container {
+            position: relative;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <img src="https://www.infomoney.com.br/wp-content/uploads/2022/06/MicrosoftTeams-image-14.jpg?resize=720%2C734&quality=70&strip=all?w=720&quality=70&strip=all" alt="Imagem de fundo" id="background-image">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script>
+        // Obtenha o elemento canvas e seu contexto 2D
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Defina as dimensões do canvas para corresponder à imagem de fundo
+        const backgroundImage = document.getElementById('background-image');
+        canvas.width = backgroundImage.width;
+        canvas.height = backgroundImage.height;
+
+        // Configure o estilo de desenho
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 5;
+
+        let drawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Função para começar a desenhar
+        function startDrawing(e) {
+            drawing = true;
+            [lastX, lastY] = [e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top];
+        }
+
+        // Função para parar de desenhar
+        function stopDrawing() {
+            drawing = false;
+        }
+
+        // Função para desenhar enquanto o mouse se move
+        function draw(e) {
+            if (!drawing) return;
+
+            const x = e.clientX - canvas.getBoundingClientRect().left;
+            const y = e.clientY - canvas.getBoundingClientRect().top;
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            [lastX, lastY] = [x, y];
+        }
+
+        // Adicione os ouvintes de eventos do mouse
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mousemove', draw);
+    </script>
+</body>
+</html>

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
+  <script src="/scripts/checkbox_index.js"></script>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -795,50 +797,77 @@
 
 
     <div class="prob">
+      <label class="item-psiquiatrico">
+          <input type="checkbox" class="main-checkbox-psiq"> Psiquiátrico
+      </label>
+  </div>
 
-    <label class="item-psiquiatrico">
-      <input type="checkbox" class="main-checkbox"> Psiquiátrico
-  </label>
-</div>
-
-    <div class="prob">
-
-    <label class="item-respiratorio">
-      <input type="checkbox" class="main-checkbox-resp"> Respiratório
-  </label>
-  <label class="sub-item">
-      <input type="checkbox" class="sub-checkbox" disabled> Inalação de fumaça
-  </label>
-  <label class="sub-item">
-      <input type="checkbox" class="sub-checkbox" disabled> DPOC
-  </label>
-</div>
-
-<div class="prob">
-
-  <label class="item-respiratorio">
-    <input type="checkbox" class="main-checkbox-resp"> Diabetes
-</label>
-<label class="sub-item">
-    <input type="checkbox" class="sub-checkbox" disabled> Hiperglicemia
-</label>
-<label class="sub-item">
-    <input type="checkbox" class="sub-checkbox" disabled> Hipoglicemia
-</label>
-<label>
-  <input type="checkbox" id="other-checkbox" onchange="toggleOtherText()"> Outros
-</label>
-<input type="text" id="other-text" style="display: none;" placeholder="Por favor, especifique">
-
+  <div class="prob">
+    <label class="item">
+        <input type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()"> Respiratório
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-resp" disabled> Inalação de fumaça
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-resp" disabled> DPOC
+    </label>
 </div>
 
 <div class="prob">
-
-
+    <label class="item">
+        <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-diab" disabled> Hiperglicemia
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-diab" disabled> Hipoglicemia
+    </label>
 </div>
+
+  <div class="prob">
+      <label class="item">
+          <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Outros
+      </label>
+  </div>
+
+<hr class="hr2">
+
+<form class="form">
+  <div class="input-caixatexto">
+    <label for="username">Objetos recolhidos:</label>
+    <input type="text" id="username" name="username">
+  </div>
+</form>
 
     <div class="subtitulo"></div>
     <div class="texto">Localização dos traumas</div>
+
+    <div id="canvas-container">
+      <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="imagem_corpo" id="imagem-corpo">
+      <canvas id="canvas"></canvas>
+      <button id="undo-button">Desfazer Última Alteração</button>
+      <img src="https://i.pinimg.com/originals/8f/a4/37/8fa437a485ee3e5e62506cb5e4daef67.png" alt="imagem_corpo" id="imagem-corpo">
+  </div>
 
     <div class="subtitulo"></div>
     <div class="texto">Decisão transporte</div>
@@ -1374,41 +1403,183 @@
     <div class="subtitulo"></div>
     <div class="texto">Procedimentos efetuados: </div>
 
-    
+    <br>
+    <div class="grid_procedimentos">
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">ASPIRAÇÃO</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">CURATIVOS</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">AVALIAÇÃO  INICIAL</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">COMPRESSIVO</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">AVALIAÇÃO DIRIGIDA</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">ENCRAVAMENTO</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">AVALIAÇÃO CONTIN.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">OCULAR</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">CHAVE DE RAUTEK</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">QUEIMADURA</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">CÂNULA DE GUEDEL</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">SIMPLES</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">DESOBSTRUÇÃO DE V.A.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">3 PONTAS</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">EMPREGO DO D.E.A.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">IMOBILIZAÇÕES</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">GESTÃO DE RISCOS</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">CERVICAL</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">LIMPEZA DE FERIMEN.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MACA SOBRE RODAS</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MEMBRO INF.DIR.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MACA RÍGIDA</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MEMBRO INF. ESQ.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">PONTE</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MEMBRO SUP.DIR.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">RETIRADO CAPACETE</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">MEMBRO SUP.ESQ.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">R.C.P.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">QUADRIL</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">ROLAMENTO 90°</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">TOMADA DECISÃO</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">ROLAMENTO 180°</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">TRATADO CHOQUE</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">USO KED</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">USO COLAR ********</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">USO TTF</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">OXIGENIOT. *****LPM</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">VENTILAÇAO SUPO.</label>
+      </div>
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <label for="checkbox-id-1">REANIMADOR ***LPM</label>
+
+          <div class="checkbox-procedimentos">
+            <input type='checkbox' name='' value=''/>
+            <input type="text" id="username" name="username" />
+            </div>
+
+
+      </div>
+    </div>
+      <br><br>
+     
 
     </form>
-  
+
+    <script src="/scripts/desenho.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-
-    <script>
-      // Selecionar a checkbox principal
-      const mainCheckbox = document.querySelector('.main-checkbox-resp');
-
-      // Selecionar todas as subcheckboxes
-      const subCheckboxes = document.querySelectorAll('.sub-checkbox');
-
-      // Adicionar um ouvinte de eventos para a checkbox principal
-      mainCheckbox.addEventListener('change', function() {
-          const isChecked = mainCheckbox.checked;
-
-          // Habilitar ou desabilitar todas as subcheckboxes com base na checkbox principal
-          subCheckboxes.forEach(function(subCheckbox) {
-              subCheckbox.disabled = !isChecked;
-          });
-      });
-  </script>
-
-<script>
-  function toggleOtherText() {
-      const otherCheckbox = document.getElementById('other-checkbox');
-      const otherText = document.getElementById('other-text');
-
-      otherText.style.display = otherCheckbox.checked ? 'block' : 'none';
-  }
-</script>
 </body>
 
 </html>

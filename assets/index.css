@@ -540,13 +540,72 @@ header {
   padding: 1.5rem ;
 }
 
-#other-text input {
+#other-text input{
   width: 100%;
   border-radius: 2rem;
   border: none;
   outline: 0;
-  background-color: #E5E6E7;
-  padding: 0.75rem 1rem;
+  background-color: #185796;
+  padding: 0.75rem;
   color: #030060;
   cursor: pointer;
+}
+
+#other-text input{
+  width: 100%;
+  border-radius: 2rem;
+  border: none;
+  outline: 0;
+  background-color: #185796;
+  padding: 0.75rem;
+  color: #030060;
+  cursor: pointer;
+}
+
+#other-checkbox input{
+  width: 100%;
+  border-radius: 2rem;
+  border: none;
+  outline: 0;
+  background-color: #185796;
+  padding: 0.75rem;
+  color: #030060;
+  cursor: pointer;
+}
+
+.grid_procedimentos {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5%;
+  font-size: 0.95rem;
+}
+
+.colar-tam{
+  color: #000000;
+  width:40%;
+  position:relative;
+  width:65px; 
+  height:22px; 
+  display: flex;
+}
+
+#canvas-container {
+    position: relative;
+    display: block;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#imagem-corpo{
+  width: 100%;
+}
+
+.checkbox-procedimentos{
+  display: flex;
+  width: 50%;
 }

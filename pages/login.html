@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
+  <script src="/scripts/login.js"></script>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -52,37 +54,10 @@
       <p id="error-message" style="color: red; display: none; text-align: center; margin-top: 1rem; font-weight: bold">Por favor, preencha todos os campos.</p>
     </form>
     
-    <script>
-    function validateForm() {
-      // Obtenha os valores dos campos de entradaa
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-    
-      // Obtém a referência ao elemento da mensagem de erro
-      var errorMessage = document.getElementById("error-message");
-    
-      // Verifique se os campos estão vazios
-      if (username === "" || password === "") {
-        errorMessage.style.display = "block"; // Exibe a mensagem de erro
-        return false; // Impede o envio do formulário
-      }
-    
-      // Se os campos não estiverem vazios, oculta a mensagem de erro
-      errorMessage.style.display = "none";
-    
-      // Se ambos os campos estiverem preenchidos, o formulário será enviado
-      return true;
-    }
-    </script>
-    
 
 <!-- div para cadastro -->
       <a href="cadastro.html" class="semconta">Cadastre-se agora</a>
     </p>
-
-
-
-
 
   </div>
 </body>
