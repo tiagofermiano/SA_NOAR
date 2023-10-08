@@ -581,6 +581,57 @@ header {
   font-size: 0.95rem;
 }
 
+.grid_transporte {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5%;
+  font-size: 1.75rem;
+  justify-items: center;
+  margin-right: 12rem;
+  margin: auto;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  background-color: #E5E6E7;
+}
+input[type=checkbox]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  background-color:#1E80EF;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
+
+
 .colar-tam{
   color: #000000;
   width:40%;
