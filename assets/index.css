@@ -264,7 +264,7 @@ header {
 /* Estilize o wrapper do select */
 .custom-select {
   position: relative;
-  width: 35%;
+  width: 50%;
   /* margin-left: 5%; */
   margin-top: 0.2rem;
 }
@@ -604,7 +604,7 @@ input[type=checkbox]:before {
   height: 16px;
   top: 0;
   left: 0;
-  background-color: #E5E6E7;
+  background-color: #5e5e5e;
 }
 input[type=checkbox]:checked:before {
   content: "";

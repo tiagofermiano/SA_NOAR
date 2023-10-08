@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
-  <script src="/scripts/checkbox_index.js"></script>
+  <script src="/scripts/index.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -33,24 +33,26 @@
     <h1 class="title">Informações do paciente:</h1>
   </div>
   <div class="boxinfopaciente">
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="nomePaciente">Nome do paciente</label>
-        <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this)" placeholder="Digite...">
-        <p id="mensagemErro-1" style="color: red;"></p>
-      </div>
-    </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="idadePaciente">Idade</label>
+        <label for="nomePaciente">Nome do paciente:</label>
+        <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-1" style="color: red;"></p>
+      </div>
+    </form>
+    
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="idadePaciente">Idade:</label>
         <input type="text" id="idadePaciente" name="idadePaciente" maxlength="2" oninput="validarNumeroIdadePac(this)" placeholder="Digite...">
         <p id="mensagemErro-2" style="color: red;"></p>
       </div>
       <!-- Adicione mais campos de formulário conforme necessário -->
     </form>
 
-    <div class="textosexo">Sexo</div>
+    <div class="textosexo">Sexo:</div>
     <div class="custom-select">
       <select class="sexo">
         <option selected="selected"></option>
@@ -62,7 +64,7 @@
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="rgCpfPaciente">RG/CPF do paciente</label>
+        <label for="rgCpfPaciente">RG/CPF do paciente:</label>
         <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." maxlength="15" oninput="validarNumeroRGCPFPaciente(this);">
         <p id="mensagemErro-3" style="color: red;"></p>
       </div>
@@ -73,8 +75,8 @@
     
     <form class="form">
       <div class="input-caixatexto">
-        <label for="nomeAcompanhante">Nome do acompanhante</label>
-        <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..." oninput="validarNomeAcomp(this)">
+        <label for="nomeAcompanhante">Nome do acompanhante:</label>
+        <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..." oninput="validarNomeAcomp(this); this.value = capitalizarPalavras(this.value);">
         <p id="mensagemErro-4" style="color: red;"></p>
       </div>
     </form>
@@ -82,7 +84,7 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="idadeAcompanhante">Idade do acompanhante:</label>
-        <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="2" placeholder="Digite..." oninput="validarNumeroIdadeAcomp(this)">
+        <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="2"  placeholder="Digite..." oninput="validarNumeroIdadeAcomp(this)">
         <p id="mensagemErro-5" style="color: red;"></p>
       </div>
     </form>
@@ -188,14 +190,14 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Local da ocorrência:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
+        <input type="text" id="username" name="username" placeholder="Digite..." oninput="this.value = capitalizarPalavras(this.value);">
       </div>
     </form>
-
+    
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Nome do hospital:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
+        <input type="text" id="username" name="username" placeholder="Digite..." oninput="this.value = capitalizarPalavras(this.value);">
       </div>
     </form>
 
@@ -470,20 +472,23 @@
 
     <form class="form">
       <div class="input-caixatexto">
-          <label for="username">Pulso:</label>
-          <input type="text" id="username" name="username" placeholder="_____">
+          <label for="numeroInput">Pulso:</label>
+          <input type="text" id="numeroInput" oninput="completeWithBCPM(this)" placeholder="____B.C.P.M">
+          <p id="mensagemErro-11" style="color: red;"></p>
       </div>
   </form>
+  
     
 
-
-
-    <form class="form">
-      <div class="input-caixatexto">
+  <form class="form">
+    <div class="input-caixatexto">
         <label for="username">Respiração:</label>
-        <input type="text" id="username" name="username" placeholder="_____M.R.M.">
-      </div>
-    </form>
+        <input type="text" id="username" name="username" placeholder="___a___M.R.M." oninput="formatRespiration(this)">
+        <p id="mensagemErro-12" style="color: red;"></p>
+    </div>
+</form>
+
+  
 
     <form class="form">
       <div class="input-caixatexto">
@@ -494,17 +499,19 @@
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">HGT:</label>
-        <input type="text" id="username" name="username" placeholder="_____">
+          <label for="username">HGT:</label>
+          <input type="text" id="username" name="username" placeholder="___ mg/dL" oninput="completeWithHgt(this)">
+          <p id="mensagemErro-20" style="color: red;"></p>
       </div>
-    </form>
+  </form>
 
-    <form class="form">
-      <div class="input-caixatexto">
+  <form class="form">
+    <div class="input-caixatexto">
         <label for="username">Temperatura:</label>
-        <input type="text" id="username" name="username" placeholder="_____°C">
-      </div>
-    </form>
+        <input type="text" id="username" name="username" placeholder="_____°C" oninput="completeWithDegreeC(this)">
+        <p id="mensagemErro-21" style="color: red;"></p>
+    </div>
+</form>
 
 
     <form class="form">
@@ -791,7 +798,7 @@
 
     <div class="totalgcs">
       <p>TOTAL (GCS) (3-15)
-        <input type="number" id="gcs" name="gcs" placeholder="Digite um valor...">
+        <input type="number" id="gcs" name="gcs" placeholder="Digite um valor..." min="3" max="15">
     </div>
 
     <div class="subtitulo"></div>
@@ -857,7 +864,8 @@
 <form class="form">
   <div class="input-caixatexto">
     <label for="username">Objetos recolhidos:</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username" oninput="validarObjRecolhido(this)">
+    <p id="mensagemErro-13" style="color: red;"></p>
   </div>
 </form>
 
@@ -1204,21 +1212,20 @@
       </div>
     </div>
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-          <label for="checkbox-id-8">Não</label>
-        </div>
-        </div>
+    <div class="grid_checkbox_nao_cinematica">
+      <div>
+        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+        <label for="checkbox-id-8">Não</label>
       </div>
+      </div>
+    </div>
       
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">A quanto tempo aconteceu?</label>
-            <input type="text" id="username" name="username" placeholder="________________">
-          </div>
-          
-        </form>
+    <form class="form">
+      <div class="input-anme_sn">
+        <label for="username">A quanto tempo aconteceu?</label>
+        <input type="text" id="username" name="username" placeholder="________________">
+      </div> 
+    </form>
 
         <div class="grid_cinematica">
           <!-- TEXTOS DAS CHECKBOX -->
@@ -1383,35 +1390,40 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">M:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" oninput="validarAtendimentoM(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-14" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S1:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" oninput="validarS1(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-15" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S2:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" oninput="validarS2(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-16" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S3:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" oninput="validarS3(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-17" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Demandante:</label>
-        <input type="text" id="username" name="username">
+        <input type="text" id="username" name="username" oninput="validarDemandante(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <p id="mensagemErro-18" style="color: red;"></p>
       </div>
     </form>
 

@@ -37,7 +37,13 @@ function toggleTransporte() {
     });
 }
 
-function validarLetra(input) {
+function capitalizarPalavras(text) {
+    return text.replace(/\b\w/g, function (match) {
+      return match.toUpperCase();
+    });
+  }
+
+function validarLetraNomePaciente(input) {
     var texto = input.value;
     var mensagemErro = document.getElementById("mensagemErro-1");
 
@@ -135,6 +141,7 @@ function validarNumeroIdadeAcomp(input) {
     var numero = input.value;
     var mensagemErro = document.getElementById("mensagemErro-5");
 
+
     if (/[^0-9]/.test(numero)) {
         mensagemErro.textContent = "Digite apenas números.";
         input.value = numero.replace(/[^0-9]/g, '');
@@ -212,26 +219,207 @@ function formatarMedidaPressao(input) {
     }
   }
   
-  
-  
-  
-  
-  
+//funcao para o usuario digitar apenas os numeros do pulso e auto completar com o B.C.P.M.   
+  function completeWithBCPM(inputElement) {
+    const inputValue = inputElement.value;
+    const mensagemErro = document.getElementById("mensagemErro-11");
 
-  const inputElement = document.getElementById("username");
+    // Verifica se a entrada tem exatamente 3 números
+    if (/^\d{3}$/.test(inputValue)) {
+        inputElement.value = inputValue + ' B.C.P.M.';
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (inputValue === 'B.C.P.M.') {
+        inputElement.value = ''; // Se o usuário inserir apenas 'B.C.P.M.', limpe o campo
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (/[^0-9 ]/.test(inputValue)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        inputElement.value = inputValue.replace(/[^0-9 ]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
 
-  inputElement.addEventListener("input", function() {
-      const inputValue = inputElement.value;
-      const numbers = inputValue.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-      if (numbers.length === 3) {
-          inputElement.value = numbers + " B.C.P.M.";
-      } else {
-          inputElement.value = numbers; // Caso contrário, apenas mostra os números digitados
-      }
-  });
 
-  
-  
-  
-  
-  
+// FUNÇÃO PARA MRM
+
+function formatRespiration(inputElement) {
+    const inputValue = inputElement.value;
+    const mensagemErro = document.getElementById("mensagemErro-12");
+
+    // Verifica se a entrada tem exatamente 2 números
+    if (/^\d{2}$/.test(inputValue)) {
+        inputElement.value = inputValue + ' M.R.M.';
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (inputValue === ' M.R.M.') {
+        // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (/[^0-9]/.test(inputValue)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        inputElement.value = inputValue.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//funcao para permitir que o usuario digite apenas numeros no HGT
+function completeWithHgt(inputElement) {
+    const inputValue = inputElement.value;
+    const mensagemErro = document.getElementById("mensagemErro-20");
+
+    // Verifica se a entrada tem exatamente 2 números
+    if (/^\d{3}$/.test(inputValue)) {
+        inputElement.value = inputValue + ' mg/dL';
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (inputValue === ' mg/dL') {
+        // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (/[^0-9]/.test(inputValue)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        inputElement.value = inputValue.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // Função para completar com "°C" após o usuário digitar dois números
+ function completeWithDegreeC(inputElement) {
+    const inputValue = inputElement.value;
+    const mensagemErro = document.getElementById("mensagemErro-21");
+
+    // Verifica se a entrada tem exatamente 2 números
+    if (/^\d{2}$/.test(inputValue)) {
+        inputElement.value = inputValue + '°C';
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (inputValue === '°C') {
+        inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (/[^0-9]/.test(inputValue)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        inputElement.value = inputValue.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+const inputElement = document.getElementById("username");
+
+// Adiciona um ouvinte de evento de entrada para chamar a função
+inputElement.addEventListener("input", function () {
+    completeWithDegreeC(this);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+//funcao para validar apenas letras na input Objetos Recolhidos
+function validarObjRecolhido(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-13");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+
+//funcao para validar apenas letras no M de atendimento
+function validarAtendimentoM(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-14");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+
+//funcao para validar apenas letras no S1 de atendimento
+function validarS1(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-15");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+//funcao para validar apenas letras no S2 de atendimento
+function validarS2(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-16");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+//funcao para validar apenas letras no S3 de atendimento
+function validarS3(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-17");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+//funcao para validar apenas letras no demandante de atendimento
+function validarDemandante(input) {
+    var texto = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-18");
+
+    if (/[^a-zA-Z\s]/.test(texto)) {
+        mensagemErro.textContent = "Digite apenas letras.";
+        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
