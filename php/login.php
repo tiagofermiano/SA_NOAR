@@ -1,4 +1,7 @@
 <?php
+
+include conexao.php;
+
 function loginAtendente($cpf, $senha) {
     // Lembre-se de estabelecer uma conexão com o banco de dados aqui.
 

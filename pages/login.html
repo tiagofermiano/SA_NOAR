@@ -37,14 +37,15 @@
     
   
     <form class="form" action="/login" method="post" onsubmit="return validateForm()">
+
       <div class="input-caixatexto">
-        <label for="username">Nome do atendente</label>
-        <input type="text" name="username" id="username" placeholder="Digite o nome...">
+        <label for="user">CPF do atendente</label>
+        <input type="text" name="user" id="user" placeholder="Digite o CPF..." required>
       </div>
     
       <div class="input-caixatexto">
         <label for="password">Senha</label>
-        <input type="password" name="password" id="password" placeholder="Digite a senha...">
+        <input type="password" name="password" id="password" placeholder="Digite a senha..." required>
       </div>
 
       <div class="esqueciasenha">

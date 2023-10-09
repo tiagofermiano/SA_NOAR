@@ -37,21 +37,25 @@
     
     
   
-    <form class="form" action="/login" method="post">
+    <form class="form" action="/php/cadastro.php" method="post">
       <div class="input-caixatexto">
-        <label for="username">Nome do atendente</label>
-        <input type="text" name="username" id="username" placeholder="Digite o nome..." required>
+        <label for="nome">Nome do atendente</label>
+        <input type="text" name="nome" id="nome" placeholder="Digite o nome..." required>
       </div>
 
 
       <div class="input-caixatexto">
-       <label for="numero">Digite seu CPF</label>
-    <input type="text" id="campoTexto" name="campoTexto" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF..." required>
+       <label for="cpf">Digite seu CPF</label>
+    <input type="text" id="cpf" name="cpf" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF..." required>
     <p id="mensagemErro" style="color: red;"></p>
 
+    <div class="input-caixatexto">
+      <label for="email">Digite seu email</label>
+   <input type="text" id="email" name="email" placeholder="Digite seu email..." required>
+
       <div class="input-caixatexto">
-        <label for="password">Senha</label>
-    <input type="password" name="password" id="password" placeholder="Digite a senha...">
+        <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" placeholder="Digite a senha...">
 
     <div class="botaomostrar">
       <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()" required>Mostrar Senha</button>
@@ -69,7 +73,7 @@
 
       
 <!-- botão de entrar -->      
-      <button type="submit" class="entrar1">Entrar</button>
+      <input type="submit" class="entrar1" name="Entrar">
     </form>
 
   </div>
