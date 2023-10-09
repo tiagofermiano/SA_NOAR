@@ -17,8 +17,6 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
 
-    <link rel="stylesheet" href="./">
-<link rel="stylesheet" href="/assets/solid.min.css">
 
   <link rel="stylesheet" type="text/css" href="/assets/cadastro.css">
 
@@ -42,13 +40,13 @@
     <form class="form" action="/login" method="post">
       <div class="input-caixatexto">
         <label for="username">Nome do atendente</label>
-        <input type="text" name="username" id="username" placeholder="Digite o nome...">
+        <input type="text" name="username" id="username" placeholder="Digite o nome..." required>
       </div>
 
 
       <div class="input-caixatexto">
        <label for="numero">Digite seu CPF</label>
-    <input type="text" id="campoTexto" name="campoTexto" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF...">
+    <input type="text" id="campoTexto" name="campoTexto" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF..." required>
     <p id="mensagemErro" style="color: red;"></p>
 
       <div class="input-caixatexto">
@@ -56,16 +54,16 @@
     <input type="password" name="password" id="password" placeholder="Digite a senha...">
 
     <div class="botaomostrar">
-      <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()">Mostrar Senha</button>
+      <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()" required>Mostrar Senha</button>
     </div>
         
 
       <div class="input-caixatexto">
         <label for="confirmpassword">Confirmar senha</label>
-        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirme sua senha...">  
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirme sua senha..." required>  
 
         <div class="botaomostrar">
-          <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()">Mostrar Senha</button>
+          <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()" required>Mostrar Senha</button>
         </div>
         
 
