@@ -592,13 +592,13 @@ header {
   margin: auto;
 }
 
-input[type=checkbox] {
+/* input[type=checkbox] {
   position: relative;
   cursor: pointer;
 }
 input[type=checkbox]:before {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
   width: 15px;
   height: 16px;
@@ -608,7 +608,7 @@ input[type=checkbox]:before {
 }
 input[type=checkbox]:checked:before {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
   width: 16px;
   height: 16px;
@@ -618,10 +618,10 @@ input[type=checkbox]:checked:before {
 }
 input[type=checkbox]:checked:after {
   content: "";
-  display: block;
+  display: none;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid rgb(255, 255, 255);
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -629,8 +629,7 @@ input[type=checkbox]:checked:after {
   position: absolute;
   top: 2px;
   left: 6px;
-}
-
+} */
 
 .colar-tam{
   color: #000000;

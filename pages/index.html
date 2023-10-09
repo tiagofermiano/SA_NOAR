@@ -183,7 +183,7 @@
       <div class="input-caixatexto">
         <label for="username">Data:</label>
         <input class="textbox-n" placeholder="XX/XX/20XX" type="text" onfocus="(this.type='date')"
-          onblur="(this.type='text')" />
+          onblur="(this.type='date')" />
       </div>
     </form>
 
@@ -473,8 +473,8 @@
     <form class="form">
       <div class="input-caixatexto">
           <label for="numeroInput">Pulso:</label>
-          <input type="text" id="numeroInput" oninput="completeWithBCPM(this)" placeholder="____B.C.P.M">
-          <p id="mensagemErro-11" style="color: red;"></p>
+          <input type="text" id="numeroInput" oninput="completePulso(this)" placeholder="____B.C.P.M">
+          <p id="mensagemErro-23" style="color: red;"></p>
       </div>
   </form>
   
@@ -483,7 +483,7 @@
   <form class="form">
     <div class="input-caixatexto">
         <label for="username">Respiração:</label>
-        <input type="text" id="username" name="username" placeholder="___a___M.R.M." oninput="formatRespiration(this)">
+        <input type="text" id="username" name="username" placeholder="___M.R.M." oninput="formatRespiration(this)">
         <p id="mensagemErro-12" style="color: red;"></p>
     </div>
 </form>
@@ -493,7 +493,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Saturação:</label>
-        <input type="text" id="username" name="username" placeholder="_____%">
+        <input type="text" id="username" name="username" placeholder="_____%" oninput="completeSaturacao(this)">
+        <p id="mensagemErro-22" style="color: red;"></p>
       </div>
     </form>
 

@@ -219,21 +219,21 @@ function formatarMedidaPressao(input) {
     }
   }
   
-//funcao para o usuario digitar apenas os numeros do pulso e auto completar com o B.C.P.M.   
-  function completeWithBCPM(inputElement) {
+//funcao para permitir que o usuario digite apenas numeros no Saturação
+function completePulso(inputElement) {
     const inputValue = inputElement.value;
-    const mensagemErro = document.getElementById("mensagemErro-11");
+    const mensagemErro = document.getElementById("mensagemErro-23");
 
-    // Verifica se a entrada tem exatamente 3 números
-    if (/^\d{3}$/.test(inputValue)) {
+    // Verifica se a entrada tem exatamente 2 números
+    if (/^\d{3}/.test(inputValue)) {
         inputElement.value = inputValue + ' B.C.P.M.';
         mensagemErro.textContent = ""; // Limpa a mensagem de erro
-    } else if (inputValue === 'B.C.P.M.') {
-        inputElement.value = ''; // Se o usuário inserir apenas 'B.C.P.M.', limpe o campo
+    } else if (inputValue === ' B.C.P.M.') {
+        // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
         mensagemErro.textContent = ""; // Limpa a mensagem de erro
-    } else if (/[^0-9 ]/.test(inputValue)) {
+    } else if (/[^0-9]/.test(inputValue)) {
         mensagemErro.textContent = "Digite apenas números.";
-        inputElement.value = inputValue.replace(/[^0-9 ]/g, '');
+        inputElement.value = inputValue.replace(/[^0-9]/g, '');
     } else {
         mensagemErro.textContent = "";
     }
@@ -241,7 +241,6 @@ function formatarMedidaPressao(input) {
 
 
 // FUNÇÃO PARA MRM
-
 function formatRespiration(inputElement) {
     const inputValue = inputElement.value;
     const mensagemErro = document.getElementById("mensagemErro-12");
@@ -263,6 +262,25 @@ function formatRespiration(inputElement) {
 
 
 
+//funcao para permitir que o usuario digite apenas numeros no Saturação
+function completeSaturacao(inputElement) {
+    const inputValue = inputElement.value;
+    const mensagemErro = document.getElementById("mensagemErro-22");
+
+    // Verifica se a entrada tem exatamente 2 números
+    if (/^\d{2}/.test(inputValue)) {
+        inputElement.value = inputValue + ' %';
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (inputValue === ' %') {
+        // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
+        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+    } else if (/[^0-9]/.test(inputValue)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        inputElement.value = inputValue.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
 
 
 
