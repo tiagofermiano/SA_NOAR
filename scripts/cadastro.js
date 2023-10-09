@@ -12,17 +12,19 @@ function validarNumero(input) {
 }
 
 function mostrarOcultarSenha() {
-          var senhaInput = document.getElementById("password");
-          var confirmarSenhaInput = document.getElementById("confirmpassword");
-          var botaoMostrar = document.getElementById("mostrarSenha");
-
-          if (senhaInput.type === "password") {
-              senhaInput.type = "text";
-              confirmarSenhaInput.type = "text";
-              botaoMostrar.textContent = "Ocultar Senha";
-          } else {
-              senhaInput.type = "password";
-              confirmarSenhaInput.type = "password";
-              botaoMostrar.textContent = "Mostrar Senha";
-            }
-      }
+    var senhaInput = document.getElementById("password");
+    var confirmarSenhaInput = document.getElementById("confirmpassword");
+    var botaoMostrar = document.getElementById("mostrarSenha");
+  
+    if (senhaInput.type === "password") {
+      senhaInput.type = "text";
+      confirmarSenhaInput.type = "text";
+      botaoMostrar.textContent = "Ocultar Senha";
+      botaoMostrar.classList.add("clicked"); // Adicione a classe "clicked"
+    } else {
+      senhaInput.type = "password";
+      confirmarSenhaInput.type = "password";
+      botaoMostrar.textContent = "Mostrar Senha";
+      botaoMostrar.classList.remove("clicked"); // Remova a classe "clicked"
+    }
+  }

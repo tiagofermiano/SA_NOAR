@@ -300,3 +300,23 @@ a.button:active {
     z-index: 1;
 }
 
+/* Estilo para o botão "Mostrar Senha" */
+.mostrar-senha-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+/* Ícone do olho dentro do botão */
+.mostrar-senha-button::before {
+  content: "\f06e"; /* Código Unicode para o ícone do olho aberto */
+  font-family: FontAwesome; /* Use uma fonte de ícones, como FontAwesome */
+  padding-right: 5px;
+}
+
+/* Estilo quando o botão é clicado */
+.mostrar-senha-button.clicked::before {
+  content: "\f070"; /* Código Unicode para o ícone do olho fechado */
+}
