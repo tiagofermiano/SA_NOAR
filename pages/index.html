@@ -9,7 +9,7 @@
   <script src="/scripts/index.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,16 +37,19 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
-        <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="nomePaciente" name="nomePaciente"
+          oninput="validarLetraNomePaciente(this); this.value = capitalizarPalavras(this.value);"
+          placeholder="Digite...">
         <p id="mensagemErro-1" style="color: red;"></p>
       </div>
     </form>
-    
+
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="idadePaciente">Idade:</label>
-        <input type="text" id="idadePaciente" name="idadePaciente" maxlength="2" oninput="validarNumeroIdadePac(this)" placeholder="Digite...">
+        <input type="text" id="idadePaciente" name="idadePaciente" maxlength="2" oninput="validarNumeroIdadePac(this)"
+          placeholder="Digite...">
         <p id="mensagemErro-2" style="color: red;"></p>
       </div>
       <!-- Adicione mais campos de formulário conforme necessário -->
@@ -65,18 +68,20 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="rgCpfPaciente">RG/CPF do paciente:</label>
-        <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." maxlength="15" oninput="validarNumeroRGCPFPaciente(this);">
+        <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." maxlength="15"
+          oninput="validarNumeroRGCPFPaciente(this);">
         <p id="mensagemErro-3" style="color: red;"></p>
       </div>
     </form>
-    
-    
 
-    
+
+
+
     <form class="form">
       <div class="input-caixatexto">
         <label for="nomeAcompanhante">Nome do acompanhante:</label>
-        <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..." oninput="validarNomeAcomp(this); this.value = capitalizarPalavras(this.value);">
+        <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..."
+          oninput="validarNomeAcomp(this); this.value = capitalizarPalavras(this.value);">
         <p id="mensagemErro-4" style="color: red;"></p>
       </div>
     </form>
@@ -84,7 +89,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="idadeAcompanhante">Idade do acompanhante:</label>
-        <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="2"  placeholder="Digite..." oninput="validarNumeroIdadeAcomp(this)">
+        <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="2" placeholder="Digite..."
+          oninput="validarNumeroIdadeAcomp(this)">
         <p id="mensagemErro-5" style="color: red;"></p>
       </div>
     </form>
@@ -190,14 +196,16 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Local da ocorrência:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="this.value = capitalizarPalavras(this.value);">
+        <input type="text" id="username" name="username" placeholder="Digite..."
+          oninput="this.value = capitalizarPalavras(this.value);">
       </div>
     </form>
-    
+
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Nome do hospital:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="this.value = capitalizarPalavras(this.value);">
+        <input type="text" id="username" name="username" placeholder="Digite..."
+          oninput="this.value = capitalizarPalavras(this.value);">
       </div>
     </form>
 
@@ -359,95 +367,95 @@
       <!-- TEXTOS DAS CHECKBOX -->
 
       <div class="grid_txt_cinematica">
-      <div class="txt_cinematica">
-        <p>Distúrbio de comportamento</p>
+        <div class="txt_cinematica">
+          <p>Distúrbio de comportamento</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Encontrado com capacete</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Encontrado de cinto</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Para-brisa avariado</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Caminhando na cena</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Painel avariado</p>
+        </div>
+        <div class="txt_cinematica">
+          <p>Volante torcido</p>
+        </div>
       </div>
-      <div class="txt_cinematica">
-        <p>Encontrado com capacete</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Encontrado de cinto</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Para-brisa avariado</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Caminhando na cena</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Painel avariado</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Volante torcido</p>
-      </div>
-    </div>
-    
+
       <!-- CHECKBOX SIM -->
       <div class="grid_checkbox_sim_cinematica">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sim</label>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-2">
+          <label for="checkbox-id-2">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-3">
+          <label for="checkbox-id-3">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-4">
+          <label for="checkbox-id-4">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-5">
+          <label for="checkbox-id-5">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-6">
+          <label for="checkbox-id-6">Sim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-7">
+          <label for="checkbox-id-7">Sim</label>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-2">
-        <label for="checkbox-id-2">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-3">
-        <label for="checkbox-id-3">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-4">
-        <label for="checkbox-id-4">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-5">
-        <label for="checkbox-id-5">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-6">
-        <label for="checkbox-id-6">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-7">
-        <label for="checkbox-id-7">Sim</label>
-      </div>
-    </div>
-    
+
       <!-- CHECKBOX NÃO -->
 
       <div class="grid_checkbox_nao_cinematica">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-        <label for="checkbox-id-8">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-9">
-        <label for="checkbox-id-9">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-10">
-        <label for="checkbox-id-10">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-11">
-        <label for="checkbox-id-11">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-12">
-        <label for="checkbox-id-12">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-13">
-        <label for="checkbox-id-13">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-14">
-        <label for="checkbox-id-14">Não</label>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+          <label for="checkbox-id-8">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-9">
+          <label for="checkbox-id-9">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-10">
+          <label for="checkbox-id-10">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-11">
+          <label for="checkbox-id-11">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-12">
+          <label for="checkbox-id-12">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-13">
+          <label for="checkbox-id-13">Não</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-14">
+          <label for="checkbox-id-14">Não</label>
+        </div>
       </div>
     </div>
-  </div>
-    
+
 
     <br>
 
@@ -467,28 +475,28 @@
         <input type="text" id="medidaPressao" oninput="formatarMedidaPressao(this)" placeholder="__x__mmHg">
       </div>
     </form>
-    
-    
+
+
 
     <form class="form">
       <div class="input-caixatexto">
-          <label for="numeroInput">Pulso:</label>
-          <input type="text" id="numeroInput" oninput="completePulso(this)" placeholder="____B.C.P.M">
-          <p id="mensagemErro-23" style="color: red;"></p>
+        <label for="numeroInput">Pulso:</label>
+        <input type="text" id="numeroInput" oninput="completePulso(this)" placeholder="____B.C.P.M">
+        <p id="mensagemErro-23" style="color: red;"></p>
       </div>
-  </form>
-  
-    
+    </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
+
+
+    <form class="form">
+      <div class="input-caixatexto">
         <label for="username">Respiração:</label>
         <input type="text" id="username" name="username" placeholder="___M.R.M." oninput="formatRespiration(this)">
         <p id="mensagemErro-12" style="color: red;"></p>
-    </div>
-</form>
+      </div>
+    </form>
 
-  
+
 
     <form class="form">
       <div class="input-caixatexto">
@@ -500,19 +508,19 @@
 
     <form class="form">
       <div class="input-caixatexto">
-          <label for="username">HGT:</label>
-          <input type="text" id="username" name="username" placeholder="___ mg/dL" oninput="completeWithHgt(this)">
-          <p id="mensagemErro-20" style="color: red;"></p>
+        <label for="username">HGT:</label>
+        <input type="text" id="username" name="username" placeholder="___ mg/dL" oninput="completeWithHgt(this)">
+        <p id="mensagemErro-20" style="color: red;"></p>
       </div>
-  </form>
+    </form>
 
-  <form class="form">
-    <div class="input-caixatexto">
+    <form class="form">
+      <div class="input-caixatexto">
         <label for="username">Temperatura:</label>
         <input type="text" id="username" name="username" placeholder="_____°C" oninput="completeWithDegreeC(this)">
         <p id="mensagemErro-21" style="color: red;"></p>
-    </div>
-</form>
+      </div>
+    </form>
 
 
     <form class="form">
@@ -806,83 +814,121 @@
     <div class="texto">Problemas Encontrados</div>
 
 
-    <div class="prob">
+    <div class="prob_psiq">
       <label class="item-psiquiatrico">
-          <input type="checkbox" class="main-checkbox-psiq"> Psiquiátrico
+        <input type="checkbox" class="main-checkbox-psiq"> Psiquiátrico
       </label>
-  </div>
+    </div>
 
-  <div class="prob">
-    <label class="item">
-        <input id="checkbox-id-768" type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()"> Respiratório
-    </label>
-    <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp" disabled> Inalação de fumaça
-    </label>
-    <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp" disabled> DPOC
-    </label>
-</div>
-
-<div class="prob">
-    <label class="item">
-        <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
-    </label>
-    <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-diab" disabled> Hiperglicemia
-    </label>
-    <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-diab" disabled> Hipoglicemia
-    </label>
-</div>
-
-  <div class="prob">
+    <div class="prob">
       <label class="item">
-          <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
+        <input id="checkbox-id-768" type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()">
+        Respiratório
       </label>
       <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+        <input type="checkbox" class="sub-checkbox-resp" disabled> Inalação de fumaça
       </label>
       <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
+        <input type="checkbox" class="sub-checkbox-resp" disabled> DPOC
       </label>
-      <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
-      </label>
-      <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
-      </label>
-      <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
-      </label>
-      <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Outros
-      </label>
-  </div>
+    </div>
 
-<hr class="hr2">
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-diab" disabled> Hiperglicemia
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-diab" disabled> Hipoglicemia
+      </label>
 
-<form class="form">
-  <div class="input-caixatexto">
-    <label for="username">Objetos recolhidos:</label>
-    <input type="text" id="username" name="username" oninput="validarObjRecolhido(this)">
-    <p id="mensagemErro-13" style="color: red;"></p>
-  </div>
-</form>
+      <form class="form">
+        <div class="fundo-input">
+          <div class="input-ss">
+            <label for="username">OUTROS:</label>
+            <input type="text" id="username" name="username" placeholder="_________________">
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-obst" onchange="toggleObstetrico()"> Obstétrico
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-obst" disabled> Parto Emergencial
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-obst" disabled> Gestante
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-obst" disabled> Hemor. Excessiva
+      </label>
+    </div>
+
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-transp" disabled> Sem remoção
+      </label>
+
+      <form class="form">
+        <div class="fundo-input">
+          <div class="input-ss">
+            <label for="username">OUTROS:</label>
+            <input type="text" id="username" name="username" placeholder="_________________">
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+
+    <form class="form">
+      <div class="input-caixatexto">
+        <label for="username">Objetos recolhidos:</label>
+        <input type="text" id="username" name="username" placeholder="Digite...">
+      </div>
+    </form>
 
     <div class="subtitulo"></div>
     <div class="texto">Localização dos traumas</div>
 
     <div id="canvas-container">
-      <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="imagem_corpo" id="imagem-corpo">
+      <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="imagem_corpo"
+        id="imagem-corpo">
       <canvas id="canvas"></canvas>
       <button id="undo-button">Desfazer Última Alteração</button>
-      <img src="https://i.pinimg.com/originals/8f/a4/37/8fa437a485ee3e5e62506cb5e4daef67.png" alt="imagem_corpo" id="imagem-corpo">
-  </div>
+      <img src="https://i.pinimg.com/originals/8f/a4/37/8fa437a485ee3e5e62506cb5e4daef67.png" alt="imagem_corpo"
+        id="imagem-corpo">
+    </div>
 
     <div class="subtitulo"></div>
     <div class="texto">Decisão transporte</div>
-    
+
     <br>
     <div class="grid_transporte">
       <div>
@@ -1069,12 +1115,12 @@
         <input type="checkbox" id="scales" name="scales" />
         <label for="scales">HEMORRAGIA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer">
         <input type="checkbox" id="horns" name="horns" />
         <label for="horns">INTERNA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer2">
         <input type="checkbox" id="horns2" name="horns2" />
         <label for="horns2">EXTERNA</label>
@@ -1086,12 +1132,12 @@
         <input type="checkbox" id="scales" name="scales" />
         <label for="scales">EDEMA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer">
         <input type="checkbox" id="horns" name="horns" />
         <label for="horns">GENERALIZADO</label>
       </div>
-    
+
       <div class="checkbox-textocontainer2">
         <input type="checkbox" id="horns2" name="horns2" />
         <label for="horns2">LOCALIZADO</label>
@@ -1103,12 +1149,12 @@
         <input type="checkbox" id="scales" name="scales" />
         <label for="scales">PARADA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer">
         <input type="checkbox" id="horns" name="horns" />
         <label for="horns">CARDÍACA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer2">
         <input type="checkbox" id="horns2" name="horns2" />
         <label for="horns2">RESPIRATÓRIA</label>
@@ -1120,12 +1166,12 @@
         <input type="checkbox" id="scales" name="scales" />
         <label for="scales">CIANOSE</label>
       </div>
-    
+
       <div class="checkbox-textocontainer">
         <input type="checkbox" id="horns" name="horns" />
         <label for="horns">LÁBIOS</label>
       </div>
-    
+
       <div class="checkbox-textocontainer2">
         <input type="checkbox" id="horns2" name="horns2" />
         <label for="horns2">EXTREMIDADE</label>
@@ -1137,247 +1183,441 @@
         <input type="checkbox" id="scales" name="scales" />
         <label for="scales">PUPILAS</label>
       </div>
-    
+
       <div class="checkbox-textocontainer">
         <input type="checkbox" id="horns" name="horns" />
         <label for="horns">ANISOCORIA</label>
       </div>
-    
+
       <div class="checkbox-textocontainer2">
         <input type="checkbox" id="horns2" name="horns2" />
         <label for="horns2">ISOCORIA</label>
       </div>
-    
-    <div class="checkbox-textocontainer">
-      <input type="checkbox" id="horns" name="horns" />
-      <label for="horns">MIDRIASE</label>
-    </div>
-  
-    <div class="checkbox-textocontainer2">
-      <input type="checkbox" id="horns2" name="horns2" />
-      <label for="horns2">MIOSE</label>
-    </div>
 
-    <div class="checkbox-textocontainer">
-      <input type="checkbox" id="horns" name="horns" />
-      <label for="horns">REAGENTE</label>
-    </div>
-  
-    <div class="checkbox-textocontainer2">
-      <input type="checkbox" id="horns2" name="horns2" />
-      <label for="horns2">Ñ REAGENTE</label>
-    </div>
-    
-  </div>
-
-
-  <form class="form">
-    <div class="fundo-input">
-    <div class="input-ss">
-      <label for="username">OUTROS:</label>
-      <input type="text" id="username" name="username" placeholder="_________________">
-    </div>
-    </div>
-  </form>
-
-
-  <form class="form">
-    <div class="fundo-anamnese">
-    <div class="input-anamnese">
-      <label for="username">ANAMNESE DA EMERGÊNCIA MÉDICA</label></div>
-
-      <div class="actu">
-        <label for="username">O que aconteceu (sinais e sintomas)</label></div>
-
-        <div class="input-anamnese">
-      <input type="text" id="username" name="username" placeholder="Digite..."></div>
-    </div>
-
-
-    <br>
-  <div class="grid_cinematica">
-    <!-- TEXTOS DAS CHECKBOX -->
-
-    <div class="grid_txt_cinematica">
-    <div class="txt_cinematica">
-      <p>Aconteceu outras vezes</p>
-    </div>
-    </div>
-
-
-    <!-- CHECKBOX SIM -->
-    <div class="grid_checkbox_sim_cinematica">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sim</label>
+      <div class="checkbox-textocontainer">
+        <input type="checkbox" id="horns" name="horns" />
+        <label for="horns">MIDRIASE</label>
       </div>
+
+      <div class="checkbox-textocontainer2">
+        <input type="checkbox" id="horns2" name="horns2" />
+        <label for="horns2">MIOSE</label>
+      </div>
+
+      <div class="checkbox-textocontainer">
+        <input type="checkbox" id="horns" name="horns" />
+        <label for="horns">REAGENTE</label>
+      </div>
+
+      <div class="checkbox-textocontainer2">
+        <input type="checkbox" id="horns2" name="horns2" />
+        <label for="horns2">Ñ REAGENTE</label>
+      </div>
+
     </div>
 
-    <div class="grid_checkbox_nao_cinematica">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-        <label for="checkbox-id-8">Não</label>
-      </div>
-      </div>
-    </div>
-      
+
     <form class="form">
-      <div class="input-anme_sn">
-        <label for="username">A quanto tempo aconteceu?</label>
-        <input type="text" id="username" name="username" placeholder="________________">
-      </div> 
+      <div class="fundo-input">
+        <div class="input-ss">
+          <label for="username">OUTROS:</label>
+          <input type="text" id="username" name="username" placeholder="_________________">
+        </div>
+      </div>
     </form>
 
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
-      
-          <div class="grid_txt_cinematica">
+
+    <form class="form">
+      <div class="fundo-anamnese">
+        <div class="input-anamnese">
+          <label for="username">ANAMNESE DA EMERGÊNCIA MÉDICA</label>
+        </div>
+
+        <div class="actu">
+          <label for="username">O que aconteceu (sinais e sintomas)</label>
+        </div>
+
+        <div class="input-anamnese">
+          <input type="text" id="username" name="username" placeholder="Digite...">
+        </div>
+      </div>
+
+
+      <br>
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Aconteceu outras vezes</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">A quanto tempo aconteceu?</label>
+          <input type="text" id="username" name="username" placeholder="________________">
+        </div>
+      </form>
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
           <div class="txt_cinematica">
             <p>Possui algum problema de saúde</p>
           </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+            <label for="checkbox-id-1">Sim</label>
           </div>
-      
-      
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">Quais?</label>
+          <input type="text" id="username" name="username" placeholder="________________">
+        </div>
+      </form>
+
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Faz uso de medicação</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">Horário da ultima medicação:</label>
+          <input type="time" id="username" name="username" placeholder="________________">
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Quais?</label>
+            <input type="text" id="username" name="username" placeholder="________________">
+          </div>
+        </form>
+      </form>
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Alérgico a alguma coisa?</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">Se sim, especifique</label>
+          <input type="text" id="username" name="username" placeholder="________________">
+        </div>
+      </form>
+
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Inseriu alimento ou líquido≥6h</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">Se sim, especifique</label>
+          <input type="text" id="username" name="username" placeholder="________________">
+        </div>
+
+      </form>
+
+      <form class="form">
+        <div class="input-anme_sn">
+          <label for="username">Que horas?</label>
+          <input type="time" id="username" name="username" placeholder="________________">
+        </div>
+
+
+        <div class="subtitulo"></div>
+        <div class="texto">Anamnese da emergência médica:</div>
+
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Aconteceu outras vezes</p>
+            </div>
+          </div>
+
+
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
               <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
               <label for="checkbox-id-1">Sim</label>
             </div>
-           </div>
-      
-            <div class="grid_checkbox_nao_cinematica">
-              <div>
-                <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-                <label for="checkbox-id-8">Não</label>
-              </div>
-              </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+              <label for="checkbox-id-8">Não</label>
             </div>
-      
-              <form class="form">
-                <div class="input-anme_sn">
-                  <label for="username">Quais?</label>
-                  <input type="text" id="username" name="username" placeholder="________________">
-                </div>
-                
-              </form>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">A quanto tempo aconteceu?</label>
+            <input type="text" id="username" name="username" placeholder="________________">
+          </div>
+        </form>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Possui algum problema de saúde</p>
+            </div>
+          </div>
 
 
-              <div class="grid_cinematica">
-                <!-- TEXTOS DAS CHECKBOX -->
-            
-                <div class="grid_txt_cinematica">
-                <div class="txt_cinematica">
-                  <p>Faz uso de medicação</p>
-                </div>
-                </div>
-            
-            
-                <!-- CHECKBOX SIM -->
-                <div class="grid_checkbox_sim_cinematica">
-                  <div>
-                    <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
-                    <label for="checkbox-id-1">Sim</label>
-                  </div>
-                </div>
-            
-                  <div class="grid_checkbox_nao_cinematica">
-                    <div>
-                      <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-                      <label for="checkbox-id-8">Não</label>
-                    </div>
-                    </div>
-                  </div>
-            
-                    <form class="form">
-                      <div class="input-anme_sn">
-                        <label for="username">Horário da ultima medicação:</label>
-                        <input type="time" id="username" name="username" placeholder="________________">
-                      </div>
-                      
-                      <form class="form">
-                        <div class="input-anme_sn">
-                          <label for="username">Quais?</label>
-                          <input type="text" id="username" name="username" placeholder="________________">
-                        </div>
-                      </form>
-                    </form>
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
 
-                    <div class="grid_cinematica">
-                      <!-- TEXTOS DAS CHECKBOX -->
-                  
-                      <div class="grid_txt_cinematica">
-                      <div class="txt_cinematica">
-                        <p>Alérgico a alguma coisa?</p>
-                      </div>
-                      </div>
-                  
-                  
-                      <!-- CHECKBOX SIM -->
-                      <div class="grid_checkbox_sim_cinematica">
-                        <div>
-                          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
-                          <label for="checkbox-id-1">Sim</label>
-                        </div>
-                      </div>
-                  
-                        <div class="grid_checkbox_nao_cinematica">
-                          <div>
-                            <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-                            <label for="checkbox-id-8">Não</label>
-                          </div>
-                          </div>
-                        </div>
-                  
-                          <form class="form">
-                            <div class="input-anme_sn">
-                              <label for="username">Se sim, especifique</label>
-                              <input type="text" id="username" name="username" placeholder="________________">
-                            </div>
-                          </form>
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Quais?</label>
+            <input type="text" id="username" name="username" placeholder="________________">
+          </div>
+
+        </form>
 
 
-                          <div class="grid_cinematica">
-                            <!-- TEXTOS DAS CHECKBOX -->
-                        
-                            <div class="grid_txt_cinematica">
-                            <div class="txt_cinematica">
-                              <p>Inseriu alimento ou líquido≥6h</p>
-                            </div>
-                            </div>
-                        
-                        
-                            <!-- CHECKBOX SIM -->
-                            <div class="grid_checkbox_sim_cinematica">
-                              <div>
-                                <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
-                                <label for="checkbox-id-1">Sim</label>
-                              </div>
-                            </div>
-                        
-                              <div class="grid_checkbox_nao_cinematica">
-                                <div>
-                                  <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
-                                  <label for="checkbox-id-8">Não</label>
-                                </div>
-                                </div>
-                              </div>
-                        
-                                <form class="form">
-                                  <div class="input-anme_sn">
-                                    <label for="username">Se sim, especifique</label>
-                                    <input type="text" id="username" name="username" placeholder="________________">
-                                  </div>
-                                  
-                                </form>
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
 
-                                <form class="form">
-                                  <div class="input-anme_sn">
-                                    <label for="username">Que horas?</label>
-                                    <input type="time" id="username" name="username" placeholder="________________">
-                                  </div>
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Faz uso de medicação</p>
+            </div>
+          </div>
 
-  </div>                                
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Horário da ultima medicação:</label>
+            <input type="time" id="username" name="username" placeholder="________________">
+          </div>
+
+          <form class="form">
+            <div class="input-anme_sn">
+              <label for="username">Quais?</label>
+              <input type="text" id="username" name="username" placeholder="________________">
+            </div>
+          </form>
+        </form>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Alérgico a alguma coisa?</p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Se sim, especifique</label>
+            <input type="text" id="username" name="username" placeholder="________________">
+          </div>
+        </form>
+
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Inseriu alimento ou líquido≥6h</p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Se sim, especifique</label>
+            <input type="text" id="username" name="username" placeholder="________________">
+          </div>
+
+        </form>
+
+        <form class="form">
+          <div class="input-anme_sn">
+            <label for="username">Que horas?</label>
+            <input type="time" id="username" name="username" placeholder="________________">
+          </div>
+
+  </div>
+
+
+
+
 
 
   <hr class="hr1">
@@ -1391,7 +1631,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">M:</label>
-        <input type="text" id="username" name="username" oninput="validarAtendimentoM(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="username" name="username"
+          oninput="validarAtendimentoM(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
         <p id="mensagemErro-14" style="color: red;"></p>
       </div>
     </form>
@@ -1399,7 +1640,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S1:</label>
-        <input type="text" id="username" name="username" oninput="validarS1(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="username" name="username"
+          oninput="validarS1(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
         <p id="mensagemErro-15" style="color: red;"></p>
       </div>
     </form>
@@ -1407,7 +1649,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S2:</label>
-        <input type="text" id="username" name="username" oninput="validarS2(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="username" name="username"
+          oninput="validarS2(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
         <p id="mensagemErro-16" style="color: red;"></p>
       </div>
     </form>
@@ -1415,7 +1658,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">S3:</label>
-        <input type="text" id="username" name="username" oninput="validarS3(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="username" name="username"
+          oninput="validarS3(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
         <p id="mensagemErro-17" style="color: red;"></p>
       </div>
     </form>
@@ -1423,7 +1667,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">Demandante:</label>
-        <input type="text" id="username" name="username" oninput="validarDemandante(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
+        <input type="text" id="username" name="username"
+          oninput="validarDemandante(this); this.value = capitalizarPalavras(this.value);" placeholder="Digite...">
         <p id="mensagemErro-18" style="color: red;"></p>
       </div>
     </form>
@@ -1450,7 +1695,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">AVALIAÇÃO  INICIAL</label>
+        <label for="checkbox-id-1">AVALIAÇÃO INICIAL</label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1597,9 +1842,66 @@
         <label for="checkbox-id-1">REANIMADOR ***LPM</label>
       </div>
     </div>
-      <br><br>
+    <br><br>
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-aux" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-aux" disabled> Celesc
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-aux" disabled> Def. Civil
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-aux" disabled> IGP / PC
+      </label>
+    </div>
+    
 
-      <div class="subtitulo"></div>
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-policia" onchange="togglePolicia()"> Policia
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> Civil
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> Militar
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> PRE
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> PRF
+      </label>
+    </div>
+   
+    <div class="prob">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-Samu" onchange="toggleSamu()"> Samu
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-Samu" disabled> USA
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-Samu" disabled> USB
+      </label>
+    </div>
+
+    <form class="form">
+      <div class="fundo-input">
+        <div class="input-check">
+          <input type="checkbox">
+        </div>
+        <div class="input-cit">
+          <label for="username">CIT:</label>
+          <input type="text" id="username" name="username" placeholder="_________________">
+        </div>
+      </div>
+    </form>
+
+    <div class="subtitulo"></div>
     <div class="texto">Materiais descartáveis utilizados: </div>
 
     <br>
@@ -1676,7 +1978,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TALAS PAP. (  )P (  )G</label>
+        <label for="checkbox-id-1">TALAS PAP. ( )P ( )G</label>
       </div>
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1684,10 +1986,10 @@
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
       </div>
-      </div>
-      <br><br>
+    </div>
+    <br><br>
 
-      <div class="subtitulo"></div>
+    <div class="subtitulo"></div>
     <div class="texto">Materiais utilizados deixados no hospital:</div>
 
     <br>
@@ -1696,8 +1998,8 @@
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">BASE DO ESTABILIZA.</label>
       </div>
-      <div>
-        <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+      <div class="input-materiais">
+        <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1" placeholder="_________________________">
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1708,7 +2010,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">COLAR M G  ____</label>
+        <label for="checkbox-id-1">COLAR M G ____</label>
       </div>
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1729,7 +2031,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">KED (  )ADUL. (  )INFA.</label>
+        <label for="checkbox-id-1">KED ( )ADUL. ( )INFA.</label>
       </div>
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1743,7 +2045,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">T.T.F. (  )ADUL. (  )INFA.</label>
+        <label for="checkbox-id-1">T.T.F. ( )ADUL. ( )INFA.</label>
       </div>
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1769,36 +2071,35 @@
       <div>
         <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
       </div>
-      </div>
-      <br>
+    </div>
+    <br>
 
-      <form class="form">
-        <div class="fundo-obsimp">
+    <form class="form">
+      <div class="fundo-obsimp">
         <div class="input-obsimp">
-          <label for="username">Observações importantes:</label></div>
-    
-            <div class="input-obsimp">
-          <input type="text" id="username" name="username" placeholder="Digite..."></div>
+          <label for="username">Observações importantes:</label>
         </div>
+
+        <div class="input-obsimp">
+          <input type="text" id="username" name="username" placeholder="Digite...">
+        </div>
+      </div>
     </form>
 
-    </div>
+  </div>
+
+  <button>
+    Gerar Relatório
+  </button>
+  <br><br>
 
 
-    
-    <button>
-      Gerar Relatório
-    </button>
-    <br><br>
 
-
-    <script src="/scripts/desenho.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-    
+
 
 </body>
 

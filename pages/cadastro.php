@@ -1,9 +1,15 @@
 <?php
+session_start();
 
-include conexao.php;
+include ('conexao.php'); // Inclua o arquivo de conexão
+
+$nome = "Nome do Atendente";
+$cpf = "12345678901";
+$email = "atendente@example.com";
+$senha = "senha_segura";
 
 function cadastrarAtendente($nome, $cpf, $email, $senha) {
-    // Lembre-se de estabelecer uma conexão com o banco de dados aqui.
+    global $conn; // Use a conexão global definida no arquivo conexao.php
 
     // Hash da senha para armazenamento seguro no banco de dados.
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
@@ -19,13 +25,17 @@ function cadastrarAtendente($nome, $cpf, $email, $senha) {
 
     // Executar a declaração preparada.
     if ($stmt->execute()) {
+        // Fechar a declaração e a conexão.
+        $stmt->close();
+        $conn->close();
+
         return true; // Sucesso
     } else {
+        // Fechar a declaração e a conexão.
+        $stmt->close();
+        $conn->close();
+
         return false; // Falha
     }
-
-    // Fechar a declaração e a conexão.
-    $stmt->close();
-    $conn->close();
 }
 ?>

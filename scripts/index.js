@@ -24,12 +24,64 @@ function toggleDiabetes() {
     });
 }
 
+function toggleObstetrico() {
+    var obstetricoCheckbox = document.querySelector('.main-checkbox-obst');
+    var checkboxesObstetrico = document.querySelectorAll('.sub-checkbox-obst');
+
+    checkboxesObstetrico.forEach(function (checkbox) {
+        if (obstetricoCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
 function toggleTransporte() {
     var transporteCheckbox = document.querySelector('.main-checkbox-transp');
     var checkboxesTransporte = document.querySelectorAll('.sub-checkbox-transp');
 
     checkboxesTransporte.forEach(function (checkbox) {
         if (transporteCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleMeiosAuxiliares() {
+    var MeiosAuxiliaresCheckbox = document.querySelector('.main-checkbox-aux');
+    var checkboxesMeiosAuxiliares = document.querySelectorAll('.sub-checkbox-aux');
+
+    checkboxesMeiosAuxiliares.forEach(function (checkbox) {
+        if (MeiosAuxiliaresCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function togglePolicia() {
+    var PoliciaCheckbox = document.querySelector('.main-checkbox-policia');
+    var checkboxesPolicia = document.querySelectorAll('.sub-checkbox-policia');
+
+    checkboxesPolicia.forEach(function (checkbox) {
+        if (PoliciaCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleSamu() {
+    var SamuCheckbox = document.querySelector('.main-checkbox-Samu');
+    var checkboxesSamu = document.querySelectorAll('.sub-checkbox-Samu');
+
+    checkboxesSamu.forEach(function (checkbox) {
+        if (SamuCheckbox.checked) {
             checkbox.removeAttribute('disabled');
         } else {
             checkbox.setAttribute('disabled', 'disabled');
@@ -310,18 +362,6 @@ function completeWithHgt(inputElement) {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
  // Função para completar com "°C" após o usuário digitar dois números
  function completeWithDegreeC(inputElement) {
     const inputValue = inputElement.value;
@@ -348,31 +388,6 @@ const inputElement = document.getElementById("username");
 inputElement.addEventListener("input", function () {
     completeWithDegreeC(this);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-//funcao para validar apenas letras na input Objetos Recolhidos
-function validarObjRecolhido(input) {
-    var texto = input.value;
-    var mensagemErro = document.getElementById("mensagemErro-13");
-
-    if (/[^a-zA-Z\s]/.test(texto)) {
-        mensagemErro.textContent = "Digite apenas letras.";
-        input.value = texto.replace(/[^a-zA-Z\s]/g, '');
-    } else {
-        mensagemErro.textContent = "";
-    }
-}
 
 
 //funcao para validar apenas letras no M de atendimento
