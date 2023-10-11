@@ -659,3 +659,84 @@ input[type=checkbox]:checked:after {
   display: flex;
   width: 50%;
 }
+
+
+
+.fundo-obsimp{
+  background-color: #E5E6E7;
+  width: 90%;
+  height: 20%;
+  margin: auto;
+  padding: 5%;
+  border-radius: 1rem;
+}
+
+.input-obsimp label {
+  display: block;
+  color: #030060;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.actu label {
+  display: block;
+  color: #030060;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input-obsimp input {
+  width: 80%;
+  border-radius: 0.375rem;
+  outline: 0;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  height: 8rem;
+  border: none;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.input-obsimp input::placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem 0.5rem;
+  color: #444343;
+  opacity: 0.6;
+}
+
+button {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #030060;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+  transition: all .6s ease;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+button:hover {
+  box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+}
+
+button:focus,button:active {
+  opacity: .85;
+  box-shadow: none;
+}
