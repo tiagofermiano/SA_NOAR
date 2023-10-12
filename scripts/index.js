@@ -215,6 +215,20 @@ function validarNumeroOcorr(input) {
     }
 }
 
+//funcao para permitir apenas a escrita de numeros usb
+function validarNumeroUSB(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-25");
+
+    if (/[^0-9, ]/.test(numero)) {
+        mensagemErro.textContent = "Digite apenas números.";
+        input.value = numero.replace(/[^0-9, ]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+
 //funcao para permitir apenas a escrita de numeros no codigo IR
 function validarCodIR(input) {
     var numero = input.value;
@@ -254,7 +268,7 @@ function validarCodSIASUS(input) {
     }
 }
 
-//funcao para o usuario digitar os numeros da pressao arterial
+// Função para o usuário digitar os números da pressão arterial
 function formatarMedidaPressao(input) {
     // Remove todos os caracteres não numéricos
     var valor = input.value.replace(/\D/g, '');
@@ -266,20 +280,21 @@ function formatarMedidaPressao(input) {
       var parte1 = valor.slice(0, 2);
       var parte2 = valor.slice(2, 4);
       input.value = parte1 + 'x' + parte2 + 'mmHg';
+      mensagemErro.textContent = ""; // Limpa a mensagem de erro
     } else {
       input.value = valor;
+      
     }
   }
   
-//funcao para permitir que o usuario digite apenas numeros no Saturação
-function completePulso(inputElement) {
+//FUNCAO PARA AUTOCOMPLETAR COM B.C.P.M. E PERMITIR APENAS NÚMEROS
+  function completePulso(inputElement) {
     const inputValue = inputElement.value;
     const mensagemErro = document.getElementById("mensagemErro-23");
-
-    // Verifica se a entrada tem exatamente 2 números
-    if (/^\d{3}/.test(inputValue)) {
+    if (/^\d{3}$/.test(inputValue)) {
         inputElement.value = inputValue + ' B.C.P.M.';
         mensagemErro.textContent = ""; // Limpa a mensagem de erro
+
     } else if (inputValue === ' B.C.P.M.') {
         // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
         mensagemErro.textContent = ""; // Limpa a mensagem de erro
@@ -290,7 +305,6 @@ function completePulso(inputElement) {
         mensagemErro.textContent = "";
     }
 }
-
 
 // FUNÇÃO PARA MRM
 function formatRespiration(inputElement) {
@@ -314,18 +328,16 @@ function formatRespiration(inputElement) {
 
 
 
-//funcao para permitir que o usuario digite apenas numeros no Saturação
 function completeSaturacao(inputElement) {
     const inputValue = inputElement.value;
     const mensagemErro = document.getElementById("mensagemErro-22");
-
-    // Verifica se a entrada tem exatamente 2 números
-    if (/^\d{2}/.test(inputValue)) {
+  
+    if (/^\d{2}$/.test(inputValue)) {
         inputElement.value = inputValue + ' %';
         mensagemErro.textContent = ""; // Limpa a mensagem de erro
     } else if (inputValue === ' %') {
-        // inputElement.value = ''; // Se o usuário inserir apenas '°C', limpe o campo
-        mensagemErro.textContent = ""; // Limpa a mensagem de erro
+      // inputElement.value = ''; // Se o usuário inserir apenas ' %', limpe o campo
+      mensagemErro.textContent = ""; // Limpa a mensagem de erro
     } else if (/[^0-9]/.test(inputValue)) {
         mensagemErro.textContent = "Digite apenas números.";
         inputElement.value = inputValue.replace(/[^0-9]/g, '');
@@ -334,6 +346,7 @@ function completeSaturacao(inputElement) {
     }
 }
 
+  
 
 
 
@@ -514,3 +527,14 @@ function mostrarOcultarCIT(checkbox) {
       campoDeTexto.value = ""; // Limpar o valor do campo de texto
     }
   }
+
+  document.getElementById('idadePaciente').addEventListener('input', function() {
+    var idade = parseInt(this.value, 10);
+    var secaoOculta = document.getElementById('secaoOculta');
+
+    if (idade >= 5) {
+        secaoOculta.style.display = 'block';
+    } else {
+        secaoOculta.style.display = 'none';
+    }
+});

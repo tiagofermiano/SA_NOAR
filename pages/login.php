@@ -53,6 +53,7 @@ function loginAtendente($cpf, $senha) {
         return false; // Atendente não encontrado
     }
 }
+}
 ?>
 
 <!-- SE DER ERRO USAR A FUNÇÃO DA DJ -->

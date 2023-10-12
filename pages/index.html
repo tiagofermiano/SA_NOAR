@@ -212,7 +212,8 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="username">N° USB.:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
+        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarNumeroUSB(this)">
+        <p id="mensagemErro-25" style="color: red;"></p>
       </div>
     </form>
 
@@ -475,7 +476,7 @@
         <input type="text" id="medidaPressao" oninput="formatarMedidaPressao(this)" placeholder="__x__mmHg">
       </div>
     </form>
-
+    
 
 
     <form class="form">
@@ -549,7 +550,7 @@
     </form>
 
     <div class="subtitulo"></div>
-    <div class="texto">Nível de consciência - Maiores de 5 anos </div>
+    <div class="texto" id="">Nível de consciência - Maiores de 5 anos </div>
     <br>
     <div class="grid_maior5">
       <div class="input-consciencia">
