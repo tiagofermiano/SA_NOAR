@@ -183,6 +183,7 @@ header {
   margin: auto;
   padding: 1%;
   border-radius: 1rem;
+  display: flex;
 }
 
 .input-ss {
@@ -235,6 +236,57 @@ header {
   cursor: pointer;
   font-size: 15px;
 }
+
+.input-cit {
+  display: flex;
+  align-items: center;
+  color: #030060;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+
+}
+
+.input-cit label {
+  margin: auto;
+  display: flex;
+  margin-left: 1.8rem;
+}
+
+.input-cit input {
+  width: 60%; 
+  height: 8%;
+  border: none;
+  outline: 0;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+  background-color: #E5E6E7;
+  font-size: 15px;
+}
+
+.input-check {
+  display: flex;
+  align-items: center;
+  color: #030060;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+
+}
+
+.input-check input {
+  /* width: 60%;  */
+  border: none;
+  outline: 0;
+  /* padding: 0.75rem 1rem; */
+  color: #030060;
+  cursor: pointer;
+  background-color: #E5E6E7;
+  font-size: 15px;
+  display: flex;
+  margin-left: 2rem;
+}
+
+
 
 .sexo {
   font-size: 17px;
@@ -514,6 +566,18 @@ header {
   padding: 0.3rem;
   justify-content: center;
   text-decoration: #030060;
+}
+
+.prob_psiq{
+  /* display: grid; */
+  grid-template-rows: 1fr 1fr;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.70rem;
+  /* justify-content: center; */
+  text-decoration: #030060;
+  text-align: center;
 }
 
 #resp {
