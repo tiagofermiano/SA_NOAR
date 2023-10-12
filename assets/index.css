@@ -128,7 +128,7 @@ header {
   transition: 0.5s;
 }
 
-.fundo-anamnese{
+.fundo-anamnese {
   background-color: #E5E6E7;
   width: 90%;
   height: 20%;
@@ -176,7 +176,7 @@ header {
   opacity: 0.6;
 }
 
-.fundo-input{
+.fundo-input {
   background-color: #E5E6E7;
   width: 70%;
   height: 10%;
@@ -201,7 +201,7 @@ header {
 }
 
 .input-ss input {
-  width: 60%; 
+  width: 60%;
   height: 8%;
   border: none;
   outline: 0;
@@ -226,7 +226,7 @@ header {
 
 .input-anme_sn input {
   display: flex;
-  width: 43%; 
+  width: 43%;
   height: 8%;
   border: none;
   outline: 0;
@@ -242,23 +242,31 @@ header {
   color: #030060;
   width: 35%;
   letter-spacing: 0.05em;
-  background-color: #f2f2f2; /* Fundo cinza */
+  background-color: #f2f2f2;
+  /* Fundo cinza */
   margin-left: 5%;
   display: flex;
   align-items: center;
   border: 1.5px solid #C7BEBE;
   border-radius: 5px;
-  appearance: none; /* Remove a aparência padrão do navegador */
-  padding: 10px; /* Ajuste o preenchimento conforme necessário */
+  appearance: none;
+  /* Remove a aparência padrão do navegador */
+  padding: 10px;
+  /* Ajuste o preenchimento conforme necessário */
 }
 
 /* Estilize a seta para baixo */
 .sexo::after {
-  content: "\25BC"; /* Código Unicode para uma seta para baixo */
-  font-size: 14px; /* Tamanho da seta */
-  margin-left: auto; /* Alinha a seta à direita do elemento .sexo */
-  padding-left: 10px; /* Espaçamento entre a seta e o texto */
-  color: #030060; /* Cor da seta */
+  content: "\25BC";
+  /* Código Unicode para uma seta para baixo */
+  font-size: 14px;
+  /* Tamanho da seta */
+  margin-left: auto;
+  /* Alinha a seta à direita do elemento .sexo */
+  padding-left: 10px;
+  /* Espaçamento entre a seta e o texto */
+  color: #030060;
+  /* Cor da seta */
 }
 
 /* Estilize o wrapper do select */
@@ -295,8 +303,10 @@ header {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #030060; /* Cor da seta */
-  pointer-events: none; /* Garante que a seta não seja clicável */
+  border-top: 5px solid #030060;
+  /* Cor da seta */
+  pointer-events: none;
+  /* Garante que a seta não seja clicável */
 }
 
 
@@ -479,7 +489,7 @@ header {
   margin: auto;
 }
 
-.totalgcs{
+.totalgcs {
   display: block
 }
 
@@ -487,7 +497,7 @@ header {
   width: 45%;
   border-radius: 0.375rem;
   border: 1.5px solid #C7BEBE;
-  margin-left: 1rem ;
+  margin-left: 1rem;
   outline: 0;
   background-color: #fff;
   padding: 0.75rem 1rem;
@@ -495,7 +505,7 @@ header {
   cursor: pointer;
 }
 
-.prob{
+.prob {
   display: grid;
   grid-template-rows: 1fr 1fr;
   margin-top: 1.5rem;
@@ -506,12 +516,7 @@ header {
   text-decoration: #030060;
 }
 
-.checkbox_prob{
-  display: block;
-  margin: auto;
-}
-
-#resp{
+#resp {
   display: grid;
   grid-template-rows: 1fr 2fr;
 }
@@ -535,12 +540,12 @@ header {
   margin-left: 20px;
 }
 
-.resp .item-psiquiatrico{
+.resp .item-psiquiatrico {
   display: flex;
-  padding: 1.5rem ;
+  padding: 1.5rem;
 }
 
-#other-text input{
+#other-text input {
   width: 100%;
   border-radius: 2rem;
   border: none;
@@ -551,7 +556,7 @@ header {
   cursor: pointer;
 }
 
-#other-text input{
+#other-text input {
   width: 100%;
   border-radius: 2rem;
   border: none;
@@ -562,7 +567,7 @@ header {
   cursor: pointer;
 }
 
-#other-checkbox input{
+#other-checkbox input {
   width: 100%;
   border-radius: 2rem;
   border: none;
@@ -631,38 +636,38 @@ input[type=checkbox]:checked:after {
   left: 6px;
 } */
 
-.colar-tam{
+.colar-tam {
   color: #000000;
-  width:40%;
-  position:relative;
-  width:65px; 
-  height:22px; 
+  width: 40%;
+  position: relative;
+  width: 65px;
+  height: 22px;
   display: flex;
 }
 
 #canvas-container {
-    position: relative;
-    display: block;
+  position: relative;
+  display: block;
 }
 
 #canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-#imagem-corpo{
+#imagem-corpo {
   width: 100%;
 }
 
-.checkbox-procedimentos{
+.checkbox-procedimentos {
   display: flex;
   width: 50%;
 }
 
 
 
-.fundo-obsimp{
+.fundo-obsimp {
   background-color: #E5E6E7;
   width: 90%;
   height: 20%;
@@ -710,6 +715,41 @@ input[type=checkbox]:checked:after {
   opacity: 0.6;
 }
 
+.tamanho-colar {
+  width: 50%;
+  border-radius: 2rem;
+  margin: auto;
+  border: none;
+  outline: 0;
+  background-color: #E5E6E7;
+  padding: 0.50rem 0.75rem;
+  color: #030060;
+  cursor: pointer;
+}
+
+#litros-oxigenio {
+  width: 60%;
+  border-radius: 2rem;
+  margin: auto;
+  border: none;
+  outline: 0;
+  background-color: #E5E6E7;
+  padding: 0.50rem 0.75rem;
+  color: #030060;
+  cursor: pointer;
+}
+
+.proced {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.3rem;
+  justify-content: center;
+  text-decoration: #030060;
+}
+
 button {
   border: none;
   display: flex;
@@ -736,7 +776,8 @@ button:hover {
   box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
 }
 
-button:focus,button:active {
+button:focus,
+button:active {
   opacity: .85;
   box-shadow: none;
 }

@@ -1578,7 +1578,9 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">USO COLAR ********</label>
+        <label for="checkbox-id-1">USO COLAR</label>
+        <label for="username">Tam.:</label>
+        <input type="text" class="tamanho-colar" id="username" name="username" placeholder="Tamanho...">
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1586,7 +1588,9 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">OXIGENIOT. *****LPM</label>
+        <label for="checkbox-id-1">OXIGENIOTERAPIA</label>
+          <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M." oninput="formatRespiration(this)">
+          <p id="mensagemErro-19" style="color: red;"></p>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1594,10 +1598,66 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">REANIMADOR ***LPM</label>
+        <label for="checkbox-id-1">REANIMADOR</label>
+          <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M." oninput="formatRespiration(this)">
+          <p id="mensagemErro-19" style="color: red;"></p>
       </div>
     </div>
-      <br><br>
+
+    <br><br>
+
+    <div class="proced">
+      <label class="item">
+          <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-meios" disabled> CELESC
+      </label>
+      <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-meios" disabled> Def. Civil
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-meios" disabled> IGP / PC
+    </label>
+  </div>
+
+  <div class="proced">
+    <label class="item">
+        <input type="checkbox" class="main-checkbox-policia" onchange="togglePolicia()"> Polícia
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> Civil
+    </label>
+    <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> Militar
+    </label>
+    <label class="sub-item">
+      <input type="checkbox" class="sub-checkbox-policia" disabled> PRE
+  </label>
+  <label class="sub-item">
+    <input type="checkbox" class="sub-checkbox-policia" disabled> PRF
+</label>
+</div>
+
+<div class="proced">
+  <label class="item">
+      <input type="checkbox" class="main-checkbox-samu" onchange="toggleSamu()"> SAMU
+  </label>
+  <label class="sub-item">
+      <input type="checkbox" class="sub-checkbox-samu" disabled> USA
+  </label>
+  <label class="sub-item">
+      <input type="checkbox" class="sub-checkbox-samu" disabled> USB
+  </label>
+</div>
+
+<div class="proced" id="proced">
+  <label class="item">
+      <input type="checkbox" class="main-checkbox-cit" onchange="mostrarOcultarCIT()"> CIT
+  </label>
+      <input type="text" class="input-cit" id="input-cit" disabled>
+</div>
+      <br>
 
       <div class="subtitulo"></div>
     <div class="texto">Materiais descartáveis utilizados: </div>

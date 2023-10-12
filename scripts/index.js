@@ -441,3 +441,61 @@ function validarDemandante(input) {
     }
 }
 
+
+function toggleMeiosAuxiliares() {
+    var meiosCheckbox = document.querySelector('.main-checkbox-meios');
+    var checkboxesMeios = document.querySelectorAll('.sub-checkbox-meios');
+
+    checkboxesMeios.forEach(function (checkbox) {
+        if (meiosCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function togglePolicia() {
+    var policiaCheckbox = document.querySelector('.main-checkbox-policia');
+    var checkboxesPolicia = document.querySelectorAll('.sub-checkbox-policia');
+
+    checkboxesPolicia.forEach(function (checkbox) {
+        if (policiaCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleSamu() {
+    var samuCheckbox = document.querySelector('.main-checkbox-samu');
+    var checkboxesSamu = document.querySelectorAll('.sub-checkbox-samu');
+
+    checkboxesSamu.forEach(function (checkbox) {
+        if (samuCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+// NAO SEI FAZER ESSA MERDA ↓
+// NAO SEI FAZER ESSA MERDA ↓
+// NAO SEI FAZER ESSA MERDA ↓
+// NAO SEI FAZER ESSA MERDA ↓
+
+function mostrarOcultarCIT(checkbox) {
+    const campoDeTextoContainer = document.getElementById("proced");
+    const campoDeTexto = document.getElementById("input-cit");
+  
+    if (checkbox.checked) {
+      campoDeTextoContainer.style.display = "block";
+      campoDeTexto.required = true; // Opcional: tornar o campo de texto obrigatório
+    } else {
+      campoDeTextoContainer.style.display = "none";
+      campoDeTexto.required = false;
+      campoDeTexto.value = ""; // Limpar o valor do campo de texto
+    }
+  }
