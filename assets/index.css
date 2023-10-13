@@ -18,6 +18,56 @@ body {
   /* Definir uma fonte padrão */
 }
 
+.circle-button {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  background-color: #030060;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  bottom: 5%;
+  right: 5%;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 1;
+  border: none; 
+  text-transform: uppercase;
+}
+
+.menu-icon {
+  color: #fff;
+  font-size: 24px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 70px; /* Alterado para "bottom" */
+  right: 0;
+  background-color: #fff;
+  min-width: 160px;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.7rem;
+  text-decoration: none;
+  color: #030060;
+}
+
+.dropdown-content a:hover {
+  background-color: #030060;
+  color:#ffffff;
+  border-radius: 0.75rem;
+}
+
+
 .container {
   max-width: 1230px;
   /* Alterado de width para max-width para melhor responsividade */
@@ -100,7 +150,7 @@ header {
 }
 
 .form {
-  margin-top: 1rem;
+  margin:1rem;
 }
 
 .input-caixatexto label {
@@ -146,12 +196,23 @@ header {
   text-align: center;
 }
 
+.input-anamnese ::placeholder {
+width: 80%;
+border-radius: 0.375rem;
+outline: 0;
+cursor: pointer;
+height: 5rem;
+border: none;
+margin-left: 0.5rem;
+margin-top: 1.29rem;
+}
+
 .actu label {
   display: block;
   color: #030060;
   margin-bottom: 4px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -202,7 +263,7 @@ header {
 }
 
 .input-ss input {
-  width: 60%;
+  width: 70%;
   height: 8%;
   border-top: #030060;
   border-left: none;
@@ -213,8 +274,8 @@ header {
   cursor: pointer;
   font-size: 15px;
   display: flex;
-  margin-top: 1rem;
-  margin-left: 0.70rem;
+  margin-left: 0.80rem;
+  margin-right: 0.80rem;
   background-color: #E5E6E7;
 }
 
@@ -509,8 +570,10 @@ header {
   display: grid;
   grid-template-columns: 1fr 0.3fr 0.3fr;
   row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
 }
-
 .grid_maior5 {
   display: grid;
   grid-template-columns: 1fr 3fr 0.3fr;

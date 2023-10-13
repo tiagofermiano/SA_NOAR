@@ -1,3 +1,4 @@
+
 function toggleRespiratorio() {
     var respiratorioCheckbox = document.querySelector('.main-checkbox-resp');
     var checkboxesRespiratorio = document.querySelectorAll('.sub-checkbox-resp');
