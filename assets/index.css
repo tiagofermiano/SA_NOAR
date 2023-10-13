@@ -176,6 +176,7 @@ header {
   opacity: 0.6;
 }
 
+
 .fundo-input {
   background-color: #E5E6E7;
   width: 70%;
@@ -192,7 +193,6 @@ header {
   color: #030060;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-
 }
 
 .input-ss label {
@@ -204,13 +204,18 @@ header {
 .input-ss input {
   width: 60%;
   height: 8%;
-  border: none;
+  border-top: #030060;
+  border-left: none;
+  border-right: none;
   outline: 0;
   padding: 0.75rem 1rem;
   color: #030060;
   cursor: pointer;
-  background-color: #E5E6E7;
   font-size: 15px;
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 0.70rem;
+  background-color: #E5E6E7;
 }
 
 .input-anme_sn {
@@ -237,32 +242,6 @@ header {
   font-size: 15px;
 }
 
-.input-cit {
-  display: flex;
-  align-items: center;
-  color: #030060;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-
-}
-
-.input-cit label {
-  margin: auto;
-  display: flex;
-  margin-left: 1.8rem;
-}
-
-.input-cit input {
-  width: 60%; 
-  height: 8%;
-  border: none;
-  outline: 0;
-  padding: 0.75rem 1rem;
-  color: #030060;
-  cursor: pointer;
-  background-color: #E5E6E7;
-  font-size: 15px;
-}
 
 .input-check {
   display: flex;
@@ -729,7 +708,48 @@ input[type=checkbox]:checked:after {
   width: 50%;
 }
 
+.table-container {
+  max-width: 100%;
+  overflow: auto;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  width: 100%;
+}
+
+th, td {
+  padding: 0.2rem;
+  text-align: center;
+  width: 4rem;
+}
+
+th {
+  background-color: #030060;
+  color: #fff;
+} 
+
+.linha-tabela {
+  background-color: #030060;
+  color: #fff;
+} 
+
+td input{
+  border: none;
+  width: 100%;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+
+}
+
+input:focus {
+  outline: none;
+}
 
 .fundo-obsimp {
   background-color: #E5E6E7;
@@ -812,6 +832,26 @@ input[type=checkbox]:checked:after {
   padding: 0.3rem;
   justify-content: center;
   text-decoration: #030060;
+}
+
+.cit {
+  display: flex;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.8rem;
+  text-decoration: #030060;
+  justify-content: center;
+}
+
+.cit-input input{
+  background-color: #E5E6E7;
+  border-top: #000000;
+  border-left: none;
+  border-right: none;
+  margin-left: 0.50rem;
+  height: -1rem;
 }
 
 button {

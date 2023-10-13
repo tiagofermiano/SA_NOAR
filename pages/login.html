@@ -36,7 +36,7 @@
     
     
   
-    <form class="form" action="/login" method="post" onsubmit="return validateForm()">
+    <form class="form" action="/pages/login.php" method="post" onsubmit="return validateForm()">
 
       <div class="input-caixatexto">
         <label for="user">CPF do atendente</label>
@@ -53,9 +53,11 @@
       </div>
 
         
-      <!-- botão de entrar -->      
-      <button type="submit" name="submit-button" class="entrar1">Entrar</button>
-      
+      <!-- botão de entrar -->   
+         
+      <input type="submit" name="submit-button" value="Entrar" class="entrar1">
+      <small id="form-text"></small>
+
       <!-- Mensagem de erro -->
       <p id="error-message" style="color: red; display: none; text-align: center; margin-top: 1rem; font-weight: bold">Por favor, preencha todos os campos.</p>
     </form>

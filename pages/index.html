@@ -474,9 +474,10 @@
       <div class="input-caixatexto">
         <label for="medidaPressao">Medida de Pressão:</label>
         <input type="text" id="medidaPressao" oninput="formatarMedidaPressao(this)" placeholder="__x__mmHg">
+        <p id="mensagemErro-26" style="color: red;"></p>
       </div>
     </form>
-    
+
 
 
     <form class="form">
@@ -849,7 +850,7 @@
         <div class="fundo-input">
           <div class="input-ss">
             <label for="username">OUTROS:</label>
-            <input type="text" id="username" name="username" placeholder="_________________">
+            <input type="text" id="username" name="username">
           </div>
         </div>
       </form>
@@ -899,14 +900,11 @@
         <div class="fundo-input">
           <div class="input-ss">
             <label for="username">OUTROS:</label>
-            <input type="text" id="username" name="username" placeholder="_________________">
+            <input type="text" id="username" name="username">
           </div>
         </div>
       </form>
     </div>
-
-
-
 
     <form class="form">
       <div class="input-caixatexto">
@@ -927,6 +925,132 @@
         id="imagem-corpo">
     </div>
 
+    <div class="subtitulo"></div>
+    <div class="texto">Ferimentos / fraturas / entorses / luxação / contusão</div>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>LOCAL</th>
+          <th>LADO</th>
+          <th>FACE</th>
+          <th>TIPO</th>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>QUEIMAD.</th>
+          <th>CABEÇA</th>
+          <th>PESCOÇO</th>
+          <th>TORSO POS.</th>
+          <th>TORSO POS.</th>
+
+        </tr>
+        <tr>
+          <td class="linha-tabela">1° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="linha-tabela">2° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="linha-tabela">3° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>QUEIMAD.</th>
+          <th>GENIT.</th>
+          <th>M.I.D.</th>
+          <th>M.I.E.</th>
+          <th>M.S.D.</th>
+          <th>M.S.E.</th>
+        </tr>
+        <tr>
+          <td class="linha-tabela">1° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="linha-tabela">2° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+
+        </tr>
+        <tr>
+          <td class="linha-tabela">3° GRAU</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+
+        </tr>
+      </table>
+    </div>
     <div class="subtitulo"></div>
     <div class="texto">Decisão transporte</div>
 
@@ -1113,21 +1237,19 @@
 
     <div class="checkbox-container">
       <div class="checkbox-texto">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">HEMORRAGIA</label>
+          <input type="checkbox" id="scales" name="scales" onclick="toggleCheckboxes(this)">
+          <label for="scales">HEMORRAGIA</label>
       </div>
-
       <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">INTERNA</label>
+          <input type="checkbox" id="horns" name="horns" disabled>
+          <label for="horns">INTERNA</label>
       </div>
-
       <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">EXTERNA</label>
+          <input type="checkbox" id="horns2" name="horns2" disabled>
+          <label for="horns2">EXTERNA</label>
       </div>
-    </div>
-
+  </div>
+  
     <div class="checkbox-container">
       <div class="checkbox-texto">
         <input type="checkbox" id="scales" name="scales" />
@@ -1222,7 +1344,7 @@
       <div class="fundo-input">
         <div class="input-ss">
           <label for="username">OUTROS:</label>
-          <input type="text" id="username" name="username" placeholder="_________________">
+          <input type="text" id="username" name="username">
         </div>
       </div>
     </form>
@@ -1835,8 +1957,9 @@
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">OXIGENIOTERAPIA</label>
-          <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M." oninput="formatRespiration(this)">
-          <p id="mensagemErro-19" style="color: red;"></p>
+        <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M."
+          oninput="formatRespiration(this)">
+        <p id="mensagemErro-19" style="color: red;"></p>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -1845,8 +1968,9 @@
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">REANIMADOR</label>
-          <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M." oninput="formatRespiration(this)">
-          <p id="mensagemErro-19" style="color: red;"></p>
+        <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M."
+          oninput="formatRespiration(this)">
+        <p id="mensagemErro-19" style="color: red;"></p>
       </div>
     </div>
 
@@ -1854,57 +1978,58 @@
 
     <div class="proced">
       <label class="item">
-          <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
+        <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
       </label>
       <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-meios" disabled> CELESC
+        <input type="checkbox" class="sub-checkbox-meios" disabled> CELESC
       </label>
       <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-meios" disabled> Def. Civil
+        <input type="checkbox" class="sub-checkbox-meios" disabled> Def. Civil
       </label>
       <label class="sub-item">
         <input type="checkbox" class="sub-checkbox-meios" disabled> IGP / PC
-    </label>
-  </div>
+      </label>
+    </div>
 
-  <div class="proced">
-    <label class="item">
+    <div class="proced">
+      <label class="item">
         <input type="checkbox" class="main-checkbox-policia" onchange="togglePolicia()"> Polícia
-    </label>
-    <label class="sub-item">
+      </label>
+      <label class="sub-item">
         <input type="checkbox" class="sub-checkbox-policia" disabled> Civil
-    </label>
-    <label class="sub-item">
+      </label>
+      <label class="sub-item">
         <input type="checkbox" class="sub-checkbox-policia" disabled> Militar
-    </label>
-    <label class="sub-item">
-      <input type="checkbox" class="sub-checkbox-policia" disabled> PRE
-  </label>
-  <label class="sub-item">
-    <input type="checkbox" class="sub-checkbox-policia" disabled> PRF
-</label>
-</div>
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> PRE
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-policia" disabled> PRF
+      </label>
+    </div>
 
-<div class="proced">
-  <label class="item">
-      <input type="checkbox" class="main-checkbox-samu" onchange="toggleSamu()"> SAMU
-  </label>
-  <label class="sub-item">
-      <input type="checkbox" class="sub-checkbox-samu" disabled> USA
-  </label>
-  <label class="sub-item">
-      <input type="checkbox" class="sub-checkbox-samu" disabled> USB
-  </label>
-</div>
+    <div class="proced">
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-samu" onchange="toggleSamu()"> SAMU
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-samu" disabled> USA
+      </label>
+      <label class="sub-item">
+        <input type="checkbox" class="sub-checkbox-samu" disabled> USB
+      </label>
+    </div>
 
-<div class="proced" id="proced">
-  <label class="item">
-      <input type="checkbox" class="main-checkbox-cit" onchange="mostrarOcultarCIT()"> CIT
-  </label>
-      <input type="text" class="input-cit" id="input-cit" disabled>
-</div>
-      <br>
-
+    <div class="cit">
+      <div class="cit-checkbox">
+          <input type="checkbox" id="myCheckbox" onclick="toggleInputCit()">
+          CIT
+      </div>
+      <div class="cit-input">
+          <input type="text" id="myInput" disabled>
+      </div>
+  </div>
     <div class="subtitulo"></div>
     <div class="texto">Materiais descartáveis utilizados: </div>
 
@@ -2003,7 +2128,8 @@
         <label for="checkbox-id-1">BASE DO ESTABILIZA.</label>
       </div>
       <div class="input-materiais">
-        <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1" placeholder="_________________________">
+        <input type="text" name="checkBox[]" class="checkbox-block" id="checkbox-id-1"
+          placeholder="_________________________">
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">

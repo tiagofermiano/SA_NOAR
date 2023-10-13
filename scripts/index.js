@@ -268,24 +268,32 @@ function validarCodSIASUS(input) {
     }
 }
 
-// Função para o usuário digitar os números da pressão arterial
+var input = document.getElementById("medidaPressao");
+
 function formatarMedidaPressao(input) {
-    // Remove todos os caracteres não numéricos
-    var valor = input.value.replace(/\D/g, '');
-  
-    // Formata o valor inserido
-    if (valor.length === 2) {
-      input.value = valor + 'x';
-    } else if (valor.length >= 4) {
-      var parte1 = valor.slice(0, 2);
-      var parte2 = valor.slice(2, 4);
-      input.value = parte1 + 'x' + parte2 + 'mmHg';
-      mensagemErro.textContent = ""; // Limpa a mensagem de erro
-    } else {
-      input.value = valor;
-      
+    var valor = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-26");
+
+    if (event.inputType === "deleteContentBackward") {
+        input.value = valor.slice(0, -1);
     }
-  }
+    else {
+        var valorNumerico = valor.replace(/\D/g, '');
+
+        if (valorNumerico.length === 2) {
+            input.value = valorNumerico + 'x';
+            mensagemErro.textContent = "";
+        } else if (valorNumerico.length >= 4) {
+            var parte1 = valorNumerico.slice(0, 2);
+            var parte2 = valorNumerico.slice(2, 4);
+            input.value = parte1 + 'x' + parte2 + 'mmHg';
+            mensagemErro.textContent = "";
+        } else {
+            input.value = valorNumerico;
+            mensagemErro.textContent = "Digite apenas números.";
+        }
+    }
+}
   
 //FUNCAO PARA AUTOCOMPLETAR COM B.C.P.M. E PERMITIR APENAS NÚMEROS
   function completePulso(inputElement) {
@@ -509,32 +517,28 @@ function toggleSamu() {
     });
 }
 
-// NAO SEI FAZER ESSA MERDA ↓
-// NAO SEI FAZER ESSA MERDA ↓
-// NAO SEI FAZER ESSA MERDA ↓
-// NAO SEI FAZER ESSA MERDA ↓
 
-function mostrarOcultarCIT(checkbox) {
-    const campoDeTextoContainer = document.getElementById("proced");
-    const campoDeTexto = document.getElementById("input-cit");
-  
+function toggleInputCit() {
+    var checkbox = document.getElementById("myCheckbox");
+    var input = document.getElementById("myInput");
+
     if (checkbox.checked) {
-      campoDeTextoContainer.style.display = "block";
-      campoDeTexto.required = true; // Opcional: tornar o campo de texto obrigatório
+        input.disabled = false; // Habilita a caixa de texto
     } else {
-      campoDeTextoContainer.style.display = "none";
-      campoDeTexto.required = false;
-      campoDeTexto.value = ""; // Limpar o valor do campo de texto
+        input.disabled = true; // Desabilita a caixa de texto
     }
-  }
+}
 
-  document.getElementById('idadePaciente').addEventListener('input', function() {
-    var idade = parseInt(this.value, 10);
-    var secaoOculta = document.getElementById('secaoOculta');
 
-    if (idade >= 5) {
-        secaoOculta.style.display = 'block';
+function toggleCheckboxes(checkbox) {
+    var internaCheckbox = document.getElementById("horns");
+    var externaCheckbox = document.getElementById("horns2");
+
+    if (checkbox.checked) {
+        internaCheckbox.disabled = false;
+        externaCheckbox.disabled = false;
     } else {
-        secaoOculta.style.display = 'none';
+        internaCheckbox.disabled = true;
+        externaCheckbox.disabled = true;
     }
-});
+}
