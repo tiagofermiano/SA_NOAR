@@ -16,6 +16,23 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
+  zoom: 1.3; /* Aumenta o zoom em 20% */
+}
+
+@media (max-width: 768px) {
+  /* Estilos para telas menores, como smartphones */
+}
+@media (min-width: 769px) {
+  /* Estilos para telas maiores, como tablets e desktops */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1em;
 }
 
 .circle-button {
@@ -59,6 +76,7 @@ body {
   padding: 0.7rem;
   text-decoration: none;
   color: #030060;
+  font-size: 0.8rem;
 }
 
 .dropdown-content a:hover {
@@ -153,6 +171,17 @@ header {
   margin:1rem;
 }
 
+.input-proced{
+  width: 100%;
+  border-radius: 0.75rem;
+  border: none;
+  outline: 0;
+  background-color: #E5E6E7;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+}
+
 .input-caixatexto label {
   display: block;
   color: #030060;
@@ -162,16 +191,16 @@ header {
   margin-top: 1rem;
 }
 
-.input-caixatexto input {
-  width: 100%;
-  border-radius: 2rem;
-  border: none;
-  outline: 0;
-  background-color: #E5E6E7;
-  padding: 0.75rem 1rem;
-  color: #030060;
-  cursor: pointer;
-}
+  .input-caixatexto input {
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    outline: 0;
+    background-color: #E5E6E7;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
+  }
 
 .input-caixatexto input:focus {
   border-color: blue;
@@ -687,9 +716,26 @@ margin-top: 1.29rem;
 .grid_procedimentos {
   display: grid;
   box-sizing: border-box;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.6fr;
   row-gap: 0.5%;
   font-size: 0.95rem;
+}
+
+.grid_procedimentos div{
+align-items: center;
+margin: auto;
+}
+
+.legenda-materiais{
+  width: 90%;
+  font-size: 1.1rem;
+  color: #030060;
+  text-align: center;
+  margin-bottom: 1rem ;
+  background-color:#E5E6E7;
+  padding: 0.4rem;
+  border-radius: 0.75rem;
+font-weight: bold;
 }
 
 .grid_transporte {
