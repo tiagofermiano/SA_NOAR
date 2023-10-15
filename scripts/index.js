@@ -90,11 +90,11 @@ function toggleSamu() {
     });
 }
 
-function capitalizarPalavras(text) {
-    return text.replace(/\b\w/g, function (match) {
-      return match.toUpperCase();
+function capitalizarPalavrasIniciais(input) {
+    input.value = input.value.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+        return a.toUpperCase();
     });
-  }
+}
 
 function validarLetraNomePaciente(input) {
     var texto = input.value;
@@ -213,6 +213,9 @@ function validarNumeroOcorr(input) {
         mensagemErro.textContent = "";
     }
 }
+
+
+
 
 //funcao para permitir apenas a escrita de numeros usb
 function validarNumeroUSB(input) {
@@ -420,23 +423,25 @@ function completeWithDegreeC(input) {
 
 // checkbox > 2 seg e 2 seg
 
-const scalesCheckbox = document.getElementById('scales');
-const hornsCheckbox = document.getElementById('horns');
+document.addEventListener('DOMContentLoaded', function() {
+    const scalesCheckbox = document.getElementById('scales');
+    const hornsCheckbox = document.getElementById('horns');
 
-scalesCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        hornsCheckbox.disabled = true;
-    } else {
-        hornsCheckbox.disabled = false;
-    }
-});
+    scalesCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            hornsCheckbox.disabled = true;
+        } else {
+            hornsCheckbox.disabled = false;
+        }
+    });
 
-hornsCheckbox.addEventListener('change', function() {
-    if (this.checked) {
-        scalesCheckbox.disabled = true;
-    } else {
-        scalesCheckbox.disabled = false;
-    }
+    hornsCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            scalesCheckbox.disabled = true;
+        } else {
+            scalesCheckbox.disabled = false;
+        }
+    });
 });
 
 // checkbox NORMAL e ANORMAL
@@ -732,8 +737,174 @@ function togglePupilas(checkbox) {
     }
 }
 
+//funcao para avaliação de cinametica, SIM E NAO
+function selectCheckDistúrbio(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckDistúrbio');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckCapacete(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckCapacete');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckCinto(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckCinto');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckParabrisa(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckParabrisa');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckCaminhando(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckCaminhando');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckPainel(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPainel');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckVolante(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckVolante');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
 
 
+//funcao para selecionar só uma checkbox perfusao
+function selectCheckPerfusaoMaiorDois(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPerfusaoMaiorDois');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectCheckPerfusaoMenorDois(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPerfusaoMenorDois');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+    
+    
 
 
+//funcao para selecionar somente uma checkbox no nivel de consciencia maior de 5 anos    
+    function selectAberturaOcularMaior5(checkbox) {
+        var checkboxes = document.querySelectorAll('.checkAberturaOcularMaior5');
 
+        checkboxes.forEach(function (cb) {
+            if (cb !== checkbox) {
+                cb.checked = false;
+            }
+        });
+    }
+
+    function selectRespostaVerbalMaior5(checkbox) {
+        var checkboxes = document.querySelectorAll('.checkRespostaVerbalMaior5');
+
+        checkboxes.forEach(function (cb) {
+            if (cb !== checkbox) {
+                cb.checked = false;
+            }
+        });
+    }
+
+    function selectRespostaMotoraMaior5(checkbox) {
+        var checkboxes = document.querySelectorAll('.checkRespostaMotoraMaior5');
+
+        checkboxes.forEach(function (cb) {
+            if (cb !== checkbox) {
+                cb.checked = false;
+            }
+        });
+    }
+
+//funcao para selecionar somente uma checkbox no nivel de consciencia menor de 5 anos    
+function selectAberturaOcularMenor5(checkbox) {
+    var checkboxes = document.querySelectorAll('.checkAberturaOcularMenor5');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectRespostaVerbalMenor5(checkbox) {
+    var checkboxes = document.querySelectorAll('.checkRespostaVerbalMenor5');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+function selectRespostaMotoraMenor5(checkbox) {
+    var checkboxes = document.querySelectorAll('.checkRespostaMotoraMenor5');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
+//funcao para apenas numeros no total gcs
+var gcs1Input = document.getElementById("gcs1");
+
+gcs1Input.addEventListener("input", function () {
+  gcs1Input.value = gcs1Input.value.replace(/[^0-9]/g, "");
+});
+
+
+var gcsInput = document.getElementById("gcs");
+
+gcsInput.addEventListener("input", function () {
+  gcsInput.value = gcsInput.value.replace(/[^0-9]/g, "");
+});

@@ -17,6 +17,9 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
 
   <link rel="stylesheet" type="text/css" href="/assets/cadastro.css">
 
@@ -53,27 +56,33 @@
       <label for="email">Digite seu email</label>
    <input type="text" id="email" name="email" placeholder="Digite seu email..." required>
 
-      <div class="input-caixatexto">
-        <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" placeholder="Digite a senha...">
 
+   <div class="input-caixasenha">
+    <label for="senha">Digite sua senha</label>
     <div class="botaomostrar">
-      <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()" required>Mostrar Senha</button>
+      <input type="password" id="senha" placeholder="Digite sua senha...">
+      <button type="button" id="mostrarSenha" onclick="mostrarOcultarSenha('senha', 'olhoSenha')" style="outline: none; border: none;">
+        <span id="olhoSenha" class="fa fa-eye-slash"></span>
+      </button>
     </div>
-        
+  </div>
+  
+  <div class="input-caixasenha">
+    <label for="confirmarsenha">Confirmar senha</label>
+    <div class="botaomostrarsenha">
+      <input type="password" id="confirmarsenha" placeholder="Confirme sua senha...">
+      <button type="button" id="mostrarConfirmarSenha" onclick="mostrarOcultarSenha('confirmarsenha', 'olhoConfirmarSenha')" style="outline: none; border: none;">
+        <span id="olhoConfirmarSenha" class="fa fa-eye-slash"></span>
+      </button>
+    </div>
+  </div>
 
-      <div class="input-caixatexto">
-        <label for="confirmpassword">Confirmar senha</label>
-        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirme sua senha..." required>  
-
-        <div class="botaomostrar">
-          <button type="button" id="mostrarSenha" class="mostrar-senha-button" onclick="mostrarOcultarSenha()" required>Mostrar Senha</button>
-        </div>
-        
+  <div id="mensagemErro-1" style="color: red;"></div>
 
       
 <!-- botão de entrar -->      
-      <input type="submit" class="entrar1" name="Entrar">
+      <input type="submit" class="entrar1" name="Entrar" style="background-color: #030060; color: white;" onclick="verificarSenhas()">
+
     </form>
 
   </div>

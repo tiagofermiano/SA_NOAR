@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
+  zoom: 1.3;
 }
 
 .container {
@@ -54,6 +55,7 @@ header {
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     padding: 1rem;
+    margin-bottom: 5rem;
 }
 
 /*titulo "Login"*/
@@ -91,11 +93,18 @@ header {
     color: #030060;
     cursor: pointer;
   }
-  
-  .input-caixatexto input:focus {
-    border-color: blue;
-    transition: 0.5s;
+
+  .input-caixasenha input {
+    width: 90%;
+    border-radius: 2rem;
+    border: none;
+    outline: 0;
+    background-color: #E5E6E7;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
   }
+
 
 /*caixa de texto senha*/
 .esqueciasenha {
@@ -173,32 +182,7 @@ padding-left: 35.5%;
 
 
 
-/* Boring button styles */
-a.button {
-  /* Frame */
-  display: inline-block;
-  padding: 20px 28px;
-  border-radius: 50px;
-  box-sizing: border-box;
-  display: flex;
-  /* gap: 2rem; */
-  box-shadow: 0 0 5px rgb(0, 0, 0);
-  border-radius: 15px;
-  padding-bottom: 4.5px;
-  padding-top: 4.5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: black;
-  font-family: 'Poppins', sans-serif;
-  /* Style */
-  border: none;
-  background: var(--button-background);
-  color: var(--button-color);
-  font-size: 2.7vh;
-  cursor: pointer;
-  margin-left: 2vh;
-  font-family: 'Poppins', sans-serif;
-}
+
 
 a.button:active {
   filter: brightness(75%);
@@ -300,23 +284,4 @@ a.button:active {
     z-index: 1;
 }
 
-/* Estilo para o botão "Mostrar Senha" */
-.mostrar-senha-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 5px;
-}
 
-/* Ícone do olho dentro do botão */
-.mostrar-senha-button::before {
-  content: "\f06e"; /* Código Unicode para o ícone do olho aberto */
-  font-family: FontAwesome; /* Use uma fonte de ícones, como FontAwesome */
-  padding-right: 5px;
-}
-
-/* Estilo quando o botão é clicado */
-.mostrar-senha-button.clicked::before {
-  content: "\f070"; /* Código Unicode para o ícone do olho fechado */
-}

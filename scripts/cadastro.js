@@ -9,22 +9,33 @@ function validarNumero(input) {
     } else {
         mensagemErro.textContent = "";
     }
+};
+
+function mostrarOcultarSenha(inputId, olhoId) {
+  var senhaInput = document.getElementById(inputId);
+  var olhoIcon = document.getElementById(olhoId);
+
+  if (senhaInput.type === "password") {
+    senhaInput.type = "text";
+    olhoIcon.classList.remove("fa-eye-slash");
+    olhoIcon.classList.add("fa-eye");
+  } else {
+    senhaInput.type = "password";
+    olhoIcon.classList.remove("fa-eye");
+    olhoIcon.classList.add("fa-eye-slash");
+  }
 }
 
-function mostrarOcultarSenha() {
-    var senhaInput = document.getElementById("password");
-    var confirmarSenhaInput = document.getElementById("confirmpassword");
-    var botaoMostrar = document.getElementById("mostrarSenha");
-  
-    if (senhaInput.type === "password") {
-      senhaInput.type = "text";
-      confirmarSenhaInput.type = "text";
-      botaoMostrar.textContent = "Ocultar Senha";
-      botaoMostrar.classList.add("clicked"); // Adicione a classe "clicked"
-    } else {
-      senhaInput.type = "password";
-      confirmarSenhaInput.type = "password";
-      botaoMostrar.textContent = "Mostrar Senha";
-      botaoMostrar.classList.remove("clicked"); // Remova a classe "clicked"
-    }
+function verificarSenhas() {
+  var senha = document.getElementById('senha').value;
+  var confirmarSenha = document.getElementById('confirmarsenha').value;
+  var mensagemErro = document.getElementById('mensagemErro-1');
+
+  if (senha === confirmarSenha) {
+    // Senhas são iguais, limpe a mensagem de erro
+    mensagemErro.textContent = '';
+  } else {
+    // Senhas são diferentes, exiba a mensagem de erro
+    mensagemErro.textContent = 'As senhas não são iguais. Por favor, tente novamente.';
   }
+}

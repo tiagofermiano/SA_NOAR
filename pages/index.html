@@ -16,7 +16,6 @@
     rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="/assets/index.css">
-
 </head>
 
 <body>
@@ -52,25 +51,22 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
-        <input type="text" id="nomePaciente" name="nomePaciente"
-          oninput="validarLetraNomePaciente(this); this.value = capitalizarPalavras(this.value);"
-          placeholder="Digite...">
+        <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
         <p id="mensagemErro-1" style="color: red;"></p>
       </div>
     </form>
 
-
     <form class="form">
       <div class="input-caixatexto">
         <label for="idadePaciente">Idade:</label>
-        <input type="text" id="idadePaciente" name="idadePaciente" maxlength="2" oninput="validarNumeroIdadePac(this)"
-          placeholder="Digite...">
+        <input type="text" id="idadePaciente" name="idadePaciente" maxlength="3" oninput="validarNumeroIdadePac(this)" placeholder="Digite a idade...">
         <p id="mensagemErro-2" style="color: red;"></p>
       </div>
       <!-- Adicione mais campos de formulário conforme necessário -->
     </form>
 
-    <div class="textosexo">Sexo:</div>
+    <div class="sexo_container">
+    <label for="textosexo">Sexo:</label>
     <div class="custom-select">
       <select class="sexo">
         <option selected="selected"></option>
@@ -79,11 +75,12 @@
       </select>
       <div class="custom-arrow"></div>
     </div>
+  </div>
 
     <form class="form">
       <div class="input-caixatexto">
         <label for="rgCpfPaciente">RG/CPF do paciente:</label>
-        <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." maxlength="15"
+        <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." maxlength="11"
           oninput="validarNumeroRGCPFPaciente(this);">
         <p id="mensagemErro-3" style="color: red;"></p>
       </div>
@@ -210,77 +207,75 @@
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Local da ocorrência:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..."
-          oninput="this.value = capitalizarPalavras(this.value);">
+        <label for="localocorrencia">Local da ocorrência:</label>
+        <input type="text" id="localocorrencia" name="localocorrencia" placeholder="Digite...">
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Nome do hospital:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..."
-          oninput="this.value = capitalizarPalavras(this.value);">
+        <label for="nomehospital">Nome do hospital:</label>
+        <input type="text" id="nomehospital" name="username" placeholder="Digite...">
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">N° USB.:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarNumeroUSB(this)">
+        <label for="usb">N° USB.:</label>
+        <input type="text" id="usb" name="usb" placeholder="Digite..." oninput="validarNumeroUSB(this)">
         <p id="mensagemErro-25" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">N° Ocorr.:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarNumeroOcorr(this)">
+        <label for="numocorrencia">N° Ocorr.:</label>
+        <input type="text" id="numocorrencia" name="numocorrencia" placeholder="Digite..." oninput="validarNumeroOcorr(this)">
         <p id="mensagemErro-6" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Despacho:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
+        <label for="despacho">Despacho:</label>
+        <input type="text" id="despacho" name="despacho" placeholder="Digite...">
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Hora Chegada:</label>
-        <input type="time" id="appt" name="appt" min="01:00" max="00:00" required />
+        <label for="horachegada">Hora Chegada:</label>
+        <input type="time" id="horachegada" name="horachegada" min="01:00" max="00:00" required />
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">KM Final:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
+        <label for="kmfinal">KM Final:</label>
+        <input type="text" id="kmfinal" name="knfinal" placeholder="Digite...">
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">CÓD. IR:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarCodIR(this)">
+        <label for="codIr">CÓD. IR:</label>
+        <input type="text" id="codIr" name="codIr" placeholder="Digite..." oninput="validarCodIR(this)">
         <p id="mensagemErro-7" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">CÓD. PS:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarCodPS(this)">
+        <label for="codPs">CÓD. PS:</label>
+        <input type="text" id="codPs" name="codPs" placeholder="Digite..." oninput="validarCodPS(this)">
         <p id="mensagemErro-8" style="color: red;"></p>
       </div>
     </form>
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">CÓD. SIA/SUS:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="validarCodSIASUS(this)">
+        <label for="codSiaSus">CÓD. SIA/SUS:</label>
+        <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
         <p id="mensagemErro-9" style="color: red;"></p>
       </div>
     </form>
@@ -344,7 +339,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1"> Queda nível menor que 2M </label>
+        <label for="checkbox-id-1"> Queda nível &gt; 2M </label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -360,7 +355,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Queda de altura 2M</label>
+        <label for="checkbox-id-1">Queda de altura &lt; 2M</label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -384,7 +379,7 @@
 
       <div class="grid_txt_cinematica">
         <div class="txt_cinematica">
-          <p>Distúrbio de comportamento</p>
+          <p>Distúrbio comportamental</p>
         </div>
         <div class="txt_cinematica">
           <p>Encontrado com capacete</p>
@@ -409,31 +404,31 @@
       <!-- CHECKBOX SIM -->
       <div class="grid_checkbox_sim_cinematica">
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-1">
+          <input type="checkbox" name="checkBox[]" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
           <label for="checkbox-id-1">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-2">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
           <label for="checkbox-id-2">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-3">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
           <label for="checkbox-id-3">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-4">
+          <input type="checkbox" name="checkBox[]" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
           <label for="checkbox-id-4">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-5">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
           <label for="checkbox-id-5">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-6">
+          <input type="checkbox" name="checkBox[]" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
           <label for="checkbox-id-6">Sim</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-7">
+          <input type="checkbox" name="checkBox[]" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
           <label for="checkbox-id-7">Sim</label>
         </div>
       </div>
@@ -442,31 +437,31 @@
 
       <div class="grid_checkbox_nao_cinematica">
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-8">
+          <input type="checkbox" name="checkBox[]" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
           <label for="checkbox-id-8">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-9">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
           <label for="checkbox-id-9">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-10">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
           <label for="checkbox-id-10">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-11">
+          <input type="checkbox" name="checkBox[]" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
           <label for="checkbox-id-11">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-12">
+          <input type="checkbox" name="checkBox[]" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
           <label for="checkbox-id-12">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-13">
+          <input type="checkbox" name="checkBox[]" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
           <label for="checkbox-id-13">Não</label>
         </div>
         <div>
-          <input type="checkbox" name="checkBox[]" class="checkbox-cinematica" id="checkbox-id-14">
+          <input type="checkbox" name="checkBox[]" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
           <label for="checkbox-id-14">Não</label>
         </div>
       </div>
@@ -507,8 +502,8 @@
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Respiração:</label>
-        <input type="text" id="username" name="username" placeholder="___M.R.M." oninput="formatRespiration(this)">
+        <label for="repiracao">Respiração:</label>
+        <input type="text" id="repiracao" name="repiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
         <p id="mensagemErro-12" style="color: red;"></p>
       </div>
     </form>
@@ -546,14 +541,12 @@
       </div>
 
       <div class="checkbox-subtitleperfusão">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">&gt;2 SEG</label>
+        <input type="checkbox" id="selectCheckPerfusaoMaiorDois" name="selectCheckPerfusaoMaiorDois" class="selectCheckPerfusaoMaiorDois" onclick="selectCheckPerfusaoMaiorDois(this)"/>
+        <label for="selectCheckPerfusaoMaiorDois">&gt;2 SEG</label>
 
-
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">2 SEG</label>
+        <input type="checkbox" id="selectCheckPerfusaoMenorDois" name="selectCheckPerfusaoMaiorDois" class="selectCheckPerfusaoMenorDois" onclick="selectCheckPerfusaoMenorDois(this)"/>
+        <label for="selectCheckPerfusaoMenorDois">2 SEG</label>
       </div>
-
 
       <div class="checkbox-texto">
         <input type="checkbox" id="normal" name="normal" />
@@ -575,35 +568,28 @@
         </div>
         <div class="check_ocular">
 
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">4
+            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMaior5" id="espontanea" onclick="selectAberturaOcularMaior5(this)">
             <label for="checkbox-id-1">Espontânea</label>
             <div class="numeros_niveis"></div>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">3
+            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMaior5" id="comandoverbal" onclick="selectAberturaOcularMaior5(this)">
             <label for="checkbox-id-1">Comando verbal</label>
             <div class="numeros_niveis"></div>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">2
+            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMaior5" id="estimulodoloroso" onclick="selectAberturaOcularMaior5(this)">
             <label for="checkbox-id-1">Estímulo doloroso</label>
             <div class="numeros_niveis"></div>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">1
+            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMaior5" id="nenhuma" onclick="selectAberturaOcularMaior5(this)">
             <label for="checkbox-id-1">Nenhuma</label>
             <div class="numeros_niveis"></div>
           </div>
         </div>
-
-        <div class="numeros_niveis">
-          <p>4</p>
-          <p>3</p>
-          <p>2</p>
-          <p>1</p>
-        </div>
-      </div>
+</div>
 
       <hr class="hr2">
 
@@ -614,35 +600,29 @@
         </div>
         <div class="check_ocular">
 
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">5
+            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMaior5" id="checkbox-id-1" onclick="selectRespostaVerbalMaior5(this)">
             <label for="checkbox-id-1">Orientado</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">4
+            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMaior5" id="checkbox-id-1" onclick="selectRespostaVerbalMaior5(this)">
             <label for="checkbox-id-1">Confuso</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">3
+            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMaior5" id="checkbox-id-1" onclick="selectRespostaVerbalMaior5(this)">
             <label for="checkbox-id-1">Palavras Inapro.</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">2
+            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMaior5" id="checkbox-id-1" onclick="selectRespostaVerbalMaior5(this)">
             <label for="checkbox-id-1">Palavras Incomp.</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">1
+            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMaior5" id="checkbox-id-1" onclick="selectRespostaVerbalMaior5(this)">
             <label for="checkbox-id-1">Nenhuma</label>
           </div>
         </div>
 
-        <div class="numeros_niveis">
-          <p>5</p>
-          <p>4</p>
-          <p>3</p>
-          <p>2</p>
-          <p>1</p>
-        </div>
+
       </div>
 
       <hr class="hr2">
@@ -653,47 +633,41 @@
         </div>
         <div class="check_ocular">
 
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">6
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1" onclick="selectRespostaMotoraMaior5(this)"> 
             <label for="checkbox-id-1">Obedece comandos</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">5
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1" onclick="selectRespostaMotoraMaior5(this)">
             <label for="checkbox-id-1">Localiza dor</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-            <label for="checkbox-id-1">Movimento de retirada</label>
+          <div class="checkbox">4
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1" onclick="selectRespostaMotoraMaior5(this)">
+            <label for="checkbox-id-1">Mov. de retirada</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">3
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1" onclick="selectRespostaMotoraMaior5(this)">
             <label for="checkbox-id-1">Flexão anormal</label>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <div class="checkbox">2
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1" onclick="selectRespostaMotoraMaior5(this)">
             <label for="checkbox-id-1">Extensão anormal</label>
-            <div class="checkbox">
-              <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-              <label for="checkbox-id-1">Nenhuma</label>
+            
+          <div class="checkbox">1
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMaior5" id="checkbox-id-1">
+             <label for="checkbox-id-1">Nenhuma</label>
             </div>
           </div>
         </div>
 
-        <div class="numeros_niveis">
-          <p>6</p>
-          <p>5</p>
-          <p>4</p>
-          <p>3</p>
-          <p>2</p>
-          <p>1</p>
-        </div>
+
       </div>
 
       <hr class="hr2">
 
       <div class="totalgcs">
         <p>TOTAL (GCS) (3-15)
-          <input type="number" id="gcs" name="gcs" placeholder="Digite um valor..." min="3" max="15">
+          <input type="text" id="gcs" name="gcs" placeholder="Digite um valor..." maxlength="2">
       </div>
 
     </div>
@@ -708,35 +682,28 @@
         <label for="username">ABERTURA<br>OCULAR</label>
       </div>
       <div class="check_ocular">
-
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-aberturaocular">4
+          <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5"  id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
           <label for="checkbox-id-1">Espontânea</label>
           <div class="numeros_niveis"></div>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-aberturaocular">3
+          <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
           <label for="checkbox-id-1">Comando verbal</label>
           <div class="numeros_niveis"></div>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-aberturaocular">2
+          <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
           <label for="checkbox-id-1">Estímulo doloroso</label>
           <div class="numeros_niveis"></div>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-aberturaocular">1
+          <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
           <label for="checkbox-id-1">Nenhuma</label>
           <div class="numeros_niveis"></div>
         </div>
       </div>
 
-      <div class="numeros_niveis">
-        <p>4</p>
-        <p>3</p>
-        <p>2</p>
-        <p>1</p>
-      </div>
     </div>
 
     <hr class="hr2">
@@ -748,34 +715,26 @@
       </div>
       <div class="check_ocular">
 
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostaverbal">5
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Palavras/Frase apropriadas</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostaverbal">4
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Palavras inapropriadas</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostaverbal">3
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Choro/gritos persistentes</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostaverbal">2
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Sons incomprieensíveis</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostaverbal">1
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Nenhuma resposta</label>
         </div>
-      </div>
-
-      <div class="numeros_niveis">
-        <p>5</p>
-        <p>4</p>
-        <p>3</p>
-        <p>2</p>
-        <p>1</p>
       </div>
     </div>
 
@@ -787,39 +746,30 @@
       </div>
       <div class="check_ocular">
 
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostamotora">6
+          <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
           <label for="checkbox-id-1">Obedece prontamente</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostamotora">5
+          <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
           <label for="checkbox-id-1">Localiza dor/estímulo</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostamotora">4
+          <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
           <label for="checkbox-id-1">Retirada do segmento est.</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostamotora">3
+          <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
           <label for="checkbox-id-1">Flexão anormal</label>
         </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+        <div class="checkbox-menor5-respostamotora">2
+          <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
           <label for="checkbox-id-1">Extensão anormal</label>
-          <div class="checkbox">
-            <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-            <label for="checkbox-id-1">Ausência (paralisia flácida, flatônia)</label>
+          <div class="checkbox-menor5-respostamotora-ausencia">1
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+            <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
           </div>
         </div>
-      </div>
-
-      <div class="numeros_niveis">
-        <p>6</p>
-        <p>5</p>
-        <p>4</p>
-        <p>3</p>
-        <p>2</p>
-        <p>1</p>
       </div>
     </div>
 
@@ -827,7 +777,8 @@
 
     <div class="totalgcs">
       <p>TOTAL (GCS) (3-15)
-        <input type="number" id="gcs" name="gcs" placeholder="Digite um valor..." min="3" max="15">
+        <input type="text" id="gcs1" name="gcs1" placeholder="Digite um valor..." maxlength="2">
+      </p>
     </div>
 
     <div class="subtitulo"></div>
@@ -1983,7 +1934,7 @@
     <div class="texto">Procedimentos efetuados: </div>
 
     <br>
-    <div class="grid_procedimentos">
+    <div class="grid_procedimentosefetuados">
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">ASPIRAÇÃO</label>
@@ -2062,7 +2013,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MACA SOBRE RODAS</label>
+        <label for="checkbox-id-1">MACA SOB. RODAS</label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -2086,7 +2037,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">RETIRADO CAPACETE</label>
+        <label for="checkbox-id-1">RETIRA CAPACETE</label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -2123,8 +2074,6 @@
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">USO COLAR</label>
-        <label for="username">Tam.:</label>
-        <input type="text" class="tamanho-colar" id="username" name="username" placeholder="Tamanho...">
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
@@ -2133,20 +2082,14 @@
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">OXIGENIOTERAPIA</label>
-        <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M."
-          oninput="formatRespiration(this)">
-        <p id="mensagemErro-19" style="color: red;"></p>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">VENTILAÇAO SUPO.</label>
+        <label for="checkbox-id-1">VENTIL. SUPO.</label>
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">REANIMADOR</label>
-        <input type="text" id="litros-oxigenio" name="username" placeholder="___L.P.M."
-          oninput="formatRespiration(this)">
-        <p id="mensagemErro-19" style="color: red;"></p>
       </div>
     </div>
 
@@ -2464,7 +2407,7 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 
-  <script src="/scripts/index.js"></script>
+    <script src="/scripts/index.js"></script>
 
 </body>
 

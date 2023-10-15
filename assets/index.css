@@ -393,7 +393,7 @@ margin-top: 1.29rem;
 /* Estilize o wrapper do select */
 .custom-select {
   position: relative;
-  width: 50%;
+  width: 91%;
   /* margin-left: 5%; */
   margin-top: 0.2rem;
 }
@@ -412,6 +412,7 @@ margin-top: 1.29rem;
   border: none;
   border-radius: 2rem;
   cursor: pointer;
+  outline: 0;
 }
 
 /* Estilize a seta personalizada */
@@ -430,15 +431,19 @@ margin-top: 1.29rem;
   /* Garante que a seta não seja clicável */
 }
 
+.sexo_container{
+  margin: auto;
+  align-items: center;
+}
 
-.textosexo {
-  font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
-  color: #030060;
-  /* width: 100%;  */
-  display: flex;
-  font-weight: bold;
-  margin-top: 1rem;
+.sexo_container label {
+  display: block;
+    color: #030060;
+    margin-bottom: 4px;
+    font-family: 'Open sans', sans-serif;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-left: 1rem;
 }
 
 .hr1 {
@@ -494,7 +499,26 @@ margin-top: 1.29rem;
 
 .checkbox {
   color: #030060;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
+}
+
+.checkbox-menor5-aberturaocular {
+  color: #030060;
+  margin-left: -2rem;
+}
+
+.checkbox-menor5-respostaverbal {
+  color: #030060;
+  margin-left: 2rem;
+}
+
+.checkbox-menor5-respostamotora{
+  color: #030060;
+  margin-left: 2.3rem;
+}
+
+.checkbox-menor5-respostamotora-ausencia {
+  color: #030060;
 }
 
 .checkbox-texto {
@@ -557,7 +581,7 @@ margin-top: 1.29rem;
   grid-template-columns: 1fr;
   justify-content: space-between;
   align-items: center;
-  row-gap: 1%;
+  row-gap: 6.45%;
   margin-left: auto;
 }
 
@@ -566,7 +590,7 @@ margin-top: 1.29rem;
   grid-template-columns: 1fr;
   justify-content: space-between;
   align-items: center;
-  row-gap: 1%;
+  row-gap: 6.45%;
   margin-left: auto;
 }
 
@@ -605,7 +629,7 @@ margin-top: 1.29rem;
 }
 .grid_maior5 {
   display: grid;
-  grid-template-columns: 1fr 3fr 0.3fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 .check_ocular {
@@ -617,6 +641,19 @@ margin-top: 1.29rem;
 }
 
 #gcs {
+  width: 45%;
+  border-radius: 0.375rem;
+  border: 1.5px solid #C7BEBE;
+  margin-left: 1rem;
+  outline: 0;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+}
+
+
+#gcs1 {
   width: 45%;
   border-radius: 0.375rem;
   border: 1.5px solid #C7BEBE;
@@ -719,12 +756,23 @@ margin-top: 1.29rem;
   grid-template-columns: 1fr 0.6fr;
   row-gap: 0.5%;
   font-size: 0.95rem;
+  
 }
 
 .grid_procedimentos div{
 align-items: center;
 margin: auto;
 }
+
+.grid_procedimentosefetuados{
+  /* align-items: center;
+  margin: auto; */
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 0.6fr;
+  row-gap: 0.5%;
+  font-size: 0.85rem;
+  }
 
 .legenda-materiais{
   width: 90%;
