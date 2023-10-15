@@ -69,8 +69,9 @@
       <label for="textosexo">Sexo:</label>
       <div class="custom-select">
           <select class="sexo" id="sexoSelect">
-              <option selected="selected">Masculino</option>
+              <option selected="selected"></option>
               <option>Feminino</option>
+              <option>Masculino</option>
           </select>
           <div class="custom-arrow"></div>
       </div>
@@ -1654,7 +1655,7 @@
         </div>
       </form>
 
-      <div class="container_gestacional hidden">
+      <!-- <div class="container_gestacional hidden"> -->
         <div class="subtitulo"></div>
         <div class="texto">Anamnese Gestacional</div>
     
@@ -1669,39 +1670,40 @@
 
       <div class="grid_cinematica">
         <!-- TEXTOS DAS CHECKBOX -->
-
-
         <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Fez pré-natal?</p>
-          </div>
+            <div class="txt_cinematica">
+                <p>Fez pré-natal?</p>
+            </div>
         </div>
-
-
+    
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selectCheckPreNatal(this); selectCheckPreNatal_simnao(this);">
-  <label for="checkbox-id-1">Sim</label>
-          </div>
+            <div>
+                <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selecionarCheckbox(this); habilitarContainer(this);">
+                <label for="checkbox-id-1">Sim</label>
+            </div>
         </div>
-
+    
+        <!-- CHECKBOX NÃO -->
         <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selectCheckPreNatal(this); selectCheckPreNatal_simnao(this);">
-    <label for="checkbox-id-8">Não</label>
-          </div>
+            <div>
+                <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this);">
+                <label for="checkbox-id-8">Não</label>
+            </div>
         </div>
-      </div>
-
-      <div class="container-nome-medico">
-      <form class="form">
-        <div class="input-anme_sn_nomemedico" style="display: none"> 
-          <label for="username" class="texto-medico">Nome do médico:</label>
-          <input type="text" id="nomeMedico" name="username" placeholder="________________">
+    
+        <div class="container-nome-medico hidden">
+            <form class="form">
+                <div class="input-anme_sn_nomemedico"> 
+                    <label for="username" class="texto-medico">Nome do médico:</label>
+                    <input type="text" id="nomeMedico" name="username" placeholder="________________" oninput="capitalizarPalavrasIniciais(this);">
+                </div>
+            </form>
         </div>
-      </form>
     </div>
+
+    <br>
+    
 
 
       <div class="grid_cinematica">
@@ -1935,7 +1937,7 @@
             onclick="selectCheckSexoBebe(this)">
             <label for="checkbox-id-1">Fem</label>
           </div>
-        </div>
+        
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
@@ -1944,7 +1946,9 @@
             <label for="checkbox-id-8">Mas</label>
           </div>
         </div>
-      </div>
+        </div>
+
+
 
 
       <form class="form">
@@ -1954,7 +1958,7 @@
         </div>
       </form>
   </div>
-</div>
+
 </div>
 
   <hr class="hr1">
@@ -2249,116 +2253,138 @@
       <hr class="hr2">
 
       <div>
-
           <label class="item">
-            <input type="checkbox" class="main-checkbox-atadura" onchange="toggleAtadura()"> ATADURA</label><br>
+            <input type="checkbox" class="main-checkbox-atadura" id="atadura" onclick="toggleInputQuantidadeAtadura()"; 
+            onchange="toggleAtadura()"> ATADURA</label><br>
             <input type="checkbox" class="sub-checkbox-atadura" disabled> 8
             <input type="checkbox" class="sub-checkbox-atadura" disabled> 12
             <input type="checkbox" class="sub-checkbox-atadura" disabled> 20
           </div>
 
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
+      <div class="inputquantidade">
+        <input type="text" id="quantidadeatadura" disabled>
       </div>
       <hr class="hr2">
       <hr class="hr2">
+      
+      
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">CATETER TP. OCÚLOS</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="cateter" onclick="toggleInputQuantidadeCateter()">
+        <label for="cateter">CATETER TP. OCÚLOS</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadecateter" disabled>
+    </div>
+
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">COMPRESSA COMUM</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="compressacomum" onclick="toggleInputQuantidadeCompressa()">
+        <label for="compressacomum">COMPRESSA COMUM</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadecompressa" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
       <label class="item">
-        <input type="checkbox" class="main-checkbox-kits" onchange="toggleKits()"> KIT'S</label><br>
+        <input type="checkbox" class="main-checkbox-kits" id="kits" onclick="toggleInputQuantidadeKits()"; 
+        onchange="toggleKits()"> KIT'S</label><br>
         <input type="checkbox" class="sub-checkbox-kits" disabled> H
         <input type="checkbox" class="sub-checkbox-kits" disabled> P
         <input type="checkbox" class="sub-checkbox-kits" disabled> Q
       </div>
 
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">LUVAS DESC. (PARES)</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MÁSCARA DESC.</label>
+      <div class="inputquantidade">
+        <input type="text" id="quantidadekits" disabled>
       </div>
 
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
       <hr class="hr2">
       <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MANTA ALUMINIZADA</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+
+     <div>
+        <input type="checkbox" id="luvas" onclick="toggleInputQuantidadeLuvas()">
+        <label for="luvas">LUVAS DESC. (PARES)</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadeluvas" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">PÁS DO DEA</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="mascara" onclick="toggleInputQuantidadeMascara()">
+        <label for="mascara">MÁSCARA DESC.</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidademascara" disabled>
+    </div>
+
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">SONDA DE ASPIRAÇÃO</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="manta" onclick="toggleInputQuantidadeManta()">
+        <label for="manta">MANTA ALUMINIZADA</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidademanta" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">SORO FISIOLÓGICO</label>
-      </div>
+        <input type="checkbox" id="pas" onclick="toggleInputQuantidadePas()">
+        <label for="pas">PÁS DO DEA</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadepas" disabled>
+    </div>
+
+      <hr class="hr2">
+      <hr class="hr2">
+
       <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="sonda" onclick="toggleInputQuantidadeSonda()">
+        <label for="sonda">SONDA DE ASPIRAÇÃO</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadesonda" disabled>
+    </div>
+
+      <hr class="hr2">
+      <hr class="hr2">
+
+      <div>
+        <input type="checkbox" id="soro" onclick="toggleInputQuantidadeSoro()">
+        <label for="soro">SORO FISIOLÓGICO</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadesoro" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
         <label class="item">
-          <input type="checkbox" class="main-checkbox-talas" onchange="toggleTalas()"> TALAS PAP.</label><br>
+          <input type="checkbox" class="main-checkbox-talas" id="talas" onclick="toggleInputQuantidadeTalas()"; 
+            onchange="toggleTalas()"> TALAS PAP.</label><br>
           <input type="checkbox" class="sub-checkbox-talas" disabled> P
           <input type="checkbox" class="sub-checkbox-talas" disabled> G
       </div>
 
       
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
+      <div class="inputquantidade">
+        <input type="text" id="quantidadetalas" disabled>
       </div>
     </div>
 
@@ -2385,104 +2411,118 @@
       </div>
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">BASE DO ESTABILIZA.</label>
-      </div>
-      <div class="input-materiais">
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1" placeholder="">
-      </div>
+        <input type="checkbox" id="base" onclick="toggleInputQuantidadeBase()">
+        <label for="base">BASE DO ESTABILIZA.</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadebase" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
 
-
+      <div>
         <label class="item">
-          <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte</label>
+          <input type="checkbox" class="main-checkbox-colar" id="colar" onclick="toggleInputQuantidadeColar()"; 
+          onchange="toggleColar()"> COLAR</label><br>
+        <input type="checkbox" class="sub-checkbox-colar" disabled> PP
+        <input type="checkbox" class="sub-checkbox-colar" disabled> P
+        <input type="checkbox" class="sub-checkbox-colar" disabled> M
+        <input type="checkbox" class="sub-checkbox-colar" disabled> G
+        <input type="checkbox" class="sub-checkbox-colar" disabled> GG
+      </div>
 
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+      <div class="inputquantidade">
+        <input type="text" id="quantidadecolar" disabled>
+      </div>
 
-
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
-        </label>
-        <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
-        </label>
-        <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
-        </label>
-        <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
-        </label>
-        <label class="sub-item">
-          <input type="checkbox" class="sub-checkbox-transp" disabled> Sem remoção
-        </label>
+      <hr class="hr2">
+      <hr class="hr2">
 
       <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-segundocolar" id="segundocolar" onclick="toggleInputQuantidadeSegundoColar()"; 
+          onchange="toggleSegundoColar()"> COLAR</label><br>
+        <input type="checkbox" class="sub-checkbox-segundocolar" disabled> M
+        <input type="checkbox" class="sub-checkbox-segundocolar" disabled> G
+        <input type="checkbox" class="sub-checkbox-segundocolar" disabled> GG
+      </div>
+
+      <div class="inputquantidade">
+        <input type="text" id="quantidadesegundocolar" disabled>
       </div>
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">KIT'S ( ) H ( ) P ( ) Q</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="coxins" onclick="toggleInputQuantidadeCoxins()">
+        <label for="coxins">COXINS ESTABILIZA.</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadecoxins" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">COXINS ESTABILIZA.</label>
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-ked" onchange="toggleKed()"> KED</label><br>
+          <input type="checkbox" class="sub-checkbox-ked" disabled> ADULT.
+          <input type="checkbox" class="sub-checkbox-ked" disabled> INFA.
       </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">KED ( )ADUL. ( )INFA.</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MACA RÍGIDA</label>
-      </div>
+
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">T.T.F. ( )ADUL. ( )INFA.</label>
+        <input type="checkbox" id="maca" onclick="toggleInputQuantidadeMaca()">
+        <label for="maca">MACA RÍGIDA</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidademaca" disabled>
+    </div>
+
+      <hr class="hr2">
+      <hr class="hr2">
+
+      <div>
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-ttf" onchange="togglettf()"> T.T.F.</label><br>
+          <input type="checkbox" class="sub-checkbox-ttf" disabled> ADULT.
+          <input type="checkbox" class="sub-checkbox-ttf" disabled> INFA.
       </div>
+
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TIRANTE ARANHA</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="aranha" onclick="toggleInputQuantidadeAranha()">
+        <label for="aranha">TIRANTE ARANHA</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadearanha" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TIRANTE DE CABEÇA</label>
-      </div>
-      <div>
-        <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
-      </div>
+        <input type="checkbox" id="cabeca" onclick="toggleInputQuantidadeCabeca()">
+        <label for="cabeca">TIRANTE DE CABEÇA</label>
+    </div>
+    <div class="inputquantidade">
+        <input type="text" id="quantidadecabeca" disabled>
+    </div>
+
       <hr class="hr2">
       <hr class="hr2">
       <div>
@@ -2495,6 +2535,23 @@
     </div>
     <br><br><br><br>
 
+    <div class="materiais_deixados_outros1">
+      <div class="materiais_deixados_outros1-checkbox">
+        <input type="checkbox" id="materiais_deixados_outros1Checkbox" onclick="togglemateriais_deixados_outros1()">
+      </div>
+      <div class="materiais_deixados_outros1-input">
+        <input type="text" id="materiais_deixados_outros1Input" disabled>
+      </div>
+    </div>
+
+    <div class="materiais_deixados_outros2">
+      <div class="materiais_deixados_outros2-checkbox">
+        <input type="checkbox" id="materiais_deixados_outros2Checkbox" onclick="togglemateriais_deixados_outros2()">
+      </div>
+      <div class="materiais_deixados_outros2-input">
+        <input type="text" id="materiais_deixados_outros2Input" disabled>
+      </div>
+    </div>
 
 
     <form class="form">

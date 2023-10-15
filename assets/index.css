@@ -335,7 +335,6 @@ margin-top: 1.29rem;
 .input-anme_sn_nomemedico {
   display: flex;
   align-items: center;
-  color: #030060;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -346,15 +345,14 @@ margin-top: 1.29rem;
 
 .input-anme_sn_nomemedico input {
   display: flex;
-  width: 43%;
-  height: 8%;
+  width: 100%;
+  /* height: 8%; */
   border: none;
   outline: 0;
   padding: 0.75rem 1rem;
   color: #030060;
   cursor: pointer;
   font-size: 15px;
-  display: none;
 }
 
 .input-anme_sn {
@@ -1143,4 +1141,55 @@ button:active {
   border-right: none;
   margin-left: 0.50rem;
   height: -1rem;
+}
+
+.materiais_deixados_outros1 {
+  display: flex;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.8rem;
+  text-decoration: #030060;
+  justify-content: center;
+}
+
+.materiais_deixados_outros1 input{
+  background-color: #E5E6E7;
+  border-top: #000000;
+  border-left: none;
+  border-right: none;
+  margin-left: 0.50rem;
+  height: -1rem;
+}
+
+.materiais_deixados_outros2 {
+  display: flex;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.8rem;
+  text-decoration: #030060;
+  justify-content: center;
+}
+
+.materiais_deixados_outros2 input{
+  background-color: #E5E6E7;
+  border-top: #000000;
+  border-left: none;
+  border-right: none;
+  margin-left: 0.50rem;
+  height: -1rem;
+}
+
+.inputquantidade input{
+  width: 100%;
+  border-radius: 0.75rem;
+  border: none;
+  outline: 0;
+  background-color: #E5E6E7;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
 }
