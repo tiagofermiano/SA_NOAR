@@ -277,6 +277,26 @@ margin-top: 1.29rem;
   display: flex;
 }
 
+.fundo-input-outros1 {
+  background-color: #E5E6E7;
+  width: 20rem;
+  height: 10%;
+  margin: auto;
+  padding: 1%;
+  border-radius: 1rem;
+  display: flex;
+}
+
+.fundo-input-outros2 {
+  background-color: #E5E6E7;
+  width: 20rem;
+  height: 10%;
+  margin: auto;
+  padding: 1%;
+  border-radius: 1rem;
+  display: flex;
+}
+
 .input-ss {
   display: flex;
   align-items: center;
@@ -525,7 +545,7 @@ margin-top: 1.29rem;
   color: #030060;
   text-align: center;
   font-weight: bold;
-  margin-top: 1.2rem;
+  margin-top: 0.3rem;
   font-size: 1rem;
   padding-top: 3.5%;
 }
@@ -1041,4 +1061,16 @@ button:focus,
 button:active {
   opacity: .85;
   box-shadow: none;
+}
+
+
+.checkbox-subtitleperfusão{
+  margin-left: 4.7rem;
+  display: flex;
+}
+
+.checkbox-subtitleperfusão1{
+  margin-left: 10.3rem;
+  display: flex;
+  margin-top: -1.5rem;
 }

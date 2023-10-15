@@ -124,31 +124,35 @@ function validarNumeroIdadePac(input) {
 }
 
 function validarNumeroRGCPFPaciente(input) {
-    var numero = input.value;
-    var mensagemErro = document.getElementById("mensagemErro-3");
-  
-    // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
-    numero = numero.replace(/[^0-9a-zA-Z\s\.\-]/g, '');
-  
-    // Formatar CPF e RG conforme necessário
-    if (/[^0-9]/.test(numero)) {
-      mensagemErro.textContent = "Digite apenas números.";
-      input.value = numero.replace(/[^0-9]/g, '');
-    } else {
-      mensagemErro.textContent = "";
-  
-      // Formate o CPF e o RG em variáveis intermediárias
-      var cpfFormatado = formatarCPF(numero);
-      var rgFormatado = formatarRG(numero);
-  
-      // Defina o valor do campo de entrada com as versões formatadas
-      if (cpfFormatado !== null) {
-        input.value = cpfFormatado;
-      } else if (rgFormatado !== null) {
-        input.value = rgFormatado;
-      }
+    var numero = input.value.replace(/[^0-9a-zA-Z\s\.\-]/g, ''); // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
+
+    // Limite o número de caracteres a 14
+    if (numero.length > 14) {
+        numero = numero.slice(0, 14); // Limita o valor a 14 caracteres
     }
-  }
+
+    var mensagemErro = document.getElementById("mensagemErro-3");
+
+    // Verifique se a entrada contém caracteres não numéricos
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Digite apenas números.";
+    } else {
+        mensagemErro.textContent = "";
+    }
+
+    // Formate o CPF e o RG em variáveis intermediárias
+    var cpfFormatado = formatarCPF(numero);
+    var rgFormatado = formatarRG(numero);
+
+    // Defina o valor do campo de entrada com as versões formatadas
+    if (cpfFormatado !== null) {
+        input.value = cpfFormatado;
+    } else if (rgFormatado !== null) {
+        input.value = rgFormatado;
+    } else {
+        input.value = numero; // Se não for CPF nem RG formatável, mantenha o valor original
+    }
+}
   
   // Função para formatar CPF
   function formatarCPF(cpf) {
@@ -812,27 +816,27 @@ function selectCheckVolante(checkbox) {
 //funcao para selecionar só uma checkbox perfusao
 function selectCheckPerfusaoMaiorDois(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckPerfusaoMaiorDois');
-
+  
     checkboxes.forEach(function (cb) {
-        if (cb !== checkbox) {
-            cb.checked = false;
-        }
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
     });
-}
-
-function selectCheckPerfusaoMenorDois(checkbox) {
-    var checkboxes = document.querySelectorAll('.selectCheckPerfusaoMenorDois');
-
+  }
+  
+//funcao para selecionar só uma checkbox normal/anormal  
+  function selectCheckNormalAnormal(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckNormalAnormal');
+  
     checkboxes.forEach(function (cb) {
-        if (cb !== checkbox) {
-            cb.checked = false;
-        }
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
     });
-}
+  }
+  
     
     
-
-
 //funcao para selecionar somente uma checkbox no nivel de consciencia maior de 5 anos    
     function selectAberturaOcularMaior5(checkbox) {
         var checkboxes = document.querySelectorAll('.checkAberturaOcularMaior5');
@@ -908,3 +912,146 @@ var gcsInput = document.getElementById("gcs");
 gcsInput.addEventListener("input", function () {
   gcsInput.value = gcsInput.value.replace(/[^0-9]/g, "");
 });
+
+
+//funcao para selecionar só uma checkbox decisão transporte  
+function selectCheckTransporte(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckTransporte');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }
+
+//funcao para selecionar só uma checkbox anamnese médica 
+function selectCheckAcontOutrasVezes(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckAcontOutrasVezes');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }
+
+  function selectCheckProblemaSaude(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckProblemaSaude');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+
+  function selectCheckMedicacao(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckMedicacao');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+  
+  function selectCheckAlergico(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckAlergico');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }   
+
+  function selectCheckAlimento6horas(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckAlimento6horas');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }   
+
+  function selectCheckPreNatal(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPreNatal');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  } 
+  
+  function selectCheckComplicacoes(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckComplicacoes');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }   
+  
+  function selectCheckPrimeiroFilho(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPrimeiroFilho');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+  
+  function selectCheckPressaoEvacuar(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPressaoEvacuar');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+  
+  function selectCheckRupturaBolsa(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckRupturaBolsa');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+
+  function selectCheckInspecaoVisual(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckInspecaoVisual');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }  
+
+  function selectCheckPartoRealizado(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPartoRealizado');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  }   
+
+  function selectCheckSexoBebe(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckSexoBebe');
+  
+    checkboxes.forEach(function (cb) {
+      if (cb !== checkbox) {
+        cb.checked = false;
+      }
+    });
+  } 
