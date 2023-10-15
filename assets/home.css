@@ -23,25 +23,47 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 2%;
+  margin-left: 5%;
+
 }
 
 .logo {
   max-width: 100%;
+  position: relative;
+  display: flex;
 }
 
 .button-group {
   display: flex;
   flex-direction: column; /* Disposição vertical em todos os tamanhos de tela */
   align-items: center; /* Centraliza horizontalmente em todos os tamanhos de tela */
+  width: 90%;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 1.3rem;
+  width: 90%;
   margin: 5px;
   background-color: #030060;
   color: #fff;
   border: none;
+  border-radius: 1rem;
   cursor: pointer;
+}
+
+.grid-button{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+}
+
+.grid-button img{
+  width: 40%;
+}
+
+.grid-button p{
+  width: 90%;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 768px) { /* Quando estiver em um dispositivo desktop (largura de tela maior que 768px) */

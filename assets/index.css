@@ -341,18 +341,21 @@ margin-top: 1.29rem;
 .input-anme_sn_nomemedico label {
   margin: auto;
   display: flex;
+  /* height: 8%; */
+  /* margin-right: 5rem; */
 }
 
 .input-anme_sn_nomemedico input {
   display: flex;
-  width: 100%;
-  /* height: 8%; */
+  width: 70%;
+  height: 8%;
   border: none;
   outline: 0;
   padding: 0.75rem 1rem;
   color: #030060;
   cursor: pointer;
   font-size: 15px;
+  /* margin-left: 4rem; */
 }
 
 .input-anme_sn {
@@ -624,6 +627,14 @@ margin-top: 1.29rem;
   row-gap: 1%;
 }
 
+.grid_txt_cinematica_pre_natal {
+  display: grid;
+  grid-template-columns: 0.9fr;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1%;
+}
+
 .grid_checkbox_sim_cinematica {
   display: grid;
   grid-template-columns: 1fr;
@@ -675,6 +686,26 @@ margin-top: 1.29rem;
   border-radius: 1rem;
   padding: 1rem;
 }
+
+.grid_cinematica_pre_natal {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_pre_natal_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
 .grid_maior5 {
   display: grid;
   grid-template-columns: 1fr 3fr;

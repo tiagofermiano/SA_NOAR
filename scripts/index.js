@@ -1434,3 +1434,310 @@ function toggleInputQuantidadeSegundoColar() {
         input.disabled = true; // Desabilita a caixa de texto
     }
 }
+
+function toggleInputQuantidadeKed() {
+    var checkbox = document.getElementById("ked");
+    var input = document.getElementById("quantidadeked");
+
+    if (checkbox.checked) {
+        input.disabled = false; // Habilita a caixa de texto
+    } else {
+        input.disabled = true; // Desabilita a caixa de texto
+    }
+}
+
+function toggleInputQuantidadeTtf() {
+    var checkbox = document.getElementById("ttf");
+    var input = document.getElementById("quantidadettf");
+
+    if (checkbox.checked) {
+        input.disabled = false; // Habilita a caixa de texto
+    } else {
+        input.disabled = true; // Desabilita a caixa de texto
+    }
+}
+
+function toggleInputQuantidadeCanula() {
+    var checkbox = document.getElementById("canula");
+    var input = document.getElementById("quantidadecanula");
+
+    if (checkbox.checked) {
+        input.disabled = false; // Habilita a caixa de texto
+    } else {
+        input.disabled = true; // Desabilita a caixa de texto
+    }
+}
+
+//funcao para permitir que o usuario digite apenas numeros na quantidade
+function validarNumeroQuantidadeAtadura(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-27");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeCateter(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-28");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeCompressa(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-29");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeKits(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-30");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeLuvas(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-31");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeMascara(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-32");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeManta(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-33");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadePas(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-34");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeSonda(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-35");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeSoro(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-36");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeTalas(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-37");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeBase(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-38");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeColar(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-39");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeSegundoColar(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-40");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeCoxins(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-41");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeKed(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-42");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeMaca(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-43");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeTtf(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-44");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeAranha(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-45");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeCabeca(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-46");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
+
+function validarNumeroQuantidadeCanula(input) {
+    var numero = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-47");
+
+
+    if (/[^0-9]/.test(numero)) {
+        mensagemErro.textContent = "Apenas números.";
+        input.value = numero.replace(/[^0-9]/g, '');
+    } else {
+        mensagemErro.textContent = "";
+    }
+}
