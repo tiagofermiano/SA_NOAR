@@ -123,6 +123,20 @@ function validarNumeroIdadePac(input) {
     }
 }
 
+document.getElementById('idadePaciente').addEventListener('input', function () {
+    var idade = parseInt(this.value, 10);
+    var containerMenorDe5Anos = document.querySelector('.container-Menor-de-5-anos');
+    var containerMaioresDe5Anos = document.querySelector('.container-Maiores-de-5-anos');
+
+    if (idade < 5) {
+        containerMenorDe5Anos.classList.remove('hidden');
+        containerMaioresDe5Anos.classList.add('hidden');
+    } else {
+        containerMenorDe5Anos.classList.add('hidden');
+        containerMaioresDe5Anos.classList.remove('hidden');
+    }
+});
+
 function validarNumeroRGCPFPaciente(input) {
     var numero = input.value.replace(/[^0-9a-zA-Z\s\.\-]/g, ''); // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
 
@@ -976,8 +990,8 @@ function selectCheckAcontOutrasVezes(checkbox) {
     });
   }   
 
-  function selectCheckPreNatal(checkbox) {
-    var checkboxes = document.querySelectorAll('.selectCheckPreNatal');
+  function selectCheckPreNatal_simnao(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckPreNatal_simnao');
   
     checkboxes.forEach(function (cb) {
       if (cb !== checkbox) {
@@ -1055,3 +1069,86 @@ function selectCheckAcontOutrasVezes(checkbox) {
       }
     });
   } 
+
+  function selectCheckPreNatal(checkbox) {
+    var inputAnmeSnNomeMedico = document.querySelector(".input-anme_sn_nomemedico");
+  
+    if (checkbox.id === "selectCheckPreNatal1") {
+        inputAnmeSnNomeMedico.style.display = "block";
+    } else if (checkbox.id === "selectCheckPreNatal2") {
+        inputAnmeSnNomeMedico.style.display = "none";
+    }
+  }
+
+  function mostrarOcultarContainer(checkbox) {
+    var containerNomeMedico = document.querySelector('.container-nome-medico');
+    
+    if (checkbox.checked) {
+        containerNomeMedico.classList.remove('hidden');
+    } else {
+        containerNomeMedico.classList.add('hidden');
+    }
+}
+
+document.getElementById('sexoSelect').addEventListener('change', function () {
+    var sexo = this.value;
+    var container_gestacional = document.querySelector('.container_gestacional');
+
+    if (sexo === 'Feminino') {
+        container_gestacional.classList.remove('hidden');
+    } else {
+        container_gestacional.classList.add('hidden');
+    }
+});
+
+//funcao para selecionar tamanho Materiais descartáveis utilizados:
+function toggleAtadura() {
+    var AtaduraCheckbox = document.querySelector('.main-checkbox-atadura');
+    var checkboxesAtadura = document.querySelectorAll('.sub-checkbox-atadura');
+
+    checkboxesAtadura.forEach(function (checkbox) {
+        if (AtaduraCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleKits() {
+    var KitsCheckbox = document.querySelector('.main-checkbox-kits');
+    var checkboxesKits = document.querySelectorAll('.sub-checkbox-kits');
+
+    checkboxesKits.forEach(function (checkbox) {
+        if (KitsCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleTalas() {
+    var talasCheckbox = document.querySelector('.main-checkbox-talas');
+    var checkboxestalas = document.querySelectorAll('.sub-checkbox-talas');
+
+    checkboxestalas.forEach(function (checkbox) {
+        if (talasCheckbox.checked) {
+            checkbox.removeAttribute('disabled');
+        } else {
+            checkbox.setAttribute('disabled', 'disabled');
+        }
+    });
+}
+
+function toggleMateriais_descartaveis_outros() {
+    var checkbox = document.getElementById("materiaisOutrosCheckbox");
+    var input = document.getElementById("materiaisOutrosInput");
+
+    if (checkbox.checked) {
+        input.disabled = false; // Habilita a caixa de texto
+    } else {
+        input.disabled = true; // Desabilita a caixa de texto
+    }
+}
+

@@ -35,6 +35,10 @@ p {
   font-size: 1em;
 }
 
+.hidden {
+  display: none;
+}
+
 .circle-button {
   position: fixed;
   width: 70px;
@@ -328,6 +332,31 @@ margin-top: 1.29rem;
   background-color: #E5E6E7;
 }
 
+.input-anme_sn_nomemedico {
+  display: flex;
+  align-items: center;
+  color: #030060;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_nomemedico label {
+  margin: auto;
+  display: flex;
+}
+
+.input-anme_sn_nomemedico input {
+  display: flex;
+  width: 43%;
+  height: 8%;
+  border: none;
+  outline: 0;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  display: none;
+}
+
 .input-anme_sn {
   display: flex;
   align-items: center;
@@ -508,6 +537,7 @@ margin-top: 1.29rem;
   justify-content: center;
   margin-left: -1rem;
 }
+
 
 .texto {
   font-size: 1rem;
@@ -1011,6 +1041,25 @@ input:focus {
   text-decoration: #030060;
 }
 
+.proced_meiosauxiliares {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.3rem;
+  justify-content: center;
+  text-decoration: #030060;
+  margin-left: 2rem;
+}
+
+.item_meiosauxiliares{
+  margin-left: 2rem;
+}
+
+.sub-item_meiosauxiliares{
+  margin-left: 3.3rem;
+}
 .cit {
   display: flex;
   grid-template-rows: 1fr 1fr;
@@ -1073,4 +1122,25 @@ button:active {
   margin-left: 10.3rem;
   display: flex;
   margin-top: -1.5rem;
+}
+
+
+.materiais_descartaveis_outros {
+  display: flex;
+  grid-template-rows: 1fr 1fr;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  background-color: #E5E6E7;
+  padding: 0.8rem;
+  text-decoration: #030060;
+  justify-content: center;
+}
+
+.materiais_descartaveis_outros input{
+  background-color: #E5E6E7;
+  border-top: #000000;
+  border-left: none;
+  border-right: none;
+  margin-left: 0.50rem;
+  height: -1rem;
 }

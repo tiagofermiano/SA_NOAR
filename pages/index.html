@@ -58,26 +58,23 @@
     </form>
 
     <form class="form">
-      <div class="input-caixatexto">
-        <label for="idadePaciente">Idade:</label>
-        <input type="text" id="idadePaciente" name="idadePaciente" maxlength="3" oninput="validarNumeroIdadePac(this)"
-          placeholder="Digite a idade...">
-        <p id="mensagemErro-2" style="color: red;"></p>
-      </div>
-      <!-- Adicione mais campos de formulário conforme necessário -->
+        <div class="input-caixatexto">
+            <label for="idadePaciente">Idade:</label>
+            <input type="text" id="idadePaciente" name="idadePaciente" maxlength="3" oninput="validarNumeroIdadePac(this)" placeholder="Digite a idade...">
+            <p id="mensagemErro-2" style="color: red;"></p>
+        </div>
     </form>
 
     <div class="sexo_container">
       <label for="textosexo">Sexo:</label>
       <div class="custom-select">
-        <select class="sexo">
-          <option selected="selected"></option>
-          <option>Feminino</option>
-          <option>Masculino</option>
-        </select>
-        <div class="custom-arrow"></div>
+          <select class="sexo" id="sexoSelect">
+              <option selected="selected">Masculino</option>
+              <option>Feminino</option>
+          </select>
+          <div class="custom-arrow"></div>
       </div>
-    </div>
+  </div>
 
     <form class="form">
       <div class="input-caixatexto">
@@ -580,7 +577,7 @@
       </div>
     </form>
 
-    <div class="container-Maiores-de-5-anos">
+    <div class="container-Maiores-de-5-anos hidden">
       <div class="subtitulo"></div>
       <div class="texto" id="">Nível de consciência - Maiores de 5 anos </div>
       <br>
@@ -708,6 +705,8 @@
 
     </div>
 
+
+    <div class="container-Menor-de-5-anos hidden">
     <div class="subtitulo"></div>
     <div class="texto">Nível de consciência - Menores de 5 anos </div>
 
@@ -823,6 +822,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <hr class="hr2">
 
@@ -1654,8 +1654,10 @@
         </div>
       </form>
 
-      <div class="subtitulo"></div>
-      <div class="texto">Anamnese Gestacional</div>
+      <div class="container_gestacional hidden">
+        <div class="subtitulo"></div>
+        <div class="texto">Anamnese Gestacional</div>
+    
 
 
       <form class="form">
@@ -1679,27 +1681,28 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal" id="selectCheckPreNatal1"
-            onclick="selectCheckPreNatal(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selectCheckPreNatal(this); selectCheckPreNatal_simnao(this);">
+  <label for="checkbox-id-1">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal" id="selectCheckPreNatal2"
-            onclick="selectCheckPreNatal(this)">
-            <label for="checkbox-id-8">Não</label>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selectCheckPreNatal(this); selectCheckPreNatal_simnao(this);">
+    <label for="checkbox-id-8">Não</label>
           </div>
         </div>
       </div>
 
+      <div class="container-nome-medico">
       <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Nome do médico:</label>
-          <input type="text" id="username" name="username" placeholder="________________">
+        <div class="input-anme_sn_nomemedico" style="display: none"> 
+          <label for="username" class="texto-medico">Nome do médico:</label>
+          <input type="text" id="nomeMedico" name="username" placeholder="________________">
         </div>
       </form>
+    </div>
+
 
       <div class="grid_cinematica">
         <!-- TEXTOS DAS CHECKBOX -->
@@ -1920,6 +1923,9 @@
             </p>
           </div>
         </div>
+      </div>
+      
+      
 
 
         <!-- CHECKBOX SIM -->
@@ -1948,6 +1954,8 @@
         </div>
       </form>
   </div>
+</div>
+</div>
 
   <hr class="hr1">
 
@@ -2175,16 +2183,16 @@
     <br><br>
 
     <div class="proced">
-      <label class="item">
+      <label class="item_meiosauxiliares">
         <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
       </label>
-      <label class="sub-item">
+      <label class="sub-item_meiosauxiliares">
         <input type="checkbox" class="sub-checkbox-meios" disabled> CELESC
       </label>
-      <label class="sub-item">
+      <label class="sub-item_meiosauxiliares">
         <input type="checkbox" class="sub-checkbox-meios" disabled> Def. Civil
       </label>
-      <label class="sub-item">
+      <label class="sub-item_meiosauxiliares">
         <input type="checkbox" class="sub-checkbox-meios" disabled> IGP / PC
       </label>
     </div>
@@ -2241,12 +2249,14 @@
       <hr class="hr2">
 
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">ATADURAS</label><br>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">8
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">12
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">20
-      </div>
+
+          <label class="item">
+            <input type="checkbox" class="main-checkbox-atadura" onchange="toggleAtadura()"> ATADURA</label><br>
+            <input type="checkbox" class="sub-checkbox-atadura" disabled> 8
+            <input type="checkbox" class="sub-checkbox-atadura" disabled> 12
+            <input type="checkbox" class="sub-checkbox-atadura" disabled> 20
+          </div>
+
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
@@ -2271,12 +2281,13 @@
       <hr class="hr2">
       <hr class="hr2">
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">KIT'S</label><br>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">H
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">P
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">Q
+      <label class="item">
+        <input type="checkbox" class="main-checkbox-kits" onchange="toggleKits()"> KIT'S</label><br>
+        <input type="checkbox" class="sub-checkbox-kits" disabled> H
+        <input type="checkbox" class="sub-checkbox-kits" disabled> P
+        <input type="checkbox" class="sub-checkbox-kits" disabled> Q
       </div>
+
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
@@ -2337,18 +2348,31 @@
       </div>
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TALAS PAP.</label>
-        <br>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">P
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">G
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-talas" onchange="toggleTalas()"> TALAS PAP.</label><br>
+          <input type="checkbox" class="sub-checkbox-talas" disabled> P
+          <input type="checkbox" class="sub-checkbox-talas" disabled> G
       </div>
+
+      
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
     </div>
+
     <br><br><br><br><br>
+
+    <div class="materiais_descartaveis_outros">
+      <div class="materiais_descartaveis_outros-checkbox">
+        <input type="checkbox" id="materiaisOutrosCheckbox" onclick="toggleMateriais_descartaveis_outros()">
+      </div>
+      <div class="materiais_descartaveis_outros-input">
+        <input type="text" id="materiaisOutrosInput" disabled>
+      </div>
+    </div>
+
 
     <div class="subtitulo"></div>
     <div class="texto">Materiais utilizados deixados no hospital:</div>
@@ -2370,17 +2394,29 @@
       </div>
       <hr class="hr2">
       <hr class="hr2">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">COLAR</label>
-        <br>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">N
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">PP
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">P
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">M
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">G
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">GG
-      </div>
+
+
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte</label>
+
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+
+
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Sem remoção
+        </label>
+
       <div>
         <input type="text" name="checkBox[]" class="input-proced" id="checkbox-id-1">
       </div>
