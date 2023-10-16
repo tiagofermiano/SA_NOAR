@@ -18,6 +18,5 @@ if ($conn->connect_error) {
 // Agora você pode executar consultas SQL, inserções, atualizações, etc.
 
 // Lembre-se de fechar a conexão quando terminar de usá-la
-$conn->close();
-
+return $conn;
 ?>

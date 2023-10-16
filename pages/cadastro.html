@@ -40,7 +40,7 @@
     
     
   
-    <form class="form" action="/php/cadastro.php" method="post">
+    <form class="form" action="sync_connect.php" method="post">
       <div class="input-caixatexto">
         <label for="nome">Nome do atendente</label>
         <input type="text" name="nome" id="nome" placeholder="Digite o nome..." required>
@@ -49,7 +49,7 @@
 
       <div class="input-caixatexto">
        <label for="cpf">Digite seu CPF</label>
-    <input type="text" id="cpf" name="cpf" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF..." required>
+    <input type="text" id="cpf" name="userCPF" maxlength="11" oninput="validarNumero(this)" placeholder="Digite o CPF..." required>
     <p id="mensagemErro" style="color: red;"></p>
 
     <div class="input-caixatexto">
@@ -60,7 +60,7 @@
    <div class="input-caixasenha">
     <label for="senha">Digite sua senha</label>
     <div class="botaomostrar">
-      <input type="password" id="senha" placeholder="Digite sua senha...">
+      <input type="password" name="password" id="senha" placeholder="Digite sua senha...">
       <button type="button" id="mostrarSenha" onclick="mostrarOcultarSenha('senha', 'olhoSenha')" style="outline: none; border: none;">
         <span id="olhoSenha" class="fa fa-eye-slash"></span>
       </button>
@@ -70,7 +70,7 @@
   <div class="input-caixasenha">
     <label for="confirmarsenha">Confirmar senha</label>
     <div class="botaomostrarsenha">
-      <input type="password" id="confirmarsenha" placeholder="Confirme sua senha...">
+      <input type="password" name="password" id="confirmarsenha" placeholder="Confirme sua senha...">
       <button type="button" id="mostrarConfirmarSenha" onclick="mostrarOcultarSenha('confirmarsenha', 'olhoConfirmarSenha')" style="outline: none; border: none;">
         <span id="olhoConfirmarSenha" class="fa fa-eye-slash"></span>
       </button>

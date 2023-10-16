@@ -16,7 +16,7 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
-  zoom: 1.3; /* Aumenta o zoom em 20% */
+  zoom: 1.15; /* Aumenta o zoom em 20% */
 }
 
 @media (max-width: 768px) {
@@ -26,10 +26,6 @@ body {
   /* Estilos para telas maiores, como tablets e desktops */
 }
 
-img {
-  width: 90%;
-  height: auto;
-}
 
 p {
   font-size: 1em;
@@ -39,11 +35,6 @@ p {
   display: none;
 }
 
-.logoimagem{
-  width: 8rem;
-  display: block;
-  margin: auto;
-}
 
 .navbar {
   width: 100%;
@@ -54,27 +45,41 @@ p {
   /* background-color: #030060; */
   }
 
-  .container {
-    max-width: 1230px;
-    margin:  auto;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #cabecalho{
-    display: flex;
-    align-items: center; /* Centralizar verticalmente */
-    justify-content: space-between; /* Centralizar horizontalmente e espaçar os elementos */
-    padding: 10px;
-  }
-  
-  #cabecalho a{
+  .relatorios, .perfil, .inicio {
+    position: absolute;
+    top: 0;
+    padding: 0.8rem;
+    margin: 5px;
+    background-color: #030060;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.relatorios a, .perfil a, .inicio a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px; /* Adiciona margem entre os links */
-    font-weight: bold;
-    color: #ffffff;
-  }
+}
+
+.relatorios:hover, .perfil:hover, .inicio:hover {
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.relatorios {
+    left: 0;
+}
+
+.perfil {
+    right: 0;
+}
+
+.inicio {
+    left: 50%;
+    transform: translateX(-50%);
+}
   
 
 .circle-button {
@@ -146,6 +151,7 @@ p {
   margin: 2rem 0;
   font-family: 'Open Sans', sans-serif;
   /* Adicionado espaçamento superior e inferior */
+  margin-top: 3.5rem;
 }
 
 .boxinfopaciente {
@@ -727,7 +733,6 @@ margin-top: 1.29rem;
   /* background-color: #E5E6E7; */
   border-radius: 1rem;
   padding: 1rem;
-  marg
 }
 
 .grid_maior5 {

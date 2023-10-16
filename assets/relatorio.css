@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Adicionado para melhorar o cálculo do tamanho */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E5E6E7;
+  /* background-image: linear-gradient(to bottom, #001024, #001e44); */
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  /* Definir uma fonte padrão */
+  zoom: 1.15; /* Aumenta o zoom em 20% */
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #030060; */
+  }
+
+  .relatorios, .perfil, .inicio {
+    position: absolute;
+    top: 0;
+    padding: 0.8rem;
+    margin: 5px;
+    background-color: #030060;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.relatorios a, .perfil a, .inicio a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.relatorios:hover, .perfil:hover, .inicio:hover {
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.relatorios {
+    left: 0;
+}
+
+.perfil {
+    right: 0;
+}
+
+.inicio {
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.form-caixa {
+    background-color: #fff;
+    width: 90%;
+    /* Alterado para largura relativa */
+    max-width: 400px;
+    /* Definir uma largura máxima */
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+/*titulo "Login"*/
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color:#030060;
+    margin-top: 5rem;
+  }
+
+  .perfil{
+    color: #030060;
+    font-size: 1.2rem;
+  }
+
+  .id{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .email{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .cpf{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .senha{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
