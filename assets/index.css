@@ -39,6 +39,44 @@ p {
   display: none;
 }
 
+.logoimagem{
+  width: 8rem;
+  display: block;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #030060; */
+  }
+
+  .container {
+    max-width: 1230px;
+    margin:  auto;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #cabecalho{
+    display: flex;
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: space-between; /* Centralizar horizontalmente e espaçar os elementos */
+    padding: 10px;
+  }
+  
+  #cabecalho a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; /* Adiciona margem entre os links */
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+
 .circle-button {
   position: fixed;
   width: 70px;
@@ -97,34 +135,6 @@ p {
   /* Adicionado um espaçamento interno */
   justify-content: center;
   align-items: center;
-}
-
-#cabecalho{
-  display: flex;
-  align-items: center; /* Centralizar verticalmente */
-  justify-content: space-between; /* Centralizar horizontalmente e espaçar os elementos */
-  padding: 10px;
-}
-
-#cabecalho a{
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px; /* Adiciona margem entre os links */
-  font-weight: bold;
-  color: #ffffff;
-}
-
-header {
-  display: block;
-  margin: auto;  /* Centralizar verticalmente */
-  height: 10vh;
-  background: #030060;
-  justify-content: center;
-}
-
-.logo {
-  max-width: 100px; /* Define a largura máxima da imagem */
-  height: auto; /* Mantém a proporção da imagem */
 }
 
 .title {
