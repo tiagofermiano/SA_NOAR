@@ -51,10 +51,6 @@ body {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
-.relatorios {
-    left: 0;
-}
-
 .perfil {
     right: 0;
 }
@@ -62,6 +58,23 @@ body {
 .inicio {
     left: 50%;
     transform: translateX(-50%);
+}
+
+#conectado{
+  margin-top: 1%;
+  margin-left: 1%;
+  font-weight: bold;
+  max-width: 25%;
+  color: #030060;
+}
+
+#sem-relatorio{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
+  margin-top: 6rem;
 }
   
 .form-caixa {
@@ -82,7 +95,6 @@ body {
     font-size: 2rem;
     line-height: 2rem;
     font-weight: 600;
-    color: black;
     font-family: 'Poppins', sans-serif;
     color:#030060;
     margin-top: 5rem;
