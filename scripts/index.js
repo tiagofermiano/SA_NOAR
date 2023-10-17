@@ -1740,4 +1740,5 @@ function validarNumeroQuantidadeCanula(input) {
     } else {
         mensagemErro.textContent = "";
     }
+}
 
