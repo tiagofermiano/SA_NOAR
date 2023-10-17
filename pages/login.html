@@ -43,26 +43,25 @@
     
     
   
-    <form class="form" method="post" action="sync_connect.php">
+    <form class="form" method="post" action="connect_login.php">
 
       <div class="input-caixatexto">
-        <label for="user">CPF do atendente</label>
-        <input type="text" name="userCPF" id="user" placeholder="Digite o CPF..." required>
+        <label for="userCPF">CPF do atendente</label>
+        <input type="text" name="userCPF" id="cpf" placeholder="Digite o CPF..." required>
       </div>
     
       <div class="input-caixatexto">
-        <label for="password">Senha</label>
-        <input type="password" name="password" id="password" placeholder="Digite a senha..." required>
+        <label for="passwords">Senha</label>
+        <input type="password" name="passwords" id="senha" placeholder="Digite a senha..." required>
       </div>
 
       <div class="esqueciasenha">
         <a rel="noopener noreferrer" href="esqueciasenha.html">Esqueceu a senha?</a>
       </div>
-
         
       <!-- botão de entrar -->   
          
-      <input type="submit" name="submit-button" value="Entrar" class="entrar1">
+      <button type="submit" name="submit-button" class="entrar1">Entrar</button>
       <small id="form-text"></small>
 
       <!-- Mensagem de erro -->

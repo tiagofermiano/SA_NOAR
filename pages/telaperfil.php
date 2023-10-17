@@ -1,4 +1,6 @@
-<?php $mysqli = include 'conexao.php';?>
+<?php
+include('protect.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,32 +23,50 @@
 </head>
 
 <body>
-
+    
   <header>
-    <div class="navbar">
-      <div class="relatorios">
-        <a href="relatórios.html">Relatórios</a>
+    <div class="relatorios">
+        <a href="relatorio.html">Relatórios</a>
     </div>
     <div class="inicio">
         <a href="home.html">Início</a>
     </div>
-    <div class="conectado">
-        <a href="home.html">Perfil</a>
+    <div class="perfil">
+        <a href="logout.php">Sair</a>
     </div>
-</div>
-        
+</div>   
 </header>
+
+
 
 <p class="titulo">Meu perfil</p>
     <div class="form-caixa">
-
         <div class="perfil">
-        <p>Bem-vindo ao seu perfil, <?php echo $usercpf; ?>!</p>
+            <p>Bem-vindo ao seu perfil, <?php echo $_SESSION['nome']; ?>!</p>
+            </div>
+
+        <div class="id">
+            Id: <?php echo $_SESSION['id_atendente']; ?>
+        </div>
+
+        <div class="email">
+            Email: <?php echo $_SESSION['email']; ?>
+
+        </div>
+
+        <div class="cpf">
+            CPF: <?php echo $_SESSION['cpf']; ?>
+
+        </div>
+
+        <div class="senha">
+            Senha: <?php echo $_SESSION['senha']; ?>
+
         </div>
 
 
-</div>
 
 
+    </div>
 </body>
 </html>    

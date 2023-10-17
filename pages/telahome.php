@@ -1,3 +1,7 @@
+<?php
+include('protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +26,7 @@
                     <p>Relatórios</p>
                 </div>
             </a>
-            <a href="login.html">
+            <a href="telaperfil.php">
                 <div class="grid-button">
                     <img src="https://i.pinimg.com/originals/f2/a6/3b/f2a63bb71f3b572d23fc9351ebb8198a.jpg">
                     <p>Perfil</p>

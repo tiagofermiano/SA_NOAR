@@ -82,15 +82,12 @@ p {
 }
   
 .form-caixa {
-    background-color: #fff;
-    width: 40%;
-    /* Alterado para largura relativa */
-    max-width: 90%;
-    /* Definir uma largura máxima */
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
 }
 
 /*titulo "Login"*/
@@ -103,18 +100,22 @@ p {
     font-family: 'Poppins', sans-serif;
     color:#030060;
     margin-top: 5rem;
+    margin-bottom: 3rem;
   }
 
-  .perfil{
+  .perfil {
     color: #030060;
     font-size: 1.2rem;
-    display: block;
-    margin: auto;
-    width: 80%;
-  }
+    display: flex; /* Use display flex para centralizar o conteúdo verticalmente */
+    flex-direction: column; /* Para alinhar os elementos verticalmente */
+    text-align: center; /* Alinhe o texto horizontalmente ao centro */
+    margin: 0 auto;
+    width: 60%;
+    align-items: center;
+}
 
   .perfil p{
-    
+    width: 100%;
   }
 
   #nome{
