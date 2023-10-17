@@ -83,9 +83,9 @@ p {
   
 .form-caixa {
     background-color: #fff;
-    width: 90%;
+    width: 40%;
     /* Alterado para largura relativa */
-    max-width: 400px;
+    max-width: 90%;
     /* Definir uma largura máxima */
     margin: 0 auto;
     border-radius: 10px;
@@ -108,28 +108,47 @@ p {
   .perfil{
     color: #030060;
     font-size: 1.2rem;
+    display: block;
+    margin: auto;
+    width: 80%;
+  }
+
+  .perfil p{
+    
+  }
+
+  #nome{
+    color: #030060;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
   }
 
   .id{
     color: #030060;
     font-size: 1.2rem;
     margin-top: 1rem;
+    font-weight: bold;
+    font-weight: bold;
   }
 
   .email{
     color: #030060;
     font-size: 1.2rem;
     margin-top: 1rem;
+    font-weight: bold;
   }
 
   .cpf{
     color: #030060;
     font-size: 1.2rem;
     margin-top: 1rem;
+    font-weight: bold;
   }
 
   .senha{
     color: #030060;
     font-size: 1.2rem;
     margin-top: 1rem;
+    font-weight: bold;
   }

@@ -76,18 +76,6 @@ body {
   color:#000000;
   margin-top: 6rem;
 }
-  
-.form-caixa {
-    background-color: #fff;
-    width: 90%;
-    /* Alterado para largura relativa */
-    max-width: 400px;
-    /* Definir uma largura máxima */
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-}
 
 /*titulo "Login"*/
 .titulo {
@@ -100,31 +88,57 @@ body {
     margin-top: 5rem;
   }
 
-  .perfil{
-    color: #030060;
-    font-size: 1.2rem;
-  }
+#container-relatorios{
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-top:3% ;
+}
 
-  .id{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
+#relatorio{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: #fff;
+  /* Alterado para largura relativa */
+  max-width: 95%;
+  margin: auto;
+  /* Definir uma largura máxima */
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
 
-  .email{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
+#numero-ocorrencia{
+  margin: auto;
+  font-weight: bold;
+  color: #030060;
+  padding: 3%;
+}
 
-  .cpf{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
+#info-ocorrencia{
+ margin: auto ;
+ padding: 5%;
+}
 
-  .senha{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
+#botao-ver{
+  margin: auto;
+  font-weight: bold;
+  color: #030060;
+  padding: 5%;
+
+}
+.botao{
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-color: #030060;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.botao:hover{
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
