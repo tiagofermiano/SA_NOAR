@@ -82,6 +82,11 @@ p {
 }
   
 
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
 .circle-button {
   position: fixed;
   width: 70px;
@@ -379,14 +384,42 @@ margin-top: 1.29rem;
   display: flex;
   width: 100%;
   /* height: 8%; */
-  border: none;
   outline: 0;
-  padding: 0.75rem 1rem;
   color: #030060;
   cursor: pointer;
   font-size: 15px;
   /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
 }
+
+.input-anme_sn_quantos {
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_quantos label {
+  margin: auto;
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.input-anme_sn_quantos input {
+  display: flex;
+  width: 100%;
+  /* height: 8%; */
+  outline: 0;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
+}
+
 
 .input-anme_sn {
   display: flex;
@@ -735,6 +768,24 @@ margin-top: 1.29rem;
   padding: 1rem;
 }
 
+.grid_cinematica_primeiro_filho {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_primeiro_filho_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
 .grid_maior5 {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -977,6 +1028,14 @@ input[type=checkbox]:checked:after {
   max-width: 100%;
   overflow: auto;
 }
+
+/* #check-table {
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  outline: none;
+} */
 
 table {
   width: 100%;

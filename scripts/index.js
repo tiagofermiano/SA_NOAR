@@ -1742,3 +1742,32 @@ function validarNumeroQuantidadeCanula(input) {
     }
 }
 
+function selecionarCheckboxPrimeiroFilho(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckPrimeiroFilho1");
+    var checkboxNao = document.getElementById("selectCheckPrimeiroFilho2");
+    
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+}
+
+function habilitarContainerQuantos(checkbox) {
+    var containerQuantos = document.querySelector('.container-Quantos');
+    
+    if (checkbox.checked) {
+        containerQuantos.classList.remove('hidden');
+    } else {
+        containerQuantos.classList.add('hidden');
+    }
+    
+    // Adicione uma verificação extra
+    var checkboxes = document.querySelectorAll('.selectCheckPrimeiroFilho');
+    var checkboxSim = checkboxes[0];
+    var checkboxNao = checkboxes[1];
+    
+    if (checkbox === checkboxNao && checkboxSim.checked) {
+        containerQuantos.classList.add('hidden');
+    }
+}

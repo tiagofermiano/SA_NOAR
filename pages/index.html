@@ -1021,24 +1021,24 @@
         </tr>
         <tr>
           <td class="linha-tabela">1° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="CABEÇA-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="PESCOÇO-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO POS.-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO ANT.-1°GRAU"></td>
         </tr>
         <tr>
           <td class="linha-tabela">2° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="CABEÇA-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="PESCOÇO-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO POS.-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO ANT.-2°GRAU"></td>
         </tr>
         <tr>
           <td class="linha-tabela">3° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="CABEÇA-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="PESCOÇO-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO POS.-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="TORSO ANT.-3°GRAU"></td>
         </tr>
       </table>
     </div>
@@ -1057,28 +1057,28 @@
         </tr>
         <tr>
           <td class="linha-tabela">1° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="GENIT-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.D.-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.E.-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.D.-1°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.E.-1°GRAU"></td>
         </tr>
         <tr>
           <td class="linha-tabela">2° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="GENIT-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.D.-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.E.-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.D.-2°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.E.-2°GRAU"></td>
 
         </tr>
         <tr>
           <td class="linha-tabela">3° GRAU</td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="checkbox" id="check-table" name="GENIT-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.D.-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.I.E.-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.D.-3°GRAU"></td>
+          <td><input type="checkbox" id="check-table" name="M.S.E.-3°GRAU"></td>
 
         </tr>
       </table>
@@ -1707,7 +1707,7 @@
             <form class="form">
                 <div class="input-anme_sn_nomemedico"> 
                     <label for="username" class="texto-medico">Nome do médico:</label>
-                    <input type="text" id="nomeMedico" name="username" placeholder="________________" oninput="capitalizarPalavrasIniciais(this);">
+                    <input type="text" id="nomeMedico" name="username"  oninput="capitalizarPalavrasIniciais(this);">
                 </div>
             </form>
         </div>
@@ -1760,28 +1760,32 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1"
-            onclick="selectCheckPrimeiroFilho(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1"
+            onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+            <label for="PrimeiroFilhoSim">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2"
-            onclick="selectCheckPrimeiroFilho(this)">
-            <label for="checkbox-id-8">Não</label>
+            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2"
+            onclick="selecionarCheckboxPrimeiroFilho(this)">
+            <label for="PrimeiroFilhoNao">Não</label>
           </div>
         </div>
       </div>
 
-      <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Quantos?</label>
-          <input type="text" id="username" name="username" placeholder="________________">
-        </div>
+      <div class="grid_cinematica_primeiro_filho_input">
+        <div class="container-quantos hidden"></div>
+          <form class="form">
+            <div class="input-anme_sn_quantos"> 
+          <label for="username" class="texto-medico">Quantos?</label>
+          <input type="text" id="QuantosFilhos?" name="QuantosFilhos?">
+        </div>  
       </form>
-    </form>
+    </div>
+  </form>
+    
 
     <form class="form">
       <div class="input-anme_sn">
