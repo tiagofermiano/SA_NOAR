@@ -19,23 +19,6 @@ body {
   zoom: 1.15; /* Aumenta o zoom em 20% */
 }
 
-@media (max-width: 768px) {
-  /* Estilos para telas menores, como smartphones */
-}
-@media (min-width: 769px) {
-  /* Estilos para telas maiores, como tablets e desktops */
-}
-
-
-p {
-  font-size: 1em;
-}
-
-.hidden {
-  display: none;
-}
-
-
 .navbar {
   width: 100%;
   margin: 0 auto;
@@ -45,7 +28,7 @@ p {
   /* background-color: #030060; */
   }
 
-  .relatorios, .conectado, .inicio {
+  .relatorios, .perfil, .inicio {
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -59,20 +42,16 @@ p {
     overflow: visible;
 }
 
-.relatorios a, .conectado a, .inicio a {
+.relatorios a, .perfil a, .inicio a {
     color: #fff;
     text-decoration: none;
 }
 
-.relatorios:hover, .conectado:hover, .inicio:hover {
+.relatorios:hover, .perfil:hover, .inicio:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
-.relatorios {
-    left: 0;
-}
-
-.conectado {
+.perfil {
     right: 0;
 }
 
@@ -80,14 +59,22 @@ p {
     left: 50%;
     transform: translateX(-50%);
 }
-  
-.form-caixa {
-  background-color: #fff;
-  width: 70%;
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+
+#conectado{
+  margin-top: 1%;
+  margin-left: 1%;
+  font-weight: bold;
+  max-width: 25%;
+  color: #030060;
+}
+
+#sem-relatorio{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color:#000000;
+  margin-top: 6rem;
 }
 
 /*titulo "Login"*/
@@ -96,44 +83,62 @@ p {
     font-size: 2rem;
     line-height: 2rem;
     font-weight: 600;
-    color: black;
     font-family: 'Poppins', sans-serif;
     color:#030060;
     margin-top: 5rem;
-    margin-bottom: 3rem;
   }
 
-  .classe {
-    color: #030060;
-    font-size: 1.2rem;
-    display: flex; /* Use display flex para centralizar o conteúdo verticalmente */
-    flex-direction: column; /* Para alinhar os elementos verticalmente */
-    text-align: center; /* Alinhe o texto horizontalmente ao centro */
-    margin: 0 auto;
-    width: 60%;
-    align-items: center;
+#container-relatorios{
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-top:3% ;
 }
 
-  .classe p{
-    width: 100%;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-
-  #dado1{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-
-#info{
-  font-weight: normal;
+#relatorio{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: #fff;
+  /* Alterado para largura relativa */
+  max-width: 95%;
+  margin: auto;
+  /* Definir uma largura máxima */
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
 }
 
-  #dado2{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
+#numero-ocorrencia{
+  margin: auto;
+  font-weight: bold;
+  color: #030060;
+  padding: 3%;
+}
+
+#info-ocorrencia{
+ margin: auto ;
+ padding: 5%;
+}
+
+#botao-ver{
+  margin: auto;
+  font-weight: bold;
+  color: #030060;
+  padding: 5%;
+
+}
+.botao{
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-color: #030060;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.botao:hover{
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}

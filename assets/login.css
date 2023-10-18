@@ -28,7 +28,7 @@ body {
   /* background-color: #030060; */
   }
 
-  .relatorios, .perfil, .inicio {
+  .historico, .perfil, .inicio {
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -42,16 +42,16 @@ body {
     overflow: visible;
 }
 
-.relatorios a, .perfil a, .inicio a {
+.historico a, .perfil a, .inicio a {
     color: #fff;
     text-decoration: none;
 }
 
-.relatorios:hover, .perfil:hover, .inicio:hover {
+.historico:hover, .perfil:hover, .inicio:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
-.relatorios {
+.historico {
     left: 0;
 }
 
