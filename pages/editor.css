@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Adicionado para melhorar o cálculo do tamanho */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #E5E6E7;
+  /* background-image: linear-gradient(to bottom, #001024, #001e44); */
+  background-repeat: no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  /* Definir uma fonte padrão */
+  zoom: 1.15; /* Aumenta o zoom em 20% */
+}
+
+@media (max-width: 768px) {
+  /* Estilos para telas menores, como smartphones */
+}
+@media (min-width: 769px) {
+  /* Estilos para telas maiores, como tablets e desktops */
+}
+
+
+p {
+  font-size: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.navbar {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #030060; */
+  }
+
+  .voltar, .conectado, .inicio {
+    position: absolute;
+    top: 0;
+    padding: 0.8rem;
+    margin: 5px;
+    background-color: #030060;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.voltar a, .conectado a, .inicio a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.voltar:hover, .conectado:hover, .inicio:hover {
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.voltar {
+    left: 0;
+}
+
+.conectado {
+    right: 0;
+}
+
+.inicio {
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
+.form-caixa {
+  background-color: #fff;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+/*titulo "Login"*/
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color:#030060;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .perfil {
+    color: #030060;
+    font-size: 1.2rem;
+    display: flex; /* Use display flex para centralizar o conteúdo verticalmente */
+    flex-direction: column; /* Para alinhar os elementos verticalmente */
+    text-align: center; /* Alinhe o texto horizontalmente ao centro */
+    margin: 0 auto;
+    width: 60%;
+    align-items: center;
+}
+
+  .perfil p{
+    width: 100%;
+  }
+
+  #info{
+    font-weight: normal;
+  }
+
+  #nome{
+    color: #030060;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .id{
+    color: #030060;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+  }
+
+  .email{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .cpf{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  .senha{
+    color: #030060;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  #botao-editar{
+    display: flex;
+    margin: auto;
+    font-weight: bold;
+    color: #030060;
+    padding: 2%;
+    align-items: center;
+    width: 80%;
+    justify-content: center;
+  }
+  .botao{
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    background-color: #030060;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
+  }
+  
+  .botao:hover{
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+  }
