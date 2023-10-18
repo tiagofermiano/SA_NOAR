@@ -1754,7 +1754,7 @@ function selecionarCheckboxPrimeiroFilho(checkbox) {
 }
 
 function habilitarContainerQuantos(checkbox) {
-    var containerQuantos = document.querySelector('.container-Quantos');
+    var containerQuantos = document.querySelector('.container-quantos'); // Nome da classe corrigido
     
     if (checkbox.checked) {
         containerQuantos.classList.remove('hidden');
@@ -1763,7 +1763,7 @@ function habilitarContainerQuantos(checkbox) {
     }
     
     // Adicione uma verificação extra
-    var checkboxes = document.querySelectorAll('.selectCheckPrimeiroFilho');
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     var checkboxSim = checkboxes[0];
     var checkboxNao = checkboxes[1];
     
@@ -1771,3 +1771,13 @@ function habilitarContainerQuantos(checkbox) {
         containerQuantos.classList.add('hidden');
     }
 }
+
+const textarea = document.getElementById("username");
+
+  textarea.addEventListener("input", function () {
+    if (textarea.scrollHeight > textarea.clientHeight) {
+      textarea.style.resize = "vertical";
+    } else {
+      textarea.style.resize = "none";
+    }
+  });

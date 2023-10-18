@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="/assets/index.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 
@@ -750,6 +750,12 @@
           <label for="checkbox-id-1">Nenhuma</label>
           <div class="numeros_niveis"></div>
         </div>
+        <div class="checkbox-menor5-nt1">
+          <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1"
+            onclick="selectAberturaOcularMenor5(this)">
+          <label for="checkbox-id-1">NT</label>
+          <div class="numeros_niveis"></div>
+        </div>
       </div>
 
     </div>
@@ -787,6 +793,11 @@
           <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1"
             onclick="selectRespostaVerbalMenor5(this)">
           <label for="checkbox-id-1">Nenhuma resposta</label>
+        </div>
+        <div class="checkbox-menor5-nt">
+          <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1"
+            onclick="selectRespostaVerbalMenor5(this)">
+          <label for="checkbox-id-1">NT</label>
         </div>
       </div>
     </div>
@@ -828,6 +839,12 @@
               onclick="selectRespostaMotoraMenor5(this)">
             <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
           </div>
+          <div class="checkbox-menor5-nt">
+            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1"
+              onclick="selectRespostaMotoraMenor5(this)">
+            <label for="checkbox-id-1">NT</label>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1461,7 +1478,7 @@
         </div>
 
         <div class="input-anamnese">
-          <input type="text" id="username" name="username" placeholder="Digite...">
+          <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
         </div>
       </div>
 
@@ -1746,10 +1763,10 @@
 
       <br>
 
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_primeiro_filho">
         <!-- TEXTOS DAS CHECKBOX -->
 
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_primeiro_filho">
           <div class="txt_cinematica">
             <p>É o primeiro filho?
             </p>
@@ -2581,9 +2598,9 @@
         <div class="input-obsimp">
           <label for="username">Observações importantes:</label>
         </div>
-
+        
         <div class="input-obsimp">
-          <input type="text" id="username" name="username" placeholder="Digite...">
+          <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
         </div>
       </div>
     </form>

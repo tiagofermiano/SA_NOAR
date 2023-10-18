@@ -635,6 +635,20 @@ margin-top: 1.29rem;
   color: #030060;
 }
 
+.checkbox-menor5-nt{
+  color: #030060;
+  margin-left: 2.3rem;
+}
+
+.checkbox-maior5-nt{
+  color: #030060;
+  margin-left: 2.3rem;
+}
+.checkbox-maior5-nt1{
+  color: #030060;
+  margin-left: 2.3rem;
+}
+
 .checkbox-texto {
   color: #030060;
   text-align: center;
@@ -685,14 +699,6 @@ margin-top: 1.29rem;
 .grid_txt_cinematica {
   display: grid;
   grid-template-columns: 1fr;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 1%;
-}
-
-.grid_txt_cinematica_pre_natal {
-  display: grid;
-  grid-template-columns: 0.9fr;
   justify-content: space-between;
   align-items: center;
   row-gap: 1%;
@@ -768,6 +774,14 @@ margin-top: 1.29rem;
   padding: 1rem;
 }
 
+.grid_txt_cinematica_pre_natal {
+  display: grid;
+  grid-template-columns: 0.9fr;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1%;
+}
+
 .grid_cinematica_primeiro_filho {
   display: grid;
   grid-template-columns: 1fr 0.3fr 0.3fr;
@@ -784,6 +798,14 @@ margin-top: 1.29rem;
   /* background-color: #E5E6E7; */
   border-radius: 1rem;
   padding: 1rem;
+}
+
+.grid_txt_cinematica_pre_natal {
+  display: grid;
+  grid-template-columns: 0.9fr;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1%;
 }
 
 .grid_maior5 {
@@ -1029,13 +1051,13 @@ input[type=checkbox]:checked:after {
   overflow: auto;
 }
 
-/* #check-table {
+#check-table {
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
   border: none;
   outline: none;
-} */
+}
 
 table {
   width: 100%;
@@ -1092,6 +1114,18 @@ input:focus {
   font-weight: bold;
   text-align: center;
 }
+
+.textarea {
+  background-color: white;
+  width: 16.69rem;
+  height: 7rem;
+  border: none;
+  outline: none;
+}
+
+/* textarea {
+  resize: none;
+} */
 
 .actu label {
   display: block;

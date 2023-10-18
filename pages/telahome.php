@@ -10,7 +10,7 @@ include('protect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOAR</title>
 
-    <link href="/assets/home.css" rel="stylesheet">
+    <link href="home.css" rel="stylesheet">
 
 <body>
     <div id="conectado">
