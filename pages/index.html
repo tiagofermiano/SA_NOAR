@@ -74,15 +74,43 @@
     </form>
 
     <div class="sexo_container">
-      <label for="textosexo">Sexo:</label>
+      <label for="sexoSelect">Sexo:</label>
       <div class="custom-select">
-          <select class="sexo" id="sexoSelect">
+          <select class="sexo" id="sexoSelect" name="sexoSelect">
               <option selected="selected"></option>
               <option>Feminino</option>
               <option>Masculino</option>
           </select>
           <div class="custom-arrow"></div>
       </div>
+  </div>
+
+  <div class="grid_cinematica_sexo">
+    <!-- TEXTOS DAS CHECKBOX -->
+
+    <div class="grid_txt_cinematica_sexo">
+      <div class="txt_cinematica">
+        <p>Sexo:</p>
+      </div>
+    </div>
+
+
+    <!-- CHECKBOX SIM -->
+    <div class="grid_checkbox_feminino_sexo">
+      <div>
+        <input type="checkbox" name="sexo_escolha" class="selectCheckSexo_" id="selectCheckSexo_1"
+          onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+        <label for="sexo_escolha">Feminino</label>
+      </div>
+    </div>
+
+    <div class="grid_checkbox_masculino_sexo">
+      <div>
+        <input type="checkbox" name="sexo_escolha" class="selectCheckSexo_" id="selectCheckSexo_2"
+          onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+        <label for="sexo_escolha">Masculino</label>
+      </div>
+    </div>
   </div>
 
     <form class="form">
@@ -246,7 +274,7 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="despacho">Despacho:</label>
-        <input type="text" id="despacho" name="despacho" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
+        <input type="text" id="despacho" name="despacho" placeholder="Digite...">
       </div>
     </form>
 
@@ -1484,10 +1512,9 @@
 
 
       <br>
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_aconteceu">
         <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_aconteceu">
           <div class="txt_cinematica">
             <p>Aconteceu outras vezes</p>
           </div>
@@ -1497,34 +1524,36 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAcontOutrasVezes" id="selectCheckAcontOutrasVezes1"
-              onclick="selectCheckAcontOutrasVezes(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="AconteceuOutrasVezes" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1"
+              onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+            <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAcontOutrasVezes" id="selectCheckAcontOutrasVezes2"
-              onclick="selectCheckAcontOutrasVezes(this)">
+            <input type="checkbox" name="checkBox[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2"
+              onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
             <label for="checkbox-id-8">Não</label>
           </div>
         </div>
       </div>
 
-      <br>
-
-      <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">A quanto tempo aconteceu?</label>
-          <input type="text" id="username" name="username" placeholder="________________">
+      <div class="grid_cinematica_aconteceu_input">
+        <div class="container-aconteceu hidden">
+          <form class="form">
+            <div class="input-anme_sn_QntTempoAconteceu">
+          <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
+          <input type="text" id="QuantoTempoAconteceu" name="QuantoTempoAconteceu" >
         </div>
       </form>
+    </div>
+  </div>
+</form>
 
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_problemaSaude">
         <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_problemaSaude">
           <div class="txt_cinematica">
             <p>Possui algum problema de saúde</p>
           </div>
@@ -1534,33 +1563,39 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1"
-              onclick="selectCheckProblemaSaude(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1"
+              onclick="selecionarCheckboxProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2"
-              onclick="selectCheckProblemaSaude(this)">
-            <label for="checkbox-id-8">Não</label>
+            <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2"
+              onclick="selectCheckProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Não</label>
           </div>
         </div>
       </div>
 
+      <div class="grid_cinematica_problemaSaude_input">
+        <div class="container-PrbSaude hidden">
       <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Quais?</label>
-          <input type="text" id="username" name="username" placeholder="________________">
+        <div class="input-anme_sn_Quais">
+          <label for="Quais">Quais?</label>
+          <input type="text" id="Quais" name="Quais">
         </div>
       </form>
+    </div>
+  </div>
+</form>
+<br>
 
 
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_medicacao">
         <!-- TEXTOS DAS CHECKBOX -->
 
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_medicacao">
           <div class="txt_cinematica">
             <p>Faz uso de medicação</p>
           </div>
@@ -1570,41 +1605,48 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckMedicacao" id="selectCheckMedicacao1"
-              onclick="selectCheckMedicacao(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao1"
+              onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckMedicacao" id="selectCheckMedicacao2"
-              onclick="selectCheckMedicacao(this)">
-            <label for="checkbox-id-8">Não</label>
+            <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao2"
+              onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Não</label>
           </div>
         </div>
       </div>
 
-      <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Horário da ultima medicação:</label>
-          <input type="time" id="username" name="username" placeholder="________________">
+      <div class="grid_cinematica_medicacao_input">
+        <div class="container-medicacao hidden">
+            <form class="form">
+                <div class="input-anme_sn_HorarioMedicacao">
+          <label for="username">Ultima medicação:</label>
+          <input type="time" id="HorarioMedicacao" name="HorarioMedicacao">
         </div>
+      </form>
+  </div>
+</div>
 
-        <br>
-
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">Quais?</label>
-            <input type="text" id="username" name="username" placeholder="________________">
+        <div class="grid_cinematica_medicacao_input">
+          <div class="container-medicacao-quais hidden">
+            <form class="form">
+              <div class="input-anme_sn_HorarioMedicacao">
+            <label for="QuaisMedicacao">Quais?</label>
+            <input type="text" id="QuaisMedicacao" name="QuaisMedicacao">
           </div>
         </form>
+    </div>
+  </div>
       </form>
 
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_alergico">
         <!-- TEXTOS DAS CHECKBOX -->
 
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_alergico">
           <div class="txt_cinematica">
             <p>Alérgico a alguma coisa?</p>
           </div>
@@ -1614,33 +1656,39 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAlergico" id="selectCheckAlergico1"
-              onclick="selectCheckAlergico(this)">
-            <label for="checkbox-id-1">Sim</label>
+            <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico1"
+              onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAlergico" id="selectCheckAlergico2"
-              onclick="selectCheckAlergico(this)">
-            <label for="checkbox-id-8">Não</label>
+            <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico2"
+              onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Não</label>
           </div>
         </div>
       </div>
 
+      <div class="grid_cinematica_alergico_input">
+        <div class="container-Alergico hidden">
       <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Se sim, especifique</label>
-          <input type="text" id="username" name="username" placeholder="________________">
+        <div class="input-anme_sn_Especifique">
+          <label for="Quais">Quais?</label>
+          <input type="text" id="Quais" name="Quais">
         </div>
       </form>
+    </div>
+  </div>
+</form>
+<br>
 
 
-      <div class="grid_cinematica">
+      <div class="grid_cinematica_alimento">
         <!-- TEXTOS DAS CHECKBOX -->
 
-        <div class="grid_txt_cinematica">
+        <div class="grid_txt_cinematica_alimento">
           <div class="txt_cinematica">
             <p>Inseriu alimento ou líquido a 6 horas ou mais?</p>
           </div>
@@ -1650,41 +1698,47 @@
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1"
-              onclick="selectCheckAlimento6horas(this)">
+            <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1"
+              onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
             <label for="checkbox-id-1">Sim</label>
           </div>
         </div>
 
         <div class="grid_checkbox_nao_cinematica">
           <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2"
-              onclick="selectCheckAlimento6horas(this)">
+            <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2"
+              onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
             <label for="checkbox-id-8">Não</label>
           </div>
         </div>
       </div>
 
+
+<div class="grid_cinematica_alimento_input">
+        <div class="container-alimento-espec hidden">
       <form class="form">
         <div class="input-anme_sn">
-          <label for="username">Se sim, especifique</label>
+          <label for="username">Se sim, especifique:</label>
           <input type="text" id="username" name="username" placeholder="________________">
         </div>
-
       </form>
+    </div>
+  </div>
 
+<div class="grid_cinematica_alimento_input">
+        <div class="container-alimento-horas hidden">
       <form class="form">
         <div class="input-anme_sn">
           <label for="username">Que horas?</label>
           <input type="time" id="username" name="username" placeholder="________________">
         </div>
       </form>
+    </div>
+  </div>
 
-      <!-- <div class="container_gestacional hidden"> -->
+<div class="container_gestacional hidden">
         <div class="subtitulo"></div>
         <div class="texto">Anamnese Gestacional</div>
-    
-
 
       <form class="form">
         <div class="input-anme_sn">
@@ -1712,7 +1766,7 @@
         <!-- CHECKBOX NÃO -->
         <div class="grid_checkbox_nao_cinematica">
             <div>
-                <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this);">
+                <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this); habilitarContainer(this);">
                 <label for="checkbox-id-8">Não</label>
             </div>
         </div>
@@ -1765,43 +1819,41 @@
 
       <div class="grid_cinematica_primeiro_filho">
         <!-- TEXTOS DAS CHECKBOX -->
-
         <div class="grid_txt_cinematica_primeiro_filho">
-          <div class="txt_cinematica">
-            <p>É o primeiro filho?
-            </p>
-          </div>
+            <div class="txt_cinematica">
+                <p>É o primeiro filho?</p>
+            </div>
         </div>
-
-
+    
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1"
-            onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
-            <label for="PrimeiroFilhoSim">Sim</label>
-          </div>
+            <div>
+                <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1"
+                    onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+                <label for="selectCheckPrimeiroFilho1">Sim</label>
+            </div>
         </div>
-
+    
         <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2"
-            onclick="selecionarCheckboxPrimeiroFilho(this)">
-            <label for="PrimeiroFilhoNao">Não</label>
-          </div>
+            <div>
+                <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2"
+                    onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+                <label for="selectCheckPrimeiroFilho2">Não</label>
+            </div>
         </div>
-      </div>
-
-      <div class="grid_cinematica_primeiro_filho_input">
-        <div class="container-quantos hidden"></div>
-          <form class="form">
-            <div class="input-anme_sn_quantos"> 
-          <label for="username" class="texto-medico">Quantos?</label>
-          <input type="text" id="QuantosFilhos?" name="QuantosFilhos?">
-        </div>  
-      </form>
     </div>
-  </form>
+    
+    <div class="grid_cinematica_primeiro_filho_input">
+        <div class="container-quantos hidden">
+            <form class="form">
+                <div class="input-anme_sn_quantos">
+                    <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
+                    <input type="text" id="QuantosFilhos" name="QuantosFilhos">
+                </div>
+            </form>
+        </div>
+    </div>
+    </form>
     
 
     <form class="form">
@@ -1955,10 +2007,6 @@
             </p>
           </div>
         </div>
-      </div>
-      
-      
-
 
         <!-- CHECKBOX SIM -->
         <div class="grid_checkbox_sim_cinematica">
@@ -1967,6 +2015,7 @@
             onclick="selectCheckSexoBebe(this)">
             <label for="checkbox-id-1">Fem</label>
           </div>
+        </div>
         
 
         <div class="grid_checkbox_nao_cinematica">
@@ -1978,9 +2027,6 @@
         </div>
         </div>
 
-
-
-
       <form class="form">
         <div class="input-anme_sn">
           <label for="username">Nome do bebê:</label>
@@ -1988,7 +2034,6 @@
         </div>
       </form>
   </div>
-
 </div>
 
   <hr class="hr1">

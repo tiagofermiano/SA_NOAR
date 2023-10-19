@@ -309,7 +309,7 @@ margin-top: 1.29rem;
 
 .fundo-input {
   background-color: #E5E6E7;
-  width: 70%;
+  width: 90%;
   height: 10%;
   margin: auto;
   padding: 1%;
@@ -782,6 +782,14 @@ margin-top: 1.29rem;
   row-gap: 1%;
 }
 
+.grid_txt_cinematica_alimento {
+  display: grid;
+  grid-template-columns: 0.9fr;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 1%;
+}
+
 .grid_cinematica_primeiro_filho {
   display: grid;
   grid-template-columns: 1fr 0.3fr 0.3fr;
@@ -800,13 +808,207 @@ margin-top: 1.29rem;
   padding: 1rem;
 }
 
-.grid_txt_cinematica_pre_natal {
+.grid_cinematica_aconteceu {
   display: grid;
-  grid-template-columns: 0.9fr;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 1%;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
 }
+
+.grid_cinematica_aconteceu_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+
+.input-anme_sn_QntTempoAconteceu {
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_QntTempoAconteceu label {
+  margin: auto;
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.input-anme_sn_QntTempoAconteceu input {
+  display: flex;
+  width: 100%;
+  /* height: 8%; */
+  outline: 0;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
+}
+
+.grid_cinematica_problemaSaude {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_problemaSaude_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+
+.input-anme_sn_Quais{
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_Quais label {
+  margin: auto;
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.input-anme_sn_Quais input {
+  display: flex;
+  width: 100%;
+  /* height: 8%; */
+  outline: 0;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
+}
+
+
+.grid_cinematica_alergico {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_alergico_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_alimento {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_alimento_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+
+.input-anme_sn_Especifique{
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_Especifique label {
+  margin: auto;
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.input-anme_sn_Especifique input {
+  display: flex;
+  width: 100%;
+  /* height: 8%; */
+  outline: 0;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
+}
+
+
+
+.grid_cinematica_medicacao{
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 0.3fr;
+  row-gap: 4%;
+  background-color: #E5E6E7;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.grid_cinematica_medicacao_input {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4%;
+  /* background-color: #E5E6E7; */
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+
+.input-anme_sn_HorarioMedicacao{
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-anme_sn_HorarioMedicacao label {
+  margin: auto;
+  display: flex;
+  /* margin-right: 5rem; */
+}
+
+.input-anme_sn_HorarioMedicacao input {
+  display: flex;
+  width: 100%;
+  /* height: 8%; */
+  outline: 0;
+  color: #030060;
+  cursor: pointer;
+  font-size: 15px;
+  /* margin-left: 4rem; */
+  border-top: #000000;
+  border-left: #000000;
+  border-right: #000000;
+}
+
 
 .grid_maior5 {
   display: grid;

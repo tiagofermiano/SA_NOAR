@@ -950,6 +950,38 @@ function selectCheckAcontOutrasVezes(checkbox) {
     });
   }
 
+  function selecionarCheckboxAconteceuOutrasVezes(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckAconteceuOutrasVezes1");
+    var checkboxNao = document.getElementById("selectCheckAconteceuOutrasVezes2");
+
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+
+    // Adicione uma verificação extra
+    var checkboxes = document.querySelectorAll('.selectCheckAconteceuOutrasVezes');
+    var checkboxSim = checkboxes[0];
+    var checkboxNao = checkboxes[1];
+
+    if (checkbox === checkboxNao && checkboxSim.checked) {
+        habilitarContainerAconteceu(checkboxSim);
+    }
+}
+
+function habilitarContainerAconteceu(checkbox) {
+    var containerAconteceu = document.querySelector('.container-aconteceu');
+
+    if (checkbox.id === "selectCheckAconteceuOutrasVezes1" && checkbox.checked) {
+        containerAconteceu.classList.remove('hidden');
+    } else {
+        containerAconteceu.classList.add('hidden');
+    }
+}
+
+///////////////////////////////////////////////////////////////////////
+
   function selectCheckProblemaSaude(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckProblemaSaude');
   
@@ -959,6 +991,38 @@ function selectCheckAcontOutrasVezes(checkbox) {
       }
     });
   }  
+
+  function selecionarCheckboxProblemaSaude(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckProblemaSaude1");
+    var checkboxNao = document.getElementById("selectCheckProblemaSaude2");
+
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+
+    // Adicione uma verificação extra
+    var checkboxes = document.querySelectorAll('.selectCheckProblemaSaude');
+    var checkboxSim = checkboxes[0];
+    var checkboxNao = checkboxes[1];
+
+    if (checkbox === checkboxNao && checkboxSim.checked) {
+        habilitarContainerPrbSaude(checkboxSim);
+    }
+}
+
+function habilitarContainerPrbSaude(checkbox) {
+    var containerPrbSaude = document.querySelector('.container-PrbSaude');
+
+    if (checkbox.id === "selectCheckProblemaSaude1" && checkbox.checked) {
+        containerPrbSaude.classList.remove('hidden');
+    } else {
+        containerPrbSaude.classList.add('hidden');
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////
 
   function selectCheckMedicacao(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckMedicacao');
@@ -970,6 +1034,48 @@ function selectCheckAcontOutrasVezes(checkbox) {
     });
   }  
   
+  function selecionarCheckboxMedicacao(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckMedicacao1");
+    var checkboxNao = document.getElementById("selectCheckMedicacao2");
+
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+
+    // Adicione uma verificação extra
+    var checkboxes = document.querySelectorAll('.selectCheckMedicacao');
+    var checkboxSim = checkboxes[0];
+    var checkboxNao = checkboxes[1];
+
+    if (checkbox === checkboxNao && checkboxSim.checked) {
+        habilitarContainerMedicacao(checkboxSim);
+    }
+}
+
+function habilitarContainerMedicacao(checkbox) {
+    var containerMedicacao = document.querySelector('.container-medicacao');
+
+    if (checkbox.id === "selectCheckMedicacao1" && checkbox.checked) {
+        containerMedicacao.classList.remove('hidden');
+    } else {
+        containerMedicacao.classList.add('hidden');
+    }
+}
+
+function habilitarContainerMedicacaoQuais(checkbox) {
+    var containerMedicacao = document.querySelector('.container-medicacao-quais');
+
+    if (checkbox.id === "selectCheckMedicacao1" && checkbox.checked) {
+        containerMedicacao.classList.remove('hidden');
+    } else {
+        containerMedicacao.classList.add('hidden');
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////
   function selectCheckAlergico(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckAlergico');
   
@@ -980,6 +1086,39 @@ function selectCheckAcontOutrasVezes(checkbox) {
     });
   }   
 
+
+  function selecionarCheckboxAlergico(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckAlergico1");
+    var checkboxNao = document.getElementById("selectCheckAlergico2");
+
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+
+    // Adicione uma verificação extra
+    var checkboxes = document.querySelectorAll('.selectCheckAlergico');
+    var checkboxSim = checkboxes[0];
+    var checkboxNao = checkboxes[1];
+
+    if (checkbox === checkboxNao && checkboxSim.checked) {
+        habilitarContainerAlergico(checkboxSim);
+    }
+}
+
+function habilitarContainerAlergico(checkbox) {
+    var containerAlergico = document.querySelector('.container-Alergico');
+
+    if (checkbox.id === "selectCheckAlergico1" && checkbox.checked) {
+        containerAlergico.classList.remove('hidden');
+    } else {
+        containerAlergico.classList.add('hidden');
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////    
+
   function selectCheckAlimento6horas(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckAlimento6horas');
   
@@ -989,6 +1128,26 @@ function selectCheckAcontOutrasVezes(checkbox) {
       }
     });
   }   
+
+  function habilitarContainerAlimento_espec(checkbox) {
+    var containerAlergico = document.querySelector('.container-alimento-espec');
+
+    if (checkbox.id === "selectCheckAlimento6horas1" && checkbox.checked) {
+        containerAlergico.classList.remove('hidden');
+    } else {
+        containerAlergico.classList.add('hidden');
+    }
+}
+
+function habilitarContainerAlimento_horas(checkbox) {
+    var containerAlergico = document.querySelector('.container-alimento-horas');
+
+    if (checkbox.id === "selectCheckAlimento6horas1" && checkbox.checked) {
+        containerAlergico.classList.remove('hidden');
+    } else {
+        containerAlergico.classList.add('hidden');
+    }
+}
 
   function selectCheckPreNatal_simnao(checkbox) {
     var checkboxes = document.querySelectorAll('.selectCheckPreNatal_simnao');
@@ -1084,7 +1243,7 @@ function selectCheckAcontOutrasVezes(checkbox) {
 function habilitarContainer(checkbox) {
     var containerNomeMedico = document.querySelector('.container-nome-medico');
     
-    if (checkbox.checked) {
+    if (checkbox.id === "selectCheckPreNatal_simnao1" && checkbox.checked) {
         containerNomeMedico.classList.remove('hidden');
     } else {
         containerNomeMedico.classList.add('hidden');
@@ -1099,6 +1258,34 @@ function habilitarContainer(checkbox) {
         containerNomeMedico.classList.add('hidden');
     }
 }
+
+
+function selecionarCheckboxPrimeiroFilho(checkbox) {
+    var checkboxSim = document.getElementById("selectCheckPrimeiroFilho1");
+    var checkboxNao = document.getElementById("selectCheckPrimeiroFilho2");
+
+    if (checkbox === checkboxSim) {
+        checkboxNao.checked = false;
+    } else if (checkbox === checkboxNao) {
+        checkboxSim.checked = false;
+    }
+
+    // Verifique se a caixa "Não" está marcada e chame a função habilitarContainerQuantos
+    if (checkbox === checkboxNao) {
+        habilitarContainerQuantos(checkbox);
+    }
+}
+
+function habilitarContainerQuantos(checkbox) {
+    var containerQuantos = document.querySelector('.container-quantos');
+
+    if (checkbox.id === "selectCheckPrimeiroFilho2" && checkbox.checked) {
+        containerQuantos.classList.remove('hidden');
+    } else {
+        containerQuantos.classList.add('hidden');
+    }
+}
+
 
 document.getElementById('sexoSelect').addEventListener('change', function () {
     var sexo = this.value;
@@ -1742,42 +1929,3 @@ function validarNumeroQuantidadeCanula(input) {
     }
 }
 
-function selecionarCheckboxPrimeiroFilho(checkbox) {
-    var checkboxSim = document.getElementById("selectCheckPrimeiroFilho1");
-    var checkboxNao = document.getElementById("selectCheckPrimeiroFilho2");
-    
-    if (checkbox === checkboxSim) {
-        checkboxNao.checked = false;
-    } else if (checkbox === checkboxNao) {
-        checkboxSim.checked = false;
-    }
-}
-
-function habilitarContainerQuantos(checkbox) {
-    var containerQuantos = document.querySelector('.container-quantos'); // Nome da classe corrigido
-    
-    if (checkbox.checked) {
-        containerQuantos.classList.remove('hidden');
-    } else {
-        containerQuantos.classList.add('hidden');
-    }
-    
-    // Adicione uma verificação extra
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    var checkboxSim = checkboxes[0];
-    var checkboxNao = checkboxes[1];
-    
-    if (checkbox === checkboxNao && checkboxSim.checked) {
-        containerQuantos.classList.add('hidden');
-    }
-}
-
-const textarea = document.getElementById("username");
-
-  textarea.addEventListener("input", function () {
-    if (textarea.scrollHeight > textarea.clientHeight) {
-      textarea.style.resize = "vertical";
-    } else {
-      textarea.style.resize = "none";
-    }
-  });
