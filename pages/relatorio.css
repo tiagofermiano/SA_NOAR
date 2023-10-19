@@ -16,7 +16,6 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
-  zoom: 1.15; /* Aumenta o zoom em 20% */
 }
 
 @media (max-width: 768px) {
@@ -45,7 +44,7 @@ p {
   /* background-color: #030060; */
   }
 
-  .relatorios, .conectado, .inicio {
+  .historico, .perfil, .inicio {
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -59,20 +58,20 @@ p {
     overflow: visible;
 }
 
-.relatorios a, .conectado a, .inicio a {
+.historico a, .perfil a, .inicio a {
     color: #fff;
     text-decoration: none;
 }
 
-.relatorios:hover, .conectado:hover, .inicio:hover {
+.historico:hover, .perfil:hover, .inicio:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
-.relatorios {
+.historico {
     left: 0;
 }
 
-.conectado {
+.perfil {
     right: 0;
 }
 

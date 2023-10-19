@@ -1230,7 +1230,6 @@ input[type=checkbox]:checked:after {
 
 #canvas-container {
   position: relative;
-  display: block;
 }
 
 #canvas {
@@ -1239,7 +1238,7 @@ input[type=checkbox]:checked:after {
   left: 0;
 }
 
-#imagem-corpo {
+#imagem-corpo{
   width: 100%;
 }
 

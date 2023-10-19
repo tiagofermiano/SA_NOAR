@@ -1,103 +1,30 @@
-// Obtenha o elemento canvas e seu contexto 2D
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+        // Obtenha o elemento canvas e seu contexto 2D
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-// Defina as dimensões do canvas para corresponder à imagem de fundo
-const corpoImage = document.getElementById('imagem-corpo');
-canvas.width = corpoImage.width;
-canvas.height = corpoImage.height;
+        // Obtenha o elemento da imagem de fundo
+        const backgroundImage = document.getElementById('imagem-corpo');
 
-// Configure o estilo de desenho
-ctx.strokeStyle = 'red';
-ctx.lineWidth = 5;
+        // Configure as dimensões do canvas para corresponder à imagem de fundo
+        canvas.width = backgroundImage.width;
+        canvas.height = backgroundImage.height;
 
-let drawing = false;
-let lastX = 0;
-let lastY = 0;
+        // Configure o estilo de desenho
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 5;
 
-// Função para começar a desenhar
-function startDrawing(e) {
-    drawing = true;
-    [lastX, lastY] = [e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top];
-}
+        // Adicione um ouvinte de evento de clique no canvas
+        canvas.addEventListener('click', function(e) {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-// Função para parar de desenhar
-function stopDrawing() {
-    drawing = false;
-}
+            // Desenhe um círculo no local clicado
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, 2 * Math.PI);
+            ctx.stroke();
+        });
 
-// Função para desenhar enquanto o mouse se move
-function draw(e) {
-    if (!drawing) return;
 
-    const x = e.clientX - canvas.getBoundingClientRect().left;
-    const y = e.clientY - canvas.getBoundingClientRect().top;
 
-    ctx.beginPath();
-    ctx.moveTo(lastX, lastY);
-    ctx.lineTo(x, y);
-    ctx.stroke();
 
-    [lastX, lastY] = [x, y];
-}
-
-// Adicione os ouvintes de eventos do mouse
-canvas.addEventListener('mousedown', startDrawing);
-canvas.addEventListener('mouseup', stopDrawing);
-canvas.addEventListener('mousemove', draw);
-
-// Obtém o botão "Desfazer Última Alteração" e adiciona um ouvinte de evento de clique
-const undoButton = document.getElementById('undo-button');
-undoButton.addEventListener('click', undoLastDrawing);
-
-// Variável para armazenar o histórico das ações de desenho
-const drawingHistory = [];
-
-// Função para desenhar enquanto o mouse se move
-function draw(e) {
-    if (!drawing) return;
-
-    const x = e.clientX - canvas.getBoundingClientRect().left;
-    const y = e.clientY - canvas.getBoundingClientRect().top;
-
-    ctx.beginPath();
-    ctx.moveTo(lastX, lastY);
-    ctx.lineTo(x, y);
-    ctx.stroke();
-
-    [lastX, lastY] = [x, y];
-
-    // Adiciona as coordenadas ao histórico
-    drawingHistory.push({ x, y });
-}
-
-// Função para desfazer a última alteração
-function undoLastDrawing() {
-    if (drawingHistory.length > 0) {
-        drawingHistory.pop(); // Remove a última coordenada do histórico
-        clearCanvas(); // Limpa o canvas
-        redrawDrawingHistory(); // Redesenha o histórico atual
-    }
-}
-
-// Função para limpar o canvas
-function clearCanvas() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-// Função para redesenhar o histórico atual
-function redrawDrawingHistory() {
-    clearCanvas();
-    ctx.strokeStyle = 'red';
-    ctx.lineWidth = 5;
-
-    for (let i = 0; i < drawingHistory.length - 1; i++) {
-        const { x: startX, y: startY } = drawingHistory[i];
-        const { x: endX, y: endY } = drawingHistory[i + 1];
-
-        ctx.beginPath();
-        ctx.moveTo(startX, startY);
-        ctx.lineTo(endX, endY);
-        ctx.stroke();
-    }
-}

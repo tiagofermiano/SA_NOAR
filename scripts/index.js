@@ -125,6 +125,8 @@ function validarNumeroIdadePac(input) {
 
 document.getElementById('idadePaciente').addEventListener('input', function () {
     var idade = parseInt(this.value, 10);
+    console.log(idade)
+    console.log("Teste");
     var containerMenorDe5Anos = document.querySelector('.container-Menor-de-5-anos');
     var containerMaioresDe5Anos = document.querySelector('.container-Maiores-de-5-anos');
 
@@ -177,7 +179,7 @@ function validarNumeroRGCPFPaciente(input) {
     }
     return null; // Retorna null se o CPF não tiver 11 dígitos
   }
-  
+
   // Função para formatar RG
   function formatarRG(rg) {
     // Remove todos os caracteres não numéricos
@@ -299,12 +301,12 @@ function formatarMedidaPressao(input) {
     else {
         var valorNumerico = valor.replace(/\D/g, '');
 
-        if (valorNumerico.length === 2) {
+        if (valorNumerico.length === 3) {
             input.value = valorNumerico + 'x';
             mensagemErro.textContent = "";
         } else if (valorNumerico.length >= 4) {
-            var parte1 = valorNumerico.slice(0, 2);
-            var parte2 = valorNumerico.slice(2, 4);
+            var parte1 = valorNumerico.slice(0, 3);
+            var parte2 = valorNumerico.slice(3, 6);
             input.value = parte1 + 'x' + parte2 + 'mmHg';
             mensagemErro.textContent = "";
         } else {
@@ -416,26 +418,21 @@ function completeWithHgt(input) {
 
 var input = document.getElementById("completeWithDegreeC");
 
-function completeWithDegreeC(input) {
+input.addEventListener("input", completeWithDegreeC);
+
+function completeWithDegreeC(event) {
     var valor = input.value;
     var mensagemErro = document.getElementById("mensagemErro-21");
 
-    if (event.inputType === "deleteContentBackward") {
-        input.value = valor.slice(0, -1);
-    }
-    else {
-        var valorNumerico = valor.replace(/\D/g, '');
+    var valorNumerico = valor.replace(/[^0-9,]/g, ''); // Remover tudo que não é número ou vírgula
 
-        if (valorNumerico.length === 1) {
-            mensagemErro.textContent = "";
-        } else if (valorNumerico.length >= 2) {
-            var parte1 = valorNumerico.slice(0, 2);
-            input.value = parte1 + ' °C';
-            mensagemErro.textContent = "";
-        } else {
-            input.value = valorNumerico;
-            mensagemErro.textContent = "Digite apenas números.";
-        }
+    if (valorNumerico.length >= 2) {
+        // Adicionar '°C' após os dois números e a vírgula
+        input.value = valorNumerico.slice(0, 2) + ',' + valorNumerico.slice(2) + '°C';
+        mensagemErro.textContent = "";
+    } else {
+        input.value = valorNumerico;
+        mensagemErro.textContent = "Digite pelo menos dois números seguidos de uma vírgula (ex: 37,7°C).";
     }
 }
 
@@ -1287,16 +1284,29 @@ function habilitarContainerQuantos(checkbox) {
 }
 
 
-document.getElementById('sexoSelect').addEventListener('change', function () {
+document.querySelector('#sexoSelect').addEventListener('change', function () {
+    console.log("ok");
     var sexo = this.value;
-    var container_gestacional = document.querySelector('.container_gestacional');
-
+    var container_gestacional = document.querySelector('.gestacional');
+    
     if (sexo === 'Feminino') {
         container_gestacional.classList.remove('hidden');
     } else {
         container_gestacional.classList.add('hidden');
     }
 });
+document.getElementById('sexoSelect').addEventListener('change', function () {
+    var sexo = this.value;
+    var selectElement = this;
+    console.log(sexo);
+
+    if (sexo === 'Feminino') {
+        selectElement.style.backgroundColor = 'pink';
+    } else {
+        selectElement.style.backgroundColor = '';
+    }
+});
+
 
 //funcao para selecionar tamanho Materiais descartáveis utilizados:
 function toggleAtadura() {

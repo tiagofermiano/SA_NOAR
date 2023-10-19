@@ -16,29 +16,53 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
-  zoom: 1.3;
 }
 
-.container {
-  max-width: 1230px;
-  /* Alterado de width para max-width para melhor responsividade */
+
+
+.navbar {
+  width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
-  /* Adicionado um espaçamento interno */
-}
-
-header {
-  display: flex;
+  display: block;
   align-items: center;
-  /* Centralizar verticalmente */
-  height: 12vh;
-  background: #030060;
+  justify-content: space-between;
+  /* background-color: #030060; */
+  }
+
+  .historico, .perfil, .inicio {
+    position: absolute;
+    top: 0;
+    padding: 0.8rem;
+    margin: 5px;
+    background-color: #030060;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
 }
 
-.logo {
-  width: 8%;
-  margin: 0 auto;
-  /* Centralizar horizontalmente */
+.historico a, .perfil a, .inicio a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.historico:hover, .perfil:hover, .inicio:hover {
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.historico {
+    left: 0;
+}
+
+.perfil {
+    right: 0;
+}
+
+.inicio {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -66,7 +90,7 @@ header {
   font-weight: 600;
   color: #030060;
   font-family: 'Poppins', sans-serif;
-  margin-top: 3rem;
+  margin-top: 8rem;
 }
 
 .form {

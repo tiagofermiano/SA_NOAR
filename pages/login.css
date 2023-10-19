@@ -16,7 +16,6 @@ body {
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
   /* Definir uma fonte padrão */
-  zoom: 1.15;
 }
 
 .navbar {
@@ -98,7 +97,7 @@ body {
   color: black;
   font-family: 'Poppins', sans-serif;
   color:#030060;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .form {
@@ -130,17 +129,6 @@ body {
     border-color: blue;
     transition: 0.5s;
   }
-
-/*caixa de texto senha*/
-.esqueciasenha {
-  display: flex;
-  justify-content: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgb(37, 37, 37);
-  margin: 8px 0 14px 0;
-
-}
 
 /*caixa de texto usuário*/
 .esqueciasenha  a,
@@ -174,24 +162,6 @@ body {
 }
 
 /*div com a mensagem e a linha*/
-
-
-.semconta {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgb(37, 37, 37);
-  font-family: 'Poppins', sans-serif;
-  margin-left: 35.8%;
-}
-
-.semconta a {
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgb(37, 37, 37);
-  font-family: 'Poppins', sans-serif;
-}
-
 
 /* Boring button styles */
 a.button {

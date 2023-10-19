@@ -78,39 +78,11 @@
       <div class="custom-select">
           <select class="sexo" id="sexoSelect" name="sexoSelect">
               <option selected="selected"></option>
-              <option>Feminino</option>
+              <option class="opcao" value="Feminino">Feminino</option>
               <option>Masculino</option>
           </select>
           <div class="custom-arrow"></div>
       </div>
-  </div>
-
-  <div class="grid_cinematica_sexo">
-    <!-- TEXTOS DAS CHECKBOX -->
-
-    <div class="grid_txt_cinematica_sexo">
-      <div class="txt_cinematica">
-        <p>Sexo:</p>
-      </div>
-    </div>
-
-
-    <!-- CHECKBOX SIM -->
-    <div class="grid_checkbox_feminino_sexo">
-      <div>
-        <input type="checkbox" name="sexo_escolha" class="selectCheckSexo_" id="selectCheckSexo_1"
-          onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-        <label for="sexo_escolha">Feminino</label>
-      </div>
-    </div>
-
-    <div class="grid_checkbox_masculino_sexo">
-      <div>
-        <input type="checkbox" name="sexo_escolha" class="selectCheckSexo_" id="selectCheckSexo_2"
-          onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-        <label for="sexo_escolha">Masculino</label>
-      </div>
-    </div>
   </div>
 
     <form class="form">
@@ -578,8 +550,8 @@
 
     <form class="form">
       <div class="input-caixatexto">
-        <label for="username">Temperatura:</label>
-        <input type="text" id="username" name="username" placeholder="___°C" oninput="completeWithDegreeC(this)">
+        <label for="temperatura">Temperatura:</label>
+        <input type="text" id="temperatura" name="temperatura" placeholder="___°C" oninput="completeWithDegreeC(this)">
         <p id="mensagemErro-21" style="color: red;"></p>
       </div>
     </form>
@@ -993,16 +965,68 @@
     <div class="subtitulo"></div>
     <div class="texto" id="localizacao-traumas">Localização dos traumas</div>
 
-    <div id="canvas-container">
-      <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="imagem_corpo"
-        id="imagem-corpo">
-      <canvas id="canvas"></canvas>
-      <button id="undo-button">Desfazer Última Alteração</button>
-      <img src="https://i.pinimg.com/originals/8f/a4/37/8fa437a485ee3e5e62506cb5e4daef67.png" alt="imagem_corpo"
-        id="imagem-corpo">
-    </div>
+<br>
 
-    <div class="subtitulo"></div>
+<div id="canvas-container">
+  <img src="https://i.pinimg.com/originals/89/ac/da/89acda9bfa22ab0029f6e821d5ad3d27.png" alt="Imagem do corpo" id="imagem-corpo">
+  <canvas id="canvas"></canvas>
+</div>
+
+<br>
+
+<div class="grid_ocorrencia">
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Queimadura</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Escorição</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Ferimento Contuso</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Ferimento perfurante</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Laceração</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Contusão</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Fratura aberta</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Fratura fechada</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Luxação</label>
+  </div>
+  <div>
+    <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+    <label for="checkbox-id-1">Hemorragia</label>
+  </div>
+  </div>
+
+  <form class="form">
+    <div class="fundo-input">
+      <div class="input-ss">
+        <label for="username">Superficie total afetada:</label>
+        <input type="text" id="username" name="username">
+      </div>
+    </div>
+  </form>
+
+    <!-- <div class="subtitulo"></div>
     <div class="texto">Ferimentos / fraturas / entorses / luxação / contusão</div>
 
     <div class="table-container">
@@ -1050,9 +1074,9 @@
           <td><input type="text"></td>
         </tr>
       </table>
-    </div>
+    </div> -->
 
-    <br>
+    
 
     <div class="table-container">
       <table>
@@ -1736,7 +1760,7 @@
     </div>
   </div>
 
-<div class="container_gestacional hidden">
+<div class="gestacional hidden">
         <div class="subtitulo"></div>
         <div class="texto">Anamnese Gestacional</div>
 
@@ -2035,7 +2059,6 @@
       </form>
   </div>
 </div>
-
   <hr class="hr1">
 
   <div class="container">
@@ -2664,6 +2687,9 @@
     crossorigin="anonymous"></script>
 
   <script src="/scripts/index.js"></script>
+
+  <script src="/scripts/desenho.js"></script>
+
 
 </body>
 
