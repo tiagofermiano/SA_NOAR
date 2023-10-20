@@ -139,6 +139,20 @@ document.getElementById('idadePaciente').addEventListener('input', function () {
     }
 });
 
+document.getElementById('idadePaciente').addEventListener('input', function () {
+    var idade = parseInt(this.value, 10);
+    var imagemCorpoAdulto = document.getElementById('imagem-corpo-adulto');
+    var imagemCorpoCrianca = document.getElementById('imagem-corpo-crianca');
+
+    if (idade >= 12) {
+        imagemCorpoAdulto.classList.remove('hidden');
+        imagemCorpoCrianca.classList.add('hidden');
+    } else {
+        imagemCorpoAdulto.classList.add('hidden');
+        imagemCorpoCrianca.classList.remove('hidden');
+    }
+});
+
 function validarNumeroRGCPFPaciente(input) {
     var numero = input.value.replace(/[^0-9a-zA-Z\s\.\-]/g, ''); // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
 

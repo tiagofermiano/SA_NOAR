@@ -1228,20 +1228,30 @@ input[type=checkbox]:checked:after {
   display: flex;
 }
 
-#canvas-container {
+#image-container {
   position: relative;
+  display: block;
 }
 
-#canvas {
+.click-circle {
   position: absolute;
-  top: 0;
-  left: 0;
+  width: 20px; /* Tamanho do círculo */
+  height: 20px; /* O mesmo valor da largura para criar um círculo */
+  background-color: red; /* Cor do círculo */
+  border-radius: 50%; /* Torna o elemento circular */
 }
 
 #imagem-corpo{
   width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+#desfazer{
+  margin-top: 0;
+}
 .checkbox-procedimentos {
   display: flex;
   width: 50%;
