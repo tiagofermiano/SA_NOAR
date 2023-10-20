@@ -139,17 +139,15 @@ document.getElementById('idadePaciente').addEventListener('input', function () {
     }
 });
 
-document.getElementById('idadePaciente').addEventListener('input', function () {
-    var idade = parseInt(this.value, 10);
-    var imagemCorpoAdulto = document.getElementById('imagem-corpo-adulto');
-    var imagemCorpoCrianca = document.getElementById('imagem-corpo-crianca');
+document.getElementById('idadePaciente').addEventListener('input', function() {
+    var idade = parseInt(this.value);
 
-    if (idade >= 12) {
-        imagemCorpoAdulto.classList.remove('hidden');
-        imagemCorpoCrianca.classList.add('hidden');
+    if (idade < 12) {
+        document.getElementById('imagem-corpo-adulto').classList.add('hidden');
+        document.getElementById('imagem-corpo-crianca').classList.remove('hidden');
     } else {
-        imagemCorpoAdulto.classList.add('hidden');
-        imagemCorpoCrianca.classList.remove('hidden');
+        document.getElementById('imagem-corpo-adulto').classList.remove('hidden');
+        document.getElementById('imagem-corpo-crianca').classList.add('hidden');
     }
 });
 
@@ -937,6 +935,11 @@ var gcsInput = document.getElementById("gcs");
 gcsInput.addEventListener("input", function () {
   gcsInput.value = gcsInput.value.replace(/[^0-9]/g, "");
 });
+
+
+////////////////////////////
+
+
 
 
 //funcao para selecionar só uma checkbox decisão transporte  

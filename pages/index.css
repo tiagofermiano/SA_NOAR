@@ -1048,6 +1048,8 @@ margin-top: 1.29rem;
   cursor: pointer;
 }
 
+
+
 .prob {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -1233,6 +1235,10 @@ input[type=checkbox]:checked:after {
   display: block;
 }
 
+img, svg{
+  width: 23rem;
+}
+
 .click-circle {
   position: absolute;
   width: 20px; /* Tamanho do círculo */
@@ -1241,8 +1247,8 @@ input[type=checkbox]:checked:after {
   border-radius: 50%; /* Torna o elemento circular */
 }
 
-#imagem-corpo{
-  width: 100%;
+.imagem-corpo{
+  width: 10%;
 }
 
 .hidden {

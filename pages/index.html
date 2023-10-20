@@ -31,7 +31,7 @@
     <div class="perfil">
         <a href="perfil.html">Perfil</a>
     </div>
-        
+  </div>
 </header>
 
   <div class="circle-button">
@@ -850,13 +850,6 @@
     </div>
   </div>
 
-    <hr class="hr2">
-
-    <div class="totalgcs">
-      <p>TOTAL (GCS) (3-15)
-        <input type="text" id="gcs1" name="gcs1" placeholder="Digite um valor..." maxlength="2">
-      </p>
-    </div>
 
     <div class="subtitulo"></div>
     <div class="texto" id="problemas-encontrados">Problemas Encontrados</div>
@@ -967,15 +960,20 @@
 
 <br>
 
-<div id="image-container">
-  <img src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo" name="imagem-corpo-adulto">
-  <br>
-  <img src="https://i.pinimg.com/originals/87/c6/fb/87c6fb29c276cc56187274991e32ee66.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo" name="imagem-corpo-crianca" >
+
+  <div id="image-container">
+    <img src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-adulto">
+  </div>
+  <div id="image-container-crn">
+    <img src="https://i.pinimg.com/originals/87/c6/fb/87c6fb29c276cc56187274991e32ee66.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-crianca">
 </div>
+
 <button id="desfazer">Desfazer</button>
 
 
 <br>
+
+
 
 <div class="grid_ocorrencia">
   <div>
@@ -1020,16 +1018,10 @@
   </div>
   </div>
 
-  <form class="form">
-    <div class="fundo-input">
-      <div class="input-ss">
-        <label for="username">Superficie total afetada:</label>
-        <input type="text" id="username" name="username">
-      </div>
-    </div>
-  </form>
+  <br>
 
-    <!-- <div class="subtitulo"></div>
+
+    <div class="subtitulo"></div>
     <div class="texto">Ferimentos / fraturas / entorses / luxação / contusão</div>
 
     <div class="table-container">
@@ -1041,46 +1033,47 @@
           <th>TIPO</th>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula1"></td>
+          <td><input type="text" id="celula2"></td>
+          <td><input type="text" id="celula3"></td>
+          <td><input type="text" id="celula4"></td>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula5"></td>
+          <td><input type="text" id="celula6"></td>
+          <td><input type="text" id="celula7"></td>
+          <td><input type="text" id="celula8"></td>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula9"></td>
+          <td><input type="text" id="celula10"></td>
+          <td><input type="text" id="celula11"></td>
+          <td><input type="text" id="celula12"></td>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula13"></td>
+          <td><input type="text" id="celula14"></td>
+          <td><input type="text" id="celula15"></td>
+          <td><input type="text" id="celula16"></td>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula17"></td>
+          <td><input type="text" id="celula18"></td>
+          <td><input type="text" id="celula19"></td>
+          <td><input type="text" id="celula20"></td>
         </tr>
         <tr>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
-          <td><input type="text"></td>
+          <td><input type="text" id="celula21"></td>
+          <td><input type="text" id="celula22"></td>
+          <td><input type="text" id="celula23"></td>
+          <td><input type="text" id="celula24"></td>
         </tr>
       </table>
-    </div> -->
+    </div>
 
-    
-
+<div class="subtitulo"></div>
+<div class="texto" id="localizacao-traumas">Queimaduras</div>
+<br>
     <div class="table-container">
       <table>
         <tr>
@@ -2205,7 +2198,7 @@
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MACA SOB. RODAS</label>
+        <label for="checkbox-id-1">MACA</label> SOB. RODAS
       </div>
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
