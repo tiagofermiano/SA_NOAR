@@ -1,4 +1,3 @@
-
 function toggleRespiratorio() {
     var respiratorioCheckbox = document.querySelector('.main-checkbox-resp');
     var checkboxesRespiratorio = document.querySelectorAll('.sub-checkbox-resp');
@@ -233,6 +232,17 @@ function validarNumeroIdadeAcomp(input) {
     }
 }
 
+//funcao vitima era, selecionar somente uma opção
+function selectCheckVitimaEra(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckVitimaEra');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
+}
+
 //funcao para permitir apenas a escrita de numeros na ocorrencia
 function validarNumeroOcorr(input) {
     var numero = input.value;
@@ -299,6 +309,17 @@ function validarCodSIASUS(input) {
     } else {
         mensagemErro.textContent = "";
     }
+}
+
+//funcao para tipo de ocorrencia, selecionar somente uma opção
+function selectCheckOcorrencia(checkbox) {
+    var checkboxes = document.querySelectorAll('.selectCheckOcorrencia');
+
+    checkboxes.forEach(function (cb) {
+        if (cb !== checkbox) {
+            cb.checked = false;
+        }
+    });
 }
 
 var input = document.getElementById("medidaPressao");
@@ -1955,4 +1976,3 @@ function validarNumeroQuantidadeCanula(input) {
         mensagemErro.textContent = "";
     }
 }
-
