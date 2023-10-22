@@ -1277,8 +1277,9 @@ img, svg{
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
+  /* max-width: 10%; */
+  /* border-collapse: collapse; */
+  margin-top: 10%;
 }
 
 table, th, td {
@@ -1289,7 +1290,7 @@ table, th, td {
 th, td {
   padding: 0.2rem;
   text-align: center;
-  width: 4rem;
+  width: 1rem;
 }
 
 th {
@@ -1304,7 +1305,7 @@ th {
 
 td input{
   border: none;
-  width: 100%;
+  width: 20%;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
 
@@ -1314,6 +1315,101 @@ input:focus {
   outline: none;
 }
 
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 95%;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ------------------ */
+
+.popup2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.popup-content2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 95%;
+}
+
+.fechar-popup2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ------------------------------ */
+
+.popup3 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.popup-content3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-width: 95%;
+}
+
+.fechar-popup3 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ---------------------------------- */
 .fundo-obsimp {
   background-color: #E5E6E7;
   width: 90%;
