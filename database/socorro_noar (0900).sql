@@ -484,6 +484,7 @@ CREATE TABLE `situacao_paciente` (
   `perfusao` varchar(6) NOT NULL,
   `normal_anormal` text NOT NULL,
   `total_gcs` int(11) NOT NULL,
+   `localizacao_trauma` image(AUTO_INCREMENT) NOT NULL,
   `id_queimaduras_1grau` int(100) NOT NULL,
   `id_queimaduras_2grau` int(100) NOT NULL,
   `id_queimaduras_3grau` int(100) NOT NULL,
