@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/10/2023 às 07:02
+-- Tempo de geração: 23/10/2023 às 02:46
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.1.17
 
@@ -81,7 +81,7 @@ CREATE TABLE `atendente` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(20) NOT NULL,
   `data_cadastro` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `atendente`
@@ -112,7 +112,7 @@ CREATE TABLE `atendimento` (
   `materiais_descartaveis` int(11) NOT NULL,
   `materiais_hospital` int(11) NOT NULL,
   `observacoes` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,7 @@ CREATE TABLE `avaliacao_cinematica` (
   `caminhando_cena` tinyint(4) NOT NULL,
   `painel_avariado` tinyint(4) NOT NULL,
   `volante_torcido` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -153,7 +153,7 @@ CREATE TABLE `diabetes` (
   `id_diabetes` int(11) NOT NULL,
   `hiperglicemia` tinyint(1) DEFAULT NULL,
   `hipoglicemia` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -201,7 +201,7 @@ CREATE TABLE `info_ocorrencia` (
   `codigo_sia_sus` varchar(10) NOT NULL,
   `tipo_ocorrencia` set('Afogamento','Atropelamento','Desabamento','Esportivo','Com meio de transp.','Intoxicação','Emergência Médica','Tentativa de suicídio','Agressão','Choque elétrico','Doméstico','Causado por animais','Desmor./Desliz.','Queda bicicleta','Queda nível menor que 2M','Transferência','Queda de altura 2M','Queda própria altura') NOT NULL,
   `avaliacao_cinematica` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -220,7 +220,7 @@ CREATE TABLE `info_paciente` (
   `idade_acompanhante` varchar(3) NOT NULL,
   `vitima_era` set('Ciclista','Gestante','Pas.Moto','Clínico','Pas.Bco.Trás','Condutor moto','Pas.Bco.Frente','Condutor carro','Trauma','Pedestre','') NOT NULL,
   `forma_conducao` set('Deitada','Semi-deitada','Sentada') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -242,7 +242,7 @@ CREATE TABLE `materiais_descartaveis` (
   `soro_fisiologico` varchar(6) NOT NULL,
   `talas_pap` varchar(6) NOT NULL,
   `outro` varchar(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -262,7 +262,7 @@ CREATE TABLE `materiais_hospital` (
   `tirante_cabeca` varchar(6) NOT NULL,
   `canula` varchar(6) NOT NULL,
   `outro` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -275,7 +275,7 @@ CREATE TABLE `meios_auxiliares` (
   `celesc` tinyint(1) DEFAULT NULL,
   `def_civil` tinyint(1) DEFAULT NULL,
   `igp_pc` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -288,7 +288,7 @@ CREATE TABLE `nivel_consciencia` (
   `abertura_ocular` int(11) NOT NULL,
   `resposta _verbal` int(11) NOT NULL,
   `resposta_motora` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `nivel_consciencia`
@@ -308,7 +308,7 @@ CREATE TABLE `obstetrico` (
   `parto_emergencial` tinyint(1) DEFAULT NULL,
   `gestante` tinyint(1) DEFAULT NULL,
   `hemorragia_excessiva` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -334,7 +334,7 @@ CREATE TABLE `policia` (
   `militar` tinyint(1) NOT NULL,
   `pre` tinyint(1) NOT NULL,
   `prf` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -344,13 +344,12 @@ CREATE TABLE `policia` (
 
 CREATE TABLE `problemas_encontrados` (
   `id_problemas_encontrados` int(11) NOT NULL,
-  `id_situacao_paciente` int(11) NOT NULL,
   `psiquiatrico` tinyint(1) DEFAULT NULL,
   `respiratorio` int(11) NOT NULL,
   `diabetes` int(11) NOT NULL,
   `obstetrico` int(11) NOT NULL,
   `transporte` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -364,7 +363,7 @@ CREATE TABLE `procedimentos_efetuados` (
   `policia` int(11) NOT NULL,
   `samu` int(11) NOT NULL,
   `cit` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -452,7 +451,7 @@ CREATE TABLE `respiratorio` (
   `id_respiratorio` int(11) NOT NULL,
   `inalacao_fumaca` tinyint(1) DEFAULT NULL,
   `DPOC` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -464,7 +463,7 @@ CREATE TABLE `samu` (
   `id_samu` int(11) NOT NULL,
   `usa` tinyint(1) NOT NULL,
   `usb` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -483,11 +482,14 @@ CREATE TABLE `situacao_paciente` (
   `temperatura` varchar(4) NOT NULL,
   `perfusao` varchar(6) NOT NULL,
   `normal_anormal` text NOT NULL,
+  `problemas_encontrados` int(100) NOT NULL,
   `total_gcs` int(11) NOT NULL,
-  `localizacao_trauma` image(AUTO_INCREMENT) NOT NULL,
+  `localizacao_traumas` mediumblob NOT NULL,
+  `tabela_traumas` int(100) NOT NULL,
   `id_queimaduras_1grau` int(100) NOT NULL,
   `id_queimaduras_2grau` int(100) NOT NULL,
   `id_queimaduras_3grau` int(100) NOT NULL,
+  `decisao_transporte` set('Ruim','Péssimo','Bom','Ótimo') NOT NULL,
   `sinais_sintomas` set('Abdomen sensível/ rígido','Afundamento de crânio','Agitação','Amnésia','Angina de peito','Apinéia','Bradicardia','Bradipnéia','Bronco-Aspirando','Cefaléia','Enfisema subcutâneo','Êstase de jugular','Face pálida','O.V.A.C.E','Priaprismo','Prurido na pele','Sede','Sinal de battle','Convulsão','Decorticação','Deformidade','Descerebração','Desmaio',' Desvio de traquéia','Dispnéia','Dor local','Otorréia','Otorragia','Óbito','Hipertensão','Hipotensão','Náusea e vômitos','Nasoragia','Sinal de guaxinim',' Sudorese','Taquipnéia','Taquicardia','Tontura') NOT NULL,
   `id_hemorragia` int(100) NOT NULL,
   `id_edema` int(100) NOT NULL,
@@ -497,7 +499,7 @@ CREATE TABLE `situacao_paciente` (
   `outros` varchar(300) NOT NULL,
   `anamnese_emergencial` int(100) NOT NULL,
   `anamnese_gestacional` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -507,12 +509,11 @@ CREATE TABLE `situacao_paciente` (
 
 CREATE TABLE `tabela_traumas` (
   `id_tabela_traumas` int(11) NOT NULL,
-  `id_situacao_paciente` int(11) NOT NULL,
   `local` varchar(255) DEFAULT NULL,
   `lado` varchar(255) DEFAULT NULL,
   `face` varchar(255) DEFAULT NULL,
   `tipo` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -653,7 +654,6 @@ ALTER TABLE `problemas_encontrados`
   ADD PRIMARY KEY (`id_problemas_encontrados`),
   ADD KEY `fk_id_diabetes` (`diabetes`),
   ADD KEY `fk_id_respiratorio` (`respiratorio`),
-  ADD KEY `fk_id_situacao_paciente` (`id_situacao_paciente`),
   ADD KEY `fk_id_obstetrico` (`obstetrico`);
 
 --
@@ -717,14 +717,15 @@ ALTER TABLE `situacao_paciente`
   ADD KEY `fk_id_pupilas` (`id_pupilas`),
   ADD KEY `fk_anamnese_emergencial` (`anamnese_emergencial`),
   ADD KEY `fk_anamnese_gestacional` (`anamnese_gestacional`),
-  ADD KEY `fk_id_atendente4` (`id_atendente`);
+  ADD KEY `fk_id_atendente4` (`id_atendente`),
+  ADD KEY `fk_tabela_traumas` (`tabela_traumas`),
+  ADD KEY `fk_problemas_encontrados` (`problemas_encontrados`);
 
 --
 -- Índices de tabela `tabela_traumas`
 --
 ALTER TABLE `tabela_traumas`
-  ADD PRIMARY KEY (`id_tabela_traumas`),
-  ADD KEY `fk_id_situacao_paciente2` (`id_situacao_paciente`);
+  ADD PRIMARY KEY (`id_tabela_traumas`);
 
 --
 -- Índices de tabela `tempo_contracao`
@@ -948,8 +949,7 @@ ALTER TABLE `info_paciente`
 ALTER TABLE `problemas_encontrados`
   ADD CONSTRAINT `fk_id_diabetes` FOREIGN KEY (`diabetes`) REFERENCES `diabetes` (`id_diabetes`),
   ADD CONSTRAINT `fk_id_obstetrico` FOREIGN KEY (`obstetrico`) REFERENCES `obstetrico` (`id_obstetrico`),
-  ADD CONSTRAINT `fk_id_respiratorio` FOREIGN KEY (`respiratorio`) REFERENCES `respiratorio` (`id_respiratorio`),
-  ADD CONSTRAINT `fk_id_situacao_paciente` FOREIGN KEY (`id_situacao_paciente`) REFERENCES `situacao_paciente` (`id_situacao_paciente`);
+  ADD CONSTRAINT `fk_id_respiratorio` FOREIGN KEY (`respiratorio`) REFERENCES `respiratorio` (`id_respiratorio`);
 
 --
 -- Restrições para tabelas `procedimentos_efetuados`
@@ -974,13 +974,9 @@ ALTER TABLE `situacao_paciente`
   ADD CONSTRAINT `fk_id_queimaduras_1grau` FOREIGN KEY (`id_queimaduras_1grau`) REFERENCES `queimaduras_1grau` (`id_queimaduras_1grau`),
   ADD CONSTRAINT `fk_id_queimaduras_2grau` FOREIGN KEY (`id_queimaduras_2grau`) REFERENCES `queimaduras_2grau` (`id_queimaduras_2grau`),
   ADD CONSTRAINT `fk_id_queimaduras_3grau` FOREIGN KEY (`id_queimaduras_3grau`) REFERENCES `queimaduras_3grau` (`id_queimaduras_3grau`),
-  ADD CONSTRAINT `fk_nivel_cosnciencia` FOREIGN KEY (`total_gcs`) REFERENCES `nivel_consciencia` (`id_nivel_consciencia`);
-
---
--- Restrições para tabelas `tabela_traumas`
---
-ALTER TABLE `tabela_traumas`
-  ADD CONSTRAINT `fk_id_situacao_paciente2` FOREIGN KEY (`id_situacao_paciente`) REFERENCES `situacao_paciente` (`id_situacao_paciente`);
+  ADD CONSTRAINT `fk_nivel_cosnciencia` FOREIGN KEY (`total_gcs`) REFERENCES `nivel_consciencia` (`id_nivel_consciencia`),
+  ADD CONSTRAINT `fk_problemas_encontrados` FOREIGN KEY (`problemas_encontrados`) REFERENCES `problemas_encontrados` (`id_problemas_encontrados`),
+  ADD CONSTRAINT `fk_tabela_traumas` FOREIGN KEY (`tabela_traumas`) REFERENCES `tabela_traumas` (`id_tabela_traumas`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
