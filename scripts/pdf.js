@@ -1,12 +1,23 @@
 document.getElementById('gerar-pdf').addEventListener('click', function () {
-    const pdf = new jsPDF();
-    const relatorio = document.getElementById('relatorio'); // Substitua 'relatorio' pelo ID ou classe do elemento que contém suas informações de relatório
+    // Coleta os dados da página HTML
+    const tipoDado = document.getElementById('dado2').textContent;
+    const infoValor = document.getElementById('info').textContent;
+    // Outros dados podem ser coletados da mesma maneira
 
-    pdf.text(10, 10, 'Relatório'); // Título do relatório
+    // Crie o documento PDF
+    const docDefinition = {
+        content: [
+            { text: 'Relatório', style: 'titulo' },
+            // nao sei oq la
+            { text: 'Informações do paciente:', style: 'classe' },
+            // nao sei oq nao sei oq la
+        ],
+        styles: {
+            titulo: { fontSize: 16, bold: true, margin: [0, 0, 0, 10] },
+            classe: { fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
+        },
+    };
 
-    // Adicione o conteúdo do relatório como texto ou HTML
-    pdf.fromHTML(relatorio, 10, 20);
-
-    // Salve ou exiba o PDF
-    pdf.save('relatorio_ocorrencia.pdf');
+    // Gere o PDF e faça o download automaticamente
+    pdfmake.createPdf(docDefinition).download('relatorio.pdf');
 });
