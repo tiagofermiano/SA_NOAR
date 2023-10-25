@@ -60,7 +60,7 @@
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
         <input type="text" id="nomePaciente" name="nomePaciente"
-          oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
+        oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
         <p id="mensagemErro-1" style="color: red;"></p>
       </div>
     </form>
@@ -2807,9 +2807,7 @@
   </div>
   </div>
 
-  <button onclick="captureAndSend()">
-    Gerar Relatório
-  </button>
+  <button id="gerarRelatorioButton">Gerar Relatório</button>
   <br><br>
 
 

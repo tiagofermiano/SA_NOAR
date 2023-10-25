@@ -1976,3 +1976,22 @@ function validarNumeroQuantidadeCanula(input) {
         mensagemErro.textContent = "";
     }
 }
+
+
+
+document.getElementById("gerarRelatorioButton").addEventListener("click", function() {
+    // Captura o valor do campo de entrada
+    var nomePaciente = document.getElementById("nomePaciente").value;
+  
+    // Crie um novo documento em uma janela separada
+    var relatorioWindow = window.open();
+    
+    // Gere o relatório no novo documento
+    relatorioWindow.document.write("<h1>Relatório</h1>");
+    relatorioWindow.document.write("<p>Nome do paciente: " + nomePaciente + "</p>");
+    
+    // Feche o documento após a impressão
+    relatorioWindow.print();
+    relatorioWindow.close();
+  });
+  
