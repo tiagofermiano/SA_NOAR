@@ -160,12 +160,8 @@ function validarNumeroRGCPFPaciente(input) {
 
     var mensagemErro = document.getElementById("mensagemErro-3");
 
-    // Verifique se a entrada contém caracteres não numéricos
-    if (/[^0-9]/.test(numero)) {
-        mensagemErro.textContent = "Digite apenas números.";
-    } else {
-        mensagemErro.textContent = "";
-    }
+    // Verifique se a entrada contém letras
+    var contemLetras = /[a-zA-Z]/.test(numero);
 
     // Formate o CPF e o RG em variáveis intermediárias
     var cpfFormatado = formatarCPF(numero);
@@ -179,7 +175,15 @@ function validarNumeroRGCPFPaciente(input) {
     } else {
         input.value = numero; // Se não for CPF nem RG formatável, mantenha o valor original
     }
+
+    // Exiba a mensagem de erro apenas se houver letras na entrada
+    if (contemLetras) {
+        mensagemErro.textContent = "Digite apenas números.";
+    } else {
+        mensagemErro.textContent = "";
+    }
 }
+
   
   // Função para formatar CPF
   function formatarCPF(cpf) {

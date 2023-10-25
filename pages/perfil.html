@@ -38,25 +38,25 @@
 <p class="titulo">Meu perfil</p>
     <div class="form-caixa">
         <div class="perfil">
-            <p>Bem-vindo ao seu perfil, (nome do mano) !</p>
+            <p>Bem-vindo ao seu perfil, <?php echo $_SESSION['nome']; ?>!</p>
             </div>
 
         <div class="id">
-            Id:
+            Id: <?php echo $_SESSION['id_atendente']; ?>
         </div>
 
         <div class="email">
-            Email:
+            Email: <?php echo $_SESSION['email']; ?>
 
         </div>
 
         <div class="cpf">
-            CPF:
+            CPF: <?php echo $_SESSION['cpf']; ?>
 
         </div>
 
         <div class="senha">
-            Senha:
+            Senha: <?php echo $_SESSION['senha']; ?>
 
         </div>
 

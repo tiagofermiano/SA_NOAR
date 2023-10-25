@@ -26,13 +26,13 @@ include('protect.php');
     
   <header>
     <div class="relatorios">
-        <a href="relatorio.html">Relatórios</a>
+        <a href="historico.html">Histórico</a>
     </div>
     <div class="inicio">
         <a href="home.html">Início</a>
     </div>
     <div class="perfil">
-        <a href="logout.php">Sair</a>
+        <a href="perfil.html">Perfil</a>
     </div>
 </div>   
 </header>
@@ -64,9 +64,7 @@ include('protect.php');
 
         </div>
 
-
-
-
     </div>
 </body>
 </html>    
+
