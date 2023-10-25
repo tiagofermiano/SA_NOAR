@@ -12,21 +12,26 @@ include('protect.php');
 
     <link href="home.css" rel="stylesheet">
 
-<body>
-    <div id="conectado">
+<body>   
+
+    <div class="cabecalho">
+    <div class="txt_conectado" id="conectado">
         Conectado como: <?php echo $_SESSION['nome']; ?>
     </div>
+</div>
+
     <img src="https://i.pinimg.com/originals/63/1b/2a/631b2a6d8b0480b22c425f8efc67bf81.png" alt="Logo do Sistema"
         class="logo">
+
     <div class="container">
         <div class="button-group">
-            <a href="relatorio.html">
+            <a href="historico.html">
                 <div class="grid-button">
                     <img src="https://i.pinimg.com/originals/4e/05/c0/4e05c0480bfb15b19bed458be9b7e45d.jpg">
-                    <p>Relatórios</p>
+                    <p>Histórico</p>
                 </div>
             </a>
-            <a href="telaperfil.php">
+            <a href="login.html">
                 <div class="grid-button">
                     <img src="https://i.pinimg.com/originals/f2/a6/3b/f2a63bb71f3b572d23fc9351ebb8198a.jpg">
                     <p>Perfil</p>
@@ -40,6 +45,7 @@ include('protect.php');
             </a>
         </div>
     </div>
+        
 <footer>
     <p class="copyright">Todos os direitos Reservados - NOAR - 2023 &copy;</p>
     <p class="copyright">Todos os direitos Reservados - AHBSAR - 2023 &copy;</p>
