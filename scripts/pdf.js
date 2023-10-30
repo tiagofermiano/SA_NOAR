@@ -1,23 +1,14 @@
-document.getElementById('gerar-pdf').addEventListener('click', function () {
-    // Coleta os dados da página HTML
-    const tipoDado = document.getElementById('dado2').textContent;
-    const infoValor = document.getElementById('info').textContent;
-    // Outros dados podem ser coletados da mesma maneira
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
 
-    // Crie o documento PDF
-    const docDefinition = {
-        content: [
-            { text: 'Relatório', style: 'titulo' },
-            // nao sei oq la
-            { text: 'Informações do paciente:', style: 'classe' },
-            // nao sei oq nao sei oq la
-        ],
-        styles: {
-            titulo: { fontSize: 16, bold: true, margin: [0, 0, 0, 10] },
-            classe: { fontSize: 14, bold: true, margin: [0, 10, 0, 5] },
-        },
-    };
-
-    // Gere o PDF e faça o download automaticamente
-    pdfmake.createPdf(docDefinition).download('relatorio.pdf');
+$('#gerar-pdf').click(function () {
+    doc.fromHTML($('#relatorio').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('exemplo-pdf.pdf');
 });
