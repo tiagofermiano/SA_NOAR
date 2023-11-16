@@ -651,6 +651,12 @@
             <label for="Nenhuma">Nenhuma</label>
             <div class="numeros_niveis"></div>
           </div>
+          <div class="checkbox">
+            <input type="checkbox" name="Maior5AberturOcularNT" class="checkAberturaOcularMaior5" id="NT"
+              onclick="selectAberturaOcularMaior5(this)">
+            <label for="NT">NT</label>
+            <div class="numeros_niveis"></div>
+          </div>
         </div>
       </div>
 
@@ -664,29 +670,35 @@
         <div class="check_ocular">
 
           <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="Orientado"
               onclick="selectRespostaVerbalMaior5(this)">
             <label for="Orientado">Orientado</label>
           </div>
           <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="Confuso"
               onclick="selectRespostaVerbalMaior5(this)">
             <label for="Confuso">Confuso</label>
           </div>
           <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="Palavras_Inapro."
               onclick="selectRespostaVerbalMaior5(this)">
             <label for="PalavrasInapro.">Palavras Inapro.</label>
           </div>
           <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="Palavras_Incomp."
               onclick="selectRespostaVerbalMaior5(this)">
             <label for="PalavrasIncomp.">Palavras Incomp.</label>
           </div>
           <div class="checkbox">1
-            <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="Nenhuma"
               onclick="selectRespostaVerbalMaior5(this)">
             <label for="Nenhuma">Nenhuma</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="Maior5RespostaVerbalNT" class="checkRespostaVerbalMaior5" id="NT"
+              onclick="selectRespostaVerbalMaior5(this)">
+            <label for="NT">NT</label>
+            <div class="numeros_niveis"></div>
           </div>
         </div>
 
@@ -702,33 +714,39 @@
         <div class="check_ocular">
 
           <div class="checkbox">6
-            <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="Obedece_comandos"
               onclick="selectRespostaMotoraMaior5(this)">
             <label for="ObedeceComandos">Obedece comandos</label>
           </div>
           <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="Localiza_dor"
               onclick="selectRespostaMotoraMaior5(this)">
             <label for="LocalizaDor">Localiza dor</label>
           </div>
           <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="Mov_retirada"
               onclick="selectRespostaMotoraMaior5(this)">
             <label for="Mov.deRetirada">Mov. de retirada</label>
           </div>
           <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="Flexão_anormal"
               onclick="selectRespostaMotoraMaior5(this)">
             <label for="FlexãoAnormal">Flexão anormal</label>
           </div>
           <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="checkbox-id-1"
+            <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="ExtensãoAnormal"
               onclick="selectRespostaMotoraMaior5(this)">
             <label for="ExtensãoAnormal">Extensão anormal</label>
 
             <div class="checkbox">1
-              <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="checkbox-id-1">
+              <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="Nenhuma">
               <label for="Nenhuma">Nenhuma</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="Maior5RespostaMotoraNT" class="checkRespostaMotoraMaior5" id="NT"
+                onclick="selectRespostaMotoraMaior5(this)">
+              <label for="NT">NT</label>
+              <div class="numeros_niveis"></div>
             </div>
           </div>
         </div>
@@ -874,11 +892,14 @@
             <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1"
               onclick="selectRespostaMotoraMenor5(this)">
             <label for="checkbox-id-1">NT</label>
+            <div class="numeros_niveis"></div>
           </div>
-
         </div>
       </div>
     </div>
+
+    
+
   </div>
 
 

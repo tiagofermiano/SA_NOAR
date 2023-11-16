@@ -1350,6 +1350,7 @@ document.getElementById('sexoSelect').addEventListener('change', function () {
 });
 
 
+
 //funcao para selecionar tamanho Materiais descartáveis utilizados:
 function toggleAtadura() {
     var AtaduraCheckbox = document.querySelector('.main-checkbox-atadura');
