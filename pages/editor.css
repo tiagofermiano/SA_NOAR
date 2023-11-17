@@ -72,6 +72,33 @@ p {
     left: 0;
 }
 
+.novo_usuario, .conectado, .inicio {
+  position: absolute;
+  top: 0;
+  padding: 0.8rem;
+  margin: 5px;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.novo_usuario a, .conectado a, .inicio a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.novo_usuario:hover, .conectado:hover, .inicio:hover {
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.novo_usuario {
+  left: 0;
+}
+
 .conectado {
     right: 0;
 }

@@ -26,10 +26,10 @@
         <a href="historico.html">Histórico</a>
     </div>
     <div class="inicio">
-        <a href="home.html">Início</a>
+        <a href="telahome.php">Início</a>
     </div>
     <div class="perfil">
-        <a href="perfil.html">Perfil</a>
+        <a href="telaperfil.php">Perfil</a>
     </div>
   </div>
 </header>
@@ -1020,28 +1020,21 @@
 
 <br>
 
-<banner>
-  <form id="TraumaLocForm" name="localFerimento">
-      <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
-      <select id="traumaType" class="form-control mb-3">
-          <option value="Trauma 1">Trauma 1</option>
-          <option value="Trauma 2">Trauma 2</option>
-          <option value="Trauma 3">Trauma 3</option>
-          <option value="Trauma 4">Trauma 4</option>
-      </select>
-      <div class="col position-relative">
-          <img id="HumanBody"
-              src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png"
-              alt="imagem adulto" style="width: 100%; height: auto; max-width: 564px;">
-          <div id="markerPurple" class="position-flex" style="width: 10px; height: 10px; background-color: purple; border-radius: 50%; display: none;"></div>
-          <div id="markerRed" class="position-flex" style="width: 10px; height: 10px; background-color: red; border-radius: 50%; display: none;"></div>
-          <div id="markerOrange" class="position-flex" style="width: 10px; height: 2px; background-color: orange; display: none;"></div>
-          <div id="markerYellow" class="position-flex" style="width: 10px; height: 10px; background-color: yellow; display: none;"></div>
-      </div>                                
-  </form>
-</banner>
+<div id="captura">
+  <div id="image-container">
+    <img src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-adulto">
+  </div>
+  <div id="image-container-crn">
+    <img src="https://i.pinimg.com/originals/87/c6/fb/87c6fb29c276cc56187274991e32ee66.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-crianca">
+</div>
+  </div>
+
+<button id="desfazer">Desfazer</button>
+
 
 <br>
+
+
 
 <div class="grid_ocorrencia">
   <div>

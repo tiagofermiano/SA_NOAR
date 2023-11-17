@@ -27,6 +27,22 @@ body {
   justify-content: space-between;
   /* background-color: #030060; */
   }
+    .grid_header {
+      display: grid;
+      justify-content: space-between;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .titulo_usuario{
+      display: block;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color:#030060;
+      margin-top: 6rem;
+    }
 
   .relatorios, .perfil, .inicio {
     position: absolute;
@@ -53,6 +69,50 @@ body {
 
 .inicio{
     right: 0;
+}
+
+.novo_usuario, .conectado, .inicio {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  top: 0;
+  padding: 0.8rem;
+  margin: 5px;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.novo_usuario a, .conectado a, .inicio a {
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+}
+
+.novo_usuario:hover, .conectado:hover, .inicio:hover {
+  display: flex;
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.novo_usuario {
+  display: flex;
+  left: 0;
+}
+
+.conectado {
+  display: flex;
+    right: 0;
+}
+
+.inicio {
+  display: flex;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #conectado{

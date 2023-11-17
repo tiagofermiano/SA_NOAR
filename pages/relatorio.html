@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOAR</title>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 
@@ -402,15 +403,27 @@
         </div>
     </div>
     <div id="editor"></div>
-    <button id="gerar-pdf" onclick="gerarPDF()">
+    <button id="gerar-pdf">
         Gerar PDF
     </button>
 
     <br><br>
-    <script src="scripts/jspdf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" 
-    integrity="sha384-THVO/SMmFD9h7dfSndI6TSOPgAGavwKVB5hAXRRVC009cPLOhBowb/ PTA7LdUHS" 
-    crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        $("#gerar-pdf").click(function() {
+          abrirCaixaDeDialogoDeImpressao();
+        });
+    
+        $(document).keydown(function(event) {
+          if (event.ctrlKey && event.key === 'p') {
+            abrirCaixaDeDialogoDeImpressao();
+          }
+        });
+    
+        function abrirCaixaDeDialogoDeImpressao() {
+          window.print();
+        }
+      });</script>
 </body>
 
 </html>

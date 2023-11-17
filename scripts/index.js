@@ -138,6 +138,19 @@ document.getElementById('idadePaciente').addEventListener('input', function () {
     }
 });
 
+document.getElementById('sexoSelect').addEventListener('change', function () {
+    var sexo = this.value;
+    console.log(sexo);
+    var containerSexo = document.querySelector('.gestacional');
+
+    if (sexo === "Feminino") {
+        containerSexo.classList.remove('hidden');
+    } else {
+        containerSexo.classList.add('hidden');
+    }
+});
+
+
 document.getElementById('idadePaciente').addEventListener('input', function() {
     var idade = parseInt(this.value);
 
@@ -2000,3 +2013,20 @@ document.getElementById("gerarRelatorioButton").addEventListener("click", functi
     relatorioWindow.close();
   });
   
+
+
+  // Esconde a div gestacional no carregamento da página
+  $(document).ready(function() {
+    $(".gestacional").hide();
+  });
+
+  function mostrarOcultarDiv() {
+    var selectedSexo = $("#sexoSelect").val();
+    var gestacionalDiv = $(".gestacional");
+
+    if (selectedSexo === "Feminino") {
+      gestacionalDiv.show();
+    } else {
+      gestacionalDiv.hide();
+    }
+  }

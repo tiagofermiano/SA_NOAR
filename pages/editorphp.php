@@ -1,5 +1,6 @@
 <?php
 include('protect.php');
+include('conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +32,6 @@ include('protect.php');
 </header>
 
 <?php
-
-include('conexao.php');
-
 // Verifica se um ID de usuário foi fornecido na URL
 $editUsuarioId = null;
 if (isset($_GET['edit'])) {

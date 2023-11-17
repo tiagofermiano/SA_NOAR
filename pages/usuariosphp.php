@@ -27,16 +27,28 @@ include('protect.php');
 
 
   <header>
-    <div id="conectado">
-      Conectado: <?php echo $_SESSION['nome']; ?>
+
+  <div class="grid_header">
+
+    <div class="conectado">
+      Conectado: <?php echo $_SESSION['nome'];?>
   </div>
+
+  <div class="novo_usuario">
+        <a href="cadastro.php">Cadastrar novo usuário</a>
+    </div>
+
     <div class="inicio">
         <a href="telahome.php">Início</a>
     </div>
-</div>   
+
+</div>
+
 </header>
 
+<div class="titulo_usuario">
 <p class="titulo">Usuários</p>
+</div>
 
 <div id="container-relatorios">
  <div id="relatorio">

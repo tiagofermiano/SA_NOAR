@@ -763,6 +763,7 @@
     background-color: #E5E6E7;
     border-radius: 1rem;
     padding: 1rem;
+    margin-top: 2rem;
   }
 
   .grid_cinematica_pre_natal_input {
@@ -1235,6 +1236,15 @@
     display: block;
   }
 
+#markerRed{
+  position: absolute;
+  width: 10px; 
+  height: 10px; 
+  background-color: red; 
+  border-radius: 50%; 
+  display: none;
+}
+
   img, svg{
     width: 23rem;
   }
@@ -1672,4 +1682,8 @@
     cursor: pointer;
   }
   
+
+  .gestacional_hidden_form{
+    display: none;
+  }
 

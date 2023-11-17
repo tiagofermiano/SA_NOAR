@@ -12,16 +12,15 @@ include('protect.php');
 
     <link href="home.css" rel="stylesheet">
 
-<body>   
+<body>
 
     <div class="cabecalho">
-    <div class="txt_conectado" id="conectado">
-        Conectado como: <?php echo $_SESSION['nome']; ?>
+        <div class="txt_conectado" id="conectado">
+            Conectado como: <?php echo $_SESSION['nome']; ?>
+        </div>
     </div>
-</div>
 
-    <img src="https://i.pinimg.com/originals/63/1b/2a/631b2a6d8b0480b22c425f8efc67bf81.png" alt="Logo do Sistema"
-        class="logo">
+    <img src="https://i.pinimg.com/originals/63/1b/2a/631b2a6d8b0480b22c425f8efc67bf81.png" alt="Logo do Sistema" class="logo">
 
     <div class="container">
         <div class="button-group">
@@ -31,13 +30,13 @@ include('protect.php');
                     <p>Histórico</p>
                 </div>
             </a>
-            <a href="login.html">
+            <a href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'telaperfil.php'; ?>">
                 <div class="grid-button">
                     <img src="https://i.pinimg.com/originals/f2/a6/3b/f2a63bb71f3b572d23fc9351ebb8198a.jpg">
                     <p>Perfil</p>
                 </div>
             </a>
-            <a href="index.html">
+            <a href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'index.php'; ?>">
                 <div class="grid-button">
                     <img src="https://i.pinimg.com/originals/de/0c/e3/de0ce31be5bdb9cdfd808215b9dfa8dd.jpg">
                     <p>Novo</p>
@@ -45,11 +44,11 @@ include('protect.php');
             </a>
         </div>
     </div>
-        
-<footer>
-    <p class="copyright">Todos os direitos Reservados - NOAR - 2023 &copy;</p>
-    <p class="copyright">Todos os direitos Reservados - AHBSAR - 2023 &copy;</p>
-</footer>
+
+    <footer>
+        <p class="copyright">Todos os direitos Reservados - NOAR - 2023 &copy;</p>
+        <p class="copyright">Todos os direitos Reservados - AHBSAR - 2023 &copy;</p>
+    </footer>
 
 </html>
 </body>
