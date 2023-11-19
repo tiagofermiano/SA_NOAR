@@ -156,31 +156,10 @@ p {
     display: inline-block;
   }
 
-  .id{
+  .texto{
     color: #030060;
     font-size: 1.2rem;
     font-weight: bold;
-    font-weight: bold;
-  }
-
-  .email{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-
-  .cpf{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-
-  .senha{
-    color: #030060;
-    font-size: 1.2rem;
-    margin-top: 1rem;
     font-weight: bold;
   }
 

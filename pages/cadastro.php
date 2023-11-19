@@ -33,8 +33,8 @@ include('conexao.php');
 <body>
 
   <header>
-    <div class="container">
-      <img class="logo" alt="LOGO NOAR" src="SA_NOAR/images/logo_socorro_top.png">
+    <div class="logo_cadastro">
+      <img src="https://i.pinimg.com/originals/63/1b/2a/631b2a6d8b0480b22c425f8efc67bf81.png" alt="Logo do Sistema" class="logo" style="width: 200px; height: auto;">
     </div>
   </header>
 
@@ -42,35 +42,8 @@ include('conexao.php');
 <body>
     <p class="titulo">Cadastro</p>
   <div class="form-caixa">
-
-  <?php
-  if($_SESSION['status_cadastro']):
-    ?>
-
-  <div class="notification is-success">
-                      <p>Cadastro efetuado!</p>
-                      <p>Faça login informando o seu usuário e senha <a href="login.php">aqui</a></p>
-                    </div>
     
-    <?php
-    endif;
-    unset($_SESSION['status_cadastro']);
-?>
-
-<?php
-  if($_SESSION['usuario_existe']):
-    ?>
-
-                    <div class="notification is-info">
-                        <p>O usuário escolhido já existe. Informe outro e tente novamente.</p>
-                    </div>
-
-                    <?php
-    endif;
-    unset($_SESSION['usuario_existe']);
-?>
-    
-    <form class="form" action="telahome.php" method="post">
+    <form class="form" action="usuariosphp.php" method="post">
       <div class="input-caixatexto">
         <label for="nome">Nome do atendente</label>
         <input type="text" name="nome" id="nome" placeholder="Digite o nome..." required>
@@ -85,6 +58,14 @@ include('conexao.php');
       <label for="email">Digite seu email</label>
    <input type="text" id="email" name="email" placeholder="Digite seu email..." required>
 
+  <div class="input-caixatexto">
+    <label for="tipo">Escolha seu cargo</label>
+    <select id="tipo" name="tipo" required>
+      <option value="atendente">Atendente</option>
+      <option value="bombeiro">Bombeiro</option>
+      <option value="outro">Outro</option>
+    </select>
+  </div>
 
    <div class="input-caixasenha">
     <label for="passwords">Digite sua senha</label>
@@ -117,7 +98,6 @@ include('conexao.php');
       <input type="submit" class="entrar1" name="Entrar" style="background-color: #030060; color: white;" onclick="verificarSenhas()">
 
     </form>
-
   </div>
 </body>
 </html>

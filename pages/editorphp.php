@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Consulta para buscar todos os usuários
-$usuariosQuery = "SELECT id_atendente, nome, email, cpf, senha, tipo FROM atendente";
+$usuariosQuery = "SELECT id_atendente, nome, cpf, email, senha, tipo FROM atendente";
 $usuariosResult = $conn->query($usuariosQuery);
 ?>
 
@@ -91,10 +91,10 @@ $usuariosResult = $conn->query($usuariosQuery);
                                 echo "<tr>";
                                 echo "<td>" . $row["id_atendente"] . "</td>";
                                 echo "<td>" . $row["nome"] . "</td>";
-                                echo "<td>" . $row["email"] . "</td>";
                                 echo "<td>" . $row["cpf"] . "</td>";
-                                echo "<td>" . $row["senha"] . "</td>";
+                                echo "<td>" . $row["email"] . "</td>";
                                 echo "<td>" . $row["tipo"] . "</td>";
+                                echo "<td>" . $row["senha"] . "</td>";
                                 // Adicione um botão para edição (vai para a mesma página com um parâmetro de ID)
                                 echo '<td><a href="?edit=' . $row["id_atendente"] . '" class="btn btn-primary">Editar</a></td>';
                                 echo "</tr>";
@@ -112,41 +112,45 @@ $usuariosResult = $conn->query($usuariosQuery);
         <?php
         if ($editUsuarioId !== null) {
             // Recupera os dados do usuário com base no ID fornecido para edição
-            $query = "SELECT id_atendente, nome, email, cpf, senha, tipo FROM atendente WHERE id_atendente = $editUsuarioId";
+            $query = "SELECT id_atendente, nome, cpf, email, tipo, senha FROM atendente WHERE id_atendente = $editUsuarioId";
             $result = $conn->query($query);
             $usuario = $result->fetch_assoc();
         ?>
-            <div class="card">
-                <h5 class="card-header">Editar Usuário</h5>
-                <div class="card-body">
-                    <h5 class="card-title" id="card-title">Editar Usuário</h5>
+            <div class="card-card">
+                <h5 class="titulo">Editar Usuário</h5>
+
+                <div class="form-caixa">
                     <form method="POST">
-                        <div class="mb-3">
+                        <div class="texto-style">
                             <label for="novo_nome_completo" class="form-label">Nome Completo</label>
                             <input type="text" class="form-control" id="novo_nome_completo" name="novo_nome_completo" value="<?php echo $usuario['nome']; ?>" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="novo_email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="novo_email" name="novo_email" value="<?php echo $usuario['email']; ?>" required>
-                        </div>
-                        <div class="mb-3">
+                        <div class="texto-style">
                             <label for="novo_cpf" class="form-label">CPF</label>
                             <input type="text" class="form-control" id="novo_cpf" name="novo_cpf" value="<?php echo $usuario['cpf']; ?>" required>
                         </div>
-                        <div class="mb-3">
+                        <div class="texto-style">
+                            <label for="novo_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="novo_email" name="novo_email" value="<?php echo $usuario['email']; ?>" required>
+                        </div>
+                        <div class="texto-style">
+                            <label for="novo_tipo">Cargo</label>
+                            <select class="form-control" name="novo_tipo">
+                                <option value="atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
+                                <option value="bombeiro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Bombeiro</option>
+                                <option value="outro_cargo" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Outro cargo</option>
+                            </select>
+                        </div>
+                        <div class="texto-style">
                             <label for="nova_senha" class="form-label">Senha</label>
                             <input type="password" class="form-control" id="nova_senha" name="nova_senha" value="<?php echo $usuario['senha']; ?>" required>
                         </div>
-                        <div class="mb-3">
-                            <label for="novo_tipo">Tipo</label>
-                            <select class="form-control" name="novo_tipo">
-                                <option value="atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
-                                <option value="outro_tipo" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Outro Tipo</option>
-                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+
+                        <div id="botao-editar">
+                        <button type="submit" class="botao">Salvar Alterações</button>
+                        </div>
                     </form>
-                </div>
             </div>
         <?php
         }
@@ -158,22 +162,27 @@ $usuariosResult = $conn->query($usuariosQuery);
 
 <p class="titulo"><?php echo $_SESSION['nome']; ?></p>
     <div class="form-caixa">
-        <div class="id">
+        <div class="texto-style">
             Id:
             <?php echo $_SESSION['id_atendente']; ?>
         </div>
 
-        <div class="email">
+        <div class="texto-style">
             Email:
             <?php echo $_SESSION['email']; ?>
         </div>
 
-        <div class="cpf">
+        <div class="texto-style">
             CPF:
             <?php echo $_SESSION['cpf']; ?>
         </div>
 
-        <div class="senha">
+        <div class="texto-style">
+            Cargo:
+            <?php echo $_SESSION['tipo']; ?>
+        </div>
+
+        <div class="texto-style">
             Senha:
             <?php echo $_SESSION['senha']; ?>
         </div>

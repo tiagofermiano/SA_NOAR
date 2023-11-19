@@ -22,7 +22,7 @@ body {
 @media (max-width: 768px) {
   /* Estilos para telas menores, como smartphones */
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   /* Estilos para telas maiores, como tablets e desktops */
 }
 
@@ -80,6 +80,10 @@ p {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.container-login{
+  margin-top: 12%;
+}
   
 .form-caixa {
   background-color: #fff;
@@ -89,6 +93,18 @@ p {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
+
+.form-caixa-login {
+  display: block;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 5%;
+}
+
 
 /*titulo "Login"*/
 .titulo {
@@ -100,6 +116,18 @@ p {
     font-family: 'Poppins', sans-serif;
     color:#030060;
     margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .titulo-login {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color:#030060;
+    /* margin-top: 5rem; */
     margin-bottom: 3rem;
   }
 
@@ -115,6 +143,21 @@ p {
 }
 
   .perfil p{
+    width: 100%;
+  }
+
+  .perfil-login {
+    color: #030060;
+    font-size: 1.2rem;
+    display: flex; /* Use display flex para centralizar o conteúdo verticalmente */
+    flex-direction: column; /* Para alinhar os elementos verticalmente */
+    text-align: center; /* Alinhe o texto horizontalmente ao centro */
+    margin: 0 auto;
+    /* width: 60%; */
+    align-items: center;
+}
+
+  .perfil-login p{
     width: 100%;
   }
 

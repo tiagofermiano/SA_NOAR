@@ -66,7 +66,10 @@ body {
 }
 
 
-
+.logo_cadastro{
+  display: flex;
+  margin: auto;
+}
 
 /*caixa de fundo do login*/
 .form-caixa {

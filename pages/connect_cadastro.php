@@ -5,6 +5,7 @@ include('protect.php');
 $nome = mysqli_real_escape_string($conn, trim($_POST['nome']));
 $cpf = mysqli_real_escape_string($conn, trim($_POST['userCPF']));
 $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+$tipo = mysqli_real_escape_string($conn, trim($_POST['tipo']));
 $senha = mysqli_real_escape_string($conn, trim($_POST['passwords']));
 
 // Verifique se o CPF já existe na tabela "usuario"
@@ -24,12 +25,12 @@ if ($row['total'] == 1) {
 }
 
 // Inserir dados na tabela "atendente"
-$sql = "INSERT INTO atendente (nome, cpf, email, senha, data_cadastro) VALUES ('$nome', '$cpf', '$email', '$senha', NOW())";
+$sql = "INSERT INTO atendente (nome, cpf, email, tipo, senha, data_cadastro) VALUES ('$nome', '$cpf', '$email', '$tipo', '$senha', NOW())";
 
 if ($conn->query($sql) === TRUE) {
     $_SESSION['status_cadastro'] = true;
     $conn->close();
-    header('Location: login.html');
+    header('Location: telalogin.php');
     exit;
 } else {
     echo "Erro ao inserir dados: " . $conn->error;
