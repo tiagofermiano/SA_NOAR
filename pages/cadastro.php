@@ -11,7 +11,7 @@ include('conexao.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
-  <script src="cadastro.js"></script>
+  <script src="/scripts/cadastro.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -43,7 +43,7 @@ include('conexao.php');
     <p class="titulo">Cadastro</p>
   <div class="form-caixa">
     
-    <form class="form" action="usuariosphp.php" method="post">
+    <form class="form" method="post">
       <div class="input-caixatexto">
         <label for="nome">Nome do atendente</label>
         <input type="text" name="nome" id="nome" placeholder="Digite o nome..." required>
@@ -61,10 +61,10 @@ include('conexao.php');
   <div class="input-caixatexto">
     <label for="tipo">Escolha seu cargo</label>
     <select id="tipo" name="tipo" required>
-      <option value="atendente">Atendente</option>
+      <option value="atendente">Atendente </option>
       <option value="bombeiro">Bombeiro</option>
       <option value="outro">Outro</option>
-    </select>
+    </select required> 
   </div>
 
    <div class="input-caixasenha">

@@ -33,6 +33,7 @@ if(isset($_POST['userCPF']) || isset($_POST['passwords'])) {
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['cpf'] = $usuario['cpf'];
             $_SESSION['email'] = $usuario['email'];
+            $_SESSION['tipo'] = $usuario['tipo'];
             $_SESSION['senha'] = $usuario['senha'];
 
             header("Location: telahome.php");

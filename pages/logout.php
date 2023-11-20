@@ -1,12 +1,11 @@
 <?php
+// Inicia a sessão
+session_start();
 
-if(!isset($_SESSION)){
-    session_start();
-}
-
+// Destrói a sessão
 session_destroy();
 
-header("Location: login.html");
-
-
+// Redireciona para a página de login
+header('Location: telalogin.php');
+exit;
 ?>

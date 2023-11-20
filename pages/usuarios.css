@@ -5,18 +5,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Adicionado para melhorar o cálculo do tamanho */
 }
 
 body {
   width: 100%;
   min-height: 100vh;
   background-color: #E5E6E7;
-  /* background-image: linear-gradient(to bottom, #001024, #001e44); */
   background-repeat: no-repeat;
   font-family: 'Open Sans', sans-serif;
-  /* Definir uma fonte padrão */
-  zoom: 1.15; /* Aumenta o zoom em 20% */
+  zoom: 1.15;
 }
 
 .navbar {
@@ -25,57 +22,27 @@ body {
   display: block;
   align-items: center;
   justify-content: space-between;
-  /* background-color: #030060; */
-  }
-    .grid_header {
-      display: grid;
-      justify-content: space-between;
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .titulo_usuario{
-      display: block;
-      text-align: center;
-      font-size: 2rem;
-      line-height: 2rem;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      color:#030060;
-      margin-top: 6rem;
-    }
-
-  .relatorios, .perfil, .inicio {
-    position: absolute;
-    top: 0;
-    padding: 0.8rem;
-    margin: 5px;
-    background-color: #030060;
-    color: #fff;
-    border: none;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    transition: 0.5s ease-out;
-    overflow: visible;
 }
 
-.relatorios a, .perfil a, .inicio a {
-    color: #fff;
-    text-decoration: none;
+.grid_header {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.relatorios:hover, .perfil:hover, .inicio:hover {
-    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
-}
-
-.inicio{
-    right: 0;
-}
-
-.novo_usuario, .conectado, .inicio {
-  display: flex;
-  position: absolute;
-  align-items: center;
+.titulo_usuario {
+  display: block;
   text-align: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #030060;
+  margin-top: 6rem;
+}
+
+.relatorios, .perfil, .inicio, .novo_usuario, .conectado, .editar, .voltar {
+  position: absolute;
   top: 0;
   padding: 0.8rem;
   margin: 5px;
@@ -88,34 +55,33 @@ body {
   overflow: visible;
 }
 
-.novo_usuario a, .conectado a, .inicio a {
-  display: flex;
+.relatorios a, .perfil a, .inicio a, .novo_usuario a, .conectado a, .editar a, .voltar a {
   color: #fff;
   text-decoration: none;
 }
 
-.novo_usuario:hover, .conectado:hover, .inicio:hover {
-  display: flex;
-  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+.relatorios:hover, .perfil:hover, .inicio:hover, .novo_usuario:hover, .conectado:hover, .editar:hover, .voltar:hover {
+  background-color: #1b40af;
+}
+
+.inicio {
+  right: 0;
 }
 
 .novo_usuario {
-  display: flex;
   left: 0;
 }
 
 .conectado {
-  display: flex;
-    right: 0;
+  right: 0;
 }
 
 .inicio {
-  display: flex;
-    left: 50%;
-    transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#conectado{
+#conectado {
   margin-top: 1%;
   margin-left: 1%;
   font-weight: bold;
@@ -123,66 +89,64 @@ body {
   color: #030060;
 }
 
-#sem-relatorio{
+#sem-relatorio {
   text-align: center;
   font-size: 1rem;
   line-height: 2rem;
   font-family: 'Poppins', sans-serif;
-  color:#000000;
+  color: #000000;
   margin-top: 6rem;
 }
 
-/*titulo "Login"*/
 .titulo {
-    text-align: center;
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    color:#030060;
-    margin-top: 2rem;
-  }
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #030060;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
 
-#container-relatorios{
+#container-relatorios {
   display: block;
   width: 90%;
   margin: auto;
-  margin-top:3% ;
+  margin-top: 3%;
 }
 
-#relatorio{
+#relatorio {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   background-color: #fff;
-  /* Alterado para largura relativa */
-  max-width: 95%;
+  max-width: 85%;
   margin: auto;
-  /* Definir uma largura máxima */
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
-#id-atendente{
+#id-atendente {
   margin: auto;
   font-weight: bold;
   color: #030060;
   padding: 3%;
 }
 
-#info-atendente{
- margin: auto ;
- padding: 5%;
+#info-atendente {
+  margin: auto;
+  padding: 5%;
 }
 
-#botao-editar{
+#botao-editar {
   margin: auto;
   font-weight: bold;
   color: #030060;
   padding: 5%;
-
 }
-.botao{
+
+.botao {
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -194,6 +158,60 @@ body {
   overflow: visible;
 }
 
-.botao:hover{
-  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+.botao:hover {
+  background-color: #1b40af;
+}
+
+.form-caixa {
+  background-color: #fff;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.table table-striped {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+.perfil {
+  color: #030060;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  align-items: center;
+}
+
+.perfil p {
+  width: 100%;
+}
+
+#info {
+  font-weight: normal;
+}
+
+#nome {
+  color: #030060;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.texto {
+  color: #030060;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.text-table-style {
+  color: #030060;
+  font-size: 1.2rem;
+  font-weight: bold;
 }

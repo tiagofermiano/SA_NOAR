@@ -57,34 +57,84 @@ p {
     cursor: pointer;
     transition: 0.5s ease-out;
     overflow: visible;
-}
+  }
 
-.relatorios a, .conectado a, .inicio a {
+  .relatorios a, .conectado a, .inicio a {
     color: #fff;
     text-decoration: none;
-}
+  }
 
-.relatorios:hover, .conectado:hover, .inicio:hover {
+  .relatorios:hover, .conectado:hover, .inicio:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
-}
+  }
 
-.relatorios {
+  .relatorios {
     left: 0;
-}
+  }
 
-.conectado {
+  .conectado {
     right: 0;
-}
+  }
 
-.inicio {
+  .inicio {
     left: 50%;
     transform: translateX(-50%);
-}
+  }
+
+  .logout {
+    display: block;
+    position: absolute;
+    top: 0;
+    padding: 0.8rem;
+    margin: 5px;
+    background-color: #030060;
+    color: #fff;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+    overflow: visible;
+  }
+
+  .logout a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logout:hover {
+    background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+  }
+
 
 .container-login{
   margin-top: 12%;
 }
-  
+
+/* .container-usuario {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr;
+  margin-top: 5%;
+} */
+
+.grid-button-usuario{
+  display: block;
+  margin-top: 5%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #030060;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 0.8rem;
+  width: 30%;
+  height: 100%;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
 .form-caixa {
   background-color: #fff;
   width: 70%;

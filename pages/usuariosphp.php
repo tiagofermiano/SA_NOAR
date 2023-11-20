@@ -1,5 +1,7 @@
 <?php
 include('protect.php');
+include('conexao.php');
+include('banco_usuarios.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,24 +48,58 @@ include('protect.php');
 
 </header>
 
-<div class="titulo_usuario">
-<p class="titulo">Usuários</p>
-</div>
-
 <div id="container-relatorios">
- <div id="relatorio">
-  <p id="id-atendente"><?php echo $_SESSION['id_atendente']; ?></p>
-  <div id="info-atendente">
-    <p id="nome-atendente"><?php echo $_SESSION['nome']; ?></p>
-  </div>
-  <div id="botao-editar">
-    <a href="editorphp.php" class="botao">
-      Editar
-    </a>
-  </div>
- </div>
-</div>
 
+<div class="atend">
+
+<h5 class="titulo">Visualizar e Editar Usuários</h5>
+
+<div class="form-caixa">
+            <div class="card-body">
+                <h5 class="texto" id="card-title">Lista de Usuários</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <div class="text-table-style">
+                        <tr>
+                            <th>ID do Bombeiro</th>
+                            <th>Nome Completo</th>
+                            <th>Email</th>
+                            <th>CPF</th>
+                            <th>Tipo</th>
+                            <th>Senha</th>
+                            <th>Ação</th>
+                        </tr>
+                        </div>
+                    </thead>
+                    <tbody>
+
+                        <?php
+
+                        if ($usuariosResult->num_rows > 0) {
+                          while ($row = $usuariosResult->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["id_atendente"] . "</td>";
+                            echo "<td>" . $row["nome"] . "</td>";
+                            echo "<td>" . $row["cpf"] . "</td>";
+                            echo "<td>" . $row["email"] . "</td>";
+                            echo "<td>" . $row["tipo"] . "</td>";
+                            echo "<td>" . $row["senha"] . "</td>";
+                            // Adicione um botão para edição (redireciona para a página editorphp.php com um parâmetro de ID)
+                            echo '<td><a href="editorphp.php?edit=' . $row["id_atendente"] . '" class="btn btn-primary">Editar</a></td>';
+                            echo "</tr>";
+                          }
+                        } else {
+                          echo "<tr><td colspan='7'>Nenhum usuário encontrado.</td></tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <a href="cadastro.php"><button class="btn btn-primary">Cadastrar um novo Bombeiro</button></a>
+
+            </div>
+        </div>
+</div>
+</div>
 
 </body>
 </html>   

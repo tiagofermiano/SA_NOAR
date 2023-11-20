@@ -45,7 +45,7 @@ p {
   /* background-color: #030060; */
   }
 
-  .voltar, .conectado, .inicio {
+  .voltar, .conectado, .inicio, .editar {
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -57,20 +57,20 @@ p {
     cursor: pointer;
     transition: 0.5s ease-out;
     overflow: visible;
-}
+  }
 
-.voltar a, .conectado a, .inicio a {
+  .voltar a, .conectado a, .inicio a, .editar a {
     color: #fff;
     text-decoration: none;
-}
+  }
 
-.voltar:hover, .conectado:hover, .inicio:hover {
+  .voltar:hover, .conectado:hover, .inicio:hover, .editar:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
-}
+  }
 
-.voltar {
+  .voltar {
     left: 0;
-}
+  }
 
 .novo_usuario, .conectado, .inicio {
   position: absolute;
@@ -110,11 +110,20 @@ p {
   
 .form-caixa {
   background-color: #fff;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+.table table-striped {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+
 }
 
 /*titulo "Login"*/
@@ -157,6 +166,13 @@ p {
   }
 
   .texto{
+    color: #030060;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-weight: bold;
+  }
+
+  .text-table-style{
     color: #030060;
     font-size: 1.2rem;
     font-weight: bold;
