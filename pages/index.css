@@ -16,15 +16,17 @@
     background-repeat: no-repeat;
     font-family: 'Open Sans', sans-serif;
     /* Definir uma fonte padrão */
-    zoom: 1.15; /* Aumenta o zoom em 20% */
   }
 
-  @media (max-width: 768px) {
-    /* Estilos para telas menores, como smartphones */
+@media (max-width: 600px) {
+  .boxinfopaciente,
+  .boxinfoocorrencia,
+  .boxsituacaopaciente,
+  .boxatendimento {
+    width: 100%;
+    max-width: none;
   }
-  @media (min-width: 769px) {
-    /* Estilos para telas maiores, como tablets e desktops */
-  }
+}
 
 
   p {
@@ -158,13 +160,11 @@
     /* Adicionado espaçamento superior e inferior */
     margin-top: 3.5rem;
   }
-
+/* 
   .boxinfopaciente {
     background-color: #fff;
     width: 90%;
-    /* Alterado para largura relativa */
     max-width: 400px;
-    /* Definir uma largura máxima */
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -174,9 +174,7 @@
   .boxinfoocorrencia {
     background-color: #fff;
     width: 90%;
-    /* Alterado para largura relativa */
     max-width: 400px;
-    /* Definir uma largura máxima */
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -186,9 +184,7 @@
   .boxsituacaopaciente {
     background-color: #fff;
     width: 90%;
-    /* Alterado para largura relativa */
     max-width: 400px;
-    /* Definir uma largura máxima */
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -198,14 +194,43 @@
   .boxatendimento {
     background-color: #fff;
     width: 90%;
-    /* Alterado para largura relativa */
     max-width: 400px;
-    /* Definir uma largura máxima */
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     padding: 1rem;
-  }
+  } */
+.boxinfopaciente,
+.boxinfoocorrencia,
+.boxsituacaopaciente,
+.boxatendimento {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+}
+
+.subtitulo {
+  background-color: #030060;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #fff;
+  height: 2rem;
+  width: 100%;
+  text-align: center;
+}
+.texto {
+  font-size: 1rem;
+  margin-top: -1.8rem;
+  color: #fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
   .form {
     margin:1rem;
@@ -587,28 +612,6 @@
 
   #checkbox {
     left: 90%;
-  }
-
-  .subtitulo {
-    background-color: #030060;
-    font-size: 1rem;
-    margin-top: 1rem;
-    color: #fff;
-    /* border-radius: 1rem; */
-    height: 2rem;
-    width: 25rem;
-    text-align: center;
-    justify-content: center;
-    margin-left: -1rem;
-  }
-
-
-  .texto {
-    font-size: 1rem;
-    margin-top: -1.8rem;
-    color: #fff;
-    text-align: center;
-    justify-content: center;
   }
 
   .checkbox {

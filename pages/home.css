@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,44 +11,39 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  min-height: 70vh; /* Alterado de height para min-height para garantir que o conteúdo seja exibido corretamente em telas pequenas */
 }
 
-#conectado{
-  margin-top: 5%;
+#conectado {
+  margin-top: 2%; /* Reduzido o espaço superior */
   font-weight: bold;
 }
 
 .container {
-  max-width: 100vw;
+  max-width: 90vw; /* Alterado para 90vw para evitar possíveis problemas de overflow */
   text-align: center;
-  display: flex;
-  flex-direction: column;
   margin-top: 2%;
-  margin-left: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 70px;
 }
 
 .logo {
   max-width: 100%;
-  position: relative;
-  display: flex;
+  height: auto; /* Garante que a altura da imagem seja ajustada proporcionalmente à largura */
 }
 
 .button-group {
   display: flex;
-  flex-direction: column; /* Disposição vertical em todos os tamanhos de tela */
-  align-items: center; /* Centraliza horizontalmente em todos os tamanhos de tela */
-  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 a {
-  padding: 1.3rem;
-  width: 90%;
-  margin: 5px;
-  background-color: #030060;
-  color: #fff;
+  padding: 1rem;
+  width: 80%;
+  margin: 10px 0;
+  background-color: #030060; /* Mantido o fundo azul escuro */
+  color: #fff; /* Cor do texto */
   border: none;
   border-radius: 1rem;
   cursor: pointer;
@@ -61,64 +52,57 @@ a {
   text-decoration: none;
 }
 
-.grid-button{
+.grid-button {
   display: grid;
-  grid-template-columns:1fr 2fr;
+  grid-template-columns: 1fr 2fr;
   width: 100%;
+  align-items: center; /* Adicionado para centralizar verticalmente */
 }
 
-.grid-button img{
-  width: 40%;
+.grid-button img {
+  width: 70%; /* Ajustado o tamanho da imagem */
+  margin-right: 10px; /* Adicionado espaço à direita da imagem */
 }
 
-.grid-button p{
-  width: 90%;
-  font-size: 1.5rem;
+.grid-button p {
+  font-size: 1.2rem; /* Reduzido o tamanho da fonte para melhorar a aparência em tamanhos menores de tela */
 }
-@media (min-width: 768px) { /* Quando estiver em um dispositivo desktop (largura de tela maior que 768px) */
+
+@media (min-width: 768px) {
   .container {
-      max-width: 960px;
-      flex-direction: row;
+    max-width: 960px;
+    flex-direction: row;
   }
-  
+
   .logo {
-      max-width: 30%; /* Ajuste o tamanho do logotipo de acordo com suas necessidades */
+    max-width: 20%;
   }
-  
+
   .button-group {
-      flex-direction: row; /* Disposição horizontal em dispositivos desktop */
+    flex-direction: row;
+  }
+
+  a {
+    width: auto; /* Alterado para largura automática em telas maiores */
+    margin: 0 10px; /* Adicionado espaço horizontal entre os botões em telas maiores */
   }
 }
 
 .cabecalho {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.txt_conectado {
-  display: flex;
-  width: 100%;
+  display: flex; /* Alterado para flex para facilitar a centralização vertical */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2%; /* Adicionado espaço inferior para separar o cabeçalho do conteúdo principal */
 }
 
 footer {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 5%;
   background-color: #030060;
   color: #fff;
   text-align: center;
   position: fixed;
   bottom: 0;
-  padding-top: 0.2rem;
-  padding-bottom: 2%;
-  margin: auto;
-}
-
-/* Estilize o texto de direitos autorais */
-.copyright {
-  display: flex;
-  font-size: 14px;
-  margin: 0.4%;
- justify-content: center;
 }
