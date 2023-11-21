@@ -65,14 +65,14 @@ include('protect.php');
     </div>
 
     <form action="logout.php" method="post">
-    <button type="submit" name="logout" class="logout">Sair do perfil</button>
+    <a id="sair" type="submit" name="logout" class="logout">Sair do perfil</a>
 </form>
 
 <div class="container-usuario">
         <div class="button-group-usuario">
                 <div class="grid-button-usuario">
-                <a href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuariosphp.php'; ?>">
-                    <p>Editar usuarios</p>
+                <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuariosphp.php'; ?>">
+                    Editar usuarios
                 </div>
             </a>
         </div>

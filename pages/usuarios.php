@@ -12,8 +12,6 @@ include('banco_usuarios.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +24,6 @@ include('banco_usuarios.php');
 
 <body>
     
-
 
   <header>
 
@@ -85,7 +82,7 @@ include('banco_usuarios.php');
                             echo "<td>" . $row["tipo"] . "</td>";
                             echo "<td>" . $row["senha"] . "</td>";
                             // Adicione um botão para edição (redireciona para a página editorphp.php com um parâmetro de ID)
-                            echo '<td><a href="editorphp.php?edit=' . $row["id_atendente"] . '" class="btn btn-primary">Editar</a></td>';
+                            echo '<td><a href="editorphp.php?edit=' . $row["id_atendente"] . '" class="editar">Editar</a></td>';
                             echo "</tr>";
                           }
                         } else {
@@ -94,8 +91,6 @@ include('banco_usuarios.php');
                         ?>
                     </tbody>
                 </table>
-                <a href="cadastro.php"><button class="btn btn-primary">Cadastrar um novo Bombeiro</button></a>
-
             </div>
         </div>
 </div>

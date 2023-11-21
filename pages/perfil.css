@@ -46,7 +46,6 @@ p {
   }
 
   .relatorios, .conectado, .inicio {
-    position: absolute;
     top: 0;
     padding: 0.8rem;
     margin: 5px;
@@ -82,8 +81,6 @@ p {
   }
 
   .logout {
-    display: block;
-    position: absolute;
     top: 0;
     padding: 0.8rem;
     margin: 5px;
@@ -110,29 +107,53 @@ p {
   margin-top: 12%;
 }
 
-/* .container-usuario {
-  display: grid;
-  margin: auto;
-  grid-template-columns: 1fr;
-  margin-top: 5%;
-} */
+.editar {
+
+}
+
+table{
+  gap: 0.5rem;
+}
 
 .grid-button-usuario{
   display: block;
-  margin-top: 5%;
   margin: auto;
+  margin-top: 2rem;
   justify-content: center;
   align-items: center;
   background-color: #030060;
   color: white;
   text-decoration: none;
   text-align: center;
+  font-weight: 600;
   border: none;
   border-radius: 0.8rem;
-  width: 30%;
-  height: 100%;
-  padding: 0.6rem;
+  width: 20%;
+  padding: 0.7rem;
   cursor: pointer;
+  box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+  transition: all .6s ease;
+}
+
+.grid-button-usuario a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-button-usuario:hover {
+  box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+}
+
+.grid-button-usuario:focus,
+.grid-button-usuario:active {
+  opacity: .85;
+  box-shadow: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .form-caixa {
@@ -191,7 +212,6 @@ p {
     margin-bottom: 3rem;
   }
 
-
   .titulo-login {
     text-align: center;
     font-size: 2rem;
@@ -244,6 +264,7 @@ p {
     line-height: 1rem;
     font-weight: 600;
     text-align: center;
+    text-decoration: none;
     vertical-align: middle;
     align-items: center;
     border-radius: 0.5rem;
@@ -263,4 +284,9 @@ p {
   button:active {
     opacity: .85;
     box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
   }
