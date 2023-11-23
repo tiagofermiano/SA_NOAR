@@ -2,7 +2,7 @@
 // Configuração da conexão com o banco de dados
 $hostname = 'localhost'; // Endereço do servidor MySQL
 $username = 'root'; // Nome de usuário do MySQL
-$password = 'root'; // Senha do MySQL
+$password = ''; // Senha do MySQL
 $database = 'socorro_noar'; // Nome do banco de dados MySphp QL
 
 // Tentar estabelecer a conexão

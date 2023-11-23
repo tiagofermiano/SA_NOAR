@@ -107,9 +107,6 @@ p {
   margin-top: 12%;
 }
 
-.editar {
-
-}
 
 table{
   gap: 0.5rem;
@@ -175,6 +172,16 @@ a {
   padding: 1rem;
 }
 
+.form-caixa-salvo{
+  background-color: #fff;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 4rem;
+ border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
 .form-caixa-login {
   display: block;
   background-color: #fff;
@@ -211,6 +218,17 @@ a {
     margin-top: 1rem;
     margin-bottom: 3rem;
   }
+
+  .titulo-salvo {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    color:#030060;
+    margin-top: 1rem;
+    }
 
   .titulo-login {
     text-align: center;
@@ -273,7 +291,7 @@ a {
     box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
     transition: all .6s ease;
     margin: auto;
-    margin-top: 3rem;
+    margin-top:2rem;
   }
 
   button:hover {
@@ -289,4 +307,37 @@ a {
   a {
     text-decoration: none;
     color: #fff;
+  }
+
+
+  .irUsuarios {
+    border: none;
+    display: flex;
+    padding: 1.5rem 2.5rem;
+    background-color: #030060;
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+    transition: all .6s ease;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .irUsuarios:hover {
+    box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+  }
+
+  .irUsuarios:focus,
+  .irUsuarios:active {
+    opacity: .85;
+    box-shadow: none;
   }

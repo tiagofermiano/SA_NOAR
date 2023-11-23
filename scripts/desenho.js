@@ -52,19 +52,23 @@ document.getElementById('HumanBody').addEventListener('click', function(event) {
     markerRed.style.display = 'none';
     markerOrange.style.display = 'none';
     markerYellow.style.display = 'none';
+    
 
     if (selectedTrauma === 'Trauma 1') {
         markerPurple.style.left = x - 5 + 'px';
         markerPurple.style.top = y - 5 + 'px';
         markerPurple.style.display = 'block';
+
     } else if (selectedTrauma === 'Trauma 2') {
         markerRed.style.left = x - 5 + 'px';
         markerRed.style.top = y - 5 + 'px';
         markerRed.style.display = 'block';
+
     } else if (selectedTrauma === 'Trauma 3') {
         markerOrange.style.left = x - 5 + 'px';
         markerOrange.style.top = y - 1 + 'px';
         markerOrange.style.display = 'block';
+
     } else if (selectedTrauma === 'Trauma 4') {
         markerYellow.style.left = x - 5 + 'px';
         markerYellow.style.top = y - 5 + 'px';

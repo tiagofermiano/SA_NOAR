@@ -17,7 +17,7 @@
             <p>Você não pode acessar esta página, pois não está logado.</p>
         </div>
 
-        <button>
+        <button class="irUsuarios">
             <div id="irparaLogin">
                 <a href="telalogin.php">Fazer Login</a>
             </div>

@@ -25,7 +25,7 @@ include('banco_usuarios.php');
 
     <header>
         <div class="voltar">
-            <a href="usuariosphp.php">Voltar</a>
+            <a href="usuarios.php">Voltar</a>
         </div>
     </header>
 
@@ -41,7 +41,7 @@ include('banco_usuarios.php');
             <h5 class="titulo">Editar Usuário</h5>
 
             <div class="form-caixa">
-                <form method="POST">
+                <form method="POST" action="voltarusuarios.html">
                     <div class="texto">
                         <label for="novo_nome_completo" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" id="novo_nome_completo" name="novo_nome_completo" value="<?php echo $usuario['nome']; ?>" required>
@@ -57,9 +57,9 @@ include('banco_usuarios.php');
                     <div class="texto">
                         <label for="novo_tipo">Cargo</label>
                         <select class="form-control" name="novo_tipo">
-                            <option value="atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
-                            <option value="bombeiro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Bombeiro</option>
-                            <option value="outro_cargo" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Outro cargo</option>
+                            <option value="Atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
+                            <option value="Bombeiro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Bombeiro</option>
+                            <option value="Nenhum" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Nenhum</option>
                         </select>
                     </div>
                     <div class="texto">
@@ -67,11 +67,9 @@ include('banco_usuarios.php');
                         <input type="password" class="form-control" id="nova_senha" name="nova_senha" value="<?php echo $usuario['senha']; ?>" required>
                     </div>
             </div>
-
             <div id="botao-editar">
                 <button type="submit" class="botao">Salvar Alterações</button>
             </div>
-            
             </form>
         </div>
 
