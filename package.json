@@ -1,5 +1,12 @@
 {
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "html2pdf.js": "^0.10.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.7.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }

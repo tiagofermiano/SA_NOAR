@@ -1,142 +1,178 @@
-function drawMarkers(context, x, y, color) {
-    context.beginPath();
-    context.arc(x, y, 5, 0, 2 * Math.PI);
-    context.fillStyle = color;
-    context.fill();
-}
+document.addEventListener('DOMContentLoaded', function() {
+    let currentMarker = null;
 
-function drawHemorragia(context, x, y, color) {
-    context.fillStyle = color;
-    context.fillRect(x - 5, y - 5, 10, 10);
-}
+    // Get the canvas and its context
+    const canvas = document.getElementById('HumanBodyCanvas');
+const ctx = canvas.getContext('2d');
+const markerColors = ['purple', 'red', 'blue', 'black', 'green', 'darkorange', 'rgb(243, 0, 138)', 'rgb(0, 168, 174)', 'rgb(233, 221, 0)'];
+const markers = markerColors.map((color, i) => ({ color, clicked: false }));
+    
+    
+    // Declare uma estrutura de dados para armazenar as posições e cores das marcações
+    var marcacoes = {
+        markerPurple: [],
+        markerRed: [],
+        markerBlue: [],
+        markerBlack: [],
+        markerGreen: [],
+        markerDarkOrange: [],
+        markerPink: [],
+        markerWater: [],
+        markerYellow: []
+    };
 
-
-function printImage() {
-    const img = document.getElementById('HumanBody');
-    const canvas = document.createElement('canvas');
-    const context = canvas.getContext('2d');
-
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    context.drawImage(img, 0, 0, img.width, img.height);
-
-    const markerPurple = document.getElementById('markerPurple');
-    const markerRed = document.getElementById('markerRed');
-    const markerBlue = document.getElementById('markerBlue');
-    const markerBlack = document.getElementById('markerBlack');
-    const markerGreen = document.getElementById('markerGreen');
-    const markerDarkOrange = document.getElementById('markerDarkOrange');
-    const markerPink = document.getElementById('markerPink');
-    const markerWater = document.getElementById('markerWater');
-    const markerYellow = document.getElementById('markerYellow');
-
-
-    if (markerPurple.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerPurple.style.left) + 5, parseFloat(markerPurple.style.top) + 5, 'purple');
-    }
-    if (markerRed.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerRed.style.left) + 5, parseFloat(markerRed.style.top) + 5, 'red');
-    }
-    if (markerBlue.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerBlue.style.left) + 5, parseFloat(markerBlue.style.top) + 1, 'orange');
-    }
-    if (markerBlack.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerBlack.style.left) + 5, parseFloat(markerBlack.style.top) + 5, 'yellow');
-    }
-    if (markerGreen.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerGreen.style.left) + 5, parseFloat(markerGreen.style.top) + 5, 'yellow');
-    }
-    if (markerDarkOrange.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerDarkOrange.style.left) + 5, parseFloat(markerDarkOrange.style.top) + 5, 'red');
-    }
-    if (markerPink.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerPink.style.left) + 5, parseFloat(markerPink.style.top) + 1, 'orange');
-    }
-    if (markerWater.style.display !== 'none') {
-        drawMarkers(context, parseFloat(markerWater.style.left) + 5, parseFloat(markerWater.style.top) + 5, 'yellow');
-    }
-    if (markerYellow.style.display !== 'none') {
-        drawHemorragia(context, parseFloat(markerYellow.style.left) + 5, parseFloat(markerYellow.style.top) + 5, 'yellow');
+    function loadImageWithBg(src, bgColor) {
+        var img = new Image();
+        img.src = src;
+        img.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+            img.src = canvas.toDataURL();
+        };
+        return img;
     }
 
-    const newWindow = window.open();
-    newWindow.document.write('<img src="' + canvas.toDataURL() + '" alt="Imagem com Marcações">');
-}
+    function drawMarkers() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        markers.forEach((marker, i) => {
+           if (marker.clicked) {
+             drawMarker(marker.x, marker.y, marker.color);
+           }
+        });
+       }
 
-document.getElementById('HumanBody').addEventListener('click', function(event) {
-    const x = event.offsetX;
-    const y = event.offsetY;
+    function drawMarker(x, y, color) {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, 2 * Math.PI);
+        ctx.fill();
+       }
 
-    const markerPurple = document.getElementById('markerPurple');
-    const markerRed = document.getElementById('markerRed');
-    const markerBlue = document.getElementById('markerBlue');
-    const markerBlack = document.getElementById('markerBlack');
-    const markerGreen = document.getElementById('markerGreen');
-    const markerDarkOrange = document.getElementById('markerDarkOrange');
-    const markerPink = document.getElementById('markerPink');
-    const markerWater = document.getElementById('markerWater');
-    const markerYellow = document.getElementById('markerYellow');
+       canvas.addEventListener('click', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+       
+        for (let i = 0; i < markers.length; i++) {
+           if (!markers[i].clicked) {
+             markers[i].x = x;
+             markers[i].y = y;
+             markers[i].clicked = true;
+             drawMarkers();
+             break;
+           }
+        }
+       });
+       
+       drawMarkers();
 
+    function drawHemorragia(context, x, y, color) {
+        context.fillStyle = color;
+        context.fillRect(x - 5, y - 5, 10, 10);
+    }
 
-    const selectedTrauma = document.getElementById('traumaType').value;
+    function salvarAlteracoes() {
+        // Capturar o tipo de trauma selecionado
+        var tipoTrauma = document.getElementById("traumaType").value;
 
-    markerPurple.style.display = 'none';
-    markerRed.style.display = 'none';
-    markerBlue.style.display = 'none';
-    markerBlack.style.display = 'none';
-    markerGreen.style.display = 'none';
-    markerDarkOrange.style.display = 'none';
-    markerPink.style.display = 'none';
-    markerWater.style.display = 'none';
-    markerYellow.style.display = 'none';
+        // Capturar a posição dos marcadores
+        var markerPurple = obterPosicaoMarcador("markerPurple");
+        var markerRed = obterPosicaoMarcador("markerRed");
+        var markerBlue = obterPosicaoMarcador("markerBlue");
+        var markerBlack = obterPosicaoMarcador("markerBlack");
+        var markerGreen = obterPosicaoMarcador("markerGreen");
+        var markerDarkOrange = obterPosicaoMarcador("markerDarkOrange");
+        var markerPink = obterPosicaoMarcador("markerPink");
+        var markerWater = obterPosicaoMarcador("markerWater");
+        var markerYellow = obterPosicaoMarcador("markerYellow");
+        // Adicione os outros marcadores conforme necessário
+
+        // Aqui, você pode enviar os dados para o servidor ou salvá-los localmente
+        console.log("Tipo de Trauma:", tipoTrauma);
+        console.log("Posição do Marcador Roxo:", markerPurple);
+        console.log("Posição do Marcador Vermelho:", markerRed);
+        console.log("Posição do Marcador Azul:", markerBlue);
+        console.log("Posição do Marcador Preto:", markerBlack);
+        console.log("Posição do Marcador Verde:", markerGreen);
+        console.log("Posição do Marcador Laranja escuro:", markerDarkOrange);
+        console.log("Posição do Marcador Rosa:", markerPink);
+        console.log("Posição do Marcador Agua:", markerWater);
+        console.log("Posição do Marcador Amarelo:", markerYellow);
+        // Adicione os outros marcadores conforme necessário
+    }
+
+    function obterPosicaoMarcador(marcadorId) {
+        var marcador = document.getElementById(marcadorId);
+        return {
+            left: marcador.style.left,
+            top: marcador.style.top
+        };
+    }
+
+    function updateMarkerDisplay() {
+        const canvas = document.getElementById('HumanBodyCanvas');
+        const context = canvas.getContext('2d');
+    
+        // Limpe o canvas antes de redesenhar as marcações
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    
+        // Carregue a imagem
+        const img = new Image();
+        img.onload = function () {
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+            // Desenhe todos os marcadores para todas as cores
+            for (const [cor, dados] of Object.entries(marcacoes)) {
+                for (const markerData of dados) {
+                    if (cor === 'markerYellow') {
+                        drawHemorragia(context, parseFloat(markerData.left) + 5, parseFloat(markerData.top) + 5, cor);
+                    } else {
+                        drawMarkers(context, parseFloat(markerData.left) + 5, parseFloat(markerData.top) + 5, cor);
+                    }
+                }
+            }
+        };
+    
+        // Defina a origem da imagem
+        img.src = 'https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png';
+    }
     
 
-    if (selectedTrauma === 'Trauma 1') {
-        markerPurple.style.left = x - 5 + 'px';
-        markerPurple.style.top = y - 5 + 'px';
-        markerPurple.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 2') {
-        markerRed.style.left = x - 5 + 'px';
-        markerRed.style.top = y - 5 + 'px';
-        markerRed.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 3') {
-        markerBlue.style.left = x - 5 + 'px';
-        markerBlue.style.top = y - 1 + 'px';
-        markerBlue.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 4') {
-        markerBlack.style.left = x - 5 + 'px';
-        markerBlack.style.top = y - 5 + 'px';
-        markerBlack.style.display = 'block';
-    
-    } else if (selectedTrauma === 'Trauma 5') {
-        markerGreen.style.left = x - 5 + 'px';
-        markerGreen.style.top = y - 1 + 'px';
-        markerGreen.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 6') {
-        markerDarkOrange.style.left = x - 5 + 'px';
-        markerDarkOrange.style.top = y - 5 + 'px';
-        markerDarkOrange.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 7') {
-        markerPink.style.left = x - 5 + 'px';
-        markerPink.style.top = y - 1 + 'px';
-        markerPink.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 8') {
-        markerWater.style.left = x - 5 + 'px';
-        markerWater.style.top = y - 5 + 'px';
-        markerWater.style.display = 'block';
-
-    } else if (selectedTrauma === 'Trauma 9') {
-        markerYellow.style.left = x - 5 + 'px';
-        markerYellow.style.top = y - 1 + 'px';
-        markerYellow.style.display = 'block';
-
+    function printImage() {
+        // Abra uma nova janela com a imagem
+        const newWindow = window.open();
+        newWindow.document.write('<img src="' + document.getElementById('HumanBodyCanvas').toDataURL() + '" alt="Imagem com Marcações">');
     }
-    
+
+    document.getElementById('HumanBodyCanvas').addEventListener('click', function(event) {
+        const x = event.offsetX;
+        const y = event.offsetY;
+
+        const selectedTrauma = document.getElementById('traumaType').value;
+
+        // Verifique se a propriedade existe, se não, inicialize-a como um array vazio
+        if (!marcacoes[selectedTrauma]) {
+            marcacoes[selectedTrauma] = [];
+        }
+
+        const markerData = {
+            left: x - 5 + 'px',
+            top: y - 5 + 'px',
+            display: 'block'
+        };
+
+        // Adicione a posição e a cor à estrutura de dados
+        marcacoes[selectedTrauma].push(markerData);
+
+        // Atualize o código para exibir todas as marcações
+        updateMarkerDisplay();
+    });
+
+    // Carregue a imagem no início
+    updateMarkerDisplay();
 });

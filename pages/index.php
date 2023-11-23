@@ -2838,8 +2838,10 @@
   </div>
   </div>
 
-  <button id="gerarRelatorioButton" onclick="gerarRelatorio()">Gerar Relatório</button>
+  <button id="gerarRelatorioButton">Gerar Relatório</button>
   <br><br>
+
+
   
 
 
@@ -2849,7 +2851,9 @@
     crossorigin="anonymous"></script>
 
   <script src="/scripts/index.js"></script>
-  
+  <script src="/scripts/relatorio.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
   <script src="/scripts/desenho.js"></script>
   <script src="/scripts/tabela-queimadura.js"></script>
   <script src="/scripts/salvamento.js"></script>
