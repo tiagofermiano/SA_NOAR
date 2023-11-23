@@ -750,6 +750,15 @@
     row-gap: 1%;
   }
 
+  .grid_traumas {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 1fr ;
+    row-gap: 2%;
+    text-align: center;
+    font-size: 12.5px;
+  }
+
   .grid_cinematica {
     display: grid;
     grid-template-columns: 1fr 0.3fr 0.3fr;
@@ -1690,3 +1699,16 @@
     display: none;
   }
 
+
+  #markerPurple,
+  #markerRed,
+  #markerBlue,
+  #markerBlack,
+  #markerDarkOrange,
+  #markerPink,
+  #markerWater,
+  #markerYellow,
+  #markerGreen {
+      position: absolute;
+      z-index: 1;
+  }

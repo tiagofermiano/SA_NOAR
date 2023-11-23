@@ -1,7 +1,6 @@
 <?php
 include('protect.php');
-include('conexao.php');
-include('banco_usuarios.php');
+include('connect_usuarios.php');
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,6 @@ include('banco_usuarios.php');
         </div>
     </header>
 
-
     <?php
     if ($editUsuarioId !== null) {
         // Recupera os dados do usuário com base no ID fornecido para edição
@@ -41,7 +39,7 @@ include('banco_usuarios.php');
             <h5 class="titulo">Editar Usuário</h5>
 
             <div class="form-caixa">
-                <form method="POST" action="voltarusuarios.html">
+                <form method="POST">
                     <div class="texto">
                         <label for="novo_nome_completo" class="form-label">Nome Completo</label>
                         <input type="text" class="form-control" id="novo_nome_completo" name="novo_nome_completo" value="<?php echo $usuario['nome']; ?>" required>
@@ -59,26 +57,24 @@ include('banco_usuarios.php');
                         <select class="form-control" name="novo_tipo">
                             <option value="Atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
                             <option value="Bombeiro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Bombeiro</option>
-                            <option value="Nenhum" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Nenhum</option>
+                            <option value="Outro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Outro</option>
                         </select>
                     </div>
                     <div class="texto">
                         <label for="nova_senha" class="form-label">Senha</label>
                         <input type="password" class="form-control" id="nova_senha" name="nova_senha" value="<?php echo $usuario['senha']; ?>" required>
                     </div>
+                </div>
+                <div id="botao-editar">
+                    <button type="submit" class="botao">Salvar Alterações</button>
+                </div>
+                </form>
             </div>
-            <div id="botao-editar">
-                <button type="submit" class="botao">Salvar Alterações</button>
-            </div>
-            </form>
-        </div>
 
     <?php
     }
     ?>
 
-    </div>
-
-</body>
+    </body>
 
 </html>

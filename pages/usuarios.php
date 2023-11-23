@@ -1,7 +1,6 @@
 <?php
 include('protect.php');
-include('conexao.php');
-include('banco_usuarios.php');
+include('connect_usuarios.php');
 ?>
 
 <!DOCTYPE html>

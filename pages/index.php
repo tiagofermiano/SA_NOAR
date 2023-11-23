@@ -16,6 +16,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="index.css">
+
 </head>
 <body>
 
@@ -33,6 +34,7 @@
     </div>
   </div>
 </header>
+
 
   <div class="circle-button">
     <div class="menu-icon">&#9776;</div>
@@ -59,7 +61,7 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
-        <input type="text" id="nomePaciente" name="nomePaciente"
+        <input type="text" id="nome_paciente" name="nomePaciente"
         oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
         <p id="mensagemErro-1" style="color: red;"></p>
       </div>
@@ -2836,8 +2838,9 @@
   </div>
   </div>
 
-  <button id="gerarRelatorioButton">Gerar Relatório</button>
+  <button id="gerarRelatorioButton" onclick="gerarRelatorio()">Gerar Relatório</button>
   <br><br>
+  
 
 
 
@@ -2846,7 +2849,7 @@
     crossorigin="anonymous"></script>
 
   <script src="/scripts/index.js"></script>
-
+  
   <script src="/scripts/desenho.js"></script>
   <script src="/scripts/tabela-queimadura.js"></script>
   <script src="/scripts/salvamento.js"></script>

@@ -30,7 +30,7 @@ $sql = "INSERT INTO atendente (nome, cpf, email, tipo, senha, data_cadastro) VAL
 if ($conn->query($sql) === TRUE) {
     $_SESSION['status_cadastro'] = true;
     $conn->close();
-    header('Location: usuariosphp.php');
+    header('Location: usuarios.php');
     exit;
 } else {
     echo "Erro ao inserir dados: " . $conn->error;

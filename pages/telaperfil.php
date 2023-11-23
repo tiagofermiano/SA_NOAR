@@ -29,9 +29,6 @@ include('protect.php');
     <div class="inicio">
         <a href="telahome.php">Início</a>
     </div>
-    <div class="perfil">
-        <a href="telaperfil.php">Perfil</a>
-    </div>
 </div>   
 </header>
 
@@ -65,7 +62,7 @@ include('protect.php');
     </div>
 
     <form action="logout.php" method="post">
-    <a id="sair" type="submit" name="logout" class="logout">Sair do perfil</a>
+    <a id="sair" type="submit" name="logout" class="logout">Desconectar</a>
 </form>
 
 <div class="container-usuario">

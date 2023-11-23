@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOLTAR</title>
+    <title></title>
 
     <link rel="stylesheet" type="text/css" href="perfil.css">
 
 </head>
-
 <body>
-    <div class="form-caixa-salvo">
+    
+<div class="form-caixa-salvo">
         <div class="perfil">
             <p class="titulo-salvo">Alteração salva com sucesso.</p>
             <form method="POST" action="connect_usuarios.php">
+
         <button>
             <div id="irparaUsuarios">
-                <a href="connect_usuarios.php">Voltar para Visualizador de Usuários</a>
+                Gerar PDF
             </div>
         </button>
     </form>
     </div>
 
-</body>
 
+
+</body>
 </html>
