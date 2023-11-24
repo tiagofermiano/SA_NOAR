@@ -91,14 +91,9 @@ include('conexao.php');
 </head>
 
 <body>
-
-  <header>
-    <div class="logo_cadastro">
-      <img src="https://i.pinimg.com/originals/63/1b/2a/631b2a6d8b0480b22c425f8efc67bf81.png" alt="Logo do Sistema" class="logo" style="width: 200px; height: auto;">
+  <div class="voltar">
+            <a href="usuarios.php">Voltar</a>
     </div>
-  </header>
-
-  <!-- div pra caixa de login, input de usuário e senha e pro titulo "Login" -->
 
   <p class="titulo">Cadastro</p>
   <div class="form-caixa">
