@@ -1,3 +1,38 @@
+<?php
+require('fpdf/fpdf.php');
+require('fpdf.php');
+
+if(isset($_POST['gerar_pdf'])){
+  require('fpdf/fpdf.php');
+  
+  class PDF extends FPDF
+  {
+    function Header()
+    {
+      $this->SetFont('Arial','B',15);
+      $this->Cell(0,10,'Relatório',0,1,'C');
+    }
+    
+    function Footer()
+    {
+      $this->SetY(-15);
+      $this->SetFont('Arial','I',8);
+      $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+    }
+  }
+  
+  $pdf = new PDF();
+  $pdf->AliasNbPages();
+  $pdf->AddPage();
+  $pdf->SetFont('Arial','',12);
+  
+  $html = file_get_contents('http://localhost/SA_NOAR/pages/index.php');
+  $pdf->WriteHTML($html);
+  
+  $pdf->Output('relatorio.pdf', 'D');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -2838,8 +2873,13 @@
   </div>
   </div>
 
-  <button id="gerarRelatorioButton">Gerar Relatório</button>
+  <form method="post">
+    <button type="submit" name="gerar_pdf">Gerar PDF</button>
+  </form>
   <br><br>
+
+  <!-- <button id="gerarRelatorioButton">Gerar Relatório</button>
+  <br><br> -->
 
 
   
