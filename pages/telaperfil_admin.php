@@ -37,6 +37,7 @@ include('protect.php');
             <p>Bem-vindo ao seu perfil, <?php echo $_SESSION['nome']; ?>!</p>
         </div>
 
+        <div class="infos">
         <div class="id">
             Id: <?php echo $_SESSION['id_atendente']; ?>
         </div>
@@ -53,8 +54,8 @@ include('protect.php');
 
         <div class="senha">
             Senha: <?php echo $_SESSION['senha']; ?>
-
         </div>
+        
 <div class="desconectar">
         <form action="logout.php" method="POST">
             <button id="sair" type="submit" name="logout" class="logout">Desconectar</button>
@@ -62,17 +63,13 @@ include('protect.php');
 
 </div>
     </div>
-
-
-    <div class="container-usuario">
-        <div class="button-group-usuario">
-            <div class="grid-button-usuario">
-                <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuarios.php'; ?>">
-                    Editar usuarios
-            </div>
-            </a>
-        </div>
     </div>
+
+<div class="boxEditar">
+        <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuarios.php'; ?>">
+                    Editar usuarios
+            </a>
+</div>
 
 </body>
 

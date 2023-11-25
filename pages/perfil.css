@@ -145,11 +145,19 @@ button:hover {
   /* Cor do fundo ao passar o mouse */
 }
 
-.desconectar{
-  display: flex;
+.infos{
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 1rem;
   justify-content: center;
 }
 
+.desconectar{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
 
 .container-login {
   margin-top: 12%;
@@ -160,36 +168,6 @@ table {
   gap: 0.5rem;
 }
 
-.grid-button-usuario {
-  display: flex;
-  margin: auto;
-  margin-top: 2rem;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  background-color: #030060;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  font-weight: 600;
-  border: none;
-  border-radius: 0.8rem;
-  padding: 0.8rem;
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
-  transition: all .6s ease;
-}
-
-.grid-button-usuario:hover {
-  box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
-}
-
-.grid-button-usuario:focus,
-.grid-button-usuario:active {
-  opacity: .85;
-  box-shadow: none;
-}
-
 a {
   text-decoration: none;
   color: #fff;
@@ -198,11 +176,49 @@ a {
 .form-caixa {
   display: block;
   background-color: #fff;
-  width: 70%;
-  margin: 0 auto;
+  width: 60%;
+  margin:auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
+}
+
+#botaoEditar {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin-top: 1.5rem;
+  max-width: 35%;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+
+#botaoEditar a {
+  display: flex;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+justify-content: center;}
+
+#botaoEditar:hover {
+  background-color: #1b40af;
+  /* Cor do fundo ao passar o mouse */
+}
+
+.boxEditar{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -248,7 +264,7 @@ a {
   color: black;
   font-family: 'Poppins', sans-serif;
   color: #030060;
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-bottom: 3rem;
 }
 
@@ -291,11 +307,8 @@ a {
   color: #030060;
   font-size: 1.2rem;
   display: flex;
-  /* Use display flex para centralizar o conteúdo verticalmente */
   flex-direction: column;
-  /* Para alinhar os elementos verticalmente */
   text-align: center;
-  /* Alinhe o texto horizontalmente ao centro */
   margin: 0 auto;
   width: 60%;
   align-items: center;

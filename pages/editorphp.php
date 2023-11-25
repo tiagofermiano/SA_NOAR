@@ -25,9 +25,9 @@ include('connect_usuarios.php');
 <body>
 
     <header>
-        <div class="voltar">
-            <a href="usuarios.php">Voltar</a>
-        </div>
+        <a href="usuarios.php"><div class="voltar">
+            Voltar
+        </div></a>
     </header>
 
     <?php

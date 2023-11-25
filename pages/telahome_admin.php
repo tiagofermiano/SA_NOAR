@@ -24,41 +24,26 @@ include('protect.php');
 
     <div class="container">
         <div class="button-group">
-            <a href="historico.php">
-                <div class="grid-button">
-                    <img src="https://i.pinimg.com/originals/4e/05/c0/4e05c0480bfb15b19bed458be9b7e45d.jpg">
-                    <p>Histórico</p>
-                </div>
+            <a id="botaoEditar"href="historico_admin.php">
+                    <p>Ver Histórico</p>
             </a>
-            <a href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'telaperfil_admin.php'; ?>">
-                <div class="grid-button">
-                    <img src="https://i.pinimg.com/originals/f2/a6/3b/f2a63bb71f3b572d23fc9351ebb8198a.jpg">
-                    <p>Perfil</p>
-                </div>
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'telaperfil_admin.php'; ?>">
+                    <p>Ver Perfil</p>
             </a>
-            <a href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'index_admin.php'; ?>">
-                <div class="grid-button">
-                    <img src="https://i.pinimg.com/originals/de/0c/e3/de0ce31be5bdb9cdfd808215b9dfa8dd.jpg">
-                    <p>Novo</p>
-                </div>
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'index_admin.php'; ?>">
+                    <p>Nova ocorrência
+                    </p>
             </a>
+            <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuariosphp.php'; ?>">
+                    Editar usuarios</a>
         </div>
     </div>
 
-    <div class="container-usuario">
-        <div class="button-group-usuario">
-            <div class="grid-button-usuario">
-                <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuariosphp.php'; ?>">
-                    Editar usuarios
-            </div>
-            </a>
+           
         </div>
     </div>
 
     <footer>
-        <p class="copyright">Todos os direitos Reservados - NOAR - 2023 &copy;</p>
-        <p class="copyright">Todos os direitos Reservados - AHBSAR - 2023 &copy;</p>
-    </footer>
-
+        <p class="copyright">Todos os direitos Reservados - NOAR / AHBSAR- 2023 &copy;</p>
 </html>
 </body>

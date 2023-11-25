@@ -32,13 +32,13 @@ include('connect_usuarios.php');
       Conectado: <?php echo $_SESSION['nome'];?>
   </div>
 
-  <div class="novo_usuario">
-        <a href="cadastro.php">Cadastrar novo usuário</a>
-    </div>
+  <a href="cadastro.php"><div class="novo_usuario">
+        Cadastrar novo usuário
+    </div></a>
 
-    <div class="inicio">
-        <a href="telahome_admin.php">Início</a>
-    </div>
+    <a href="telahome_admin.php"><div class="inicio">
+        Início
+    </div></a>
 
 </div>
 
@@ -63,7 +63,7 @@ include('connect_usuarios.php');
                             <th>CPF</th>
                             <th>Tipo</th>
                             <th>Senha</th>
-                            <th>Ação</th>
+                            <th></th>
                         </tr>
                         </div>
                     </thead>

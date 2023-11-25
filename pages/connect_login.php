@@ -44,7 +44,7 @@ if(isset($_POST['userCPF']) && isset($_POST['passwords'])) {
                 header("Location: telahome.php");
             } elseif ($_SESSION['tipo'] == 'Bombeiro') {
                 // Allow access to specific pages for bombeiro
-                header("Location: telahome.php.php");
+                header("Location: telahome.php");
             } elseif ($_SESSION['tipo'] == 'Outro') {
                 // Allow access to specific pages for bombeiro
                 header("Location: telahome.php.php");
