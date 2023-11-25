@@ -2757,22 +2757,19 @@
   <!-- <button id="gerarRelatorioButton">Gerar Relatório</button>
   <br><br> -->
 
-
-
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <script src="/scripts/index.js"></script>
-  <script src="/scripts/relatorio.js"></script>
+  <script src="index.js"></script>
+  <script src="relatorio.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
-  <script src="/scripts/desenho.js"></script>
-  <script src="/scripts/tabela-queimadura.js"></script>
-  <script src="/scripts/salvamento.js"></script>
-  <sc<script src="https://code.jquery.com/jquery-3.6.4.min.js">
+  <script src="desenho.js"></script>
+  <script src="tabela-queimadura.js"></script>
+  <script src="salvamento.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js">
     </script>
+
+
 
 
 </body>

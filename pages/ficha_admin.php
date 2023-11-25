@@ -39,7 +39,6 @@
     </div>
   </header>
 
-
   <div class="circle-button">
     <div class="menu-icon">&#9776;</div>
     <div class="dropdown-content">
@@ -65,7 +64,7 @@
     <form class="form">
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
-        <input type="text" id="nome_paciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
+        <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
         <p id="mensagemErro-1" style="color: red;"></p>
       </div>
     </form>
@@ -937,62 +936,100 @@
 
     <br>
 
-    <div id="captura">
-      <div id="image-container">
-        <img src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-adulto">
-      </div>
-      <div id="image-container-crn">
-        <img src="https://i.pinimg.com/originals/87/c6/fb/87c6fb29c276cc56187274991e32ee66.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-crianca">
-      </div>
-    </div>
+    <banner>
+      <form id="TraumaLocForm" name="localFerimento">
+        <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
+        <select id="traumaType" class="form-control mb-3">
+          <option value="Trauma 1">Fraturas/Luxações/Entorses</option>
+          <option value="Trauma 2">Queimadura 1°Grau</option>
+          <option value="Trauma 3">Hemorragias Int.</option>
+          <option value="Trauma 4">Queimadura 2°Grau</option>
+          <option value="Trauma 5">F.A.B./F.A.F.</option>
+          <option value="Trauma 6">Queimadura 3°Grau</option>
+          <option value="Trauma 7">Ferimentos Diversos</option>
+          <option value="Trauma 8">Esviceração</option>
+          <option value="Trauma 9">Hemorragias Ext.</option>
 
-    <button id="desfazer">Desfazer</button>
-
+        </select>
+      </form>
+      <div class="col position-relative">
+        <img id="HumanBody" src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="imagem adulto" style="width: 100%; height: auto; max-width: 564px;">
+        <div id="markerPurple" class="position-flex" style="width: 10px; height: 10px; background-color: purple; border-radius: 50%; display: none;"></div>
+        <div id="markerRed" class="position-flex" style="width: 10px; height: 10px; background-color: red; border-radius: 50%; display: none;"></div>
+        <div id="markerBlue" class="position-flex" style="width: 10px; height: 10px; background-color: blue; border-radius: 50%; display: none;"></div>
+        <div id="markerBlack" class="position-flex" style="width: 10px; height: 10px; background-color: black; border-radius: 50%; display: none;"></div>
+        <div id="markerGreen" class="position-flex" style="width: 10px; height: 10px; background-color: green; border-radius: 50%; display: none;"></div>
+        <div id="markerDarkOrange" class="position-flex" style="width: 10px; height: 10px; background-color: darkorange; border-radius: 50%; display: none;"></div>
+        <div id="markerPink" class="position-flex" style="width: 10px; height: 10px; background-color: rgb(243, 0, 138); border-radius: 50%; display: none;"></div>
+        <div id="markerWater" class="position-flex" style="width: 10px; height: 10px; background-color: rgb(0, 168, 174); border-radius: 50%; display: none;"></div>
+        <div id="markerYellow" class="position-flex" style="width: 10px; height: 10px; background-color: rgb(233, 221, 0); display: none;"></div>
+      </div>
+    </banner>
 
     <br>
 
+    <div class="grid_traumas">
+      <div>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: purple; border-radius: 50%; margin-right: 5px;"></span>
+          Fraturas/Luxações/Entorses
+        </label>
+      </div>
 
+      <div>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: red; border-radius: 50%; margin-right: 5px;"></span>
+          Queimadura 1°Grau
+        </label>
+      </div>
 
-    <div class="grid_ocorrencia">
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Queimadura</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: blue; border-radius: 50%; margin-right: 5px;"></span>
+          Hemorragias Int.
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Escorição</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: black; border-radius: 50%; margin-right: 5px;"></span>
+          Queimadura 2°Grau
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Ferimento Contuso</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: green; border-radius: 50%; margin-right: 5px;"></span>
+          F.A.B./F.A.F.
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Ferimento perfurante</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: darkorange; border-radius: 50%; margin-right: 5px;"></span>
+          Queimadura 3°Grau
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Laceração</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: rgb(243, 0, 138); border-radius: 50%; margin-right: 5px;"></span>
+          Ferimentos Diversos
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Contusão</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: rgb(0, 168, 174); border-radius: 50%; margin-right: 5px;"></span>
+          Esviceração
+        </label>
       </div>
+
       <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Fratura aberta</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Fratura fechada</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Luxação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Hemorragia</label>
+        <label for="checkbox-id-1" style="display: flex; align-items: center;">
+          <span style="width: 10px; height: 10px; background-color: rgb(233, 221, 0); margin-right: 5px;"></span>
+          Hemorragias Ext.
+        </label>
       </div>
     </div>
 
@@ -1158,78 +1195,78 @@
       </div>
     </div>
     <!-- <table>
-        <tr>
-          <th>QUEIMAD.</th>
-          <th>CABEÇA</th>
-          <th>PESCOÇO</th>
-          <th>TORSO POS.</th>
-          <th>TORSO ANT.</th>
+      <tr>
+        <th>QUEIMAD.</th>
+        <th>CABEÇA</th>
+        <th>PESCOÇO</th>
+        <th>TORSO POS.</th>
+        <th>TORSO ANT.</th>
 
-        </tr>
-        <tr>
-          <td class="linha-tabela">1° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="CABEÇA-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="PESCOÇO-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO POS.-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO ANT.-1°GRAU"></td>
-        </tr>
-        <tr>
-          <td class="linha-tabela">2° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="CABEÇA-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="PESCOÇO-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO POS.-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO ANT.-2°GRAU"></td>
-        </tr>
-        <tr>
-          <td class="linha-tabela">3° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="CABEÇA-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="PESCOÇO-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO POS.-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="TORSO ANT.-3°GRAU"></td>
-        </tr>
-      </table> -->
+      </tr>
+      <tr>
+        <td class="linha-tabela">1° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="CABEÇA-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="PESCOÇO-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO POS.-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO ANT.-1°GRAU"></td>
+      </tr>
+      <tr>
+        <td class="linha-tabela">2° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="CABEÇA-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="PESCOÇO-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO POS.-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO ANT.-2°GRAU"></td>
+      </tr>
+      <tr>
+        <td class="linha-tabela">3° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="CABEÇA-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="PESCOÇO-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO POS.-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="TORSO ANT.-3°GRAU"></td>
+      </tr>
+    </table> -->
     <!-- </div> -->
 
     <br>
 
     <!-- <div class="table-container">
-      <table>
-        <tr>
-          <th>QUEIMAD.</th>
-          <th>GENIT.</th>
-          <th>M.I.D.</th>
-          <th>M.I.E.</th>
-          <th>M.S.D.</th>
-          <th>M.S.E.</th>
-        </tr>
-        <tr>
-          <td class="linha-tabela">1° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="GENIT-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.D.-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.E.-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.D.-1°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.E.-1°GRAU"></td>
-        </tr>
-        <tr>
-          <td class="linha-tabela">2° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="GENIT-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.D.-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.E.-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.D.-2°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.E.-2°GRAU"></td>
+    <table>
+      <tr>
+        <th>QUEIMAD.</th>
+        <th>GENIT.</th>
+        <th>M.I.D.</th>
+        <th>M.I.E.</th>
+        <th>M.S.D.</th>
+        <th>M.S.E.</th>
+      </tr>
+      <tr>
+        <td class="linha-tabela">1° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="GENIT-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.D.-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.E.-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.D.-1°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.E.-1°GRAU"></td>
+      </tr>
+      <tr>
+        <td class="linha-tabela">2° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="GENIT-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.D.-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.E.-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.D.-2°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.E.-2°GRAU"></td>
 
-        </tr>
-        <tr>
-          <td class="linha-tabela">3° GRAU</td>
-          <td><input type="checkbox" id="check-table" name="GENIT-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.D.-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.I.E.-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.D.-3°GRAU"></td>
-          <td><input type="checkbox" id="check-table" name="M.S.E.-3°GRAU"></td>
+      </tr>
+      <tr>
+        <td class="linha-tabela">3° GRAU</td>
+        <td><input type="checkbox" id="check-table" name="GENIT-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.D.-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.I.E.-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.D.-3°GRAU"></td>
+        <td><input type="checkbox" id="check-table" name="M.S.E.-3°GRAU"></td>
 
-        </tr>
-      </table>
-    </div> -->
+      </tr>
+    </table>
+  </div> -->
     <div class="subtitulo"></div>
     <div class="texto">Decisão transporte</div>
 
@@ -1491,91 +1528,91 @@
 
 
     <!-- <div class="checkbox-container">
-      <div class="checkbox-texto">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">EDEMA</label>
-      </div>
+    <div class="checkbox-texto">
+      <input type="checkbox" id="scales" name="scales" />
+      <label for="scales">EDEMA</label>
+    </div>
 
-      <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">GENERALIZADO</label>
-      </div>
+    <div class="checkbox-textocontainer">
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">GENERALIZADO</label>
+    </div>
 
-      <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">LOCALIZADO</label>
-      </div>
-    </div> -->
-
-    <!-- <div class="checkbox-container">
-      <div class="checkbox-texto">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">PARADA</label>
-      </div>
-
-      <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">CARDÍACA</label>
-      </div>
-
-      <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">RESPIRATÓRIA</label>
-      </div>
-    </div> -->
+    <div class="checkbox-textocontainer2">
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">LOCALIZADO</label>
+    </div>
+  </div> -->
 
     <!-- <div class="checkbox-container">
-      <div class="checkbox-texto">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">CIANOSE</label>
-      </div>
+    <div class="checkbox-texto">
+      <input type="checkbox" id="scales" name="scales" />
+      <label for="scales">PARADA</label>
+    </div>
 
-      <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">LÁBIOS</label>
-      </div>
+    <div class="checkbox-textocontainer">
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">CARDÍACA</label>
+    </div>
 
-      <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">EXTREMIDADE</label>
-      </div>
-    </div> -->
+    <div class="checkbox-textocontainer2">
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">RESPIRATÓRIA</label>
+    </div>
+  </div> -->
+
+    <!-- <div class="checkbox-container">
+    <div class="checkbox-texto">
+      <input type="checkbox" id="scales" name="scales" />
+      <label for="scales">CIANOSE</label>
+    </div>
+
+    <div class="checkbox-textocontainer">
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">LÁBIOS</label>
+    </div>
+
+    <div class="checkbox-textocontainer2">
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">EXTREMIDADE</label>
+    </div>
+  </div> -->
 
     <div class="checkbox-container">
       <!-- <div class="checkbox-texto">
-        <input type="checkbox" id="scales" name="scales" />
-        <label for="scales">PUPILAS</label>
-      </div> -->
+      <input type="checkbox" id="scales" name="scales" />
+      <label for="scales">PUPILAS</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">ANISOCORIA</label>
-      </div> -->
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">ANISOCORIA</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">ISOCORIA</label>
-      </div> -->
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">ISOCORIA</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">MIDRIASE</label>
-      </div> -->
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">MIDRIASE</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">MIOSE</label>
-      </div> -->
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">MIOSE</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer">
-        <input type="checkbox" id="horns" name="horns" />
-        <label for="horns">REAGENTE</label>
-      </div> -->
+      <input type="checkbox" id="horns" name="horns" />
+      <label for="horns">REAGENTE</label>
+    </div> -->
 
       <!-- <div class="checkbox-textocontainer2">
-        <input type="checkbox" id="horns2" name="horns2" />
-        <label for="horns2">Ñ REAGENTE</label>
-      </div> -->
+      <input type="checkbox" id="horns2" name="horns2" />
+      <label for="horns2">Ñ REAGENTE</label>
+    </div> -->
 
     </div>
 
@@ -2722,20 +2759,15 @@
   <!-- <button id="gerarRelatorioButton">Gerar Relatório</button>
   <br><br> -->
 
-
-
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <script src="/scripts/index.js"></script>
-  <script src="/scripts/relatorio.js"></script>
+  <script src="index.js"></script>
+  <script src="relatorio.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
-  <script src="/scripts/desenho.js"></script>
-  <script src="/scripts/tabela-queimadura.js"></script>
-  <script src="/scripts/salvamento.js"></script>
+  <script src="desenho.js"></script>
+  <script src="tabela-queimadura.js"></script>
+  <script src="salvamento.js"></script>
   <sc<script src="https://code.jquery.com/jquery-3.6.4.min.js">
     </script>
 
