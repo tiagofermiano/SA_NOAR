@@ -5,7 +5,7 @@ if ($conn->connect_error) {
     die("Erro de conexão com o banco de dados: " . $conn->connect_error);
 } 
 
-if(isset($_POST['userCPF']) || isset($_POST['passwords'])) {
+if(isset($_POST['userCPF']) && isset($_POST['passwords'])) {
 
     if(strlen($_POST['userCPF']) == 0) {
         echo "Preencha seu cpf";
@@ -36,10 +36,26 @@ if(isset($_POST['userCPF']) || isset($_POST['passwords'])) {
             $_SESSION['tipo'] = $usuario['tipo'];
             $_SESSION['senha'] = $usuario['senha'];
 
-            header("Location: telahome.php");
+            if ($_SESSION['tipo'] == 'Administrador') {
+                // Allow access to all pages for administrators
+                header("Location: telahome_admin.php");
+            } elseif ($_SESSION['tipo'] == 'Atendente') {
+                // Allow access to specific pages for atendente
+                header("Location: telahome.php");
+            } elseif ($_SESSION['tipo'] == 'Bombeiro') {
+                // Allow access to specific pages for bombeiro
+                header("Location: telahome.php.php");
+            } elseif ($_SESSION['tipo'] == 'Outro') {
+                // Allow access to specific pages for bombeiro
+                header("Location: telahome.php.php");
+            }else {
+                // Redirect other users to a restricted page
+                header("Location: restricted.php");
+            }
 
         } else {
             echo "Falha ao logar! CPF ou SENHA incorretos";
         }
     }
 }
+?>

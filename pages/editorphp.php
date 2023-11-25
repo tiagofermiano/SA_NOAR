@@ -57,6 +57,7 @@ include('connect_usuarios.php');
                     <div class="texto">
                         <label for="novo_tipo">Cargo</label>
                         <select class="form-control" name="novo_tipo">
+                            <option value="Administrador" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Administrador</option>
                             <option value="Atendente" <?php echo ($usuario["tipo"] === "atendente") ? "selected" : ""; ?>>Atendente</option>
                             <option value="Bombeiro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Bombeiro</option>
                             <option value="Outro" <?php echo ($usuario["tipo"] !== "atendente") ? "selected" : ""; ?>>Outro</option>
@@ -76,6 +77,73 @@ include('connect_usuarios.php');
     <?php
     }
     ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.querySelector('form');
+    var originalFormValues = getFormValues(form);
+
+    form.addEventListener('submit', function (event) {
+        // Evita o envio tradicional do formulário
+        event.preventDefault();
+
+        // Verifica se houve alteração nos valores do formulário
+        if (isFormChanged(form, originalFormValues)) {
+            // Adiciona um popup usando Bootstrap com o botão "SIM"
+            var confirmation = confirm("Deseja salvar as alterações?");
+
+            if (confirmation) {
+                // Cria um objeto FormData para enviar os dados do formulário
+                var formData = new FormData(form);
+
+                // Cria uma solicitação AJAX usando fetch
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Alteração salva com sucesso.");
+                    } else {
+                        alert("Erro ao salvar alterações: " + data.error);
+                    }
+                })
+                .catch(success => {
+                    console.error('Salvo', success);
+                    alert("Alteração salva com sucesso. Você já pode retornar para o visualizador de usuários.");
+                });
+            }
+        } else {
+            alert("Nenhuma alteração foi feita nos campos.");
+        }
+    });
+});
+
+// Função para obter os valores originais do formulário
+function getFormValues(form) {
+    var values = {};
+    var inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(function (input) {
+        values[input.name] = input.value;
+    });
+    return values;
+}
+
+// Função para verificar se houve alteração nos valores do formulário
+function isFormChanged(form, originalValues) {
+    var currentValues = getFormValues(form);
+
+    for (var key in originalValues) {
+        if (originalValues[key] !== currentValues[key]) {
+            return true;
+        }
+    }
+
+    return false;
+}
+</script>
+
     </body>
 
 </html>

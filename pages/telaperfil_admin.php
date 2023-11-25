@@ -24,7 +24,7 @@ include('protect.php');
     <header>
 
         <div class="inicioPerfil">
-            <a href="telahome.php">Início</a>
+            <a href="telahome_admin.php">Início</a>
         </div>
         </div>
     </header>
@@ -61,6 +61,17 @@ include('protect.php');
         </form>
 
 </div>
+    </div>
+
+
+    <div class="container-usuario">
+        <div class="button-group-usuario">
+            <div class="grid-button-usuario">
+                <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuarios.php'; ?>">
+                    Editar usuarios
+            </div>
+            </a>
+        </div>
     </div>
 
 </body>

@@ -37,7 +37,7 @@ include('connect_usuarios.php');
     </div>
 
     <div class="inicio">
-        <a href="telahome.php">Início</a>
+        <a href="telahome_admin.php">Início</a>
     </div>
 
 </div>
@@ -82,6 +82,7 @@ include('connect_usuarios.php');
                             echo "<td>" . $row["senha"] . "</td>";
                             // Adicione um botão para edição (redireciona para a página editorphp.php com um parâmetro de ID)
                             echo '<td><a href="editorphp.php?edit=' . $row["id_atendente"] . '" class="editar">Editar</a></td>';
+                            echo '<td><a href="#" class="editar" onclick="confirmarExclusao(' . $row["id_atendente"] . ')">Excluir</a></td>'; 
                             echo "</tr>";
                           }
                         } else {
@@ -94,6 +95,19 @@ include('connect_usuarios.php');
         </div>
 </div>
 </div>
+
+<script>
+  function confirmarExclusao(idAtendente) {
+    var confirmacao = confirm("Tem certeza que deseja excluir este usuário?");
+
+    if (confirmacao) {
+      // Se o usuário clicou em "OK" no popup, redirecione para a página de exclusão com o ID do usuário
+      window.location.href = 'excluirUsuario.php?edit=' + idAtendente + '&action=excluir';
+    } else {
+      // Se o usuário clicou em "Cancelar", nada acontecerá
+    }
+  }
+</script>
 
 </body>
 </html>   

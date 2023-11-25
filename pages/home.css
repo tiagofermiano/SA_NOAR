@@ -52,6 +52,35 @@ a {
   text-decoration: none;
 }
 
+.grid-button-usuario {
+  display: flex;
+  margin: auto;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #030060;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+  transition: all .6s ease;
+}
+
+.grid-button-usuario:hover {
+  box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+}
+
+.grid-button-usuario:focus,
+.grid-button-usuario:active {
+  opacity: .85;
+  box-shadow: none;
+}
+
 .grid-button {
   display: grid;
   grid-template-columns: 1fr 2fr;

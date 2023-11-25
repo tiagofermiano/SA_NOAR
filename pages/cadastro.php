@@ -116,6 +116,7 @@ include('conexao.php');
           <div class="input-caixatexto">
             <label for="tipo">Escolha seu cargo</label>
             <select id="tipo" name="tipo" required>
+            <option value="administrador">Administrador </option>
               <option value="atendente">Atendente </option>
               <option value="bombeiro">Bombeiro</option>
               <option value="outro">Outro</option>
