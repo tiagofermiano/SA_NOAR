@@ -6,6 +6,6 @@ session_start();
 session_destroy();
 
 // Redireciona para a página de login
-header('Location: telalogin.php');
+header('Location: index.php');
 exit;
 ?>

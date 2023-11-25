@@ -66,7 +66,7 @@ include('protect.php');
     </div>
 
 <div class="boxEditar">
-        <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuarios.php'; ?>">
+        <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'usuarios.php'; ?>">
                     Editar usuarios
             </a>
 </div>

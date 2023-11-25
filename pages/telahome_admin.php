@@ -27,14 +27,14 @@ include('protect.php');
             <a id="botaoEditar"href="historico_admin.php">
                     <p>Ver Histórico</p>
             </a>
-            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'telaperfil_admin.php'; ?>">
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'telaperfil_admin.php'; ?>">
                     <p>Ver Perfil</p>
             </a>
-            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'index_admin.php'; ?>">
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'ficha_admin.php'; ?>">
                     <p>Nova ocorrência
                     </p>
             </a>
-            <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'usuariosphp.php'; ?>">
+            <a id="botaoEditar" href="usuarios.php" <?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'usuariosphp.php'; ?>">
                     Editar usuarios</a>
         </div>
     </div>

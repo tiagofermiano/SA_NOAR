@@ -27,10 +27,10 @@ include('protect.php');
             <a id="botaoEditar"href="historico.php">
                     <p>Ver Histórico</p>
             </a>
-            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'telaperfil.php'; ?>">
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'telaperfil.php'; ?>">
                     <p>Ver Perfil</p>
             </a>
-            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'telalogin.php' : 'index.php'; ?>">
+            <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'ficha.php'; ?>">
                     <p>Nova ocorrência
                     </p>
             </a>
