@@ -214,7 +214,6 @@ CREATE TABLE `situacao_paciente` (
   `problema_transporte_outros` varchar(100) NOT NULL,
   `problema_objetos_recolhidos` varchar(100) NOT NULL,
   `localizacao_traumas` mediumblob NOT NULL,
-  `localizacao_traumas_check` varchar(200) NOT NULL,
   `tabela_traumas_local` varchar(100) NOT NULL,
   `tabela_traumas_lado` varchar(100) NOT NULL,
   `tabela_traumas_face` varchar(100) NOT NULL,
