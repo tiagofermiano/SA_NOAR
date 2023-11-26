@@ -16,8 +16,8 @@ function processarAtendimento()
     $socorrista3 = $_POST['socorrista3'];
     $demandante = $_POST['demandante'];
     $equipe = $_POST['equipe'];
-    $procedimentosEfetuados1 = isset($_POST['procedimentosefetuados1']) ? implode(", ", $_POST['procedimentosEfetuados1']) : '';
-    $procedimentoMeiosAuxiliares = isset($_POST['procedimentosmeiosauxiliares']) ? implode(", ", $_POST['procedimentosefetuados1']) : '';
+    $procedimentosEfetuados1 = isset($_POST['procedimentosefetuados1']) ? implode(", ", $_POST['procedimentosefetuados1']) : '';
+    $procedimentoMeiosAuxiliares = isset($_POST['procedimentomeiosauxiliares']) ? implode(", ", $_POST['procedimentomeiosauxiliares']) : '';
     $procedimentoPolicia = isset($_POST['procedimentopolicia']) ? implode(", ", $_POST['procedimentopolicia']) : '';
     $procedimentoSamu = isset($_POST['procedimentosamu']) ? implode(", ", $_POST['procedimentosamu']) : '';
     $procedimentoCit =$_POST['procedimentocit'];
@@ -93,12 +93,11 @@ function processarAtendimento()
             deixados_hospital_canula_quant,
             deixados_hospital_outro,
             observacoes
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
-        // Preparar e executar a declaração
+
         if ($stmt) {
-            // Vincular parâmetros
             $stmt->bind_param(
                 "ssssssssssssssssssssssssssssssssssssssss",
                 $motorista,
@@ -143,7 +142,6 @@ function processarAtendimento()
                 $observacoes
             );
 
-            // Executar a declaração
             $stmt->execute();
 
             if ($stmt->affected_rows > 0) {
@@ -162,5 +160,4 @@ function processarAtendimento()
         echo "Erro inesperado: " . $e->getMessage();
     }
 }
-
 ?>

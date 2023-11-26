@@ -20,14 +20,13 @@ function processarInfoPaciente() {
     $formaConducao = $_POST['formaConducaoSelect'];
 
     // Inserir os dados no banco de dados
-    try {
-        $sql = "INSERT INTO info_paciente (nome_paciente, idade_paciente, sexo_paciente, rg_cpf_paciente, nome_acompanhante, idade_acompanhante, vitima_era, forma_conducao) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$nomePaciente, $idadePaciente, $sexoPaciente, $rgCpfPaciente, $nomeAcompanhante, $idadeAcompanhante, $vitimaEra, $formaConducao]);
+    $sql = "INSERT INTO info_paciente (nome_paciente, idade_paciente, sexo_paciente, rg_cpf_paciente, nome_acompanhante, idade_acompanhante, vitima_era, forma_conducao) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
 
+    if ($stmt->execute([$nomePaciente, $idadePaciente, $sexoPaciente, $rgCpfPaciente, $nomeAcompanhante, $idadeAcompanhante, $vitimaEra, $formaConducao])) {
         echo "Informações do paciente inseridas com sucesso!";
-    } catch (PDOException $e) {
-        echo "Erro ao inserir informações do paciente: " . $e->getMessage();
+    } else {
+        echo "Erro ao inserir informações do paciente: " . $conn->error; // Use $conn->error para obter mensagens de erro diretamente da conexão PDO.
     }
 }
 ?>

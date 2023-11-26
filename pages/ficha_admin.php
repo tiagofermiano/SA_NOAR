@@ -1076,7 +1076,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar" type="button" class="botao-grau" name="submitInfos">Pronto</button>
+        <button id="salvar" type="button" class="botao-grau" name="submitInfo">Pronto</button>
       </div>
     </div>
 
@@ -1109,7 +1109,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar2" type="button" class="botao-grau" name="submitInfos">Pronto</button>
+        <button id="salvar2" type="button" class="botao-grau" name="submitInfo">Pronto</button>
       </div>
     </div>
 
@@ -1144,7 +1144,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar3" class="botao-grau" type="button" name="submitInfos">Pronto</button>
+        <button id="salvar3" class="botao-grau" type="button" name="submitInfo">Pronto</button>
       </div>
     </div>
 
