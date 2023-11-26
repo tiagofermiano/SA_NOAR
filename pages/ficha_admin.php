@@ -1,6 +1,6 @@
 <?php
 include('conexao.php');
-include('processarFicha.php');
+include('processarInfoPaciente.php');
 
 ?>
 
@@ -73,17 +73,12 @@ include('processarFicha.php');
 
 
 
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
+    <div class="container">
 
-  <div class="container">
-    <h1 class="title" id="info-paciente">Informações do paciente:</h1>
-  </div>
-  <div class="boxinfopaciente">
-    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
-      <div class="input-caixatexto">
-        <label for="idadePaciente">ID:</label>
-        <input type="text" id="idadePaciente" name="idInfoOcorrencia" maxlength="9" oninput="validarNumeroIdadePac(this);" placeholder="Digite a id...">
-        <p id="mensagemErro-2" style="color: red;"></p>
-      </div>
+      <h1 class="title" id="info-paciente">Informações do paciente:</h1>
+    </div>
+    <div class="boxinfopaciente">
 
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
@@ -210,9 +205,9 @@ include('processarFicha.php');
           <div class="custom-arrow"></div>
         </div>
       </div>
-  </div>
+    </div>
 
-<!-- 
+    <!-- 
 
 ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
 ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
@@ -225,301 +220,264 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
 
 
-  <hr class="hr1">
+    <hr class="hr1">
 
-  <div class="container">
-    <h1 class="title" id="info-ocorrencia">Informações da ocorrência:</h1>
-  </div>
+    <div class="container">
+      <h1 class="title" id="info-ocorrencia">Informações da ocorrência:</h1>
+    </div>
 
 
-  <div class="boxinfoocorrencia">
+    <div class="boxinfoocorrencia">
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="username">Data:</label>
-        <input class="textbox-n" placeholder="XX/XX/20XX" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
+        <input class="textbox-n" placeholder="XX/XX/20XX" name="data" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="localocorrencia">Local da ocorrência:</label>
         <input type="text" id="localocorrencia" name="localocorrencia" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="nomehospital">Nome do hospital:</label>
         <input type="text" id="nomehospital" name="nomehospital" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="usb">N° USB.:</label>
         <input type="text" id="usb" name="usb" placeholder="Digite..." oninput="validarNumeroUSB(this)" maxlength="3">
         <p id="mensagemErro-25" style="color: red;"></p>
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="numocorrencia">N° Ocorr.:</label>
         <input type="text" id="numocorrencia" name="numocorrencia" placeholder="Digite..." oninput="validarNumeroOcorr(this)">
         <p id="mensagemErro-6" style="color: red;"></p>
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="despacho">Despacho:</label>
         <input type="text" id="despacho" name="despacho" placeholder="Digite...">
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="horachegada">Hora Chegada:</label>
         <input type="time" id="horachegada" name="horachegada" min="01:00" max="00:00" required />
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="kmfinal">KM Final:</label>
-        <input type="text" id="kmfinal" name="knfinal" placeholder="Digite...">
+        <input type="text" id="kmfinal" name="kmfinal" placeholder="Digite...">
       </div>
-    </form>
-
-    <form class="form">
       <div class="input-caixatexto">
         <label for="codIr">CÓD. IR:</label>
         <input type="text" id="codIr" name="codIr" placeholder="Digite..." oninput="validarCodIR(this)">
         <p id="mensagemErro-7" style="color: red;"></p>
       </div>
-    </form>
 
-    <form class="form">
       <div class="input-caixatexto">
         <label for="codPs">CÓD. PS:</label>
         <input type="text" id="codPs" name="codPs" placeholder="Digite..." oninput="validarCodPS(this)">
         <p id="mensagemErro-8" style="color: red;"></p>
       </div>
-    </form>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="codSiaSus">CÓD. SIA/SUS:</label>
-        <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
-        <p id="mensagemErro-9" style="color: red;"></p>
-      </div>
-    </form>
+  <div class="input-caixatexto">
+    <label for="codSiaSus">CÓD. SIA/SUS:</label>
+    <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
+    <p id="mensagemErro-9" style="color: red;"></p>
+  </div>
 
 
-    <div class="subtitulo"></div>
-    <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
-    <br>
-    <div class="grid_ocorrencia">
+  <div class="subtitulo"></div>
+  <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
+  <br>
+  <div class="grid_ocorrencia">
 
-      <div>
-        <input type="checkbox" name="afogamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Afogamento">Afogamento</label>
-      </div>
-      <div>
-        <input type="checkbox" name="agressao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Agressão">Agressão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="atropelamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Atropelamento">Atropelamento</label>
-      </div>
-      <div>
-        <input type="checkbox" name="choqueElétrico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Choque elétrico">Choque elétrico</label>
-      </div>
-      <div>
-        <input type="checkbox" name="desabamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Desabamento">Desabamento</label>
-      </div>
-      <div>
-        <input type="checkbox" name="domestico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Doméstico">Doméstico</label>
-      </div>
-      <div>
-        <input type="checkbox" name="esportivo" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Esportivo">Esportivo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="cCausadoPorAnimais" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="CausadoPorAnimais">Causado por animais</label>
-      </div>
-      <div>
-        <input type="checkbox" name="ComMeioTransporte" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="ComMeioTransporte">Com meio de transp.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="Desmor./Desliz." class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Desmor./Desliz.">Desmor./Desliz.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="intoxicacao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Intoxicação">Intoxicação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedabibicleta" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaBicicleta">Queda bicicleta</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedamoto" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaMoto">Queda moto</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedanivelmenor2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaNivelMenor2M"> Queda nível &gt; 2M </label>
-      </div>
-      <div>
-        <input type="checkbox" name="trabalho" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Trabalho">Trabalho</label>
-      </div>
-      <div>
-        <input type="checkbox" name="transferência" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Transferência">Transferência</label>
-      </div>
-      <div>
-        <input type="checkbox" name="emergênciamédica" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="EmergenciaMedica">Emergência Médica</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedaalturamaior2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaAlturaMaior2M">Queda de altura &lt; 2M</label>
-      </div>
-      <div>
-        <input type="checkbox" name="tentativasuicidio" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="TentativadeSuicidio">Tentativa de suicídio</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedaprorpiaaltura" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaPropriaAltura">Queda própria altura</label>
-      </div>
-
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Afogamento">Afogamento</label>
     </div>
-    <br>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Agressão">Agressão</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Atropelamento">Atropelamento</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Choque elétrico">Choque elétrico</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Desabamento">Desabamento</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Doméstico">Doméstico</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Esportivo">Esportivo</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="CausadoPorAnimais">Causado por animais</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="ComMeioTransporte">Com meio de transp.</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Desmor./Desliz.">Desmor./Desliz.</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Intoxicação">Intoxicação</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="QuedaBicicleta">Queda bicicleta</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="QuedaMoto">Queda moto</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="QuedaNivelMenor2M"> Queda nível &gt; 2M </label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Trabalho">Trabalho</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="Transferência">Transferência</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="EmergenciaMedica">Emergência Médica</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="QuedaAlturaMaior2M">Queda de altura &lt; 2M</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="TentativadeSuicidio">Tentativa de suicídio</label>
+    </div>
+    <div>
+      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+      <label for="QuedaPropriaAltura">Queda própria altura</label>
+    </div>
 
-    <div class="subtitulo"></div>
-    <div class="texto">Avaliação de cinemática: </div>
+  </div>
+  <br>
 
-    <br>
+  <div class="subtitulo"></div>
+  <div class="texto">Avaliação de cinemática: </div>
 
-    <div class="grid_cinematica">
-      <!-- TEXTOS DAS CHECKBOX -->
+  <br>
 
-      <div class="grid_txt_cinematica">
-        <div class="txt_cinematica">
-          <p>Distúrbio comportamental</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Encontrado com capacete</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Encontrado de cinto</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Para-brisa avariado</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Caminhando na cena</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Painel avariado</p>
-        </div>
-        <div class="txt_cinematica">
-          <p>Volante torcido</p>
-        </div>
+  <div class="grid_cinematica">
+    <!-- TEXTOS DAS CHECKBOX -->
+
+    <div class="grid_txt_cinematica">
+      <div class="txt_cinematica">
+        <p>Distúrbio comportamental</p>
       </div>
-
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckDistúrbio" id="selectCheckDistúrbio"
-            onclick="selectCheckDistúrbio(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCapacete" id="selectCheckCapacete"
-            onclick="selectCheckCapacete(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCinto" id="selectCheckCinto"
-            onclick="selectCheckCinto(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckParabrisa" id="selectCheckParabrisa"
-            onclick="selectCheckParabrisa(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCaminhando" id="selectCheckCaminhando"
-            onclick="selectCheckCaminhando(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckPainel" id="selectCheckPainel"
-            onclick="selectCheckPainel(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckVolante" id="selectCheckVolante"
-            onclick="selectCheckVolante(this)">
-          <label for="Sim">Sim</label>
-        </div>
+      <div class="txt_cinematica">
+        <p>Encontrado com capacete</p>
       </div>
-
-      <!-- CHECKBOX NÃO -->
-
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckDistúrbio" id="selectCheckDistúrbio"
-            onclick="selectCheckDistúrbio(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCapacete" id="selectCheckCapacete"
-            onclick="selectCheckCapacete(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCinto" id="selectCheckCinto"
-            onclick="selectCheckCinto(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckParabrisa" id="selectCheckParabrisa"
-            onclick="selectCheckParabrisa(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCaminhando" id="selectCheckCaminhando"
-            onclick="selectCheckCaminhando(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckPainel" id="selectCheckPainel"
-            onclick="selectCheckPainel(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckVolante" id="selectCheckVolante"
-            onclick="selectCheckVolante(this)">
-          <label for="Não">Não</label>
-        </div>
+      <div class="txt_cinematica">
+        <p>Encontrado de cinto</p>
+      </div>
+      <div class="txt_cinematica">
+        <p>Para-brisa avariado</p>
+      </div>
+      <div class="txt_cinematica">
+        <p>Caminhando na cena</p>
+      </div>
+      <div class="txt_cinematica">
+        <p>Painel avariado</p>
+      </div>
+      <div class="txt_cinematica">
+        <p>Volante torcido</p>
       </div>
     </div>
 
+    <!-- CHECKBOX SIM -->
+    <div class="grid_checkbox_sim_cinematica">
+      <div>
+        <input type="checkbox" name="disturbio" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
+        <label for="Sim">Sim</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Sim" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
+        <label for="Sim">Sim</label>
+      </div>
+    </div>
 
-    <br>
+    <!-- CHECKBOX NÃO -->
+
+    <div class="grid_checkbox_nao_cinematica">
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
+        <label for="Não">Não</label>
+      </div>
+      <div>
+        <input type="checkbox" name="Não" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
+        <label for="Não">Não</label>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
 
   </div>
   <hr class="hr1">
@@ -531,85 +489,71 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
   <div class="boxsituacaopaciente">
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="medidaPressao">Medida de Pressão:</label>
-        <input type="text" id="medidaPressao" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
-        <p id="mensagemErro-26" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="medidaPressao">Medida de Pressão:</label>
+      <input type="text" id="medidaPressao" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
+      <p id="mensagemErro-26" style="color: red;"></p>
+    </div>
 
 
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="numeroInput">Pulso:</label>
-        <input type="text" id="numeroInput" name="pulso" oninput="completePulso(this)" placeholder="___B.C.P.M.">
-        <p id="mensagemErro-23" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="numeroInput">Pulso:</label>
+      <input type="text" id="numeroInput" name="pulso" oninput="completePulso(this)" placeholder="___B.C.P.M.">
+      <p id="mensagemErro-23" style="color: red;"></p>
+    </div>
 
 
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="repiracao">Respiração:</label>
-        <input type="text" id="repiracao" name="repiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
-        <p id="mensagemErro-12" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="repiracao">Respiração:</label>
+      <input type="text" id="repiracao" name="repiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
+      <p id="mensagemErro-12" style="color: red;"></p>
+    </div>
 
 
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">Saturação:</label>
-        <input type="text" id="username" name="saturacao" placeholder="___%" oninput="completeSaturacao(this)">
-        <p id="mensagemErro-22" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">Saturação:</label>
+      <input type="text" id="username" name="saturacao" placeholder="___%" oninput="completeSaturacao(this)">
+      <p id="mensagemErro-22" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">HGT:</label>
-        <input type="text" id="username" name="hgt" placeholder="___mg/dL" oninput="completeWithHgt(this)">
-        <p id="mensagemErro-20" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">HGT:</label>
+      <input type="text" id="username" name="hgt" placeholder="___mg/dL" oninput="completeWithHgt(this)">
+      <p id="mensagemErro-20" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="temperatura">Temperatura:</label>
-        <input type="text" id="temperatura" name="temperatura" placeholder="___°C" oninput="completeWithDegreeC(this)">
-        <p id="mensagemErro-21" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="temperatura">Temperatura:</label>
+      <input type="text" id="temperatura" name="temperatura" placeholder="___°C" oninput="completeWithDegreeC(this)">
+      <p id="mensagemErro-21" style="color: red;"></p>
+    </div>
 
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">Perfusão:</label>
-      </div>
+    <div class="input-caixatexto">
+      <label for="username">Perfusão:</label>
+    </div>
 
-      <div class="checkbox-texto">
-        <input type="checkbox" name="menor2seg" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois1" onclick="selectCheckPerfusaoMaiorDois(this)">
-        <label for="Menor2seg">&gt;2 SEG</label>
+    <div class="checkbox-texto">
+      <input type="checkbox" name="menor2seg" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois1" onclick="selectCheckPerfusaoMaiorDois(this)">
+      <label for="Menor2seg">&gt;2 SEG</label>
 
-        <input type="checkbox" name="maior2seg" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois2" onclick="selectCheckPerfusaoMaiorDois(this)">
-        <label for="Maior2seg">&lt; 2 SEG</label>
-      </div>
+      <input type="checkbox" name="maior2seg" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois2" onclick="selectCheckPerfusaoMaiorDois(this)">
+      <label for="Maior2seg">&lt; 2 SEG</label>
+    </div>
 
 
 
-      <div class="checkbox-texto">
-        <input type="checkbox" id="selectCheckNormalAnormal1" name="normal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
-        <label for="checkbox-id-1">NORMAL</label>
+    <div class="checkbox-texto">
+      <input type="checkbox" id="selectCheckNormalAnormal1" name="normal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
+      <label for="checkbox-id-1">NORMAL</label>
 
 
-        <input type="checkbox" id="selectCheckNormalAnormal2" name="anormal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
-        <label for="checkbox-id-2">ANORMAL</label>
-      </div>
-    </form>
+      <input type="checkbox" id="selectCheckNormalAnormal2" name="anormal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
+      <label for="checkbox-id-2">ANORMAL</label>
+    </div>
 
     <div class="container-Maiores-de-5-anos hidden">
       <div class="subtitulo"></div>
@@ -904,14 +848,12 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
       </label>
     </div>
 
-    <form class="form">
-      <div class="fundo-input-outros1">
-        <div class="input-ss">
-          <label for="username">OUTROS:</label>
-          <input type="text" id="username" name="username">
-        </div>
+    <div class="fundo-input-outros1">
+      <div class="input-ss">
+        <label for="username">OUTROS:</label>
+        <input type="text" id="username" name="username">
       </div>
-    </form>
+    </div>
 
 
 
@@ -956,38 +898,37 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     </div>
 
-    <form class="form">
-      <div class="fundo-input-outros2">
-        <div class="input-ss">
-          <label for="username">OUTROS:</label>
-          <input type="text" id="username" name="username">
-        </div>
+    <div class="fundo-input-outros2">
+      <div class="input-ss">
+        <label for="username">OUTROS:</label>
+        <input type="text" id="username" name="username">
       </div>
-    </form>
+    </div>
 
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">Objetos recolhidos:</label>
-        <input type="text" id="username" name="username" placeholder="Digite...">
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">Objetos recolhidos:</label>
+      <input type="text" id="username" name="username" placeholder="Digite...">
+    </div>
 
     <div class="subtitulo"></div>
     <div class="texto" id="localizacao-traumas">Localização dos traumas</div>
 
     <br>
 
-    <div id="captura">
-      <div id="image-container">
-        <img src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-adulto">
-      </div>
-      <div id="image-container-crn">
-        <img src="https://i.pinimg.com/originals/87/c6/fb/87c6fb29c276cc56187274991e32ee66.png" alt="Imagem do corpo" class="hidden" id="imagem-corpo-crianca">
-      </div>
+    <banner>
+  <form id="TraumaLocForm" name="localFerimento">
+    <div class="col position-relative">
+      <canvas id="myCanvas" style="max-width: 100%;"></canvas>
+      <button id="undoButton" class="btn btn-primary mt-2" type="button">Desfazer</button>
+      <br>
+      <div class="center-text">
+        <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
     </div>
-
-    <button id="desfazer">Desfazer</button>
+      <div id="colorSelector"></div>
+</div>
+</form>
+</banner>
 
 
     <br>
@@ -1101,7 +1042,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <span class="fechar-popup" id="fechar-popup">&times;</span>
         <table id="tabela-editavel1">
           <tr>
-          <th name="CABEÇA-1°GRAU">CABEÇA</th>
+            <th name="CABEÇA-1°GRAU">CABEÇA</th>
             <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
             <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
             <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
@@ -1135,7 +1076,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <span class="fechar-popup2" id="fechar-popup2">&times;</span>
         <table id="tabela-editavel2">
           <tr>
-          <th name="CABEÇA-2°GRAU">CABEÇA</th>
+            <th name="CABEÇA-2°GRAU">CABEÇA</th>
             <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
             <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
             <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
@@ -1619,72 +1560,66 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
     </div>
 
 
-    <form class="form">
-      <div class="fundo-input">
-        <div class="input-ss">
-          <label for="username">OUTROS:</label>
-          <input type="text" id="username" name="username">
-        </div>
+    <div class="fundo-input">
+      <div class="input-ss">
+        <label for="username">OUTROS:</label>
+        <input type="text" id="username" name="username">
       </div>
-    </form>
+    </div>
 
     <div id="anamnese"></div>
 
     <div class="subtitulo"></div>
     <div class="texto">Anamnese da Emergência Médica</div>
 
-    <form class="form">
-      <div class="fundo-anamnese">
-        <div class="input-anamnese">
-        </div>
+    <div class="fundo-anamnese">
+      <div class="input-anamnese">
+      </div>
 
-        <div class="actu">
-          <label for="username">O que aconteceu (sinais e sintomas)</label>
-        </div>
+      <div class="actu">
+        <label for="username">O que aconteceu (sinais e sintomas)</label>
+      </div>
 
-        <div class="input-anamnese">
-          <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
+      <div class="input-anamnese">
+        <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
+      </div>
+    </div>
+
+
+    <br>
+    <div class="grid_cinematica_aconteceu">
+      <!-- TEXTOS DAS CHECKBOX -->
+      <div class="grid_txt_cinematica_aconteceu">
+        <div class="txt_cinematica">
+          <p>Aconteceu outras vezes</p>
         </div>
       </div>
 
 
-      <br>
-      <div class="grid_cinematica_aconteceu">
-        <!-- TEXTOS DAS CHECKBOX -->
-        <div class="grid_txt_cinematica_aconteceu">
-          <div class="txt_cinematica">
-            <p>Aconteceu outras vezes</p>
-          </div>
-        </div>
-
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="AconteceuOutrasVezes" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-            <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
-          </div>
-        </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
+      <!-- CHECKBOX SIM -->
+      <div class="grid_checkbox_sim_cinematica">
+        <div>
+          <input type="checkbox" name="AconteceuOutrasVezes" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+          <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
         </div>
       </div>
 
-      <div class="grid_cinematica_aconteceu_input">
-        <div class="container-aconteceu hidden">
-          <form class="form">
-            <div class="input-anme_sn_QntTempoAconteceu">
-              <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
-              <input type="text" id="QuantoTempoAconteceu" name="QuantoTempoAconteceu">
-            </div>
-          </form>
+      <div class="grid_checkbox_nao_cinematica">
+        <div>
+          <input type="checkbox" name="checkBox[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+          <label for="checkbox-id-8">Não</label>
         </div>
       </div>
-    </form>
+    </div>
+
+    <div class="grid_cinematica_aconteceu_input">
+      <div class="container-aconteceu hidden">
+        <div class="input-anme_sn_QntTempoAconteceu">
+          <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
+          <input type="text" id="QuantoTempoAconteceu" name="QuantoTempoAconteceu">
+        </div>
+      </div>
+    </div>
 
     <div class="grid_cinematica_problemaSaude">
       <!-- TEXTOS DAS CHECKBOX -->
@@ -1713,15 +1648,12 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="grid_cinematica_problemaSaude_input">
       <div class="container-PrbSaude hidden">
-        <form class="form">
-          <div class="input-anme_sn_Quais">
-            <label for="Quais">Qual?</label>
-            <input type="text" id="Quais" name="Quais">
-          </div>
-        </form>
+        <div class="input-anme_sn_Quais">
+          <label for="Quais">Qual?</label>
+          <input type="text" id="Quais" name="Quais">
+        </div>
       </div>
     </div>
-    </form>
     <br>
 
 
@@ -1753,26 +1685,21 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="grid_cinematica_medicacao_input">
       <div class="container-medicacao hidden">
-        <form class="form">
-          <div class="input-anme_sn_HorarioMedicacao">
-            <label for="username">Ultima medicação:</label>
-            <input type="time" id="HorarioMedicacao" name="HorarioMedicacao">
-          </div>
-        </form>
+        <div class="input-anme_sn_HorarioMedicacao">
+          <label for="username">Ultima medicação:</label>
+          <input type="time" id="HorarioMedicacao" name="HorarioMedicacao">
+        </div>
       </div>
     </div>
 
     <div class="grid_cinematica_medicacao_input">
       <div class="container-medicacao-quais hidden">
-        <form class="form">
-          <div class="input-anme_sn_HorarioMedicacao">
-            <label for="QuaisMedicacao">Qual?</label>
-            <input type="text" id="QuaisMedicacao" name="QuaisMedicacao">
-          </div>
-        </form>
+        <div class="input-anme_sn_HorarioMedicacao">
+          <label for="QuaisMedicacao">Qual?</label>
+          <input type="text" id="QuaisMedicacao" name="QuaisMedicacao">
+        </div>
       </div>
     </div>
-    </form>
 
     <div class="grid_cinematica_alergico">
       <!-- TEXTOS DAS CHECKBOX -->
@@ -1802,15 +1729,12 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="grid_cinematica_alergico_input">
       <div class="container-Alergico hidden">
-        <form class="form">
-          <div class="input-anme_sn_Especifique">
-            <label for="Quais">Qual?</label>
-            <input type="text" id="Quais" name="Quais">
-          </div>
-        </form>
+        <div class="input-anme_sn_Especifique">
+          <label for="Quais">Qual?</label>
+          <input type="text" id="Quais" name="Quais">
+        </div>
       </div>
     </div>
-    </form>
     <br>
 
 
@@ -1843,23 +1767,19 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="grid_cinematica_alimento_input">
       <div class="container-alimento-espec hidden">
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">Se sim, especifique:</label>
-            <input type="text" id="username" name="username" placeholder="________________">
-          </div>
-        </form>
+        <div class="input-anme_sn">
+          <label for="username">Se sim, especifique:</label>
+          <input type="text" id="username" name="username" placeholder="________________">
+        </div>
       </div>
     </div>
 
     <div class="grid_cinematica_alimento_input">
       <div class="container-alimento-horas hidden">
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">Que horas?</label>
-            <input type="time" id="username" name="username" placeholder="________________">
-          </div>
-        </form>
+        <div class="input-anme_sn">
+          <label for="username">Que horas?</label>
+          <input type="time" id="username" name="username" placeholder="________________">
+        </div>
       </div>
     </div>
 
@@ -1867,12 +1787,12 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
       <div class="subtitulo"></div>
       <div class="texto">Anamnese Gestacional</div>
 
-      <form class="gestacional_hidden_form">
+      <div class="gestacional_hidden_form">
         <div class="input-anme_sn">
           <label for="username">Período da gestação:</label>
           <input type="text" id="username" name="username" placeholder="________________">
         </div>
-      </form>
+      </div>
 
       <div class="grid_cinematica_pre_natal">
         <!-- TEXTOS DAS CHECKBOX -->
@@ -1902,12 +1822,10 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
       <div class="grid_cinematica_pre_natal_input">
         <div class="container-nome-medico hidden">
-          <form class="form">
-            <div class="input-anme_sn_nomemedico">
-              <label for="username" class="texto-medico">Nome do médico:</label>
-              <input type="text" id="nomeMedico" name="username" oninput="capitalizarPalavrasIniciais(this);">
-            </div>
-          </form>
+          <div class="input-anme_sn_nomemedico">
+            <label for="username" class="texto-medico">Nome do médico:</label>
+            <input type="text" id="nomeMedico" name="username" oninput="capitalizarPalavrasIniciais(this);">
+          </div>
         </div>
       </div>
 
@@ -1968,184 +1886,176 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
       <div class="grid_cinematica_primeiro_filho_input">
         <div class="container-quantos hidden">
-          <form class="form">
-            <div class="input-anme_sn_quantos">
-              <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
-              <input type="text" id="QuantosFilhos" name="QuantosFilhos">
-            </div>
-          </form>
+          <div class="input-anme_sn_quantos">
+            <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
+            <input type="text" id="QuantosFilhos" name="QuantosFilhos">
+          </div>
         </div>
       </div>
-      </form>
 
 
-      <form class="form">
-        <div class="input-anme_sn">
-          <label for="username">Que horas iniciaram as contrações?</label>
-          <input type="time" id="username" name="username" placeholder="________________">
-        </div>
+      <div class="input-anme_sn">
+        <label for="username">Que horas iniciaram as contrações?</label>
+        <input type="time" id="username" name="username" placeholder="________________">
+      </div>
 
-        <br>
+      <br>
 
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">Tempo das contrações:</label>
-            <input type="text" id="username" name="username" placeholder="Duração...">
-            <input type="text" id="username" name="username" placeholder="Intervalo...">
-          </div>
-        </form>
+      <div class="input-anme_sn">
+        <label for="username">Tempo das contrações:</label>
+        <input type="text" id="username" name="username" placeholder="Duração...">
+        <input type="text" id="username" name="username" placeholder="Intervalo...">
+      </div>
 
-        <br>
+      <br>
 
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
 
-          <div class="grid_txt_cinematica">
-            <div class="txt_cinematica">
-              <p>Sente pressão na região do quadril ou vontade de evacuar?
-              </p>
-            </div>
-          </div>
-
-
-          <!-- CHECKBOX SIM -->
-          <div class="grid_checkbox_sim_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar1" onclick="selectCheckPressaoEvacuar(this)">
-              <label for="checkbox-id-1">Sim</label>
-            </div>
-          </div>
-
-          <div class="grid_checkbox_nao_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar2" onclick="selectCheckPressaoEvacuar(this)">
-              <label for="checkbox-id-8">Não</label>
-            </div>
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Sente pressão na região do quadril ou vontade de evacuar?
+            </p>
           </div>
         </div>
 
-        <br>
 
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
-
-          <div class="grid_txt_cinematica">
-            <div class="txt_cinematica">
-              <p>Já houve ruptura da bolsa?
-              </p>
-            </div>
-          </div>
-
-
-          <!-- CHECKBOX SIM -->
-          <div class="grid_checkbox_sim_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa1" onclick="selectCheckRupturaBolsa(this)">
-              <label for="checkbox-id-1">Sim</label>
-            </div>
-          </div>
-
-          <div class="grid_checkbox_nao_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa2" onclick="selectCheckRupturaBolsa(this)">
-              <label for="checkbox-id-8">Não</label>
-            </div>
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar1" onclick="selectCheckPressaoEvacuar(this)">
+            <label for="checkbox-id-1">Sim</label>
           </div>
         </div>
 
-        <br>
-
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
-
-          <div class="grid_txt_cinematica">
-            <div class="txt_cinematica">
-              <p>Foi feito inspeção visual?
-              </p>
-            </div>
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar2" onclick="selectCheckPressaoEvacuar(this)">
+            <label for="checkbox-id-8">Não</label>
           </div>
+        </div>
+      </div>
 
+      <br>
 
-          <!-- CHECKBOX SIM -->
-          <div class="grid_checkbox_sim_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual1" onclick="selectCheckInspecaoVisual(this)">
-              <label for="checkbox-id-1">Sim</label>
-            </div>
-          </div>
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
 
-          <div class="grid_checkbox_nao_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual2" onclick="selectCheckInspecaoVisual(this)">
-              <label for="checkbox-id-8">Não</label>
-            </div>
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Já houve ruptura da bolsa?
+            </p>
           </div>
         </div>
 
-        <br>
 
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
-
-          <div class="grid_txt_cinematica">
-            <div class="txt_cinematica">
-              <p>Parto realizado?
-              </p>
-            </div>
-          </div>
-
-
-          <!-- CHECKBOX SIM -->
-          <div class="grid_checkbox_sim_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado1" onclick="selectCheckPartoRealizado(this)">
-              <label for="checkbox-id-1">Sim</label>
-            </div>
-          </div>
-
-          <div class="grid_checkbox_nao_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado2" onclick="selectCheckPartoRealizado(this)">
-              <label for="checkbox-id-8">Não</label>
-            </div>
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa1" onclick="selectCheckRupturaBolsa(this)">
+            <label for="checkbox-id-1">Sim</label>
           </div>
         </div>
 
-        <br>
-
-        <div class="grid_cinematica">
-          <!-- TEXTOS DAS CHECKBOX -->
-
-          <div class="grid_txt_cinematica">
-            <div class="txt_cinematica">
-              <p>Sexo do bebê:
-              </p>
-            </div>
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa2" onclick="selectCheckRupturaBolsa(this)">
+            <label for="checkbox-id-8">Não</label>
           </div>
+        </div>
+      </div>
 
-          <!-- CHECKBOX SIM -->
-          <div class="grid_checkbox_sim_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe1" onclick="selectCheckSexoBebe(this)">
-              <label for="checkbox-id-1">Fem</label>
-            </div>
-          </div>
+      <br>
 
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
 
-          <div class="grid_checkbox_nao_cinematica">
-            <div>
-              <input type="checkbox" name="checkBox[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe2" onclick="selectCheckSexoBebe(this)">
-              <label for="checkbox-id-8">Mas</label>
-            </div>
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Foi feito inspeção visual?
+            </p>
           </div>
         </div>
 
-        <form class="form">
-          <div class="input-anme_sn">
-            <label for="username">Nome do bebê:</label>
-            <input type="text" id="username" name="username" placeholder="________________">
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual1" onclick="selectCheckInspecaoVisual(this)">
+            <label for="checkbox-id-1">Sim</label>
           </div>
-        </form>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual2" onclick="selectCheckInspecaoVisual(this)">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Parto realizado?
+            </p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado1" onclick="selectCheckPartoRealizado(this)">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado2" onclick="selectCheckPartoRealizado(this)">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Sexo do bebê:
+            </p>
+          </div>
+        </div>
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe1" onclick="selectCheckSexoBebe(this)">
+            <label for="checkbox-id-1">Fem</label>
+          </div>
+        </div>
+
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="checkBox[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe2" onclick="selectCheckSexoBebe(this)">
+            <label for="checkbox-id-8">Mas</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-anme_sn">
+        <label for="username">Nome do bebê:</label>
+        <input type="text" id="username" name="username" placeholder="________________">
+      </div>
     </div>
   </div>
   <hr class="hr1">
@@ -2156,52 +2066,40 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
   <div class="boxatendimento">
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">M:</label>
-        <input type="text" id="username" name="username" oninput="validarAtendimentoM(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-        <p id="mensagemErro-14" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">M:</label>
+      <input type="text" id="username" name="username" oninput="validarAtendimentoM(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+      <p id="mensagemErro-14" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">S1:</label>
-        <input type="text" id="username" name="username" oninput="validarS1(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-        <p id="mensagemErro-15" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">S1:</label>
+      <input type="text" id="username" name="username" oninput="validarS1(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+      <p id="mensagemErro-15" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">S2:</label>
-        <input type="text" id="username" name="username" oninput="validarS2(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-        <p id="mensagemErro-16" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">S2:</label>
+      <input type="text" id="username" name="username" oninput="validarS2(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+      <p id="mensagemErro-16" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">S3:</label>
-        <input type="text" id="username" name="username" oninput="validarS3(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-        <p id="mensagemErro-17" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">S3:</label>
+      <input type="text" id="username" name="username" oninput="validarS3(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+      <p id="mensagemErro-17" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">Demandante:</label>
-        <input type="text" id="username" name="username" oninput="validarDemandante(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-        <p id="mensagemErro-18" style="color: red;"></p>
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">Demandante:</label>
+      <input type="text" id="username" name="username" oninput="validarDemandante(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+      <p id="mensagemErro-18" style="color: red;"></p>
+    </div>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="username">Equipe:</label>
-        <input type="text" id="username" name="username" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
-      </div>
-    </form>
+    <div class="input-caixatexto">
+      <label for="username">Equipe:</label>
+      <input type="text" id="username" name="username" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
+    </div>
 
     <div class="subtitulo"></div>
     <div class="texto">Procedimentos efetuados: </div>
@@ -2739,17 +2637,15 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
     </div>
 
 
-    <form class="form">
-      <div class="fundo-obsimp">
-        <div class="input-obsimp">
-          <label for="username">Observações importantes:</label>
-        </div>
-        
-        <div class="input-obsimp">
-          <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
-        </div>
+    <div class="fundo-obsimp">
+      <div class="input-obsimp">
+        <label for="username">Observações importantes:</label>
       </div>
-    </form>
+
+      <div class="input-obsimp">
+        <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
+      </div>
+    </div>
   </div>
   </div>
 

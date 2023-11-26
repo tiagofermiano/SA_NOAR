@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/11/2023 às 07:37
+-- Tempo de geração: 26/11/2023 às 16:21
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -56,7 +56,6 @@ INSERT INTO `atendente` (`id_atendente`, `nome`, `cpf`, `email`, `senha`, `data_
 
 CREATE TABLE `atendimento` (
   `id_atendimento` int(11) NOT NULL,
-  `id_info_ocorrencia` int(11) NOT NULL,
   `motorista` varchar(100) NOT NULL,
   `socorrista_1` varchar(100) NOT NULL,
   `socorrista_2` varchar(100) NOT NULL,
@@ -107,7 +106,6 @@ CREATE TABLE `atendimento` (
 
 CREATE TABLE `info_ocorrencia` (
   `id_info_ocorrencia` int(11) NOT NULL,
-  `atendente` int(11) NOT NULL,
   `data` date NOT NULL,
   `local_ocorrencia` varchar(100) NOT NULL,
   `nome_hospital` varchar(100) NOT NULL,
@@ -133,8 +131,8 @@ CREATE TABLE `info_ocorrencia` (
 -- Despejando dados para a tabela `info_ocorrencia`
 --
 
-INSERT INTO `info_ocorrencia` (`id_info_ocorrencia`, `atendente`, `data`, `local_ocorrencia`, `nome_hospital`, `numero_usb`, `numero_ocorrencia`, `despacho`, `hora_chegada`, `km_final`, `codigo_ir`, `codigo_ps`, `codigo_sia_sus`, `tipo_ocorrencia`, `cinematica_disturbio_comportamento`, `cinematica_encontrado_capacete`, `cinematica_encontrado_cinto`, `cinematica_parabrisa_avariado`, `cinematica_caminhando_cena`, `cinematica_painel_avariado`, `cinematica_volante_torcido`) VALUES
-(1, 1, '2023-11-26', 'rua tal', 'tal', '22', '12324', 'eu', '17:20:00.0000', '20', '33', '44', '34', 'acidente', '', '', '', '', '', '', '');
+INSERT INTO `info_ocorrencia` (`id_info_ocorrencia`, `data`, `local_ocorrencia`, `nome_hospital`, `numero_usb`, `numero_ocorrencia`, `despacho`, `hora_chegada`, `km_final`, `codigo_ir`, `codigo_ps`, `codigo_sia_sus`, `tipo_ocorrencia`, `cinematica_disturbio_comportamento`, `cinematica_encontrado_capacete`, `cinematica_encontrado_cinto`, `cinematica_parabrisa_avariado`, `cinematica_caminhando_cena`, `cinematica_painel_avariado`, `cinematica_volante_torcido`) VALUES
+(1, '2023-11-26', 'rua tal', 'tal', '22', '12324', 'eu', '17:20:00.0000', '20', '33', '44', '34', 'acidente', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -144,7 +142,6 @@ INSERT INTO `info_ocorrencia` (`id_info_ocorrencia`, `atendente`, `data`, `local
 
 CREATE TABLE `info_paciente` (
   `id_info_paciente` int(11) NOT NULL,
-  `id_info_ocorrencia` int(11) NOT NULL,
   `nome_paciente` varchar(100) NOT NULL,
   `idade_paciente` varchar(3) NOT NULL,
   `sexo_paciente` set('Masculino','Feminino') NOT NULL,
@@ -159,8 +156,23 @@ CREATE TABLE `info_paciente` (
 -- Despejando dados para a tabela `info_paciente`
 --
 
-INSERT INTO `info_paciente` (`id_info_paciente`, `id_info_ocorrencia`, `nome_paciente`, `idade_paciente`, `sexo_paciente`, `rg_cpf_paciente`, `nome_acompanhante`, `idade_acompanhante`, `vitima_era`, `forma_conducao`) VALUES
-(3, 1, 'Celo', '200', 'Feminino', '12121216565', 'Deus', '17', 'on', 'Sentada');
+INSERT INTO `info_paciente` (`id_info_paciente`, `nome_paciente`, `idade_paciente`, `sexo_paciente`, `rg_cpf_paciente`, `nome_acompanhante`, `idade_acompanhante`, `vitima_era`, `forma_conducao`) VALUES
+(3, 'Celo', '200', 'Feminino', '12121216565', 'Deus', '17', 'on', 'Sentada');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `ocorrencia`
+--
+
+CREATE TABLE `ocorrencia` (
+  `id` int(11) NOT NULL,
+  `id_atendente` int(11) NOT NULL,
+  `id_info_paciente` int(11) NOT NULL,
+  `id_info_ocorrencia` int(11) NOT NULL,
+  `id_situacao_paciente` int(11) NOT NULL,
+  `id_atendimento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -184,7 +196,6 @@ CREATE TABLE `relatorios` (
 
 CREATE TABLE `situacao_paciente` (
   `id_situacao_paciente` int(11) NOT NULL,
-  `id_info_ocorrencia` int(11) NOT NULL,
   `medida_pressao` varchar(12) NOT NULL,
   `pulso` varchar(12) NOT NULL,
   `respiração` varchar(9) NOT NULL,
@@ -261,22 +272,30 @@ ALTER TABLE `atendente`
 -- Índices de tabela `atendimento`
 --
 ALTER TABLE `atendimento`
-  ADD PRIMARY KEY (`id_atendimento`),
-  ADD KEY `fk_id_info_ocorrencia4` (`id_info_ocorrencia`);
+  ADD PRIMARY KEY (`id_atendimento`);
 
 --
 -- Índices de tabela `info_ocorrencia`
 --
 ALTER TABLE `info_ocorrencia`
-  ADD PRIMARY KEY (`id_info_ocorrencia`),
-  ADD KEY `fk_atedndente` (`atendente`);
+  ADD PRIMARY KEY (`id_info_ocorrencia`);
 
 --
 -- Índices de tabela `info_paciente`
 --
 ALTER TABLE `info_paciente`
-  ADD PRIMARY KEY (`id_info_paciente`),
-  ADD KEY `fk_id_info_ocorrencia` (`id_info_ocorrencia`);
+  ADD PRIMARY KEY (`id_info_paciente`);
+
+--
+-- Índices de tabela `ocorrencia`
+--
+ALTER TABLE `ocorrencia`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_id_atendente` (`id_atendente`),
+  ADD KEY `fk_id_info_paciente` (`id_info_paciente`),
+  ADD KEY `fk_id_info_ocorrencia` (`id_info_ocorrencia`),
+  ADD KEY `fk_id_situacao_paciente` (`id_situacao_paciente`),
+  ADD KEY `fk_id_atendimento` (`id_atendimento`);
 
 --
 -- Índices de tabela `relatorios`
@@ -289,8 +308,7 @@ ALTER TABLE `relatorios`
 -- Índices de tabela `situacao_paciente`
 --
 ALTER TABLE `situacao_paciente`
-  ADD PRIMARY KEY (`id_situacao_paciente`),
-  ADD KEY `fk_id_info_ocorrencia2` (`id_info_ocorrencia`);
+  ADD PRIMARY KEY (`id_situacao_paciente`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -321,6 +339,12 @@ ALTER TABLE `info_paciente`
   MODIFY `id_info_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de tabela `ocorrencia`
+--
+ALTER TABLE `ocorrencia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `relatorios`
 --
 ALTER TABLE `relatorios`
@@ -337,34 +361,20 @@ ALTER TABLE `situacao_paciente`
 --
 
 --
--- Restrições para tabelas `atendimento`
+-- Restrições para tabelas `ocorrencia`
 --
-ALTER TABLE `atendimento`
-  ADD CONSTRAINT `fk_id_info_ocorrencia4` FOREIGN KEY (`id_info_ocorrencia`) REFERENCES `info_ocorrencia` (`id_info_ocorrencia`);
-
---
--- Restrições para tabelas `info_ocorrencia`
---
-ALTER TABLE `info_ocorrencia`
-  ADD CONSTRAINT `fk_atedndente` FOREIGN KEY (`atendente`) REFERENCES `atendente` (`id_atendente`);
-
---
--- Restrições para tabelas `info_paciente`
---
-ALTER TABLE `info_paciente`
-  ADD CONSTRAINT `fk_id_info_ocorrencia` FOREIGN KEY (`id_info_ocorrencia`) REFERENCES `info_ocorrencia` (`id_info_ocorrencia`);
+ALTER TABLE `ocorrencia`
+  ADD CONSTRAINT `fk_id_atendente` FOREIGN KEY (`id_atendente`) REFERENCES `atendente` (`id_atendente`),
+  ADD CONSTRAINT `fk_id_atendimento` FOREIGN KEY (`id_atendimento`) REFERENCES `atendimento` (`id_atendimento`),
+  ADD CONSTRAINT `fk_id_info_ocorrencia` FOREIGN KEY (`id_info_ocorrencia`) REFERENCES `info_ocorrencia` (`id_info_ocorrencia`),
+  ADD CONSTRAINT `fk_id_info_paciente` FOREIGN KEY (`id_info_paciente`) REFERENCES `info_paciente` (`id_info_paciente`),
+  ADD CONSTRAINT `fk_id_situacao_paciente` FOREIGN KEY (`id_situacao_paciente`) REFERENCES `situacao_paciente` (`id_situacao_paciente`);
 
 --
 -- Restrições para tabelas `relatorios`
 --
 ALTER TABLE `relatorios`
-  ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`ocorrencia`) REFERENCES `info_ocorrencia` (`id_info_ocorrencia`);
-
---
--- Restrições para tabelas `situacao_paciente`
---
-ALTER TABLE `situacao_paciente`
-  ADD CONSTRAINT `fk_id_info_ocorrencia2` FOREIGN KEY (`id_info_ocorrencia`) REFERENCES `info_ocorrencia` (`id_info_ocorrencia`);
+  ADD CONSTRAINT `fk_ocorrencia` FOREIGN KEY (`ocorrencia`) REFERENCES `ocorrencia` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
