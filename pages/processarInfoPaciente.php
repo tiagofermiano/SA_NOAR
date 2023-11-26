@@ -1,11 +1,12 @@
 <?php
+include('protect.php');
 include('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submitInfos'])) {
-    processarFormulario();
+    processarInfoPaciente();
 }
 
-function processarFormulario() {
+function processarInfoPaciente() {
     global $conn;
 
     // Recuperar os dados do formulário
@@ -15,10 +16,7 @@ function processarFormulario() {
     $rgCpfPaciente = $_POST['rgCpfPaciente'];
     $nomeAcompanhante = $_POST['nomeAcompanhante'];
     $idadeAcompanhante = $_POST['idadeAcompanhante'];
-    
-    // Recuperar os valores dos checkboxes
     $vitimaEra = isset($_POST['vitimaEra']) ? implode(", ", $_POST['vitimaEra']) : '';
-    
     $formaConducao = $_POST['formaConducaoSelect'];
 
     // Inserir os dados no banco de dados

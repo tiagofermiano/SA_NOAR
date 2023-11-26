@@ -1665,6 +1665,40 @@
     box-shadow: none;
   }
 
+  /* NOVO BOTAOOOOO STYLEE */
+
+  .botao-grau {
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: #030060;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+    transition: all .6s ease;
+    margin: auto;
+    margin-top: 3rem;
+  }
+
+  .botao-grau:hover {
+    box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+  }
+
+  .botao-grau:focus,
+  .botao-grau:active {
+    opacity: .85;
+    box-shadow: none;
+  }
+
 
   .checkbox-subtitleperfusão {
     margin-left: 4.7rem;

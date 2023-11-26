@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('protect.php');
 include('processarInfoPaciente.php');
 include('processarInfoOcorrencia.php');
 include('processarSituacaoPaciente.php');
@@ -233,7 +233,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
       <div class="input-caixatexto">
         <label for="username">Data:</label>
-        <input class="textbox-n" placeholder="XX/XX/20XX" name="data" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
+        <input class="textbox-n" placeholder="XX/XX/20XX" name="data_ocorrencia" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
       </div>
 
       <div class="input-caixatexto">
@@ -1047,7 +1047,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
     <div class="texto" id="localizacao-traumas">Queimaduras</div>
     <!-- <div class="table-container"> -->
 
-    <button id="abrir-popup">1° GRAU</button>
+    <button id="abrir-popup" type="button" class="botao-grau" name="1graubtn">1° GRAU</button>
 
     <div id="popup" class="popup">
       <div class="popup-content">
@@ -1058,7 +1058,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
             <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
             <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
-            <th name="GENIT-1°GRAU">>GENITAL.</th>
+            <th name="GENIT-1°GRAU">GENITAL.</th>
             <th name="M.I.D.-1°GRAU">M.I.D.</th>
             <th name="M.I.E.-1°GRAU">M.I.E.</th>
             <th name="M.S.D.-1°GRAU">M.S.D.</th>
@@ -1074,14 +1074,13 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
             <td><input type="checkbox" name="queimadura"></td>
             <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar">Pronto</button>
+        <button id="salvar" type="button" class="botao-grau" name="submitInfos">Pronto</button>
       </div>
     </div>
 
-    <button id="abrir-popup2">2° GRAU</button>
+    <button id="abrir-popup2" type="button" class="botao-grau" name="2graubtn">2° GRAU</button>
 
     <div id="popup2" class="popup2">
       <div class="popup-content2">
@@ -1092,7 +1091,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
             <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
             <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
-            <th name="GENIT-2°GRAU">>GENITAL.</th>
+            <th name="GENIT-2°GRAU">GENITAL.</th>
             <th name="M.I.D.-2°GRAU">M.I.D.</th>
             <th name="M.I.E.-2°GRAU">M.I.E.</th>
             <th name="M.S.D.-2°GRAU">M.S.D.</th>
@@ -1108,14 +1107,13 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
             <td><input type="checkbox" name="queimadura"></td>
             <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar2">Pronto</button>
+        <button id="salvar2" type="button" class="botao-grau" name="submitInfos">Pronto</button>
       </div>
     </div>
 
-    <button id="abrir-popup3">3° GRAU</button>
+    <button id="abrir-popup3" type="button" class="botao-grau" name="3graubtn">3° GRAU</button>
 
     <div id="popup3" class="popup3">
       <div class="popup-content3">
@@ -1127,7 +1125,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <th name="PESCOÇO-3°GRAU">PESCOÇO</th>
             <th name="TORSO POS.-3°GRAU">TORSO POS.</th>
             <th name="TORSO ANT.-3°GRAU">TORSO ANT.</th>
-            <th name="GENIT-3°GRAU">>GENITAL.</th>
+            <th name="GENIT-3°GRAU">GENITAL.</th>
             <th name="M.I.D.-3°GRAU">M.I.D.</th>
             <th name="M.I.E.-3°GRAU">M.I.E.</th>
             <th name="M.S.D.-3°GRAU">M.S.D.</th>
@@ -1146,7 +1144,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
             <td><input type="checkbox" name="queimadura"></td>
           </tr>
         </table>
-        <button id="salvar3">Pronto</button>
+        <button id="salvar3" class="botao-grau" type="button" name="submitInfos">Pronto</button>
       </div>
     </div>
 
@@ -2505,28 +2503,32 @@ function enviarFormulario() {
     // Lógica para decidir qual ação executar
     var formulario = document.getElementById("envioFormulario");
     
-    var botao = document.getElementById("submitInfos");
+    var submitInfos = document.querySelector('button[name="submitInfos"]');
+    var action;
 
-    if (botao.name === "submitInfos") {
-        formulario.action = "processarInfoPaciente.php";
-    } else if (botao.name === "submitInfos") {
-        formulario.action = "processarInfoOcorrencia.php"; 
-    } else if (botao.name === "submitInfos") {
-        formulario.action = "processarSituacaoPaciente.php";  
-    } else if (botao.name === "submitInfos") {
-        formulario.action = "processarAtendimento.php";
+    if (submitInfos) {
+        // Verifica qual botão com name "submitInfos" foi clicado
+        if (submitInfos.id === "salvar") {
+            action = "processarInfoOcorrencia.php";
+        } else if (submitInfos.id === "salvar2") {
+            action = "processarInfoPaciente.php";
+        } else if (submitInfos.id === "salvar3") {
+            action = "processarSituacaoPaciente.php";
+        } else {
+            action = "processarAtendimento.php";
+        }
     } else {
-        formulario.action = "ficha_admin.php";
+        action = "ficha_admin.php";
     }
 
-    // Submete o formulário após definir a ação
-    formulario.submit();
+    // Define a ação do formulário
+    formulario.action = action;
+
+    // Retorna true para permitir o envio do formulário ou false para impedir
+    return true;
 }
 </script>
 </script>
-
-  <!-- <button id="gerarRelatorioButton">Gerar Relatório</button>
-  <br><br> -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
@@ -2536,7 +2538,7 @@ function enviarFormulario() {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.10/jspdf.plugin.autotable.min.js"></script>
   <script src="desenho.js"></script>
   <script src="tabela-queimadura.js"></script>
-  <script src="salvamento.js"></script>
+  <!-- <script src="salvamento.js"></script> -->
   <sc<script src="https://code.jquery.com/jquery-3.6.4.min.js">
     </script>
 

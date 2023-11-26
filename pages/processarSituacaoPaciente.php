@@ -1,12 +1,13 @@
 <?php
+include('protect.php');
 include('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submitInfos'])) {
-    processarFormulario();
+    processarSituacaoPaciente();
 }
 
 
-function processarFormulario()
+function processarSituacaoPaciente()
 {
     global $conn;
 
@@ -17,57 +18,57 @@ function processarFormulario()
     $saturacao = $_POST['saturacao'];
     $hgt = $_POST['hgt'];
     $temperatura = $_POST['temperatura'];
-    $perfusao = implode(", ", $_POST['perfusao']);
-    $normalAnormal = implode(", ", $_POST['normalAnormal']);
+    $perfusao = isset($_POST['perfusao']) ? implode(", ", $_POST['perfusao']) : '';
+    $normalAnormal = isset($_POST['normalAnormal']) ? implode(", ", $_POST['normaAnormal']) : '';
     $totalGcs = $_POST['totalGcs'];
-    $problemaPsiquiatrico = implode(", ", $_POST['problemaPsiquiatrico']);
-    $problemaRespiratorio = implode(", ", $_POST['problemaRespiratorio']);
-    $problemaDiabete = implode(", ", $_POST['problemaDiabete']);
+    $problemaPsiquiatrico = isset($_POST['problemaPsiquiatrico']) ? implode(", ", $_POST['problemaPsiquiatrico']) : '';
+    $problemaRespiratorio = isset($_POST['problemaRespiratório']) ? implode(", ", $_POST['problemaRespiratório']) : '';
+    $problemaDiabete = isset($_POST['problemaDiabete']) ? implode(", ", $_POST['problemaDiabete']) : '';
     $problemaDiabeteOutros = $_POST['problemaDiabeteOutros'];
-    $problemaObstetrico = implode(", ", $_POST['problemaObstetrico']);
-    $problemaTransporte = implode(", ", $_POST['problemaTransporte']);
+    $problemaObstetrico = isset($_POST['problemaObstetrico']) ? implode(", ", $_POST['problemaObstetrico']) : '';
+    $problemaTransporte = isset($_POST['problemaTransporte']) ? implode(", ", $_POST['problemaTransporte']) : '';
     $problemaTransporteOutros = $_POST['problemaTransporteOutros'];
     $problemaObjetosRecolhidos = $_POST['problemaObjetosRecolhidos'];
     $tabelaTraumasLocal = $_POST['tabelaTraumasLocal'];
     $tabelaTraumasLado = $_POST['tabelaTraumasLado'];
     $tabelaTraumasFace = $_POST['tabelaTraumasFace'];
     $tabelaTraumasTipo = $_POST['tabelaTraumasTipo'];
-    $queimadura = implode(", ", $_POST['queimadura']);
-    $decisaoTransporte = implode(", ", $_POST['decisaoTransporte']);
-    $sinaisSintomas = implode(", ", $_POST['sinaisSintomas']);
-    $hemorragia = implode(", ", $_POST['hemorragia']);
-    $edema = implode(", ", $_POST['edema']);
-    $parada = implode(", ", $_POST['parada']);
-    $cianose = implode(", ", $_POST['cianose']);
-    $pupilas = implode(", ", $_POST['pupilas']);
-    $outros = implode(", ", $_POST['outros']);
+    $queimadura = isset($_POST['queimadura']) ? implode(", ", $_POST['queimadura']) : '';
+    $decisaoTransporte = isset($_POST['decisaoTransporte']) ? implode(", ", $_POST['decisaoTransporte']) : '';
+    $sinaisSintomas = isset($_POST['sinaisSintomas']) ? implode(", ", $_POST['sinaiSintomas']) : '';
+    $hemorragia = isset($_POST['hemorragia']) ? implode(", ", $_POST['hemorragia']) : '';
+    $edema = isset($_POST['edema']) ? implode(", ", $_POST['edema']) : '';
+    $parada = isset($_POST['parada']) ? implode(", ", $_POST['parada']) : '';
+    $cianose = isset($_POST['cianose']) ? implode(", ", $_POST['cianose']) : '';
+    $pupilas = isset($_POST['pupilas']) ? implode(", ", $_POST['pupilas']) : '';
+    $outros = $_POST['outros'];
     $anamneseEmergencialOqueAconteceu = $_POST['anamneseEmergencialOqueAconteceu'];
-    $anamneseAconteceuOutrasVezes = implode(", ", $_POST['anamneseAconteceuOutrasVezes']);
+    $anamneseAconteceuOutrasVezes = isset($_POST['anamnseseAconteceuOutrasVezes']) ? implode(", ", $_POST['anamneseAconteceuOutrasVezes']) : '';
     $anamneseQuantoTempo = $_POST['anamneseQuantoTempo'];
-    $anamneseProblemaSaude = implode(", ", $_POST['anamneseProblemaSaude']);
+    $anamneseProblemaSaude = isset($_POST['anamneseProblemaSaude']) ? implode(", ", $_POST['anamneseProblemaSaude']) : '';
     $anamneseQuaisProblemas = $_POST['anamneseQuaisProblemas'];
-    $anamneseUsoMedicacao = implode(", ", $_POST['anamneseUsoMedicacao']);
+    $anamneseUsoMedicacao = isset($_POST['anamnseseUsoMedicacao']) ? implode(", ", $_POST['anamneseUsoMedicacao']) : '';
     $anamneseHoraUltimaMedicacao = $_POST['anamneseHoraUltimaMedicacao'];
     $anamneseQualMedicacao = $_POST['anamneseQualMedicacao'];
-    $anamneseAlergico = implode(", ", $_POST['anamneseAlergico']);
+    $anamneseAlergico = isset($_POST['anamnseseAlergico']) ? implode(", ", $_POST['anamneseAlergico']) : '';
     $anamneseQualAlergia = $_POST['anamneseQualAlergia'];
-    $anamneseAlimento6Horas = implode(", ", $_POST['anamneseAlimento6Horas']);
+    $anamneseAlimento6Horas = isset($_POST['anamnseseAlimento6Horas']) ? implode(", ", $_POST['anamneseAlimento6Horas']) : '';
     $anamneseEspecifique = $_POST['anamneseEspecifique'];
     $anamneseQueHoras = $_POST['anamneseQueHoras'];
     $gestacionalPeriodoGestacao = $_POST['gestacionalPeriodoGestacao'];
-    $gestacionalPreNatal = implode(", ", $_POST['gestacionalPreNatal']);
+    $gestacionalPreNatal = isset($_POST['gestacionalPreNatal']) ? implode(", ", $_POST['gestacionalPreNatal']) : '';
     $gestacionalNomeMedico = $_POST['gestacionalNomeMedico'];
-    $gestacionalPossibilidadeComplicacao = implode(", ", $_POST['gestacionalPossibilidadeComplicacao']);
-    $gestacionalPrimeiroFilho = implode(", ", $_POST['gestacionalPrimeiroFilho']);
+    $gestacionalPossibilidadeComplicacao = isset($_POST['gestacionalPossibilidadeComplicacao']) ? implode(", ", $_POST['gestacionalPossibilidadeComplicacao']) : '';
+    $gestacionalPrimeiroFilho = isset($_POST['gestacionalPrimeiroFilho']) ? implode(", ", $_POST['gestacionalPrimeiroFilho']) : '';
     $gestacionalQuantos = $_POST['gestacionalQuantos'];
     $gestacionalHoraContracao = $_POST['gestacionalHoraContracao'];
     $gestacionalDuracaoContracao = $_POST['gestacionalDuracaoContracao'];
     $gestacionalIntervaloContracao = $_POST['gestacionalIntervaloContracao'];
-    $gestacionalPressaoQuadril = implode(", ", $_POST['gestacionalPressaoQuadril']);
-    $gestacionalRupturaBolsa = implode(", ", $_POST['gestacionalRupturaBolsa']);
-    $gestacionalInspecaoVisual = implode(", ", $_POST['gestacionalInspecaoVisual']);
-    $gestacionalPartoRealizado = implode(", ", $_POST['gestacionalPartoRealizado']);
-    $gestacionalSexoBebe = implode(", ", $_POST['gestacionalSexoBebe']);
+    $gestacionalPressaoQuadril = isset($_POST['gestacionalPressaoQuadril']) ? implode(", ", $_POST['gestacionalPressaoQuadril']) : '';
+    $gestacionalRupturaBolsa = isset($_POST['gestacionalRupturaBolsa']) ? implode(", ", $_POST['gestacionalRupturaBolsa']) : '';
+    $gestacionalInspecaoVisual = isset($_POST['gestacionalInspecaoVisual']) ? implode(", ", $_POST['gestacionalInspecaoVisual']) : '';
+    $gestacionalPartoRealizado = isset($_POST['gestacionalPartoRealizado']) ? implode(", ", $_POST['gestacionalPartoRealizado']) : '';
+    $gestacionalSexoBebe = isset($_POST['gestacionalSexoBebe']) ? implode(", ", $_POST['gestacionalSexoBebe']) : '';
     $gestacionalNomeBebe = $_POST['gestacionalNomeBebe'];
 
     try {

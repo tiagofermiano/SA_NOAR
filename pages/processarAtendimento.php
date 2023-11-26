@@ -1,11 +1,12 @@
 <?php
+include('protect.php');
 include('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submitInfos'])) {
-    processarFormulario();
+    processarAtendimento();
 }
 
-function processarFormulario()
+function processarAtendimento()
 {
     global $conn;
 
@@ -15,16 +16,16 @@ function processarFormulario()
     $socorrista3 = $_POST['socorrista3'];
     $demandante = $_POST['demandante'];
     $equipe = $_POST['equipe'];
-    $procedimentosEfetuados1 = implode(", ", $_POST['procedimentosefetuados1']);
-    $procedimentoMeiosAuxiliares = implode(", ", $_POST['procedimentomeiosauxiliares']);
-    $procedimentoPolicia = implode(", ", $_POST['procedimentopolicia']);
-    $procedimentoSamu = implode(", ", $_POST['procedimentosamu']);
-    $procedimentoCit = implode(", ", $_POST['procedimentocit']);
-    $descartaveisAtaduraTamanho = implode(", ", $_POST['descartaveisataduratamanho']);
+    $procedimentosEfetuados1 = isset($_POST['procedimentosefetuados1']) ? implode(", ", $_POST['procedimentosEfetuados1']) : '';
+    $procedimentoMeiosAuxiliares = isset($_POST['procedimentosmeiosauxiliares']) ? implode(", ", $_POST['procedimentosefetuados1']) : '';
+    $procedimentoPolicia = isset($_POST['procedimentopolicia']) ? implode(", ", $_POST['procedimentopolicia']) : '';
+    $procedimentoSamu = isset($_POST['procedimentosamu']) ? implode(", ", $_POST['procedimentosamu']) : '';
+    $procedimentoCit =$_POST['procedimentocit'];
+    $descartaveisAtaduraTamanho = isset($_POST['descartaveisataduratamanho']) ? implode(", ", $_POST['descartaveisataduraaamanho']) : '';
     $descartaveisAtaduraQuant = $_POST['descartaveisataduraquant'];
     $descartaveisCateterOculosQuant = $_POST['descartaveiscateteroculosquant'];
     $descartaveisCompressaComumQuant = $_POST['descartaveiscompressacomumquant'];
-    $descartaveisKitsTamanho = implode(", ", $_POST['descartaveiskitstamanho']);
+    $descartaveisKitsTamanho = isset($_POST['descartaveiskitstamanho']) ? implode(", ", $_POST['descartaveiskitstamanho']) : '';
     $descartaveisKitsQuant = $_POST['descartaveiskitsquant'];
     $descartaveisLuvasQuant = $_POST['descartaveisluvasquant'];
     $descartaveisMascaraQuant = $_POST['descartaveismascaraquant'];
@@ -32,17 +33,17 @@ function processarFormulario()
     $descartaveisPasDeaQuant = $_POST['descartaveispasdeaquant'];
     $descartaveisSondaAspiracaoQuant = $_POST['descartaveissondaaspiracaoquant'];
     $descartaveisSoroFisiologicoQuant = $_POST['descartaveissorofisiologicoquant'];
-    $descartaveisTalasPapTamanho = implode(", ", $_POST['descartaveistalaspaptamanho']);
+    $descartaveisTalasPapTamanho = isset($_POST['descartaveistalaspaptamanho']) ? implode(", ", $_POST['descartaveistalaspaptamanho']) : '';
     $descartaveisTalasPapQuant = $_POST['descartaveistalaspapquant'];
     $descartaveisOutros = $_POST['descartaveisoutros'];
     $deixadosHospitalBaseEstabilizadorQuant = $_POST['deixadoshospitalbaseestabilizadorquant'];
-    $deixadosHospitalColarTamanho = implode(", ", $_POST['deixadoshospitalcolartamanho']);
+    $deixadosHospitalColarTamanho = isset($_POST['deixadosospitalcolartamanho']) ? implode(", ", $_POST['deixadosospitalcolartamanho']) : '';
     $deixadosHospitalColarQuant = $_POST['deixadoshospitalcolarquant'];
     $deixadosHospitalCoxinEstabilizadorQuant = $_POST['deixadoshospitalcoxinestabilizadorquant'];
-    $deixadosHospitalKedTamanho = implode(", ", $_POST['deixadoshospitalkedtamanho']);
+    $deixadosHospitalKedTamanho = isset($_POST['deixadosospitalkedtamanho']) ? implode(", ", $_POST['deixadosospitalkedtamanho']) : '';
     $deixadosHospitalKedQuant = $_POST['deixadoshospitalkedQquant'];
     $deixadosHospitalMacaRigidaQuant = $_POST['deixadoshospitalmacarigidaquant'];
-    $deixadosHospitalTtfTamanho = implode(", ", $_POST['deixadoshospitalttftamanho']);
+    $deixadosHospitalTtfTamanho = isset($_POST['deixadosospitalttftamanho']) ? implode(", ", $_POST['deixadosospitalttftamanho']) : '';
     $deixadosHospitalTtfQuant = $_POST['deixadoshospitalttfquant'];
     $deixadosHospitalTiranteAranhaQuant = $_POST['deixadoshospitaltirantearanhaquant'];
     $deixadosHospitalTiranteCabecaQuant = $_POST['deixadoshospitaltirantecabecaquant'];
