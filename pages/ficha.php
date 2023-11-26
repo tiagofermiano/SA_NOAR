@@ -90,7 +90,18 @@
       <a href="#atendimento">Atendimento</a>
     </div>
   </div>
-  <script src="/scripts/menu-suspenso.js"></script>
+  <script>
+
+document.querySelector('.circle-button').addEventListener('click', function() {
+    var dropdown = document.querySelector('.dropdown-content');
+    if (dropdown.style.display === 'block') {
+      dropdown.style.display = 'none';
+    } else {
+      dropdown.style.display = 'block';
+    }
+  });
+
+  </script>
 
   <div class="container">
     <h1 class="title" id="info-paciente">Informações do paciente:</h1>

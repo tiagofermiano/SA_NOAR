@@ -1,3 +1,8 @@
+<?php 
+include ('conexao.php');
+include ('processarFicha.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,14 +59,31 @@
       <a href="#atendimento">Atendimento</a>
     </div>
   </div>
-  <script src="/scripts/menu-suspenso.js"></script>
+  <script>
+    document.querySelector('.circle-button').addEventListener('click', function() {
+      var dropdown = document.querySelector('.dropdown-content');
+      if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+      } else {
+        dropdown.style.display = 'block';
+      }
+    });
+  </script>
 
   <div class="container">
     <h1 class="title" id="info-paciente">Informações do paciente:</h1>
   </div>
   <div class="boxinfopaciente">
 
-    <form class="form">
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
+      <div class="input-caixatexto">
+        <label for="idInfoOcorrencia">ID ocorrência:</label>
+        <input type="text" id="nomePaciente" name="idInfoOcorrencia" maxlength="9" oninput="validarNumeroIdadePac(this);" placeholder="Digite a ID...">
+        <p id="mensagemErro-1" style="color: red;"></p>
+      </div>
+    </form>
+
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
       <div class="input-caixatexto">
         <label for="nomePaciente">Nome do paciente:</label>
         <input type="text" id="nomePaciente" name="nomePaciente" oninput="validarLetraNomePaciente(this); capitalizarPalavrasIniciais(this);" placeholder="Digite o nome...">
@@ -69,7 +91,8 @@
       </div>
     </form>
 
-    <form class="form">
+
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
       <div class="input-caixatexto">
         <label for="idadePaciente">Idade:</label>
         <input type="text" id="idadePaciente" name="idadePaciente" maxlength="3" oninput="validarNumeroIdadePac(this);" placeholder="Digite a idade...">
@@ -77,20 +100,22 @@
       </div>
     </form>
 
-    <div class="sexo_container">
-      <label for="sexoSelect">Sexo:</label>
-      <div class="custom-select">
-        <select class="sexo" id="sexoSelect" name="sexoSelect" onchange="mostrarOcultarDiv()">
-          <option selected="selected"></option>
-          <option class="opcao" value="Feminino">Feminino</option>
-          <option value="Masculino">Masculino</option>
-        </select>
-        <div class="custom-arrow"></div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
+      <div class="sexo_container">
+        <label for="sexoSelect">Sexo:</label>
+        <div class="custom-select">
+          <select class="sexo" id="sexoSelect" name="sexoSelect" onchange="mostrarOcultarDiv()">
+            <option selected="selected"></option>
+            <option class="opcao" value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+          </select>
+          <div class="custom-arrow"></div>
+        </div>
       </div>
-    </div>
+    </form>
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">
       <div class="input-caixatexto">
         <label for="rgCpfPaciente">RG/CPF do paciente:</label>
         <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." oninput="validarNumeroRGCPFPaciente(this);">
@@ -98,95 +123,98 @@
       </div>
     </form>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="nomeAcompanhante">Nome do acompanhante:</label>
-        <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..." oninput="validarNomeAcomp(this); capitalizarPalavrasIniciais(this);">
-        <p id="mensagemErro-4" style="color: red;"></p>
-      </div>
-    </form>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+    <div class="input-caixatexto">
+      <label for="nomeAcompanhante">Nome do acompanhante:</label>
+      <input type="text" id="nomeAcompanhante" name="nomeAcompanhante" placeholder="Digite..." oninput="validarNomeAcomp(this); capitalizarPalavrasIniciais(this);">
+      <p id="mensagemErro-4" style="color: red;"></p>
+  </div>
+  </form>
 
-    <form class="form">
-      <div class="input-caixatexto">
-        <label for="idadeAcompanhante">Idade do acompanhante:</label>
-        <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="3" placeholder="Digite..." oninput="validarNumeroIdadeAcomp(this)">
-        <p id="mensagemErro-5" style="color: red;"></p>
-      </div>
-    </form>
-
-    <div class="input-vitimaera">
-      <div class="input-caixatexto">
-        <label for="vitimaEra">Vítima era:</label>
-      </div>
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+    <div class="input-caixatexto">
+      <label for="idadeAcompanhante">Idade do acompanhante:</label>
+      <input type="text" id="idadeAcompanhante" name="idadeAcompanhante" maxlength="3" placeholder="Digite..." oninput="validarNumeroIdadeAcomp(this)">
+      <p id="mensagemErro-5" style="color: red;"></p>
     </div>
+  </form>
 
+  <div class="input-vitimaera">
+    <div class="input-caixatexto">
+      <label for="vitimaEra">Vítima era:</label>
+    </div>
+  </div>
+
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
     <div class="grid_vitima">
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="ciclista" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="ciclista">Ciclista</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="CondutorMoto" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="CondutorMoto">Condutor moto</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="Gestante" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="Gestante">Gestante</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="Pas.BancoFrente" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="Pas.BancoFrente">Pas.Bco.Frente</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="Pas.Moto" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="Pas.Moto">Pas.Moto</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="CondutorCarro" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="CondutorCarro">Condutor carro</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="clinico" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="clinico">Clínico</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="trauma" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="trauma">Trauma</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="Pas.BancoTras" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="Pas.BancoTras">Pas.Bco.Trás</label>
         </div>
       </div>
       <div>
         <div class="checkbox">
-          <input type="checkbox" name="Pedestre" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
+          <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="selectCheckVitimaEra" onclick="selectCheckVitimaEra(this)">
           <label for="Pedestre">Pedestre</label>
         </div>
       </div>
     </div>
+  </form>
 
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
     <div class="sexo_container">
       <label for="textoformaconducao">Forma de Condução:</label>
       <div class="custom-select">
-        <select class="sexo">
+        <select class="sexo" name="formaConducaoSelect">
           <option selected="selected"></option>
           <option>Deitada</option>
           <option>Semi-sentada</option>
@@ -195,7 +223,8 @@
         <div class="custom-arrow"></div>
       </div>
     </div>
-  </div>
+    </div>
+  </form>
 
   <hr class="hr1">
 
@@ -206,28 +235,28 @@
 
   <div class="boxinfoocorrencia">
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Data:</label>
-        <input class="textbox-n" placeholder="XX/XX/20XX" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
+        <input class="textbox-n" placeholder="XX/XX/20XX" name="dataOcorrencia" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="localocorrencia">Local da ocorrência:</label>
-        <input type="text" id="localocorrencia" name="localocorrencia" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
+        <input type="text" id="localocorrencia" name="localOcorrencia" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="nomehospital">Nome do hospital:</label>
-        <input type="text" id="nomehospital" name="nomehospital" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
+        <input type="text" id="nomehospital" name="nomeHospital" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="usb">N° USB.:</label>
         <input type="text" id="usb" name="usb" placeholder="Digite..." oninput="validarNumeroUSB(this)" maxlength="3">
@@ -235,36 +264,36 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="numocorrencia">N° Ocorr.:</label>
-        <input type="text" id="numocorrencia" name="numocorrencia" placeholder="Digite..." oninput="validarNumeroOcorr(this)">
+        <input type="text" id="numocorrencia" name="numOcorrencia" placeholder="Digite..." oninput="validarNumeroOcorr(this)">
         <p id="mensagemErro-6" style="color: red;"></p>
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="despacho">Despacho:</label>
         <input type="text" id="despacho" name="despacho" placeholder="Digite...">
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="horachegada">Hora Chegada:</label>
-        <input type="time" id="horachegada" name="horachegada" min="01:00" max="00:00" required />
+        <input type="time" id="horachegada" name="horaChegada" min="01:00" max="00:00" required />
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="kmfinal">KM Final:</label>
-        <input type="text" id="kmfinal" name="knfinal" placeholder="Digite...">
+        <input type="text" id="kmfinal" name="kmFinal" placeholder="Digite...">
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="codIr">CÓD. IR:</label>
         <input type="text" id="codIr" name="codIr" placeholder="Digite..." oninput="validarCodIR(this)">
@@ -272,7 +301,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="codPs">CÓD. PS:</label>
         <input type="text" id="codPs" name="codPs" placeholder="Digite..." oninput="validarCodPS(this)">
@@ -280,7 +309,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php">  
       <div class="input-caixatexto">
         <label for="codSiaSus">CÓD. SIA/SUS:</label>
         <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
@@ -292,97 +321,97 @@
     <div class="subtitulo"></div>
     <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
     <br>
-    <div class="grid_ocorrencia">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="grid_ocorrencia">
 
-      <div>
-        <input type="checkbox" name="afogamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Afogamento">Afogamento</label>
+        <div>
+          <input type="checkbox" name="afogamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Afogamento">Afogamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="agressao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Agressão">Agressão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="atropelamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Atropelamento">Atropelamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="choqueElétrico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Choque elétrico">Choque elétrico</label>
+        </div>
+        <div>
+          <input type="checkbox" name="desabamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Desabamento">Desabamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="domestico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Doméstico">Doméstico</label>
+        </div>
+        <div>
+          <input type="checkbox" name="esportivo" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Esportivo">Esportivo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="cCausadoPorAnimais" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="CausadoPorAnimais">Causado por animais</label>
+        </div>
+        <div>
+          <input type="checkbox" name="ComMeioTransporte" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="ComMeioTransporte">Com meio de transp.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="Desmor./Desliz." class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Desmor./Desliz.">Desmor./Desliz.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="intoxicacao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Intoxicação">Intoxicação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="quedabibicleta" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaBicicleta">Queda bicicleta</label>
+        </div>
+        <div>
+          <input type="checkbox" name="quedamoto" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaMoto">Queda moto</label>
+        </div>
+        <div>
+          <input type="checkbox" name="quedanivelmenor2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaNivelMenor2M"> Queda nível &gt; 2M </label>
+        </div>
+        <div>
+          <input type="checkbox" name="trabalho" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Trabalho">Trabalho</label>
+        </div>
+        <div>
+          <input type="checkbox" name="transferência" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="Transferência">Transferência</label>
+        </div>
+        <div>
+          <input type="checkbox" name="emergênciamédica" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="EmergenciaMedica">Emergência Médica</label>
+        </div>
+        <div>
+          <input type="checkbox" name="quedaalturamaior2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaAlturaMaior2M">Queda de altura &lt; 2M</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tentativasuicidio" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="TentativadeSuicidio">Tentativa de suicídio</label>
+        </div>
+        <div>
+          <input type="checkbox" name="quedaprorpiaaltura" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaPropriaAltura">Queda própria altura</label>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" name="agressao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Agressão">Agressão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="atropelamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Atropelamento">Atropelamento</label>
-      </div>
-      <div>
-        <input type="checkbox" name="choqueElétrico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Choque elétrico">Choque elétrico</label>
-      </div>
-      <div>
-        <input type="checkbox" name="desabamento" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Desabamento">Desabamento</label>
-      </div>
-      <div>
-        <input type="checkbox" name="domestico" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Doméstico">Doméstico</label>
-      </div>
-      <div>
-        <input type="checkbox" name="esportivo" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Esportivo">Esportivo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="cCausadoPorAnimais" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="CausadoPorAnimais">Causado por animais</label>
-      </div>
-      <div>
-        <input type="checkbox" name="ComMeioTransporte" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="ComMeioTransporte">Com meio de transp.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="Desmor./Desliz." class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Desmor./Desliz.">Desmor./Desliz.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="intoxicacao" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Intoxicação">Intoxicação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedabibicleta" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaBicicleta">Queda bicicleta</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedamoto" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaMoto">Queda moto</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedanivelmenor2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaNivelMenor2M"> Queda nível &gt; 2M </label>
-      </div>
-      <div>
-        <input type="checkbox" name="trabalho" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Trabalho">Trabalho</label>
-      </div>
-      <div>
-        <input type="checkbox" name="transferência" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="Transferência">Transferência</label>
-      </div>
-      <div>
-        <input type="checkbox" name="emergênciamédica" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="EmergenciaMedica">Emergência Médica</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedaalturamaior2m" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaAlturaMaior2M">Queda de altura &lt; 2M</label>
-      </div>
-      <div>
-        <input type="checkbox" name="tentativasuicidio" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="TentativadeSuicidio">Tentativa de suicídio</label>
-      </div>
-      <div>
-        <input type="checkbox" name="quedaprorpiaaltura" class="selectCheckOcorrencia" id="selectCheckOcorrencia" onclick="selectCheckOcorrencia(this)">
-        <label for="QuedaPropriaAltura">Queda própria altura</label>
-      </div>
-
-    </div>
+    </form>
     <br>
 
     <div class="subtitulo"></div>
     <div class="texto">Avaliação de cinemática: </div>
 
     <br>
-
     <div class="grid_cinematica">
       <!-- TEXTOS DAS CHECKBOX -->
 
@@ -410,70 +439,72 @@
         </div>
       </div>
 
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
-          <label for="Sim">Sim</label>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
+            <label for="Sim">Sim</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Sim" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
+            <label for="Sim">Sim</label>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
-          <label for="Sim">Sim</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Sim" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
-          <label for="Sim">Sim</label>
-        </div>
-      </div>
 
-      <!-- CHECKBOX NÃO -->
+        <!-- CHECKBOX NÃO -->
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
-          <label for="Não">Não</label>
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckDistúrbio" id="selectCheckDistúrbio" onclick="selectCheckDistúrbio(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
+            <label for="Não">Não</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Não" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
+            <label for="Não">Não</label>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCapacete" id="selectCheckCapacete" onclick="selectCheckCapacete(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCinto" id="selectCheckCinto" onclick="selectCheckCinto(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckParabrisa" id="selectCheckParabrisa" onclick="selectCheckParabrisa(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckCaminhando" id="selectCheckCaminhando" onclick="selectCheckCaminhando(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckPainel" id="selectCheckPainel" onclick="selectCheckPainel(this)">
-          <label for="Não">Não</label>
-        </div>
-        <div>
-          <input type="checkbox" name="Não" class="selectCheckVolante" id="selectCheckVolante" onclick="selectCheckVolante(this)">
-          <label for="Não">Não</label>
-        </div>
-      </div>
+      </form>
     </div>
 
 
@@ -489,7 +520,7 @@
 
   <div class="boxsituacaopaciente">
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="medidaPressao">Medida de Pressão:</label>
         <input type="text" id="medidaPressao" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
@@ -499,7 +530,7 @@
 
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="numeroInput">Pulso:</label>
         <input type="text" id="numeroInput" name="pulso" oninput="completePulso(this)" placeholder="___B.C.P.M.">
@@ -509,7 +540,7 @@
 
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="repiracao">Respiração:</label>
         <input type="text" id="repiracao" name="repiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
@@ -519,7 +550,7 @@
 
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Saturação:</label>
         <input type="text" id="username" name="saturacao" placeholder="___%" oninput="completeSaturacao(this)">
@@ -527,7 +558,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">HGT:</label>
         <input type="text" id="username" name="hgt" placeholder="___mg/dL" oninput="completeWithHgt(this)">
@@ -535,7 +566,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="temperatura">Temperatura:</label>
         <input type="text" id="temperatura" name="temperatura" placeholder="___°C" oninput="completeWithDegreeC(this)">
@@ -544,7 +575,7 @@
     </form>
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Perfusão:</label>
       </div>
@@ -556,9 +587,10 @@
         <input type="checkbox" name="maior2seg" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois2" onclick="selectCheckPerfusaoMaiorDois(this)">
         <label for="Maior2seg">&lt; 2 SEG</label>
       </div>
+    </form>
 
 
-
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="checkbox-texto">
         <input type="checkbox" id="selectCheckNormalAnormal1" name="normal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
         <label for="checkbox-id-1">NORMAL</label>
@@ -577,34 +609,37 @@
         <div class="input-consciencia">
           <label for="AberturaOcular">ABERTURA<br>OCULAR</label>
         </div>
-        <div class="check_ocular">
 
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5AberturOcularEspontânea" class="checkAberturaOcularMaior5" id="espontanea" onclick="selectAberturaOcularMaior5(this)">
-            <label for="Espontânea">Espontânea</label>
-            <div class="numeros_niveis"></div>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
+
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5AberturOcularEspontânea" class="checkAberturaOcularMaior5" id="espontanea" onclick="selectAberturaOcularMaior5(this)">
+              <label for="Espontânea">Espontânea</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5AberturOcularComandoVerbal" class="checkAberturaOcularMaior5" id="comandoverbal" onclick="selectAberturaOcularMaior5(this)">
+              <label for="ComandoVerbal">Comando verbal</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5AberturOcularEstimuloDoloroso" class="checkAberturaOcularMaior5" id="estimulodoloroso" onclick="selectAberturaOcularMaior5(this)">
+              <label for="EstímuloDoloroso">Estímulo doloroso</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">1
+              <input type="checkbox" name="Maior5AberturOcularNenhuma" class="checkAberturaOcularMaior5" id="nenhuma" onclick="selectAberturaOcularMaior5(this)">
+              <label for="Nenhuma">Nenhuma</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="Maior5AberturOcularNT" class="checkAberturaOcularMaior5" id="NT" onclick="selectAberturaOcularMaior5(this)">
+              <label for="NT">NT</label>
+              <div class="numeros_niveis"></div>
+            </div>
           </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5AberturOcularComandoVerbal" class="checkAberturaOcularMaior5" id="comandoverbal" onclick="selectAberturaOcularMaior5(this)">
-            <label for="ComandoVerbal">Comando verbal</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5AberturOcularEstimuloDoloroso" class="checkAberturaOcularMaior5" id="estimulodoloroso" onclick="selectAberturaOcularMaior5(this)">
-            <label for="EstímuloDoloroso">Estímulo doloroso</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox">1
-            <input type="checkbox" name="Maior5AberturOcularNenhuma" class="checkAberturaOcularMaior5" id="nenhuma" onclick="selectAberturaOcularMaior5(this)">
-            <label for="Nenhuma">Nenhuma</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" name="Maior5AberturOcularNT" class="checkAberturaOcularMaior5" id="NT" onclick="selectAberturaOcularMaior5(this)">
-            <label for="NT">NT</label>
-            <div class="numeros_niveis"></div>
-          </div>
-        </div>
+        </form>
       </div>
 
       <hr class="hr2">
@@ -614,34 +649,37 @@
         <div class="input-consciencia">
           <label for="username">RESPOSTA<br>VERBAL</label>
         </div>
-        <div class="check_ocular">
 
-          <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="Orientado" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Orientado">Orientado</label>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
+
+            <div class="checkbox">5
+              <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="Orientado" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Orientado">Orientado</label>
+            </div>
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="Confuso" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Confuso">Confuso</label>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="Palavras_Inapro." onclick="selectRespostaVerbalMaior5(this)">
+              <label for="PalavrasInapro.">Palavras Inapro.</label>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="Palavras_Incomp." onclick="selectRespostaVerbalMaior5(this)">
+              <label for="PalavrasIncomp.">Palavras Incomp.</label>
+            </div>
+            <div class="checkbox">1
+              <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="Nenhuma" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Nenhuma">Nenhuma</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="Maior5RespostaVerbalNT" class="checkRespostaVerbalMaior5" id="NT" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="NT">NT</label>
+              <div class="numeros_niveis"></div>
+            </div>
           </div>
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="Confuso" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Confuso">Confuso</label>
-          </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="Palavras_Inapro." onclick="selectRespostaVerbalMaior5(this)">
-            <label for="PalavrasInapro.">Palavras Inapro.</label>
-          </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="Palavras_Incomp." onclick="selectRespostaVerbalMaior5(this)">
-            <label for="PalavrasIncomp.">Palavras Incomp.</label>
-          </div>
-          <div class="checkbox">1
-            <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="Nenhuma" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Nenhuma">Nenhuma</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" name="Maior5RespostaVerbalNT" class="checkRespostaVerbalMaior5" id="NT" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="NT">NT</label>
-            <div class="numeros_niveis"></div>
-          </div>
-        </div>
+        </form>
 
 
       </div>
@@ -652,49 +690,53 @@
         <div class="input-consciencia">
           <label for="username">RESPOSTA<br>MOTORA</label>
         </div>
-        <div class="check_ocular">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
 
-          <div class="checkbox">6
-            <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="Obedece_comandos" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="ObedeceComandos">Obedece comandos</label>
-          </div>
-          <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="Localiza_dor" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="LocalizaDor">Localiza dor</label>
-          </div>
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="Mov_retirada" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="Mov.deRetirada">Mov. de retirada</label>
-          </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="Flexão_anormal" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="FlexãoAnormal">Flexão anormal</label>
-          </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="ExtensãoAnormal" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="ExtensãoAnormal">Extensão anormal</label>
+            <div class="checkbox">6
+              <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="Obedece_comandos" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="ObedeceComandos">Obedece comandos</label>
+            </div>
+            <div class="checkbox">5
+              <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="Localiza_dor" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="LocalizaDor">Localiza dor</label>
+            </div>
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="Mov_retirada" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="Mov.deRetirada">Mov. de retirada</label>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="Flexão_anormal" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="FlexãoAnormal">Flexão anormal</label>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="ExtensãoAnormal" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="ExtensãoAnormal">Extensão anormal</label>
 
-            <div class="checkbox">1
-              <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="Nenhuma">
-              <label for="Nenhuma">Nenhuma</label>
-            </div>
-            <div class="checkbox">
-              <input type="checkbox" name="Maior5RespostaMotoraNT" class="checkRespostaMotoraMaior5" id="NT" onclick="selectRespostaMotoraMaior5(this)">
-              <label for="NT">NT</label>
-              <div class="numeros_niveis"></div>
+              <div class="checkbox">1
+                <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="Nenhuma">
+                <label for="Nenhuma">Nenhuma</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="Maior5RespostaMotoraNT" class="checkRespostaMotoraMaior5" id="NT" onclick="selectRespostaMotoraMaior5(this)">
+                <label for="NT">NT</label>
+                <div class="numeros_niveis"></div>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
 
 
       </div>
 
       <hr class="hr2">
 
-      <div class="totalgcs">
-        <p>TOTAL (GCS) (3-15)
-          <input type="text" id="gcs" name="gcs" placeholder="Digite um valor..." maxlength="2">
-      </div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+        <div class="totalgcs">
+          <p>TOTAL (GCS) (3-15)
+            <input type="text" id="gcs" name="gcs" placeholder="Digite um valor..." maxlength="2">
+        </div>
+      </form>
 
     </div>
 
@@ -709,33 +751,35 @@
         <div class="input-consciencia">
           <label for="username">ABERTURA<br>OCULAR</label>
         </div>
-        <div class="check_ocular">
-          <div class="checkbox-menor5-aberturaocular">4
-            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Espontânea</label>
-            <div class="numeros_niveis"></div>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
+            <div class="checkbox-menor5-aberturaocular">4
+              <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Espontânea</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">3
+              <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Comando verbal</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">2
+              <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Estímulo doloroso</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">1
+              <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Nenhuma</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-nt1">
+              <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">NT</label>
+              <div class="numeros_niveis"></div>
+            </div>
           </div>
-          <div class="checkbox-menor5-aberturaocular">3
-            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Comando verbal</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-aberturaocular">2
-            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Estímulo doloroso</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-aberturaocular">1
-            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Nenhuma</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-nt1">
-            <input type="checkbox" name="checkBox[]" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">NT</label>
-            <div class="numeros_niveis"></div>
-          </div>
-        </div>
+        </form>
 
       </div>
 
@@ -746,33 +790,35 @@
         <div class="input-consciencia">
           <label for="username">RESPOSTA<br>VERBAL</label>
         </div>
-        <div class="check_ocular">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
 
-          <div class="checkbox-menor5-respostaverbal">5
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Palavras/Frase apropriadas</label>
+            <div class="checkbox-menor5-respostaverbal">5
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Palavras/Frase apropriadas</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">4
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Palavras inapropriadas</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">3
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Choro/gritos persistentes</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">2
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Sons incomprieensíveis</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">1
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Nenhuma resposta</label>
+            </div>
+            <div class="checkbox-menor5-nt">
+              <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">NT</label>
+            </div>
           </div>
-          <div class="checkbox-menor5-respostaverbal">4
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Palavras inapropriadas</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">3
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Choro/gritos persistentes</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">2
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Sons incomprieensíveis</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">1
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Nenhuma resposta</label>
-          </div>
-          <div class="checkbox-menor5-nt">
-            <input type="checkbox" name="checkBox[]" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">NT</label>
-          </div>
-        </div>
+        </form>
       </div>
 
       <hr class="hr2">
@@ -781,46 +827,50 @@
         <div class="input-consciencia">
           <label for="username">RESPOSTA<br>MOTORA</label>
         </div>
-        <div class="check_ocular">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="check_ocular">
 
-          <div class="checkbox-menor5-respostamotora">6
-            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Obedece prontamente</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">5
-            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Localiza dor/estímulo</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">4
-            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Retirada do segmento est.</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">3
-            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Flexão anormal</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">2
-            <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Extensão anormal</label>
-            <div class="checkbox-menor5-respostamotora-ausencia">1
+            <div class="checkbox-menor5-respostamotora">6
               <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-              <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
+              <label for="checkbox-id-1">Obedece prontamente</label>
             </div>
-            <div class="checkbox-menor5-nt">
+            <div class="checkbox-menor5-respostamotora">5
               <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-              <label for="checkbox-id-1">NT</label>
-              <div class="numeros_niveis"></div>
+              <label for="checkbox-id-1">Localiza dor/estímulo</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">4
+              <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Retirada do segmento est.</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">3
+              <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Flexão anormal</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">2
+              <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Extensão anormal</label>
+              <div class="checkbox-menor5-respostamotora-ausencia">1
+                <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+                <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
+              </div>
+              <div class="checkbox-menor5-nt">
+                <input type="checkbox" name="checkBox[]" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+                <label for="checkbox-id-1">NT</label>
+                <div class="numeros_niveis"></div>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <hr class="hr2">
 
-      <div class="totalgcs">
-        <p>TOTAL (GCS) (3-15)
-          <input type="text" id="gcs" name="gcs" placeholder="Digite um valor..." maxlength="2">
-      </div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+        <div class="totalgcs">
+          <p>TOTAL (GCS) (3-15)
+            <input type="text" id="gcs" name="gcs" placeholder="Digite um valor..." maxlength="2">
+        </div>
+      </form>
 
 
 
@@ -830,37 +880,43 @@
     <div class="subtitulo"></div>
     <div class="texto" id="problemas-encontrados">Problemas Encontrados</div>
 
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob_psiq">
+        <label class="item-psiquiatrico">
+          <input type="checkbox" class="main-checkbox-psiq"> Psiquiátrico
+        </label>
+      </div>
+    </form>
 
-    <div class="prob_psiq">
-      <label class="item-psiquiatrico">
-        <input type="checkbox" class="main-checkbox-psiq"> Psiquiátrico
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input id="checkbox-id-768" type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()">
+          Respiratório
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp" disabled> Inalação de fumaça
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp" disabled> DPOC
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input id="checkbox-id-768" type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()">
-        Respiratório
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp" disabled> Inalação de fumaça
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp" disabled> DPOC
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-diab" disabled> Hiperglicemia
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-diab" disabled> Hipoglicemia
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-diab" disabled> Hiperglicemia
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-diab" disabled> Hipoglicemia
-      </label>
-    </div>
 
     <form class="form">
       <div class="fundo-input-outros1">
@@ -873,48 +929,50 @@
 
 
 
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-obst" onchange="toggleObstetrico()"> Obstétrico
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-obst" disabled> Parto Emergencial
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-obst" disabled> Gestante
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-obst" disabled> Hemor. Excessiva
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-obst" onchange="toggleObstetrico()"> Obstétrico
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-obst" disabled> Parto Emergencial
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-obst" disabled> Gestante
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-obst" disabled> Hemor. Excessiva
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-transp" disabled> Sem remoção
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> Aéreo
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> Clínico
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> Emergencial
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> Pós-trauma
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> SAMU
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-transp" disabled> Sem remoção
-      </label>
-
-    </div>
-
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="fundo-input-outros2">
         <div class="input-ss">
           <label for="username">OUTROS:</label>
@@ -924,7 +982,7 @@
     </form>
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Objetos recolhidos:</label>
         <input type="text" id="username" name="username" placeholder="Digite...">
@@ -937,7 +995,7 @@
     <br>
 
     <banner>
-      <form id="TraumaLocForm" name="localFerimento">
+      <form id="TraumaLocForm" name="formOcorrencia">
         <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
         <select id="traumaType" class="form-control mb-3">
           <option value="Trauma 1">Fraturas/Luxações/Entorses</option>
@@ -949,9 +1007,9 @@
           <option value="Trauma 7">Ferimentos Diversos</option>
           <option value="Trauma 8">Esviceração</option>
           <option value="Trauma 9">Hemorragias Ext.</option>
-
         </select>
       </form>
+
       <div class="col position-relative">
         <img id="HumanBody" src="https://i.pinimg.com/originals/58/de/42/58de422ac1de8428c3c43a719dd96205.png" alt="imagem adulto" style="width: 100%; height: auto; max-width: 564px;">
         <div id="markerPurple" class="position-flex" style="width: 10px; height: 10px; background-color: purple; border-radius: 50%; display: none;"></div>
@@ -1047,42 +1105,44 @@
           <th>FACE</th>
           <th>TIPO</th>
         </tr>
-        <tr>
-          <td><input type="text" id="celula1"></td>
-          <td><input type="text" id="celula2"></td>
-          <td><input type="text" id="celula3"></td>
-          <td><input type="text" id="celula4"></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="celula5"></td>
-          <td><input type="text" id="celula6"></td>
-          <td><input type="text" id="celula7"></td>
-          <td><input type="text" id="celula8"></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="celula9"></td>
-          <td><input type="text" id="celula10"></td>
-          <td><input type="text" id="celula11"></td>
-          <td><input type="text" id="celula12"></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="celula13"></td>
-          <td><input type="text" id="celula14"></td>
-          <td><input type="text" id="celula15"></td>
-          <td><input type="text" id="celula16"></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="celula17"></td>
-          <td><input type="text" id="celula18"></td>
-          <td><input type="text" id="celula19"></td>
-          <td><input type="text" id="celula20"></td>
-        </tr>
-        <tr>
-          <td><input type="text" id="celula21"></td>
-          <td><input type="text" id="celula22"></td>
-          <td><input type="text" id="celula23"></td>
-          <td><input type="text" id="celula24"></td>
-        </tr>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <tr>
+            <td><input type="text" id="celula1"></td>
+            <td><input type="text" id="celula2"></td>
+            <td><input type="text" id="celula3"></td>
+            <td><input type="text" id="celula4"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celula5"></td>
+            <td><input type="text" id="celula6"></td>
+            <td><input type="text" id="celula7"></td>
+            <td><input type="text" id="celula8"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celula9"></td>
+            <td><input type="text" id="celula10"></td>
+            <td><input type="text" id="celula11"></td>
+            <td><input type="text" id="celula12"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celula13"></td>
+            <td><input type="text" id="celula14"></td>
+            <td><input type="text" id="celula15"></td>
+            <td><input type="text" id="celula16"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celula17"></td>
+            <td><input type="text" id="celula18"></td>
+            <td><input type="text" id="celula19"></td>
+            <td><input type="text" id="celula20"></td>
+          </tr>
+          <tr>
+            <td><input type="text" id="celula21"></td>
+            <td><input type="text" id="celula22"></td>
+            <td><input type="text" id="celula23"></td>
+            <td><input type="text" id="celula24"></td>
+          </tr>
+        </form>
       </table>
     </div>
 
@@ -1108,18 +1168,20 @@
             <th>M.S.D.</th>
             <th>M.S.E.</th>
           </tr>
-          <tr>
-            <td class="linha-tabela">1°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
-          </tr>
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+            <tr>
+              <td class="linha-tabela">1°</td>
+              <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
+              <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
+              <td><input type="checkbox" name="GENIT-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            </tr>
+          </form>
         </table>
         <button id="salvar">Pronto</button>
       </div>
@@ -1143,18 +1205,20 @@
             <th>M.S.D.</th>
             <th>M.S.E.</th>
           </tr>
-          <tr>
-            <td class="linha-tabela">2°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
-          </tr>
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+            <tr>
+              <td class="linha-tabela">2°</td>
+              <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
+              <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
+              <td><input type="checkbox" name="GENIT-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            </tr>
+          </form>
         </table>
         <button id="salvar2">Pronto</button>
       </div>
@@ -1178,18 +1242,20 @@
             <th>M.S.D.</th>
             <th>M.S.E.</th>
           </tr>
-          <tr>
-            <td class="linha-tabela">3°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
-          </tr>
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+            <tr>
+              <td class="linha-tabela">3°</td>
+              <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
+              <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
+              <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
+              <td><input type="checkbox" name="GENIT-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
+              <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            </tr>
+          </form>
         </table>
         <button id="salvar3">Pronto</button>
       </div>
@@ -1271,259 +1337,272 @@
     <div class="texto">Decisão transporte</div>
 
     <br>
-    <div class="grid_transporte">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte1" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-1">Ruim</label>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="grid_transporte">
+        <div>
+          <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte1" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-1">Ruim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte2" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-2">Péssimo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte3" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-3">Bom</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte4" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-4">Ótimo</label>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte2" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-2">Péssimo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte3" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-3">Bom</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="selectCheckTransporte" id="selectCheckTransporte4" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-4">Ótimo</label>
-      </div>
-    </div>
+    </form>
 
 
     <div class="subtitulo"></div>
     <div class="texto" id="sinais-sintomas">Sinais e sintomas</div>
 
     <br>
-    <div class="grid_ocorrencia">
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Abdomen</label>sensível/rígido
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="grid_ocorrencia">
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Abdomen</label>sensível/rígido
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Afundamento</label> de crânio
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Agitação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Amnésia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Angina de peito</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Apinéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Bradicardia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Bradipnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Bronco-Aspirando</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Cefaléia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Enfisema subcutâneo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Êstase de jugular</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Face pálida</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">O.V.A.C.E</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Priaprismo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Prurido na pele</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sede</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sinal de battle</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Convulsão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Decorticação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Deformidade</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Descerebração</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Desmaio</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Desvio de traquéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Dispnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Dor local</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Otorréia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Otorragia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Óbito</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Hipertensão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Hipotensão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Náusea e vômitos</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Nasoragia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sinal de guaxinim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sudorese</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Taquipnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Taquicardia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Tontura</label>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Afundamento</label> de crânio
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Agitação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Amnésia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Angina de peito</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Apinéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Bradicardia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Bradipnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Bronco-Aspirando</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Cefaléia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Enfisema subcutâneo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Êstase de jugular</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Face pálida</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">O.V.A.C.E</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Priaprismo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Prurido na pele</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sede</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sinal de battle</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Convulsão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Decorticação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Deformidade</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Descerebração</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Desmaio</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Desvio de traquéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Dispnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Dor local</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Otorréia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Otorragia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Óbito</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Hipertensão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Hipotensão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Náusea e vômitos</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Nasoragia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sinal de guaxinim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sudorese</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Taquipnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Taquicardia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Tontura</label>
-      </div>
-    </div>
+    </form>
     <br><br><br><br>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleHemorragia(this)">
-        HEMORRAGIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp interna" disabled> INTERNA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp externa" disabled> EXTERNA
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleHemorragia(this)">
+          HEMORRAGIA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp interna" disabled> INTERNA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp externa" disabled> EXTERNA
+        </label>
+      </div>
+    </form>
 
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleEdema(this)"> EDEMA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp generalizado" disabled> GENERALIZADO
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp localizado" disabled> LOCALIZADO
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleEdema(this)"> EDEMA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp generalizado" disabled> GENERALIZADO
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp localizado" disabled> LOCALIZADO
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleParada(this)"> PARADA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp cardiaca" disabled> CARDÍACA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp respiratoria" disabled> RESPIRATÓRIA
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleParada(this)"> PARADA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp cardiaca" disabled> CARDÍACA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp respiratoria" disabled> RESPIRATÓRIA
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleCianose(this)"> CIANOSE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp labios" disabled> LÁBIOS
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp extremidade" disabled> EXTREMIDADE
+        </label>
+      </div>
+    </form>
 
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleCianose(this)"> CIANOSE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp labios" disabled> LÁBIOS
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp extremidade" disabled> EXTREMIDADE
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="togglePupilas(this)"> PUPILAS
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp anisocoria" disabled> ANISOCORIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp isocoria" disabled> ISOCORIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp midriase" disabled> MIDRIASE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp miose" disabled> MIOSE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp reagente" disabled> REAGENTE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" class="sub-checkbox-resp naoreagente" disabled> Ñ REAGENTE
-      </label>
-    </div>
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+      <div class="prob">
+        <label class="item">
+          <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="togglePupilas(this)"> PUPILAS
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp anisocoria" disabled> ANISOCORIA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp isocoria" disabled> ISOCORIA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp midriase" disabled> MIDRIASE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp miose" disabled> MIOSE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp reagente" disabled> REAGENTE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" class="sub-checkbox-resp naoreagente" disabled> Ñ REAGENTE
+        </label>
+      </div>
+    </form>
 
 
 
@@ -1617,7 +1696,7 @@
     </div>
 
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="fundo-input">
         <div class="input-ss">
           <label for="username">OUTROS:</label>
@@ -1631,7 +1710,7 @@
     <div class="subtitulo"></div>
     <div class="texto">Anamnese da Emergência Médica</div>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="fundo-anamnese">
         <div class="input-anamnese">
         </div>
@@ -1640,9 +1719,11 @@
           <label for="username">O que aconteceu (sinais e sintomas)</label>
         </div>
 
-        <div class="input-anamnese">
-          <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
-        </div>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div class="input-anamnese">
+            <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
+          </div>
+        </form>
       </div>
 
 
@@ -1655,26 +1736,28 @@
           </div>
         </div>
 
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="AconteceuOutrasVezes" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-            <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="AconteceuOutrasVezes" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+              <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
+            </div>
           </div>
-        </div>
 
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-            <label for="checkbox-id-8">Não</label>
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
+
 
       <div class="grid_cinematica_aconteceu_input">
         <div class="container-aconteceu hidden">
-          <form class="form">
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
             <div class="input-anme_sn_QntTempoAconteceu">
               <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
               <input type="text" id="QuantoTempoAconteceu" name="QuantoTempoAconteceu">
@@ -1694,24 +1777,27 @@
 
 
       <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1" onclick="selecionarCheckboxProblemaSaude(this); habilitarContainerPrbSaude(this)">
-          <label for="ProblemaSaude">Sim</label>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1" onclick="selecionarCheckboxProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Sim</label>
+          </div>
         </div>
-      </div>
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2" onclick="selectCheckProblemaSaude(this); habilitarContainerPrbSaude(this)">
-          <label for="ProblemaSaude">Não</label>
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="ProblemaSaude" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2" onclick="selectCheckProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Não</label>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
+
 
     <div class="grid_cinematica_problemaSaude_input">
       <div class="container-PrbSaude hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn_Quais">
             <label for="Quais">Qual?</label>
             <input type="text" id="Quais" name="Quais">
@@ -1732,26 +1818,29 @@
         </div>
       </div>
 
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
 
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao1" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
-          <label for="Medicacao">Sim</label>
-        </div>
-      </div>
+        <div class="grid_checkbox_sim_cinematica">
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao2" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
-          <label for="Medicacao">Não</label>
+          <div>
+            <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao1" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Sim</label>
+          </div>
+
         </div>
-      </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="Medicacao" class="selectCheckMedicacao" id="selectCheckMedicacao2" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Não</label>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="grid_cinematica_medicacao_input">
       <div class="container-medicacao hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn_HorarioMedicacao">
             <label for="username">Ultima medicação:</label>
             <input type="time" id="HorarioMedicacao" name="HorarioMedicacao">
@@ -1762,7 +1851,7 @@
 
     <div class="grid_cinematica_medicacao_input">
       <div class="container-medicacao-quais hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn_HorarioMedicacao">
             <label for="QuaisMedicacao">Qual?</label>
             <input type="text" id="QuaisMedicacao" name="QuaisMedicacao">
@@ -1784,23 +1873,27 @@
 
       <!-- CHECKBOX SIM -->
       <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico1" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-          <label for="Alergico">Sim</label>
-        </div>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div>
+            <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico1" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Sim</label>
+          </div>
+        </form>
       </div>
 
       <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico2" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-          <label for="Alergico">Não</label>
-        </div>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <div>
+            <input type="checkbox" name="Alergico" class="selectCheckAlergico" id="selectCheckAlergico2" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Não</label>
+          </div>
+        </form>
       </div>
     </div>
 
     <div class="grid_cinematica_alergico_input">
       <div class="container-Alergico hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn_Especifique">
             <label for="Quais">Qual?</label>
             <input type="text" id="Quais" name="Quais">
@@ -1821,27 +1914,28 @@
         </div>
       </div>
 
-
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
-          <label for="checkbox-id-1">Sim</label>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
         </div>
-      </div>
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
-          <label for="checkbox-id-8">Não</label>
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="alimento-check" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
+            <label for="checkbox-id-8">Não</label>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
 
     <div class="grid_cinematica_alimento_input">
       <div class="container-alimento-espec hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn">
             <label for="username">Se sim, especifique:</label>
             <input type="text" id="username" name="username" placeholder="________________">
@@ -1852,7 +1946,7 @@
 
     <div class="grid_cinematica_alimento_input">
       <div class="container-alimento-horas hidden">
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn">
             <label for="username">Que horas?</label>
             <input type="time" id="username" name="username" placeholder="________________">
@@ -1865,7 +1959,7 @@
       <div class="subtitulo"></div>
       <div class="texto">Anamnese Gestacional</div>
 
-      <form class="gestacional_hidden_form">
+      <form class="gestacional_hidden_form" name="formOcorrencia">>
         <div class="input-anme_sn">
           <label for="username">Período da gestação:</label>
           <input type="text" id="username" name="username" placeholder="________________">
@@ -1880,27 +1974,28 @@
           </div>
         </div>
 
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selecionarCheckbox(this); habilitarContainer(this);">
-            <label for="checkbox-id-1">Sim</label>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selecionarCheckbox(this); habilitarContainer(this);">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
           </div>
-        </div>
 
-        <!-- CHECKBOX NÃO -->
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this); habilitarContainer(this);">
-            <label for="checkbox-id-8">Não</label>
+          <!-- CHECKBOX NÃO -->
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this); habilitarContainer(this);">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
-        </div>
-
+        </form>
       </div>
 
       <div class="grid_cinematica_pre_natal_input">
         <div class="container-nome-medico hidden">
-          <form class="form">
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
             <div class="input-anme_sn_nomemedico">
               <label for="username" class="texto-medico">Nome do médico:</label>
               <input type="text" id="nomeMedico" name="username" oninput="capitalizarPalavrasIniciais(this);">
@@ -1921,21 +2016,22 @@
           </div>
         </div>
 
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes1" onclick="selectCheckComplicacoes(this)">
-            <label for="checkbox-id-1">Sim</label>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes1" onclick="selectCheckComplicacoes(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
           </div>
-        </div>
 
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="checkBox[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes2" onclick="selectCheckComplicacoes(this)">
-            <label for="checkbox-id-8">Não</label>
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="checkBox[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes2" onclick="selectCheckComplicacoes(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <br>
@@ -1948,25 +2044,27 @@
           </div>
         </div>
 
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
-            <label for="selectCheckPrimeiroFilho1">Sim</label>
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+              <label for="selectCheckPrimeiroFilho1">Sim</label>
+            </div>
           </div>
-        </div>
 
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
-            <label for="selectCheckPrimeiroFilho2">Não</label>
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="PrimeiroFilho" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+              <label for="selectCheckPrimeiroFilho2">Não</label>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <div class="grid_cinematica_primeiro_filho_input">
         <div class="container-quantos hidden">
-          <form class="form">
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
             <div class="input-anme_sn_quantos">
               <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
               <input type="text" id="QuantosFilhos" name="QuantosFilhos">
@@ -1977,15 +2075,16 @@
       </form>
 
 
-      <form class="form">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <div class="input-anme_sn">
           <label for="username">Que horas iniciaram as contrações?</label>
           <input type="time" id="username" name="username" placeholder="________________">
         </div>
+      </form>
 
         <br>
 
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn">
             <label for="username">Tempo das contrações:</label>
             <input type="text" id="username" name="username" placeholder="Duração...">
@@ -2005,7 +2104,7 @@
             </div>
           </div>
 
-
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
@@ -2020,6 +2119,7 @@
               <label for="checkbox-id-8">Não</label>
             </div>
           </div>
+        </form>
         </div>
 
         <br>
@@ -2034,7 +2134,7 @@
             </div>
           </div>
 
-
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
@@ -2049,6 +2149,7 @@
               <label for="checkbox-id-8">Não</label>
             </div>
           </div>
+        </form>
         </div>
 
         <br>
@@ -2063,7 +2164,7 @@
             </div>
           </div>
 
-
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
@@ -2078,6 +2179,7 @@
               <label for="checkbox-id-8">Não</label>
             </div>
           </div>
+        </form>
         </div>
 
         <br>
@@ -2092,7 +2194,7 @@
             </div>
           </div>
 
-
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
@@ -2107,6 +2209,7 @@
               <label for="checkbox-id-8">Não</label>
             </div>
           </div>
+          </form>
         </div>
 
         <br>
@@ -2121,6 +2224,7 @@
             </div>
           </div>
 
+          <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <!-- CHECKBOX SIM -->
           <div class="grid_checkbox_sim_cinematica">
             <div>
@@ -2129,16 +2233,16 @@
             </div>
           </div>
 
-
           <div class="grid_checkbox_nao_cinematica">
             <div>
               <input type="checkbox" name="checkBox[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe2" onclick="selectCheckSexoBebe(this)">
               <label for="checkbox-id-8">Mas</label>
             </div>
           </div>
+          </form>
         </div>
 
-        <form class="form">
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
           <div class="input-anme_sn">
             <label for="username">Nome do bebê:</label>
             <input type="text" id="username" name="username" placeholder="________________">
@@ -2154,7 +2258,7 @@
 
   <div class="boxatendimento">
 
-    <form class="form">
+  <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">M:</label>
         <input type="text" id="username" name="username" oninput="validarAtendimentoM(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
@@ -2162,7 +2266,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">S1:</label>
         <input type="text" id="username" name="username" oninput="validarS1(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
@@ -2170,7 +2274,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">S2:</label>
         <input type="text" id="username" name="username" oninput="validarS2(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
@@ -2178,7 +2282,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">S3:</label>
         <input type="text" id="username" name="username" oninput="validarS3(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
@@ -2186,7 +2290,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Demandante:</label>
         <input type="text" id="username" name="username" oninput="validarDemandante(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
@@ -2194,7 +2298,7 @@
       </div>
     </form>
 
-    <form class="form">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="input-caixatexto">
         <label for="username">Equipe:</label>
         <input type="text" id="username" name="username" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
@@ -2206,6 +2310,7 @@
 
     <br>
     <div class="grid_procedimentosefetuados">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div>
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">ASPIRAÇÃO</label>
@@ -2362,11 +2467,13 @@
         <input type="checkbox" name="checkBox[]" class="checkbox-block" id="checkbox-id-1">
         <label for="checkbox-id-1">REANIMADOR</label>
       </div>
+    </form>
     </div>
 
     <br><br>
 
     <div class="proced">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <label class="item_meiosauxiliares">
         <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
       </label>
@@ -2379,9 +2486,11 @@
       <label class="sub-item_meiosauxiliares">
         <input type="checkbox" class="sub-checkbox-meios" disabled> IGP / PC
       </label>
+    </form>
     </div>
 
     <div class="proced">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <label class="item">
         <input type="checkbox" class="main-checkbox-policia" onchange="togglePolicia()"> Polícia
       </label>
@@ -2397,9 +2506,11 @@
       <label class="sub-item">
         <input type="checkbox" class="sub-checkbox-policia" disabled> PRF
       </label>
+    </form>
     </div>
 
     <div class="proced">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <label class="item">
         <input type="checkbox" class="main-checkbox-samu" onchange="toggleSamu()"> SAMU
       </label>
@@ -2409,9 +2520,11 @@
       <label class="sub-item">
         <input type="checkbox" class="sub-checkbox-samu" disabled> USB
       </label>
+    </form>
     </div>
 
     <div class="cit">
+    <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
       <div class="cit-checkbox">
         <input type="checkbox" id="myCheckbox" onclick="toggleInputCit()">
         CIT
@@ -2419,6 +2532,7 @@
       <div class="cit-input">
         <input type="text" id="myInput" disabled>
       </div>
+    </form>
     </div>
     <div class="subtitulo"></div>
     <div class="texto">Materiais descartáveis utilizados: </div>
@@ -2433,29 +2547,37 @@
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-atadura" id="atadura" onclick="toggleInputQuantidadeAtadura()" ; onchange="toggleAtadura()"> ATADURA</label><br>
         <input type="checkbox" class="sub-checkbox-atadura" disabled> 8
         <input type="checkbox" class="sub-checkbox-atadura" disabled> 12
         <input type="checkbox" class="sub-checkbox-atadura" disabled> 20
-
+      </form>
       </div>
 
+
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadeatadura" oninput="validarNumeroQuantidadeAtadura(this)" disabled>
         <p id="mensagemErro-27" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
       <hr class="hr2">
       <hr class="hr2">
 
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="cateter" onclick="toggleInputQuantidadeCateter()">
         <label for="cateter">CATETER TP. OCÚLOS</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecateter" oninput="validarNumeroQuantidadeCateter(this)" disabled>
         <p id="mensagemErro-28" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
 
@@ -2463,52 +2585,68 @@
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="compressacomum" onclick="toggleInputQuantidadeCompressa()">
         <label for="compressacomum">COMPRESSA COMUM</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecompressa" oninput="validarNumeroQuantidadeCompressa(this)" disabled>
         <p id="mensagemErro-29" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-kits" id="kits" onclick="toggleInputQuantidadeKits()" ; onchange="toggleKits()"> KIT'S</label><br>
         <input type="checkbox" class="sub-checkbox-kits" disabled> H
         <input type="checkbox" class="sub-checkbox-kits" disabled> P
         <input type="checkbox" class="sub-checkbox-kits" disabled> Q
+      </form>
       </div>
 
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadekits" oninput="validarNumeroQuantidadeKits(this)" disabled>
         <p id="mensagemErro-30" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="luvas" onclick="toggleInputQuantidadeLuvas()">
         <label for="luvas">LUVAS DESC. (PARES)</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadeluvas" oninput="validarNumeroQuantidadeLuvas(this)" disabled>
         <p id="mensagemErro-31" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="mascara" onclick="toggleInputQuantidadeMascara()">
         <label for="mascara">MÁSCARA DESC.</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidademascara" oninput="validarNumeroQuantidadeMascara(this)" disabled>
         <p id="mensagemErro-32" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
 
@@ -2516,64 +2654,84 @@
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="manta" onclick="toggleInputQuantidadeManta()">
         <label for="manta">MANTA ALUMINIZADA</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidademanta" oninput="validarNumeroQuantidadeManta(this)" disabled>
         <p id="mensagemErro-33" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="pas" onclick="toggleInputQuantidadePas()">
         <label for="pas">PÁS DO DEA</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadepas" oninput="validarNumeroQuantidadePas(this)" disabled>
         <p id="mensagemErro-34" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="sonda" onclick="toggleInputQuantidadeSonda()">
         <label for="sonda">SONDA DE ASPIRAÇÃO</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadesonda" oninput="validarNumeroQuantidadeSonda(this)" disabled>
         <p id="mensagemErro-35" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="soro" onclick="toggleInputQuantidadeSoro()">
         <label for="soro">SORO FISIOLÓGICO</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadesoro" oninput="validarNumeroQuantidadeSoro(this)" disabled>
         <p id="mensagemErro-36" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-talas" id="talas" onclick="toggleInputQuantidadeTalas()" ; onchange="toggleTalas()"> TALAS PAP.</label><br>
         <input type="checkbox" class="sub-checkbox-talas" disabled> P
         <input type="checkbox" class="sub-checkbox-talas" disabled> G
+      </form>
       </div>
 
 
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadetalas" oninput="validarNumeroQuantidadeTalas(this)" disabled>
         <p id="mensagemErro-37" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
     </div>
 
@@ -2581,10 +2739,14 @@
 
     <div class="materiais_descartaveis_outros">
       <div class="materiais_descartaveis_outros-checkbox">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="materiaisOutrosCheckbox" onclick="toggleMateriais_descartaveis_outros()">
+      </form>
       </div>
       <div class="materiais_descartaveis_outros-input">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="materiaisOutrosInput" disabled>
+      </form>
       </div>
     </div>
 
@@ -2602,18 +2764,23 @@
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="base" onclick="toggleInputQuantidadeBase()">
         <label for="base">BASE DO ESTABILIZA.</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadebase" oninput="validarNumeroQuantidadeBase(this)" disabled>
         <p id="mensagemErro-38" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-colar" id="colar" onclick="toggleInputQuantidadeColar()" ; onchange="toggleColar()"> COLAR</label><br>
         <input type="checkbox" class="sub-checkbox-colar" disabled> PP
@@ -2621,138 +2788,182 @@
         <input type="checkbox" class="sub-checkbox-colar" disabled> M
         <input type="checkbox" class="sub-checkbox-colar" disabled> G
         <input type="checkbox" class="sub-checkbox-colar" disabled> GG
+      </form>
       </div>
 
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecolar" oninput="validarNumeroQuantidadeColar(this)" disabled>
         <p id="mensagemErro-39" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="coxins" onclick="toggleInputQuantidadeCoxins()">
         <label for="coxins">COXINS ESTABILIZA.</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecoxins" oninput="validarNumeroQuantidadeCoxins(this)" disabled>
         <p id="mensagemErro-41" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-ked" id="ked" onclick="toggleInputQuantidadeKed()" ; onchange="toggleKed()"> KED</label><br>
         <input type="checkbox" class="sub-checkbox-ked" disabled> ADULT.
         <input type="checkbox" class="sub-checkbox-ked" disabled> INFA.
+      </form>
       </div>
 
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadeked" oninput="validarNumeroQuantidadeKed(this)" disabled>
         <p id="mensagemErro-42" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
+
+
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="maca" onclick="toggleInputQuantidadeMaca()">
         <label for="maca">MACA RÍGIDA</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidademaca" oninput="validarNumeroQuantidadeMaca(this)" disabled>
         <p id="mensagemErro-43" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <label class="item">
           <input type="checkbox" class="main-checkbox-ttf" id="ttf" onclick="toggleInputQuantidadeTtf()" ; onchange="togglettf()"> T.T.F.</label><br>
         <input type="checkbox" class="sub-checkbox-ttf" disabled> ADULT.
         <input type="checkbox" class="sub-checkbox-ttf" disabled> INFA.
+      </form>
       </div>
 
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadettf" oninput="validarNumeroQuantidadeTtf(this)" disabled>
         <p id="mensagemErro-44" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
+      
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="aranha" onclick="toggleInputQuantidadeAranha()">
         <label for="aranha">TIRANTE ARANHA</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadearanha" oninput="validarNumeroQuantidadeAranha(this)" disabled>
         <p id="mensagemErro-45" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
 
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="cabeca" onclick="toggleInputQuantidadeCabeca()">
         <label for="cabeca">TIRANTE DE CABEÇA</label>
+      </form>
       </div>
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecabeca" oninput="validarNumeroQuantidadeCabeca(this)" disabled>
         <p id="mensagemErro-46" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
 
       <hr class="hr2">
       <hr class="hr2">
+
       <div>
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="canula" onclick="toggleInputQuantidadeCanula()">
         <label for="canula">CÂNULA</label>
+      </form>
       </div>
+
       <div class="inputquantidade">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="quantidadecanula" oninput="validarNumeroQuantidadeCanula(this)" disabled>
         <p id="mensagemErro-47" style="color: red; font-size: 12px;"></p>
+      </form>
       </div>
     </div>
     <br><br><br><br>
 
     <div class="materiais_deixados_outros1">
       <div class="materiais_deixados_outros1-checkbox">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="materiais_deixados_outros1Checkbox" onclick="togglemateriais_deixados_outros1()">
+      </form>
       </div>
       <div class="materiais_deixados_outros1-input">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="materiais_deixados_outros1Input" disabled>
+      </form>
       </div>
     </div>
 
     <div class="materiais_deixados_outros2">
       <div class="materiais_deixados_outros2-checkbox">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="checkbox" id="materiais_deixados_outros2Checkbox" onclick="togglemateriais_deixados_outros2()">
+      </form>
       </div>
       <div class="materiais_deixados_outros2-input">
+      <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <input type="text" id="materiais_deixados_outros2Input" disabled>
+      </form>
       </div>
     </div>
 
-
-    <form class="form">
+<br>
       <div class="fundo-obsimp">
         <div class="input-obsimp">
           <label for="username">Observações importantes:</label>
         </div>
-
+        <form class="form" name="formOcorrencia" method="POST" action="processarFicha.php"> 
         <div class="input-obsimp">
           <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
         </div>
+      </form>
       </div>
-    </form>
+    
   </div>
   </div>
 
-  <form method="post">
-    <button type="submit" name="gerar_pdf">Gerar PDF</button>
+  <form method="POST" action="processarFicha.php">
+    <button type="submit" name="submitInfos">Gerar PDF</button>
   </form>
   <br><br>
 
