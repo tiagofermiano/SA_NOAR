@@ -47,6 +47,29 @@
     /* background-color: #030060; */
     }
 
+    #colorSelector {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 200px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .colorOption {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+
+  canvas {
+      border: 2px solid #080808;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
     .historico, .perfil, .inicio {
       position: absolute;
       top: 0;

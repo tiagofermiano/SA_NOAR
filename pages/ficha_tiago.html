@@ -1024,7 +1024,7 @@
 <banner>
   <form id="TraumaLocForm" name="localFerimento">
       <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
-      <select id="traumaType" class="form-control mb-3">
+      <!-- <select id="traumaType" class="form-control mb-3">
           <option value="Trauma 1">Fraturas/Luxações/Entorses</option>
           <option value="Trauma 2">Queimadura 1°Grau</option>
           <option value="Trauma 3">Hemorragias Int.</option>
@@ -1035,20 +1035,12 @@
           <option value="Trauma 8">Esviceração</option>
           <option value="Trauma 9">Hemorragias Ext.</option>
 
-      </select>
+      </select> -->
     </form>
     <div class="col position-relative">
-      <canvas id="HumanBodyCanvas"></canvas>
-          <div id="markerPurple" class="position-flex"></div>
-          <div id="markerRed" class="position-flex"></div>
-          <div id="markerBlue" class="position-flex"></div>
-          <div id="markerBlack" class="position-flex"></div>
-          <div id="markerGreen" class="position-flex"></div>
-          <div id="markerDarkOrange" class="position-flex"></div>
-          <div id="markerPink" class="position-flex"></div>
-          <div id="markerWater" class="position-flex"></div>
-          <div id="markerYellow" class="position-flex"></div>
-        </div>                          
+      <canvas id="myCanvas" style="max-width: 100%;"></canvas>
+      <div id="colorSelector"></div>
+  </div>
 </banner>
 
 <br>
