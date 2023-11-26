@@ -1,36 +1,7 @@
 <?php
-// require('fpdf/fpdf.php');
-// require('fpdf.php');
+include('conexao.php');
+include('processarFicha.php');
 
-// if(isset($_POST['gerar_pdf'])){
-//   require('fpdf/fpdf.php');
-
-//   class PDF extends FPDF
-//   {
-//     function Header()
-//     {
-//       $this->SetFont('Arial','B',15);
-//       $this->Cell(0,10,'Relatório',0,1,'C');
-//     }
-
-//     function Footer()
-//     {
-//       $this->SetY(-15);
-//       $this->SetFont('Arial','I',8);
-//       $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
-//     }
-//   }
-
-//   $pdf = new PDF();
-//   $pdf->AliasNbPages();
-//   $pdf->AddPage();
-//   $pdf->SetFont('Arial','',12);
-
-//   $html = file_get_contents('http://localhost/SA_NOAR/pages/index.php');
-//   $pdf->WriteHTML($html);
-
-//   $pdf->Output('relatorio.pdf', 'D');
-// }
 ?>
 
 <!DOCTYPE html>
@@ -1106,16 +1077,15 @@ document.querySelector('.circle-button').addEventListener('click', function() {
         <span class="fechar-popup" id="fechar-popup">&times;</span>
         <table id="tabela-editavel1">
           <tr>
-            <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+          <th name="CABEÇA-1°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
+            <th name="GENIT-1°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-1°GRAU">M.I.D.</th>
+            <th name="M.I.E.-1°GRAU">M.I.E.</th>
+            <th name="M.S.D.-1°GRAU">M.S.D.</th>
+            <th name="M.S.E.-1°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">1°</td>
@@ -1141,28 +1111,27 @@ document.querySelector('.circle-button').addEventListener('click', function() {
         <span class="fechar-popup2" id="fechar-popup2">&times;</span>
         <table id="tabela-editavel2">
           <tr>
-            <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+          <th name="CABEÇA-2°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
+            <th name="GENIT-2°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-2°GRAU">M.I.D.</th>
+            <th name="M.I.E.-2°GRAU">M.I.E.</th>
+            <th name="M.S.D.-2°GRAU">M.S.D.</th>
+            <th name="M.S.E.-2°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">2°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            <td><input type="checkbox" name="CABEÇA-2°GRAU"></td>
+            <td><input type="checkbox" name="PESCOÇO-2°GRAU"></td>
+            <td><input type="checkbox" name="TORSO POS.-2°GRAU"></td>
+            <td><input type="checkbox" name="TORSO ANT.-2°GRAU"></td>
+            <td><input type="checkbox" name="GENIT-2°GRAU"></td>
+            <td><input type="checkbox" name="M.I.D.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.I.E.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.S.D.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.S.E.-2°GRAU"></td>
           </tr>
         </table>
         <button id="salvar2">Pronto</button>
@@ -1177,27 +1146,27 @@ document.querySelector('.circle-button').addEventListener('click', function() {
         <table id="tabela-editavel3">
           <tr>
             <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+            <th name="CABEÇA-3°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-3°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-3°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-3°GRAU">TORSO ANT.</th>
+            <th name="GENIT-3°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-3°GRAU">M.I.D.</th>
+            <th name="M.I.E.-3°GRAU">M.I.E.</th>
+            <th name="M.S.D.-3°GRAU">M.S.D.</th>
+            <th name="M.S.E.-3°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">3°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            <td><input type="checkbox" name="CABEÇA-3°GRAU"></td>
+            <td><input type="checkbox" name="PESCOÇO-3°GRAU"></td>
+            <td><input type="checkbox" name="TORSO POS.-3°GRAU"></td>
+            <td><input type="checkbox" name="TORSO ANT.-3°GRAU"></td>
+            <td><input type="checkbox" name="GENIT-3°GRAU"></td>
+            <td><input type="checkbox" name="M.I.D.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.I.E.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.S.D.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.S.E.-3°GRAU"></td>
           </tr>
         </table>
         <button id="salvar3">Pronto</button>
@@ -2733,15 +2702,6 @@ document.querySelector('.circle-button').addEventListener('click', function() {
       </div>
       <div class="materiais_deixados_outros1-input">
         <input type="text" id="materiais_deixados_outros1Input" disabled>
-      </div>
-    </div>
-
-    <div class="materiais_deixados_outros2">
-      <div class="materiais_deixados_outros2-checkbox">
-        <input type="checkbox" id="materiais_deixados_outros2Checkbox" onclick="togglemateriais_deixados_outros2()">
-      </div>
-      <div class="materiais_deixados_outros2-input">
-        <input type="text" id="materiais_deixados_outros2Input" disabled>
       </div>
     </div>
 

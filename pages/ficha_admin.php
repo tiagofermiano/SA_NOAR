@@ -1101,16 +1101,15 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <span class="fechar-popup" id="fechar-popup">&times;</span>
         <table id="tabela-editavel1">
           <tr>
-            <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+          <th name="CABEÇA-1°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
+            <th name="GENIT-1°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-1°GRAU">M.I.D.</th>
+            <th name="M.I.E.-1°GRAU">M.I.E.</th>
+            <th name="M.S.D.-1°GRAU">M.S.D.</th>
+            <th name="M.S.E.-1°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">1°</td>
@@ -1136,28 +1135,27 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <span class="fechar-popup2" id="fechar-popup2">&times;</span>
         <table id="tabela-editavel2">
           <tr>
-            <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+          <th name="CABEÇA-2°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
+            <th name="GENIT-2°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-2°GRAU">M.I.D.</th>
+            <th name="M.I.E.-2°GRAU">M.I.E.</th>
+            <th name="M.S.D.-2°GRAU">M.S.D.</th>
+            <th name="M.S.E.-2°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">2°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            <td><input type="checkbox" name="CABEÇA-2°GRAU"></td>
+            <td><input type="checkbox" name="PESCOÇO-2°GRAU"></td>
+            <td><input type="checkbox" name="TORSO POS.-2°GRAU"></td>
+            <td><input type="checkbox" name="TORSO ANT.-2°GRAU"></td>
+            <td><input type="checkbox" name="GENIT-2°GRAU"></td>
+            <td><input type="checkbox" name="M.I.D.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.I.E.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.S.D.-2°GRAU"></td>
+            <td><input type="checkbox" name="M.S.E.-2°GRAU"></td>
           </tr>
         </table>
         <button id="salvar2">Pronto</button>
@@ -1172,27 +1170,27 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <table id="tabela-editavel3">
           <tr>
             <th>GRAU</th>
-            <th>CABEÇA</th>
-            <th>PESCOÇO</th>
-            <th>TORSO POS.</th>
-            <th>TORSO ANT.</th>
-            <th>GENITAL.</th>
-            <th>M.I.D.</th>
-            <th>M.I.E.</th>
-            <th>M.S.D.</th>
-            <th>M.S.E.</th>
+            <th name="CABEÇA-3°GRAU">CABEÇA</th>
+            <th name="PESCOÇO-3°GRAU">PESCOÇO</th>
+            <th name="TORSO POS.-3°GRAU">TORSO POS.</th>
+            <th name="TORSO ANT.-3°GRAU">TORSO ANT.</th>
+            <th name="GENIT-3°GRAU">>GENITAL.</th>
+            <th name="M.I.D.-3°GRAU">M.I.D.</th>
+            <th name="M.I.E.-3°GRAU">M.I.E.</th>
+            <th name="M.S.D.-3°GRAU">M.S.D.</th>
+            <th name="M.S.E.-3°GRAU">M.S.E.</th>
           </tr>
           <tr>
             <td class="linha-tabela">3°</td>
-            <td><input type="checkbox" name="CABEÇA-1°GRAU"></td>
-            <td><input type="checkbox" name="PESCOÇO-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO POS.-1°GRAU"></td>
-            <td><input type="checkbox" name="TORSO ANT.-1°GRAU"></td>
-            <td><input type="checkbox" name="GENIT-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.I.E.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.D.-1°GRAU"></td>
-            <td><input type="checkbox" name="M.S.E.-1°GRAU"></td>
+            <td><input type="checkbox" name="CABEÇA-3°GRAU"></td>
+            <td><input type="checkbox" name="PESCOÇO-3°GRAU"></td>
+            <td><input type="checkbox" name="TORSO POS.-3°GRAU"></td>
+            <td><input type="checkbox" name="TORSO ANT.-3°GRAU"></td>
+            <td><input type="checkbox" name="GENIT-3°GRAU"></td>
+            <td><input type="checkbox" name="M.I.D.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.I.E.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.S.D.-3°GRAU"></td>
+            <td><input type="checkbox" name="M.S.E.-3°GRAU"></td>
           </tr>
         </table>
         <button id="salvar3">Pronto</button>
@@ -2746,7 +2744,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <div class="input-obsimp">
           <label for="username">Observações importantes:</label>
         </div>
-
+        
         <div class="input-obsimp">
           <textarea id="username" name="username" placeholder="   Digite..." class="textarea"></textarea>
         </div>
