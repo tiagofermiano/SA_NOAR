@@ -59,8 +59,8 @@ function processarFicha()
     $problemaRespiratorio = isset($_POST['problemaRespiratório']) ? implode(", ", $_POST['problemaRespiratório']) : '';
     $problemaDiabete = isset($_POST['problemaDiabete']) ? implode(", ", $_POST['problemaDiabete']) : '';
     $problemaDiabeteOutros = isset($_POST['problemaDiabeteOutros']) ? $_POST['problemaDiabeteOutros'] : '';
-    $problemaObstetrico = isset($_POST['problemaObstetrico']) ? implode(", ", $_POST['problemaObstetrico']) : '';
-    $problemaTransporte = isset($_POST['problemaTransporte']) ? implode(", ", $_POST['problemaTransporte']) : '';
+    $problemaObstetrico = isset($_POST['problemaObstetrico']) ? implode(", ", (array)$_POST['problemaObstetrico']) : '';
+    $problemaTransporte = isset($_POST['problemaTransporte']) ? implode(", ", (array)$_POST['problemaTransporte']) : '';
     $problemaTransporteOutros = $_POST['problemaTransporteOutros'];
     $problemaObjetosRecolhidos = $_POST['problemaObjetosRecolhidos'];
     $tabelaTraumasLocal = $_POST['tabelaTraumasLocal'];
@@ -68,8 +68,8 @@ function processarFicha()
     $tabelaTraumasFace = $_POST['tabelaTraumasFace'];
     $tabelaTraumasTipo = $_POST['tabelaTraumasTipo'];
     $queimadura = isset($_POST['queimadura']) ? implode(", ", (array)$_POST['queimadura']) : '';
-    $decisaoTransporte = isset($_POST['decisaoTransporte']) ? implode(", ", $_POST['decisaoTransporte']) : '';
-    $sinaisSintomas = isset($_POST['sinaisSintomas']) ? implode(", ", $_POST['sinaisSintomas']) : '';
+    $decisaoTransporte = isset($_POST['decisaoTransporte']) ? implode(", ", (array)$_POST['decisaoTransporte']) : '';
+    $sinaisSintomas = isset($_POST['sinaisSintomas']) ? implode(", ", (array)$_POST['sinaisSintomas']) : '';
     $hemorragia = isset($_POST['hemorragia']) ? implode(", ", (array)$_POST['hemorragia']) : '';
     $edema = isset($_POST['edema']) ? implode(", ", (array)$_POST['edema']) : '';
     $parada = isset($_POST['parada']) ? implode(", ", (array)$_POST['parada']) : '';
@@ -143,7 +143,7 @@ function processarFicha()
     $deixadosHospitalTtfQuant = $_POST['deixadoshospitalttfquant'];
     $deixadosHospitalTiranteAranhaQuant = $_POST['deixadoshospitaltirantearanhaquant'];
     $deixadosHospitalTiranteCabecaQuant = $_POST['deixadoshospitaltirantecabecaquant'];
-    $deixadosHospitalCanulaQuant = $_POST['deixadoshospitalcanulaquant'];
+    $deixadosHospitalCanulaQuant = isset($_POST['deixadoshospitalcanulaquant']) ? $_POST['deixadoshospitalcanulaquant'] : '';
     $deixadosHospitalOutro = $_POST['deixadoshospitaloutro'];
     $observacoes = $_POST['observacoes'];
 
