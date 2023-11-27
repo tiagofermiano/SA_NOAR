@@ -846,7 +846,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <input type="checkbox" name="problemaDiabete[]" class="sub-checkbox-diab" disabled> Hipoglicemia
       </label>
     </div>
-
+<br>
     <div class="fundo-input-outros1">
       <div class="input-ss">
         <label for="username">OUTROS:</label>
@@ -896,7 +896,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
       </label>
 
     </div>
-
+<br>
     <div class="fundo-input-outros2">
       <div class="input-ss">
         <label for="username">OUTROS:</label>
@@ -1111,7 +1111,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
     </div>
 
     <button id="abrir-popup3" type="button" class="botao-grau" name="3graubtn">3° GRAU</button>
-
+<br>
     <div id="popup3" class="popup3">
       <div class="popup-content3">
         <span class="fechar-popup3" id="fechar-popup3">&times;</span>
@@ -1405,6 +1405,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="checkbox-container">
     </div>
+    <br>
     <div class="fundo-input">
       <div class="input-ss">
         <label for="username">OUTROS:</label>
@@ -1416,7 +1417,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="subtitulo"></div>
     <div class="texto">Anamnese da Emergência Médica</div>
-
+<br>
     <div class="fundo-anamnese">
       <div class="input-anamnese">
       </div>

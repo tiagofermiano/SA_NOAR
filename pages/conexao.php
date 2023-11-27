@@ -12,7 +12,7 @@ $conn = new mysqli($hostname, $username, $password, $database);
 if ($conn->connect_error) {
     die("Erro na conexão com o MySQL: " . $conn->connect_error);
 } else {
-    echo "Conexão ao MySQL estabelecida com sucesso.";
+    echo "";
 }
 
 // Agora você pode executar consultas SQL, inserções, atualizações, etc.
