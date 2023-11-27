@@ -1,9 +1,6 @@
 <?php
 include('protect.php');
-include('processarInfoPaciente.php');
 include('processarInfoOcorrencia.php');
-include('processarSituacaoPaciente.php');
-include('processarAtendimento.php');
 ?>
 
 <!DOCTYPE html>
@@ -75,7 +72,7 @@ include('processarAtendimento.php');
 
 
 
-  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" onsubmit="enviarFormulario()">
+  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia.php">
     <div class="container">
 
       <h1 class="title" id="info-paciente">Informações do paciente:</h1>
@@ -2498,7 +2495,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
   </form>
   <br><br>
 
-<script>
+<!-- <script>
 function enviarFormulario() {
     // Lógica para decidir qual ação executar
     var formulario = document.getElementById("envioFormulario");
@@ -2527,7 +2524,7 @@ function enviarFormulario() {
     // Retorna true para permitir o envio do formulário ou false para impedir
     return true;
 }
-</script>
+</script> -->
 </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
