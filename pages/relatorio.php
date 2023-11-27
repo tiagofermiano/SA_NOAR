@@ -29,10 +29,10 @@
             <a href="historico.html">Histórico</a>
         </div>
         <div class="inicio">
-            <a href="home.html">Início</a>
+            <a href="telahome.php">Início</a>
         </div>
         <div class="perfil">
-            <a href="perfil.html">Perfil</a>
+            <a href="telaperfil.php">Perfil</a>
         </div>
         </div>
     </header>
