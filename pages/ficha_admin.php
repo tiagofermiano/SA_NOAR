@@ -490,7 +490,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="input-caixatexto">
       <label for="medidaPressao">Medida de Pressão:</label>
-      <input type="text" id="medidaPressao" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
+      <input type="text" id="medidaPressao1" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
       <p id="mensagemErro-26" style="color: red;"></p>
     </div>
 
@@ -506,7 +506,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
 
     <div class="input-caixatexto">
       <label for="repiracao">Respiração:</label>
-      <input type="text" id="repiracao" name="repiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
+      <input type="text" id="formatRespiration" name="respiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
       <p id="mensagemErro-12" style="color: red;"></p>
     </div>
 
@@ -850,7 +850,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
     <div class="fundo-input-outros1">
       <div class="input-ss">
         <label for="username">OUTROS:</label>
-        <input type="text" id="username" name="problemaDIabeteOutros"">
+        <input type="text" id="username" name="problemaDiabeteOutros">
       </div>
     </div>
 

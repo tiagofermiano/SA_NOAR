@@ -321,7 +321,7 @@ function selectCheckOcorrencia(checkbox) {
     });
 }
 
-var input = document.getElementById("medidaPressao");
+var input = document.getElementById("medidaPressao1");
 
 function formatarMedidaPressao(input) {
     var valor = input.value;
