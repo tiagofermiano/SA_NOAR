@@ -151,6 +151,11 @@ function processarFicha()
    $sqlInfoPaciente = "INSERT INTO info_paciente (nome_paciente, idade_paciente, sexo_paciente, rg_cpf_paciente, nome_acompanhante, idade_acompanhante, vitima_era, forma_conducao)
    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmtInfoPaciente = $conn->prepare($sqlInfoPaciente);
+
+
+if ($stmtInfoPaciente === false) {
+    die('Erro na preparação da consulta (info_paciente): ' . $conn->error);
+}
 $stmtInfoPaciente->bind_param("sissssss", $nomePaciente, $idadePaciente, $sexoPaciente, $rgCpfPaciente, $nomeAcompanhante, $idadeAcompanhante, $vitimaEra, $formaConducao);
 $stmtInfoPaciente->execute();
 
@@ -197,8 +202,40 @@ if ($stmtAtendimento === false) {
 $stmtAtendimento->bind_param("ssssssssssssssssssssssssssssssssssssssss", $motorista, $socorrista1, $socorrista2, $socorrista3, $demandante, $equipe, $procedimentosEfetuados1, $procedimentoMeiosAuxiliares, $procedimentoPolicia, $procedimentoSamu, $procedimentoCit, $descartaveisAtaduraTamanho, $descartaveisAtaduraQuant, $descartaveisCateterOculosQuant, $descartaveisCompressaComumQuant, $descartaveisKitsTamanho, $descartaveisKitsQuant, $descartaveisLuvasQuant, $descartaveisMascaraQuant, $descartaveisMantaAluminizadaQuant, $descartaveisPasDeaQuant, $descartaveisSondaAspiracaoQuant, $descartaveisSoroFisiologicoQuant, $descartaveisTalasPapTamanho, $descartaveisTalasPapQuant, $descartaveisOutros, $deixadosHospitalBaseEstabilizadorQuant, $deixadosHospitalColarTamanho, $deixadosHospitalColarQuant, $deixadosHospitalCoxinEstabilizadorQuant, $deixadosHospitalKedTamanho, $deixadosHospitalKedQuant, $deixadosHospitalMacaRigidaQuant, $deixadosHospitalTtfTamanho, $deixadosHospitalTtfQuant, $deixadosHospitalTiranteAranhaQuant, $deixadosHospitalTiranteCabecaQuant, $deixadosHospitalCanulaQuant, $deixadosHospitalOutro, $observacoes);
 $resultAtendimento = $stmtAtendimento->execute();
 
-if (!$resultAtendimento) {
-    die('Erro ao executar a consulta (atendimento): ' . $stmtAtendimento->error);
+if ($stmtInfoPaciente && $resultInfoOcorrencia && $resultSituacaoPaciente && $resultAtendimento) {
+    // Todas as operações anteriores foram bem-sucedidas, agora inserir na tabela 'ocorrencia'
+    $sqlOcorrencia = "INSERT INTO ocorrencia (id_atendente, id_info_paciente, id_info_ocorrencia, id_situacao_paciente, id_atendimento)
+        VALUES (?, ?, ?, ?, ?)";
+    $stmtOcorrencia = $conn->prepare($sqlOcorrencia);
+
+    if ($stmtOcorrencia === false) {
+        die('Erro na preparação da consulta (ocorrencia): ' . $conn->error);
+    }
+
+    // Substitua os marcadores de posição pelos valores reais correspondentes
+    $stmtOcorrencia->bind_param("iiiii", $idAtendente, $idInfoPaciente, $idInfoOcorrencia, $idSituacaoPaciente, $idAtendimento);
+
+    // Obtenha os valores para as chaves estrangeiras (exemplo: id_atendente)
+    $idAtendente = $_SESSION['id_usuario']; // Certifique-se de ter iniciado a sessão
+    $idInfoPaciente = $conn->insert_id; // O ID recém-inserido da tabela info_paciente
+    $idInfoOcorrencia = $conn->insert_id; // O ID recém-inserido da tabela info_ocorrencia
+    $idSituacaoPaciente = $conn->insert_id; // O ID recém-inserido da tabela situacao_paciente
+    $idAtendimento = $conn->insert_id; // O ID recém-inserido da tabela atendimento
+
+    $resultOcorrencia = $stmtOcorrencia->execute();
+
+    if (!$resultOcorrencia) {
+        die('Erro ao executar a consulta (ocorrencia): ' . $stmtOcorrencia->error);
+    }
+
+    $stmtOcorrencia->close();
+
+    // Restante do seu código...
+
+    // ...
+} else {
+    // Se alguma das operações anteriores falhou, trate o erro conforme necessário
+    die('Erro nas operações anteriores. Algumas consultas não foram bem-sucedidas.');
 }
 
 // Finalizando a função processarInfoOcorrencia()
