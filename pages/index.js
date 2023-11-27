@@ -166,9 +166,9 @@ document.getElementById('idadePaciente').addEventListener('input', function() {
 function validarNumeroRGCPFPaciente(input) {
     var numero = input.value.replace(/[^0-9a-zA-Z\s\.\-]/g, ''); // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
 
-    // Limite o número de caracteres a 14
-    if (numero.length > 14) {
-        numero = numero.slice(0, 14); // Limita o valor a 14 caracteres
+    // Limite o número de caracteres a 11
+    if (numero.length > 11) {
+        numero = numero.slice(0, 11); // Limita o valor a 11 caracteres
     }
 
     var mensagemErro = document.getElementById("mensagemErro-3");
@@ -176,18 +176,11 @@ function validarNumeroRGCPFPaciente(input) {
     // Verifique se a entrada contém letras
     var contemLetras = /[a-zA-Z]/.test(numero);
 
-    // Formate o CPF e o RG em variáveis intermediárias
+    // Formate o CPF em uma variável intermediária
     var cpfFormatado = formatarCPF(numero);
-    var rgFormatado = formatarRG(numero);
 
-    // Defina o valor do campo de entrada com as versões formatadas
-    if (cpfFormatado !== null) {
-        input.value = cpfFormatado;
-    } else if (rgFormatado !== null) {
-        input.value = rgFormatado;
-    } else {
-        input.value = numero; // Se não for CPF nem RG formatável, mantenha o valor original
-    }
+    // Defina o valor do campo oculto com o CPF formatado
+    document.getElementById("cpfFormatado").value = cpfFormatado || '';
 
     // Exiba a mensagem de erro apenas se houver letras na entrada
     if (contemLetras) {
@@ -196,17 +189,6 @@ function validarNumeroRGCPFPaciente(input) {
         mensagemErro.textContent = "";
     }
 }
-
-  
-  // Função para formatar CPF
-  function formatarCPF(cpf) {
-    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
-    if (cpf.length === 11) {
-      cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4'); // Formatação
-      return cpf;
-    }
-    return null; // Retorna null se o CPF não tiver 11 dígitos
-  }
 
   // Função para formatar RG
   function formatarRG(rg) {
@@ -217,7 +199,7 @@ function validarNumeroRGCPFPaciente(input) {
     if (rg.length <= 2) {
       return rg;
     } else if (rg.length <= 9) {
-      return rg.replace(/(\d{1})(\d{3})(\d{3})/, '$1.$2.$3');
+      return rg.replace(/(\d{1})(\d{3})(\d{3})/, '$1$2$3');
     }
     return null; // Retorna null se o RG não estiver em um formato válido
   }
@@ -339,7 +321,7 @@ function selectCheckOcorrencia(checkbox) {
     });
 }
 
-var input = document.getElementById("medidaPressao");
+var input = document.getElementById("medidaPressao1");
 
 function formatarMedidaPressao(input) {
     var valor = input.value;

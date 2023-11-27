@@ -19,7 +19,7 @@
 
         <button class="irUsuarios">
             <div id="irparaLogin">
-                <a href="telalogin.php">Fazer Login</a>
+                <a href="index.php">Fazer Login</a>
             </div>
         </button>
     </div>

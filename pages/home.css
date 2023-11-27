@@ -23,7 +23,6 @@ body {
   max-width: 90vw; /* Alterado para 90vw para evitar possíveis problemas de overflow */
   text-align: center;
   margin-top: 2%;
-  margin-bottom: 70px;
 }
 
 .logo {
@@ -38,18 +37,33 @@ body {
   width: 100%;
 }
 
-a {
-  padding: 1rem;
-  width: 80%;
-  margin: 10px 0;
-  background-color: #030060; /* Mantido o fundo azul escuro */
-  color: #fff; /* Cor do texto */
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: 0.5s ease-out;
-  overflow: visible;
+.grid-button-usuario {
+  display: flex;
+  margin: auto;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #030060;
+  color: white;
   text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px #5b58ff, 0 2px 4px -1px #5b58ff;
+  transition: all .6s ease;
+}
+
+.grid-button-usuario:hover {
+  box-shadow: 0 10px 15px -3px #5b58ff, 0 4px 6px -2px #5b58ff;
+}
+
+.grid-button-usuario:focus,
+.grid-button-usuario:active {
+  opacity: .85;
+  box-shadow: none;
 }
 
 .grid-button {
@@ -84,9 +98,54 @@ a {
 
   a {
     width: auto; /* Alterado para largura automática em telas maiores */
-    margin: 0 10px; /* Adicionado espaço horizontal entre os botões em telas maiores */
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    }
+
+    #botaoEditar{
+      display: flex;
+      position: relative;
+      justify-content: center;
+      padding: 1.3rem;
+      background-color: #030060;
+      color: #fff;
+      border: none;
+      border-radius: 0.8rem;
+      cursor: pointer;
+      transition: 0.5s ease-out;
+      overflow: visible;
+      margin-top: 1rem;
+    }
+
+    #botaoEditar a {
+      display: flex;
+      position: relative;
+      color: #fff;
+      text-decoration: none;
+    justify-content: center;
   }
-}
+    
+    #botaoEditar:hover {
+      background-color: #1b40af;
+      /* Cor do fundo ao passar o mouse */
+    }
+    
+
+    footer {
+      position: fixed;
+      display: block;
+      flex-direction: column;
+      width: 100%;
+      background-color: #030060;
+      color: #fff;
+      text-align: center;
+      bottom: 0;
+      overflow: auto;
+    }
+     /* Adicionado espaço horizontal entre os botões em telas maiores */
+  }
+
 
 .cabecalho {
   display: flex; /* Alterado para flex para facilitar a centralização vertical */
@@ -96,13 +155,45 @@ a {
   margin-bottom: 2%; /* Adicionado espaço inferior para separar o cabeçalho do conteúdo principal */
 }
 
-footer {
+#botaoEditar {
   display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  margin-top: 1.5rem;
+}
+
+#botaoEditar a {
+  display: flex;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+justify-content: center;}
+
+#botaoEditar:hover {
+  background-color: #1b40af;
+  /* Cor do fundo ao passar o mouse */
+}
+
+footer {
+  position: fixed;
+  display: block;
   flex-direction: column;
   width: 100%;
+  margin-top: 1rem;
   background-color: #030060;
   color: #fff;
   text-align: center;
-  position: fixed;
   bottom: 0;
+  overflow: auto;
+}
+.copyright{
+  font-size: smaller;
+  row-gap: 0;
 }

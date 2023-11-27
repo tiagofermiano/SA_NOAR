@@ -41,7 +41,7 @@ body {
   margin-top: 6rem;
 }
 
-.relatorios, .perfil, .inicio, .novo_usuario, .conectado, .voltar {
+.relatorios, .perfil, .inicio, .novo_usuario, .voltar {
   position: absolute;
   top: 0;
   padding: 0.8rem;
@@ -60,7 +60,7 @@ body {
   text-decoration: none;
 }
 
-.relatorios:hover, .perfil:hover, .inicio:hover, .novo_usuario:hover, .conectado:hover, .voltar:hover {
+.relatorios:hover, .perfil:hover, .inicio:hover, .novo_usuario:hover, .voltar:hover {
   background-color: #1b40af;
 }
 
@@ -78,17 +78,21 @@ body {
   left: 0;
 }
 
-.conectado {
+.conectado {  
+  margin: 5px;
+  background-color: #030060;
+  color: #fff;
+  position: absolute;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.8rem;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  top: 0;
   right: 0;
 }
 
-#conectado {
-  margin-top: 1%;
-  margin-left: 1%;
-  font-weight: bold;
-  max-width: 25%;
-  color: #030060;
-}
+
 
 #sem-relatorio {
   text-align: center;

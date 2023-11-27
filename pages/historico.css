@@ -28,6 +28,12 @@ body {
   /* background-color: #030060; */
   }
 
+  .grid_header {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .relatorios, .perfil, .inicio {
     position: absolute;
     top: 0;
@@ -52,7 +58,7 @@ body {
 }
 
 .perfil {
-    right: 0;
+    left: 0;
 }
 
 .inicio {
@@ -60,13 +66,20 @@ body {
     transform: translateX(-50%);
 }
 
-#conectado{
-  margin-top: 1%;
-  margin-left: 1%;
-  font-weight: bold;
-  max-width: 25%;
-  color: #030060;
+.conectado {  
+  margin: 5px;
+  background-color: #030060;
+  color: #fff;
+  position: absolute;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.8rem;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  top: 0;
+  right: 0;
 }
+
 
 #sem-relatorio{
   text-align: center;

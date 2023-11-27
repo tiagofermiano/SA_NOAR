@@ -32,13 +32,13 @@ include('connect_usuarios.php');
       Conectado: <?php echo $_SESSION['nome'];?>
   </div>
 
-  <div class="novo_usuario">
-        <a href="cadastro.php">Cadastrar novo usuário</a>
-    </div>
+  <a href="cadastro.php"><div class="novo_usuario">
+        Cadastrar novo usuário
+    </div></a>
 
-    <div class="inicio">
-        <a href="telahome.php">Início</a>
-    </div>
+    <a href="telahome_admin.php"><div class="inicio">
+        Início
+    </div></a>
 
 </div>
 
@@ -63,7 +63,7 @@ include('connect_usuarios.php');
                             <th>CPF</th>
                             <th>Tipo</th>
                             <th>Senha</th>
-                            <th>Ação</th>
+                            <th></th>
                         </tr>
                         </div>
                     </thead>
@@ -82,6 +82,7 @@ include('connect_usuarios.php');
                             echo "<td>" . $row["senha"] . "</td>";
                             // Adicione um botão para edição (redireciona para a página editorphp.php com um parâmetro de ID)
                             echo '<td><a href="editorphp.php?edit=' . $row["id_atendente"] . '" class="editar">Editar</a></td>';
+                            echo '<td><a href="#" class="editar" onclick="confirmarExclusao(' . $row["id_atendente"] . ')">Excluir</a></td>'; 
                             echo "</tr>";
                           }
                         } else {
@@ -94,6 +95,19 @@ include('connect_usuarios.php');
         </div>
 </div>
 </div>
+
+<script>
+  function confirmarExclusao(idAtendente) {
+    var confirmacao = confirm("Tem certeza que deseja excluir este usuário?");
+
+    if (confirmacao) {
+      // Se o usuário clicou em "OK" no popup, redirecione para a página de exclusão com o ID do usuário
+      window.location.href = 'excluirUsuario.php?edit=' + idAtendente + '&action=excluir';
+    } else {
+      // Se o usuário clicou em "Cancelar", nada acontecerá
+    }
+  }
+</script>
 
 </body>
 </html>   

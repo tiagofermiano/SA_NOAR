@@ -18,8 +18,6 @@ body {
   /* Definir uma fonte padrão */
 }
 
-
-
 .navbar {
   width: 100%;
   margin: 0 auto;
@@ -29,7 +27,7 @@ body {
   /* background-color: #030060; */
   }
 
-  .historico, .perfil, .inicio {
+  .voltar{
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -41,35 +39,20 @@ body {
     cursor: pointer;
     transition: 0.5s ease-out;
     overflow: visible;
-}
+  }
 
-.historico a, .perfil a, .inicio a {
+  .voltar a{
     color: #fff;
     text-decoration: none;
-}
+  }
 
-.historico:hover, .perfil:hover, .inicio:hover {
+  .voltar:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
-}
+  }
 
-.historico {
+  .voltar {
     left: 0;
-}
-
-.perfil {
-    right: 0;
-}
-
-.inicio {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.logo_cadastro{
-  display: flex;
-  margin: auto;
-}
+  }
 
 /*caixa de fundo do login*/
 .form-caixa {
@@ -88,12 +71,12 @@ body {
 /*titulo "Login"*/
 .titulo {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 2rem;
   font-weight: 600;
   color: #030060;
   font-family: 'Poppins', sans-serif;
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
 .form {
@@ -132,6 +115,17 @@ body {
     cursor: pointer;
   }
 
+  select{
+    width: 45%;
+    border-radius: 2rem;
+    border: none;
+    outline: 0;
+    background-color: #E5E6E7;
+    padding: 0.75rem 1rem;
+    color: #030060;
+    cursor: pointer;
+    align-items: center;
+  }
 
 /*caixa de texto senha*/
 .esqueciasenha {

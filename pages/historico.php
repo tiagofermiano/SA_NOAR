@@ -1,3 +1,7 @@
+<?php
+include('protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,18 +26,23 @@
     
 
 
-  <header>
-    <div id="conectado">
-      Conectado: Fernando Bagos
+<header>
+  <div class="grid_header">
+
+    <div class="conectado">
+      Conectado: <?php echo $_SESSION['nome'];?>
   </div>
-    <div class="inicio">
-        <a href="home.html">Início</a>
-    </div>
-    <div class="perfil">
-        <a href="perfil.html">Perfil</a>
-    </div>
-</div>   
-</header>
+
+  <a href="telaperfil.php"><div class="perfil">
+        Perfil
+    </div></a>
+
+    <a href="telahome.php"><div class="inicio">
+        Início
+    </div></a>
+
+</div>
+  </header>
 
 <p class="titulo">Histórico</p>
     
@@ -59,3 +68,4 @@
 
 </body>
 </html>    
+
