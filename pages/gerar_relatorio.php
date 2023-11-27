@@ -1,29 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-
-    <link rel="stylesheet" type="text/css" href="perfil.css">
-
-</head>
-<body>
+<?php
+// TENTEI
+// if (!function_exists('gerarEInserirPDF')) {
+//     function gerarEInserirPDF($idRelatorio) {
+//     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//         // Se o formulário foi enviado
+//         require('fpdf.php');
     
-<div class="form-caixa-salvo">
-        <div class="perfil">
-            <p class="titulo-salvo">Alteração salva com sucesso.</p>
-            <form method="POST" action="connect_usuarios.php">
+//         // Criar uma instância do FPDF
+//         $pdf = new FPDF();
+//         $pdf->AddPage();
+//         $pdf->SetFont('Arial', 'B', 16);
+//         $pdf->Cell(40, 10, 'Conteúdo do relatório');
+    
+//         // Adicionar mais conteúdo ao PDF conforme necessário
+//         // Exemplo: $pdf->Cell(40, 10, 'Outro conteúdo do relatório');
+    
+//         // Salvar o PDF como um blob
+//         ob_start();
+//         $pdf->Output('F');
+//         $pdfData = ob_get_clean();
+    
+//         // Inserir o PDF no banco de dados
+//         include('conexao.php'); // Certifique-se de incluir o arquivo que contém a conexão com o banco de dados
+    
+//         $stmt = $conn->prepare("UPDATE relatorios SET arquivo_pdf = ? WHERE id = ?");
+//         $stmt->bind_param("bi", $pdfData, $idRelatorio);
+//         $stmt->execute();
+    
+//         $stmt->close();
+//         $conn->close();
+//     }
+// }}
 
-        <button>
-            <div id="irparaUsuarios">
-                Gerar PDF
-            </div>
-        </button>
-    </form>
-    </div>
-
-
-
-</body>
-</html>
+?>

@@ -11,7 +11,20 @@ include('protect.php');
     <title>NOAR</title>
 
     <link href="home.css" rel="stylesheet">
+    <script>
+        // Função para exibir o popup se o parâmetro de sucesso estiver presente na URL
+        function exibirPopup() {
+            // Verifica se a URL contém "success=true"
+            if (window.location.href.indexOf("success=true") !== -1) {
+                // Exibe o popup
+                alert("Ficha salva com sucesso!");
+            }
+        }
 
+        // Chama a função após o carregamento da página
+        window.onload = exibirPopup;
+    </script>
+</head>
 <body>
 
     <div class="cabecalho">

@@ -1,6 +1,8 @@
 <?php
 include('protect.php');
 include('conexao.php');
+include('gerar_relatorio.php');
+
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -201,6 +203,42 @@ if (!$resultAtendimento) {
     die('Erro ao executar a consulta (atendimento): ' . $stmtAtendimento->error);
 }
 
+$resultAtendimento = $stmtAtendimento->execute();
+
+if (!$resultAtendimento) {
+    die('Erro ao executar a consulta (atendimento): ' . $stmtAtendimento->error);
+}
+
+// Após inserir os dados do relatório no banco de dados
+// Certifique-se de substituir '$_SESSION['atendente_id']' pela variável que contém o ID do atendente
+// $atendente_id = $_SESSION['id_atendente'];
+
+// Verificar se há relatório associado ao atendente
+// $sqlVerificarRelatorio = "SELECT id, arquivo_pdf FROM relatorios WHERE atendente = ?";
+// $stmtVerificarRelatorio = $conn->prepare($sqlVerificarRelatorio);
+// $stmtVerificarRelatorio->bind_param("i", $atendente_id);
+// $stmtVerificarRelatorio->execute();
+// $stmtVerificarRelatorio->store_result();
+
+// if ($stmtVerificarRelatorio->num_rows > 0) {
+    // Já existe um relatório associado a este atendente
+//     echo "Já existe um relatório associado a este atendente.";
+// } else {
+//     // Inserir dados na tabela 'relatorios'
+//     $sqlRelatorio = "INSERT INTO relatorios (atendente, data_upload) VALUES (?, current_timestamp())";
+//     $stmtRelatorio = $conn->prepare($sqlRelatorio);
+//     $stmtRelatorio->bind_param("i", $atendente_id);
+//     $stmtRelatorio->execute();
+
+    // Obter o ID do relatório recém-inserido
+    // $idRelatorio = $stmtRelatorio->insert_id;
+
+    // $stmtRelatorio->close();
+
+    // Chamar a função para gerar e inserir o PDF
+    // gerarEInserirPDF($idRelatorio);
+}
+
 // Finalizando a função processarInfoOcorrencia()
 echo "Informações da ocorrência inseridas com sucesso!";
 $stmtAtendimento->close();
@@ -210,7 +248,7 @@ $stmtInfoPaciente->close();
 $conn->close(); // Fechar a conexão com o banco de dados após a conclusão
 
 // Redirecionar para a página desejada após a conclusão do processo
-header("Location: telahome.php?success=true");
+header("Location: telahome_admin.php?success=true");
 exit();
-}
+
 ?>

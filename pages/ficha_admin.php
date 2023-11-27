@@ -1,6 +1,7 @@
 <?php
 include('protect.php');
-include('processarInfoOcorrencia.php');
+include('processarInfoOcorrencia_admin.php');
+include('gerar_relatorio.php');
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +73,7 @@ include('processarInfoOcorrencia.php');
 
 
 
-  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia.php">
+  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia_admin.php">
     <div class="container">
 
       <h1 class="title" id="info-paciente">Informações do paciente:</h1>
@@ -2495,6 +2496,19 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
   <button type="submit" name="submitInfos">Enviar relatório</button>
   </form>
   <br><br>
+
+  <script>
+// Adicione este script para preencher o campo oculto antes de enviar o formulário
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.querySelector('form');
+    var formContent = document.getElementById('form_content');
+
+    form.addEventListener('submit', function () {
+        // Preencher o campo oculto com o conteúdo HTML do formulário
+        formContent.value = document.documentElement.outerHTML;
+    });
+});
+</script>
 
 <!-- <script>
 function enviarFormulario() {

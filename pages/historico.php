@@ -1,5 +1,7 @@
 <?php
 include('protect.php');
+include('conexao.php');
+include('downloadPDF.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,26 +48,39 @@ include('protect.php');
 
 <p class="titulo">Histórico</p>
     
-<p id="sem-relatorio">Ainda não há relatório registrado.</p>
+<?php
+// Verificar se o ID do atendente está definido (você precisa obter isso de alguma forma, por exemplo, através de uma sessão)
+if (isset($_SESSION['id_atendente'])) {
+    $atendente_id = $_SESSION['id_atendente'];
 
-<div id="container-relatorios">
- <div id="relatorio">
-  <p id="numero-ocorrencia">000</p>
-  <div id="info-ocorrencia">
-    <p id="nome-paciente">Paciente: Fernando Bagos Filho</p>
-    <p id="idade-paciente">Idade: 247</p>
-    <p id="local-ocorrencia">Local: Rua Fernadinho bagosinho, 777</p>
-  </div>
-  <div id="botao-ver">
-    <a class="botao">
-      Acessar
-    </a>
-  </div>
+    // Sua consulta SQL com a condição WHERE para o atendente
+    $sql = "SELECT id, atendente, arquivo_pdf, data_upload FROM relatorios WHERE atendente = $atendente_id";
+    $result = $conn->query($sql);
 
- </div>
-</div>
+    if ($result->num_rows > 0) {
+        // Exibir os dados apenas se houver relatórios associados ao atendente
+        while($row = $result->fetch_assoc()) {
+            echo '<div id="container-relatorios">';
+            echo '<div id="relatorio">';
+            echo '<p id="numero-ocorrencia">Relatório ' . $row["id"] . '</p>';
+            echo '<div id="info-ocorrencia">';
+            echo '<p id="nome-paciente">Data: ' . $row["data_upload"] . '</p>';
+            echo '</div>';
+            echo '<div id="botao-ver">';
+            echo '<a class="botao" href="downloadPDF.php?id=' . $row["id"] . '">Baixar Arquivo</a>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+      echo '<p id="sem-relatorio">' . 'Nenhum relatório associado ao atendente.' . '</p>';
+    }
+} 
+
+// Fechar conexão
+$conn->close();
+?>
 
 
 </body>
 </html>    
-

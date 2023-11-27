@@ -1,3 +1,8 @@
+<?php
+include('conexao.php');
+include('protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,52 +42,74 @@
         </div>
     </header>
 
-    <div id="relatorio">
-        <p class="titulo">Relatório</p>
-        <div class="form-caixa">
-            <div class="classe">
-                <p>Informações do paciente:</p>
-            </div>
+    <?php
 
-            <div id="dado1">
-                <p>Nome do paciente:</p>
-                <p id="info">Fernandinho Bagosinho</p>
-            </div>
-            <div id="dado2">
-                <p>Idade do paciente:</p>
-                <p id="info">257</p>
-            </div>
+if (isset($_POST['nomePaciente'])) {
+    // Inicialize as variáveis com os dados do formulário
+    $nomePaciente = $_POST['nomePaciente'];
+    $idadePaciente = $_POST['idadePaciente'];
+    $sexoPaciente = $_POST['sexoPaciente'];
+    $rgCpfPaciente = $_POST['rgcpfPaciente'];
+    $nomeAcompanhante = $_POST['nomeAcompanhante'];
+    $idadeAcompanhante = $_POST['idadeAcompanhante'];
+    $vitimaEra = implode(", ", (array)$_POST['vitimaEra']);
+    $formaConducao = $_POST['formaConducao'];
+} else {
+    // Se as informações não estiverem disponíveis, redirecione para a página inicial ou lide com isso de acordo
+    header("Location: index.php");
+    exit();
+}
+?>
 
-            <div id="dado2">
-                <p>Sexo:</p>
-                <p id="info">Feminino</p>
-            </div>
+?>
 
-            <div id="dado2">
-                <p>RG/CPF do paciente:</p>
-                <p id="info">656565656556</p>
-            </div>
-
-            <div id="dado2">
-                <p>Nome do acompanhante:</p>
-                <p id="info">Fernandão Bagosão</p>
-            </div>
-
-            <div id="dado2">
-                <p>Idade do acompanhante:</p>
-                <p id="info">12327</p>
-            </div>
-
-            <div id="dado2">
-                <p>Vitima era:</p>
-                <p id="info">Filhadaputa</p>
-            </div>
-
-            <div id="dado2">
-                <p>Forma de condução:</p>
-                <p id="info">Deiatada</p>
-            </div>
+<div id="relatorio">
+    <p class="titulo">Relatório</p>
+    <div class="form-caixa">
+        <div class="classe">
+            <p>Informações do paciente:</p>
         </div>
+
+        <div id="dado1">
+            <p>Nome do paciente:</p>
+            <p id="info"><?php echo $informacoesPaciente['nomePaciente']; ?></p>
+        </div>
+        <div id="dado2">
+            <p>Idade do paciente:</p>
+            <p id="info"><?php echo $informacoesPaciente['idadePaciente']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>Sexo:</p>
+            <p id="info"><?php echo $informacoesPaciente['sexoPaciente']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>RG/CPF do paciente:</p>
+            <p id="info"><?php echo $informacoesPaciente['rgcpfPaciente']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>Nome do acompanhante:</p>
+            <p id="info"><?php echo $informacoesPaciente['nomeAcompanhante']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>Idade do acompanhante:</p>
+            <p id="info"><?php echo $informacoesPaciente['idadeAcompanhante']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>Vítima era:</p>
+            <p id="info"><?php echo $informacoesPaciente['vitimaEra']; ?></p>
+        </div>
+
+        <div id="dado2">
+            <p>Forma de condução:</p>
+            <p id="info"><?php echo $informacoesPaciente['formaConducao']; ?></p>
+        </div>
+    </div>
+</div>
 
         <br><br>
 
