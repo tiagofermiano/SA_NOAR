@@ -1,6 +1,7 @@
 <?php
 include('protect.php');
 include('processarInfoOcorrencia.php');
+include('gerar_relatorio.php');
 ?>
 
 
