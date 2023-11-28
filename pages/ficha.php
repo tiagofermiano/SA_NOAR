@@ -27,17 +27,17 @@ include('processarInfoOcorrencia.php');
   <header>
     <div class="navbar">
 
-      <a href="historico_admin.php">
+      <a href="historico.php">
         <div class="historico">
           Histórico
         </div>
       </a>
-      <a href="telahome_admin.php">
+      <a href="telahome.php">
         <div class="inicio">
           Início
         </div>
       </a>
-      <a href="telaperfil_admin.php">
+      <a href="telaperfil.php">
         <div class="perfil">
           Perfil
         </div>
@@ -73,7 +73,7 @@ include('processarInfoOcorrencia.php');
 
 
 
-  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia_admin.php">
+  <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia.php">
     <div class="container">
 
       <h1 class="title" id="info-paciente">Informações do paciente:</h1>
