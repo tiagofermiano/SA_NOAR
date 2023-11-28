@@ -1,7 +1,6 @@
 <?php
-include('conexao.php');
-include('processarFicha.php');
-
+include('protect.php');
+include('processarInfoOcorrencia.php');
 ?>
 
 
