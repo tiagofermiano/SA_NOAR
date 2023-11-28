@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/11/2023 às 22:08
+-- Tempo de geração: 28/11/2023 às 07:26
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,11 +42,8 @@ CREATE TABLE `atendente` (
 --
 
 INSERT INTO `atendente` (`id_atendente`, `nome`, `cpf`, `email`, `senha`, `data_cadastro`, `tipo`) VALUES
-(1, 'Admin 1', '12121212121', 'admin1@email.com', '123', '2023-10-18 14:03:08', 'Administrador'),
-(2, 'Admin 2', '12345678900', 'admin2@gmail.com', '123', '2023-10-18 09:04:35', 'Administrador'),
-(3, 'Bombeiro 1', '82204456373', 'bombeiro1@email.com', '123', '2023-10-18 09:28:32', 'Bombeiro'),
-(4, 'Bombeiro 2', '64573485743', 'bombeiro2@gmail.com', '123', '2023-11-19 19:25:35', 'Bombeiro'),
-(8, 'Atendente', '23232323232', 'atendente@email.com', '123', NULL, 'Atendente');
+(2, 'admin', '12345678900', 'admin@gmail.com', '123', '2023-10-18 09:04:35', 'Administrador'),
+(5, 'tiago m', '13198160960', 'tiago@gmail.com', '123', '2023-11-19 19:46:14', 'Bombeiro');
 
 -- --------------------------------------------------------
 
@@ -95,7 +92,9 @@ CREATE TABLE `atendimento` (
   `deixados_hospital_tirante_cabeca_quant` varchar(20) NOT NULL,
   `deixados_hospital_canula_quant` varchar(20) NOT NULL,
   `deixados_hospital_outro` varchar(100) NOT NULL,
-  `observacoes` varchar(200) NOT NULL
+  `observacoes` varchar(200) NOT NULL,
+  `data_ocorrencia` date NOT NULL,
+  `hora_chegada` time(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -142,20 +141,9 @@ CREATE TABLE `info_paciente` (
   `nome_acompanhante` text NOT NULL,
   `idade_acompanhante` varchar(3) NOT NULL,
   `vitima_era` varchar(30) NOT NULL,
-  `forma_conducao` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `relatorios`
---
-
-CREATE TABLE `relatorios` (
-  `id` int(11) NOT NULL,
-  `atendente` int(11) NOT NULL,
-  `arquivo_pdf` blob NOT NULL,
-  `data_upload` timestamp NULL DEFAULT current_timestamp()
+  `forma_conducao` varchar(30) NOT NULL,
+  `data_ocorrencia` date NOT NULL,
+  `hora_chegada` time(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -223,7 +211,9 @@ CREATE TABLE `situacao_paciente` (
   `gestacional_inspecao_visual` varchar(100) NOT NULL,
   `gestacional_parto_realizado` varchar(100) NOT NULL,
   `gestacional_sexo_bebe` varchar(100) NOT NULL,
-  `gestacional_nome_bebe` varchar(100) NOT NULL
+  `gestacional_nome_bebe` varchar(100) NOT NULL,
+  `data_ocorrencia` date NOT NULL,
+  `hora_chegada` time(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -255,13 +245,6 @@ ALTER TABLE `info_paciente`
   ADD PRIMARY KEY (`id_info_paciente`);
 
 --
--- Índices de tabela `relatorios`
---
-ALTER TABLE `relatorios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_ocorrencia` (`atendente`);
-
---
 -- Índices de tabela `situacao_paciente`
 --
 ALTER TABLE `situacao_paciente`
@@ -275,47 +258,31 @@ ALTER TABLE `situacao_paciente`
 -- AUTO_INCREMENT de tabela `atendente`
 --
 ALTER TABLE `atendente`
-  MODIFY `id_atendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_atendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `atendimento`
 --
 ALTER TABLE `atendimento`
-  MODIFY `id_atendimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_atendimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `info_ocorrencia`
 --
 ALTER TABLE `info_ocorrencia`
-  MODIFY `id_info_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id_info_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de tabela `info_paciente`
 --
 ALTER TABLE `info_paciente`
-  MODIFY `id_info_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
-
---
--- AUTO_INCREMENT de tabela `relatorios`
---
-ALTER TABLE `relatorios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_info_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT de tabela `situacao_paciente`
 --
 ALTER TABLE `situacao_paciente`
-  MODIFY `id_situacao_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `relatorios`
---
-ALTER TABLE `relatorios`
-  ADD CONSTRAINT `fk_atendente` FOREIGN KEY (`atendente`) REFERENCES `atendente` (`id_atendente`);
+  MODIFY `id_situacao_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
