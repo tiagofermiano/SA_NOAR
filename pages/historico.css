@@ -19,6 +19,27 @@ body {
   zoom: 1.15; /* Aumenta o zoom em 20% */
 }
 
+.form-caixa {
+  display: block;
+  background-color: #fff;
+  width: 45%;
+  margin:auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.textbox-n {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1.5px solid #C7BEBE;
+  outline: 0;
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  color: #030060;
+  cursor: pointer;
+}
+
 .navbar {
   width: 100%;
   margin: 0 auto;
@@ -34,7 +55,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .relatorios, .perfil, .inicio {
+  .relatorios, .perfil, .inicio, .pesquisar_button {
     position: absolute;
     top: 0;
     padding: 0.8rem;
@@ -48,13 +69,37 @@ body {
     overflow: visible;
 }
 
-.relatorios a, .perfil a, .inicio a {
+.relatorios a, .perfil a, .inicio a, .pesquisar_button a {
     color: #fff;
     text-decoration: none;
 }
 
-.relatorios:hover, .perfil:hover, .inicio:hover {
+.relatorios:hover, .perfil:hover, .inicio:hover, .pesquisar_button:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.pesquisar_button {
+  display: block;
+  position: relative;
+  margin: 0 auto; /* Configuração para centralizar horizontalmente */
+  margin-top: 10px;
+  padding: 0.8rem;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.pesquisar_button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.pesquisar_button:hover {
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
 .perfil {

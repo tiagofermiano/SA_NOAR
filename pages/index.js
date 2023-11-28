@@ -161,48 +161,32 @@ document.getElementById('idadePaciente').addEventListener('input', function() {
         document.getElementById('imagem-corpo-adulto').classList.remove('hidden');
         document.getElementById('imagem-corpo-crianca').classList.add('hidden');
     }
-});
+});        function formatarDocumento(input) {
+    // Remove caracteres não numéricos
+    const apenasNumeros = input.value.replace(/\D/g, '');
 
-function validarNumeroRGCPFPaciente(input) {
-    var numero = input.value.replace(/[^0-9a-zA-Z\s\.\-]/g, ''); // Remove caracteres não numéricos, exceto letras, espaços, pontos e traços
-
-    // Limite o número de caracteres a 11
-    if (numero.length > 11) {
-        numero = numero.slice(0, 11); // Limita o valor a 11 caracteres
-    }
-
-    var mensagemErro = document.getElementById("mensagemErro-3");
-
-    // Verifique se a entrada contém letras
-    var contemLetras = /[a-zA-Z]/.test(numero);
-
-    // Formate o CPF em uma variável intermediária
-    var cpfFormatado = formatarCPF(numero);
-
-    // Defina o valor do campo oculto com o CPF formatado
-    document.getElementById("cpfFormatado").value = cpfFormatado || '';
-
-    // Exiba a mensagem de erro apenas se houver letras na entrada
-    if (contemLetras) {
-        mensagemErro.textContent = "Digite apenas números.";
+    // Verifica se o valor restante é numérico
+    if (!(/^\d+$/.test(apenasNumeros))) {
+        // Mostra a mensagem de erro
+        document.getElementById('mensagemErro-3').innerText = 'Digite apenas números';
+        // Limpa o valor do input
+        input.value = '';
     } else {
-        mensagemErro.textContent = "";
+        // Limpa a mensagem de erro
+        document.getElementById('mensagemErro-3').innerText = '';
+
+        // Formatação para CPF (11 dígitos)
+        if (apenasNumeros.length === 11) {
+            const cpfFormatado = apenasNumeros.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            input.value = cpfFormatado;
+        }
+        // Formatação para RG (pode variar)
+        else if (apenasNumeros.length <= 9) {
+            const rgFormatado = apenasNumeros.replace(/(\d{1,2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4');
+            input.value = rgFormatado;
+        }
     }
 }
-
-  // Função para formatar RG
-  function formatarRG(rg) {
-    // Remove todos os caracteres não numéricos
-    rg = rg.replace(/\D/g, '');
-  
-    // Verifica o comprimento do RG e formata conforme necessário
-    if (rg.length <= 2) {
-      return rg;
-    } else if (rg.length <= 9) {
-      return rg.replace(/(\d{1})(\d{3})(\d{3})/, '$1$2$3');
-    }
-    return null; // Retorna null se o RG não estiver em um formato válido
-  }
 
 //função para permitir apenas a escrita de letras no nome do acompanhante
 function validarNomeAcomp(input) {
@@ -231,10 +215,14 @@ function validarNumeroIdadeAcomp(input) {
     }
 }
 
-//funcao vitima era, selecionar somente uma opção
 function selectCheckVitimaEra(checkbox) {
-    var checkboxes = document.querySelectorAll('.selectCheckVitimaEra');
+    // Obter o nome do grupo da checkbox atual
+    var groupName = checkbox.getAttribute('name');
 
+    // Obter todas as checkboxes com o mesmo nome (pertencentes ao mesmo grupo)
+    var checkboxes = document.querySelectorAll('input[name="' + groupName + '"]');
+
+    // Desmarcar todas as checkboxes dentro do grupo
     checkboxes.forEach(function (cb) {
         if (cb !== checkbox) {
             cb.checked = false;
@@ -255,8 +243,27 @@ function validarNumeroOcorr(input) {
     }
 }
 
+var input = document.getElementById("autoCompleteKM");
 
+function autoCompleteKM(input) {
+    var valor = input.value;
+    var mensagemErro = document.getElementById("mensagemErro-40");
 
+    if (event.inputType === "deleteContentBackward") {
+        input.value = valor.slice(0, -1);
+    } else {
+        var valorNumerico = valor.replace(/\D/g, '');
+
+        if (valorNumerico.length === 0) {
+            mensagemErro.textContent = "Digite apenas números.";
+            input.value = valor.replace(/[^0-9, ]/g, ''); // Correção aqui
+        } else {
+            var parte1 = valorNumerico.slice(0, 5);
+            input.value = parte1 + ' Km';
+            mensagemErro.textContent = "";
+        }
+    }
+}
 
 //funcao para permitir apenas a escrita de numeros usb
 function validarNumeroUSB(input) {
@@ -312,14 +319,21 @@ function validarCodSIASUS(input) {
 
 //funcao para tipo de ocorrencia, selecionar somente uma opção
 function selectCheckOcorrencia(checkbox) {
-    var checkboxes = document.querySelectorAll('.selectCheckOcorrencia');
+    // Obter o nome do grupo da checkbox atual
+    var groupName = checkbox.getAttribute('name');
 
+    // Obter todas as checkboxes com o mesmo nome (pertencentes ao mesmo grupo)
+    var checkboxes = document.querySelectorAll('input[name="' + groupName + '"]');
+
+    // Desmarcar todas as checkboxes dentro do grupo
     checkboxes.forEach(function (cb) {
         if (cb !== checkbox) {
             cb.checked = false;
         }
     });
 }
+
+
 
 var input = document.getElementById("medidaPressao1");
 
@@ -448,23 +462,28 @@ function completeWithHgt(input) {
     }
 }
 
-var input = document.getElementById("completeWithDegreeC");
+var input = document.getElementById("NumeroTemperatura");
 
-input.addEventListener("input", completeWithDegreeC);
-
-function completeWithDegreeC(event) {
+function NumeroTemperatura(input) {
     var valor = input.value;
     var mensagemErro = document.getElementById("mensagemErro-21");
 
-    var valorNumerico = valor.replace(/[^0-9,]/g, ''); // Remover tudo que não é número ou vírgula
+    if (event.inputType === "deleteContentBackward") {
+        input.value = valor.slice(0, -1);
+    }
+    else {
+        var valorNumerico = valor.replace(/[^0-9,]/g, '');
 
-    if (valorNumerico.length >= 2) {
-        // Adicionar '°C' após os dois números e a vírgula
-        input.value = valorNumerico.slice(0, 2) + ',' + valorNumerico.slice(2) + '°C';
-        mensagemErro.textContent = "";
-    } else {
-        input.value = valorNumerico;
-        mensagemErro.textContent = "Digite pelo menos dois números seguidos de uma vírgula (ex: 37,7°C).";
+        if (valorNumerico.length === 1) {
+            mensagemErro.textContent = "";
+        } else if (valorNumerico.length >= 2) {
+            var parte1 = valorNumerico.slice(0, 4);
+            input.value = parte1 + ' °C';
+            mensagemErro.textContent = "";
+        } else {
+            input.value = valorNumerico;
+            mensagemErro.textContent = "Digite apenas números.";
+        }
     }
 }
 

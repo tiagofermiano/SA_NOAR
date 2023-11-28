@@ -59,8 +59,8 @@ include('connect_usuarios.php');
                         <tr>
                             <th>ID do Bombeiro</th>
                             <th>Nome Completo</th>
-                            <th>Email</th>
                             <th>CPF</th>
+                            <th>Email</th>
                             <th>Tipo</th>
                             <th>Senha</th>
                             <th></th>

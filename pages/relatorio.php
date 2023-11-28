@@ -1,6 +1,10 @@
 <?php
 include('conexao.php');
 include('protect.php');
+
+if (isset($_SESSION['relatorio_data'])) {
+    $row = $_SESSION['relatorio_data'];
+
 ?>
 
 <!DOCTYPE html>
@@ -42,42 +46,24 @@ include('protect.php');
         </div>
     </header>
 
-    <?php
 
-if (isset($_POST['nomePaciente'])) {
-    // Inicialize as variáveis com os dados do formulário
-    $nomePaciente = $_POST['nomePaciente'];
-    $idadePaciente = $_POST['idadePaciente'];
-    $sexoPaciente = $_POST['sexoPaciente'];
-    $rgCpfPaciente = $_POST['rgcpfPaciente'];
-    $nomeAcompanhante = $_POST['nomeAcompanhante'];
-    $idadeAcompanhante = $_POST['idadeAcompanhante'];
-    $vitimaEra = implode(", ", (array)$_POST['vitimaEra']);
-    $formaConducao = $_POST['formaConducao'];
-} else {
-    // Se as informações não estiverem disponíveis, redirecione para a página inicial ou lide com isso de acordo
-    header("Location: index.php");
-    exit();
-}
-?>
 
-?>
+    <div id="relatorio">
+        <p class="titulo">Relatório</p>
 
-<div id="relatorio">
-    <p class="titulo">Relatório</p>
-    <div class="form-caixa">
-        <div class="classe">
-            <p>Informações do paciente:</p>
-        </div>
+        <div class="form-caixa">
+            <div class="classe">
+                <p>Informações do paciente:</p>
+            </div>
 
-        <div id="dado1">
-            <p>Nome do paciente:</p>
-            <p id="info"><?php echo $informacoesPaciente['nomePaciente']; ?></p>
-        </div>
-        <div id="dado2">
-            <p>Idade do paciente:</p>
-            <p id="info"><?php echo $informacoesPaciente['idadePaciente']; ?></p>
-        </div>
+            <div id="dado1">
+                <p>Nome do paciente:</p>
+                <p id="info"><?php echo $informacoesPaciente['nomePaciente']; ?></p>
+            </div>
+            <div id="dado2">
+                <p>Idade do paciente:</p>
+                <p id="info"><?php echo $informacoesPaciente['idadePaciente']; ?></p>
+            </div>
 
         <div id="dado2">
             <p>Sexo:</p>
@@ -109,7 +95,6 @@ if (isset($_POST['nomePaciente'])) {
             <p id="info"><?php echo $informacoesPaciente['formaConducao']; ?></p>
         </div>
     </div>
-</div>
 
         <br><br>
 
@@ -120,11 +105,11 @@ if (isset($_POST['nomePaciente'])) {
 
             <div id="dado1">
                 <p>Data:</p>
-                <p id="info">30/02/1945</p>
+                <p id="info"><?php echo $info_ocorrencia['data_ocorrencia']; ?></p>
             </div>
             <div id="dado2">
                 <p>Local da ocorrência:</p>
-                <p id="info">Rua Tchurusbango Tchurusbago</p>
+                <p id="info"><?php echo $info_ocorrencia['local_ocorrencia']; ?></p>
             </div>
 
             <div id="dado2">
@@ -436,21 +421,28 @@ if (isset($_POST['nomePaciente'])) {
 
     <br><br>
     <script>
-    $(document).ready(function() {
-        $("#gerar-pdf").click(function() {
-          abrirCaixaDeDialogoDeImpressao();
-        });
-    
-        $(document).keydown(function(event) {
-          if (event.ctrlKey && event.key === 'p') {
-            abrirCaixaDeDialogoDeImpressao();
-          }
-        });
-    
-        function abrirCaixaDeDialogoDeImpressao() {
-          window.print();
-        }
-      });</script>
+            $(document).ready(function () {
+                $("#gerar-pdf").click(function () {
+                    abrirCaixaDeDialogoDeImpressao();
+                });
+
+                $(document).keydown(function (event) {
+                    if (event.ctrlKey && event.key === 'p') {
+                        abrirCaixaDeDialogoDeImpressao();
+                    }
+                });
+
+                function abrirCaixaDeDialogoDeImpressao() {
+                    window.print();
+                }
+            });
+        </script>
 </body>
 
 </html>
+
+<?php
+} else {
+    echo "Nenhum dado encontrado na sessão.";
+}
+?>

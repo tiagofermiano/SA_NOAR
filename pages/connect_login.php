@@ -37,20 +37,14 @@ if(isset($_POST['userCPF']) && isset($_POST['passwords'])) {
             $_SESSION['senha'] = $usuario['senha'];
 
             if ($_SESSION['tipo'] == 'Administrador') {
-                // Allow access to all pages for administrators
                 header("Location: telahome_admin.php");
-            } elseif ($_SESSION['tipo'] == 'Atendente') {
-                // Allow access to specific pages for atendente
+                exit();
+            } elseif ($_SESSION['tipo'] == 'Atendente' || $_SESSION['tipo'] == 'Bombeiro' || $_SESSION['tipo'] == 'Outro') {
                 header("Location: telahome.php");
-            } elseif ($_SESSION['tipo'] == 'Bombeiro') {
-                // Allow access to specific pages for bombeiro
-                header("Location: telahome.php");
-            } elseif ($_SESSION['tipo'] == 'Outro') {
-                // Allow access to specific pages for bombeiro
-                header("Location: telahome.php.php");
-            }else {
-                // Redirect other users to a restricted page
-                header("Location: restricted.php");
+                exit();
+            } else {
+                // Tratar outros tipos de cargos, se necessário
+                echo "Tipo de cargo não reconhecido";
             }
 
         } else {

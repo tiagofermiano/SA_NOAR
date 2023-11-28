@@ -1,7 +1,6 @@
 <?php
 include('protect.php');
 include('conexao.php');
-include('downloadPDF.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,75 +11,71 @@ include('downloadPDF.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="historico.css">
 </head>
 
 <body>
-    
 
 
-<header>
-  <div class="grid_header">
 
-    <div class="conectado">
-      Conectado: <?php echo $_SESSION['nome'];?>
-  </div>
+  <header>
+    <div class="grid_header">
 
-  <a href="telaperfil.php"><div class="perfil">
-        Perfil
-    </div></a>
+      <div class="conectado">
+        Conectado: <?php echo $_SESSION['nome']; ?>
+      </div>
 
-    <a href="telahome.php"><div class="inicio">
-        Início
-    </div></a>
+      <form method="post" action="connect_perfil.php" id="perfil_form">
+        <button type="button" class="perfil" name="perfil_button" onclick="redirecionar('connect_perfil.php')">
+          Perfil
+        </button>
+      </form>
 
-</div>
+      <form method="post" action="connect_inicio.php">
+        <button type="button" class="inicio" name="inicio_button" onclick="redirecionar('connect_perfil.php')">
+          Início
+        </button>
+      </form>
+
+    </div>
   </header>
 
-<p class="titulo">Histórico</p>
-    
-<?php
-// Verificar se o ID do atendente está definido (você precisa obter isso de alguma forma, por exemplo, através de uma sessão)
-if (isset($_SESSION['id_atendente'])) {
-    $atendente_id = $_SESSION['id_atendente'];
+  <p class="titulo">Histórico</p>
 
-    // Sua consulta SQL com a condição WHERE para o atendente
-    $sql = "SELECT id, atendente, arquivo_pdf, data_upload FROM relatorios WHERE atendente = $atendente_id";
-    $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        // Exibir os dados apenas se houver relatórios associados ao atendente
-        while($row = $result->fetch_assoc()) {
-            echo '<div id="container-relatorios">';
-            echo '<div id="relatorio">';
-            echo '<p id="numero-ocorrencia">Relatório ' . $row["id"] . '</p>';
-            echo '<div id="info-ocorrencia">';
-            echo '<p id="nome-paciente">Data: ' . $row["data_upload"] . '</p>';
-            echo '</div>';
-            echo '<div id="botao-ver">';
-            echo '<a class="botao" href="downloadPDF.php?id=' . $row["id"] . '">Baixar Arquivo</a>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-        }
-    } else {
-      echo '<p id="sem-relatorio">' . 'Nenhum relatório associado ao atendente.' . '</p>';
+  <form method="post" action="connect_historico.php">
+  <div class="form-caixa">
+
+    <div class="buscar_data">
+      <label for="username">Data:</label>
+      <input class="textbox-n" placeholder="XX/XX/20XX" name="data_ocorrencia" type="text" onfocus="(this.type='date')" onblur="(this.type='date')" />
+    </div>
+
+    <button type="submit" class="pesquisar_button" name="pesquisar_button">
+          Pesquisar relatório
+        </button>
+
+  </div>
+
+  </form>
+
+  <script>
+    function redirecionar(action) {
+      var formId = event.target.parentNode.id;
+      var form = document.getElementById(formId);
+      form.action = action;
+      form.submit();
     }
-} 
+  </script>
 
-// Fechar conexão
-$conn->close();
-?>
 
 
 </body>
-</html>    
+
+</html>

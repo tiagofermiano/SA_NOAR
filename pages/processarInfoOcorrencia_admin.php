@@ -1,8 +1,6 @@
 <?php
 include('protect.php');
 include('conexao.php');
-include('gerar_relatorio.php');
-
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -10,8 +8,6 @@ ini_set('display_errors', 1);
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submitInfos'])) {
     processarFicha();
 }
-
-
 
 function processarFicha()
 {
@@ -27,7 +23,7 @@ function processarFicha()
     $formaConducao = isset($_POST['formaConducao']) ? $_POST['formaConducao'] : '';
 
     // ESTA PARTE VAI PARA info_ocorrencia
-    $dataocorrencia = isset($_POST['formaConducao']) ? $_POST['formaConducao'] : '';
+    $dataocorrencia = isset($_POST['data_ocorrencia']) ? $_POST['data_ocorrencia'] : '';
     $localOcorrencia = isset($_POST['localocorrencia']) ? $_POST['localocorrencia'] : '';
     $nomeHospital = isset($_POST['nomehospital']) ? $_POST['nomehospital'] : '';
     $numeroUSB = isset($_POST['usb']) ? $_POST['usb'] : '';
@@ -150,10 +146,10 @@ function processarFicha()
     $observacoes = isset($_POST['observacoes']) ? $_POST['observacoes'] : '';
 
    // Inserir dados na tabela 'info_paciente'
-   $sqlInfoPaciente = "INSERT INTO info_paciente (nome_paciente, idade_paciente, sexo_paciente, rg_cpf_paciente, nome_acompanhante, idade_acompanhante, vitima_era, forma_conducao)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+   $sqlInfoPaciente = "INSERT INTO info_paciente (nome_paciente, idade_paciente, sexo_paciente, rg_cpf_paciente, nome_acompanhante, idade_acompanhante, vitima_era, forma_conducao, data_ocorrencia, hora_chegada)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmtInfoPaciente = $conn->prepare($sqlInfoPaciente);
-$stmtInfoPaciente->bind_param("sissssss", $nomePaciente, $idadePaciente, $sexoPaciente, $rgCpfPaciente, $nomeAcompanhante, $idadeAcompanhante, $vitimaEra, $formaConducao);
+$stmtInfoPaciente->bind_param("sissssssss", $nomePaciente, $idadePaciente, $sexoPaciente, $rgCpfPaciente, $nomeAcompanhante, $idadeAcompanhante, $vitimaEra, $formaConducao, $dataocorrencia, $horaChegada);
 $stmtInfoPaciente->execute();
 
 // Inserir dados na tabela 'info_ocorrencia'
@@ -173,14 +169,14 @@ if (!$resultInfoOcorrencia) {
 }
 
 // Inserir dados na tabela 'situacao_paciente'
-$sqlSituacaoPaciente = "INSERT INTO situacao_paciente (medida_pressao, pulso, respiracao, saturacao, hgt, temperatura, perfusao, normal_anormal, total_gcs, problema_psiquiatrico, problema_respiratorio, problema_diabete, problema_diabete_outros, problema_obstetrico, problema_transporte, problema_transporte_outros, problema_objetos_recolhidos, tabela_traumas_local, tabela_traumas_lado, tabela_traumas_face, tabela_traumas_tipo, queimadura, decisao_transporte, sinais_sintomas, hemorragia, edema, parada, cianose, pupilas, outros, anamnese_emergencial_oque_aconteceu, anamnese_aconteceu_outras_vezes, anamnese_quanto_tempo, anamnese_problema_saude, anamnese_quais_problemas, anamnese_uso_medicacao, anamnese_hora_ultima_medicacao, anamnese_qual_medicacao, anamnese_alergico, anamnese_qual_alergia, anamnese_alimento_6horas, anamnese_especifique, anamnese_que_horas, gestacional_periodo_gestacao, gestacional_pre_natal, gestacional_nome_medico, gestacional_possibilidade_complicacao, gestacional_primeiro_filho, gestacional_quantos, gestacional_hora_contracao, gestacional_duracao_contracao, gestacional_intervalo_contracao, gestacional_pressao_quadril, gestacional_ruptura_bolsa, gestacional_inspecao_visual, gestacional_parto_realizado, gestacional_sexo_bebe, gestacional_nome_bebe)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sqlSituacaoPaciente = "INSERT INTO situacao_paciente (medida_pressao, pulso, respiracao, saturacao, hgt, temperatura, perfusao, normal_anormal, total_gcs, problema_psiquiatrico, problema_respiratorio, problema_diabete, problema_diabete_outros, problema_obstetrico, problema_transporte, problema_transporte_outros, problema_objetos_recolhidos, tabela_traumas_local, tabela_traumas_lado, tabela_traumas_face, tabela_traumas_tipo, queimadura, decisao_transporte, sinais_sintomas, hemorragia, edema, parada, cianose, pupilas, outros, anamnese_emergencial_oque_aconteceu, anamnese_aconteceu_outras_vezes, anamnese_quanto_tempo, anamnese_problema_saude, anamnese_quais_problemas, anamnese_uso_medicacao, anamnese_hora_ultima_medicacao, anamnese_qual_medicacao, anamnese_alergico, anamnese_qual_alergia, anamnese_alimento_6horas, anamnese_especifique, anamnese_que_horas, gestacional_periodo_gestacao, gestacional_pre_natal, gestacional_nome_medico, gestacional_possibilidade_complicacao, gestacional_primeiro_filho, gestacional_quantos, gestacional_hora_contracao, gestacional_duracao_contracao, gestacional_intervalo_contracao, gestacional_pressao_quadril, gestacional_ruptura_bolsa, gestacional_inspecao_visual, gestacional_parto_realizado, gestacional_sexo_bebe, gestacional_nome_bebe, data_ocorrencia, hora_chegada)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmtSituacaoPaciente = $conn->prepare($sqlSituacaoPaciente);
 
 if ($stmtSituacaoPaciente === false) {
     die('Erro na preparação da consulta (situacao_paciente): ' . $conn->error);
 }
-$stmtSituacaoPaciente->bind_param("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", $medidaPressao, $pulso, $respiracao, $saturacao, $hgt, $temperatura, $perfusao, $normalAnormal, $totalGcs, $problemaPsiquiatrico, $problemaRespiratorio, $problemaDiabete, $problemaDiabeteOutros, $problemaObstetrico, $problemaTransporte, $problemaTransporteOutros, $problemaObjetosRecolhidos, $tabelaTraumasLocal, $tabelaTraumasLado, $tabelaTraumasFace, $tabelaTraumasTipo, $queimadura, $decisaoTransporte, $sinaisSintomas, $hemorragia, $edema, $parada, $cianose, $pupilas, $outros, $anamneseEmergencialOqueAconteceu, $anamneseAconteceuOutrasVezes, $anamneseQuantoTempo, $anamneseProblemaSaude, $anamneseQuaisProblemas, $anamneseUsoMedicacao, $anamneseHoraUltimaMedicacao, $anamneseQualMedicacao, $anamneseAlergico, $anamneseQualAlergia, $anamneseAlimento6Horas, $anamneseEspecifique, $anamneseQueHoras, $gestacionalPeriodoGestacao, $gestacionalPreNatal, $gestacionalNomeMedico, $gestacionalPossibilidadeComplicacao, $gestacionalPrimeiroFilho, $gestacionalQuantos, $gestacionalHoraContracao, $gestacionalDuracaoContracao, $gestacionalIntervaloContracao, $gestacionalPressaoQuadril, $gestacionalRupturaBolsa, $gestacionalInspecaoVisual, $gestacionalPartoRealizado, $gestacionalSexoBebe, $gestacionalNomeBebe);
+$stmtSituacaoPaciente->bind_param("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", $medidaPressao, $pulso, $respiracao, $saturacao, $hgt, $temperatura, $perfusao, $normalAnormal, $totalGcs, $problemaPsiquiatrico, $problemaRespiratorio, $problemaDiabete, $problemaDiabeteOutros, $problemaObstetrico, $problemaTransporte, $problemaTransporteOutros, $problemaObjetosRecolhidos, $tabelaTraumasLocal, $tabelaTraumasLado, $tabelaTraumasFace, $tabelaTraumasTipo, $queimadura, $decisaoTransporte, $sinaisSintomas, $hemorragia, $edema, $parada, $cianose, $pupilas, $outros, $anamneseEmergencialOqueAconteceu, $anamneseAconteceuOutrasVezes, $anamneseQuantoTempo, $anamneseProblemaSaude, $anamneseQuaisProblemas, $anamneseUsoMedicacao, $anamneseHoraUltimaMedicacao, $anamneseQualMedicacao, $anamneseAlergico, $anamneseQualAlergia, $anamneseAlimento6Horas, $anamneseEspecifique, $anamneseQueHoras, $gestacionalPeriodoGestacao, $gestacionalPreNatal, $gestacionalNomeMedico, $gestacionalPossibilidadeComplicacao, $gestacionalPrimeiroFilho, $gestacionalQuantos, $gestacionalHoraContracao, $gestacionalDuracaoContracao, $gestacionalIntervaloContracao, $gestacionalPressaoQuadril, $gestacionalRupturaBolsa, $gestacionalInspecaoVisual, $gestacionalPartoRealizado, $gestacionalSexoBebe, $gestacionalNomeBebe, $dataocorrencia, $horaChegada);
 $resultSituacaoPaciente = $stmtSituacaoPaciente->execute();
 
 if (!$resultSituacaoPaciente) {
@@ -188,55 +184,19 @@ if (!$resultSituacaoPaciente) {
 }
 
 // Inserir dados na tabela 'atendimento'
-$sqlAtendimento = "INSERT INTO atendimento (motorista, socorrista_1, socorrista_2, socorrista_3, demandante, equipe, procedimentos_efetuados1, procedimento_meios_auxiliares, procedimento_policia, procedimento_samu, procedimento_cit, descartaveis_atadura_tamanho, descartaveis_atadura_quant, descartaveis_cateter_oculos_quant, descartaveis_compressa_comum_quant, descartaveis_kits_tamanho, descartaveis_kits_quant, descartaveis_luvas_quant, descartaveis_mascara_quant, descartaveis_manta_aluminizada_quant, descartaveis_pas_dea_quant, descartaveis_sonda_aspiracao_quant, descartaveis_soro_fisiologico_quant, descartaveis_talas_pap_tamanho, descartaveis_talas_pap_quant, descartaveis_outros, deixados_hospital_base_estabilizador_quant, deixados_hospital_colar_tamanho, deixados_hospital_colar_quant, deixados_hospital_coxin_estabilizador_quant, deixados_hospital_ked_tamanho, deixados_hospital_ked_quant, deixados_hospital_maca_rigida_quant, deixados_hospital_ttf_tamanho, deixados_hospital_ttf_quant, deixados_hospital_tirante_aranha_quant, deixados_hospital_tirante_cabeca_quant, deixados_hospital_canula_quant, deixados_hospital_outro, observacoes)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sqlAtendimento = "INSERT INTO atendimento (motorista, socorrista_1, socorrista_2, socorrista_3, demandante, equipe, procedimentos_efetuados1, procedimento_meios_auxiliares, procedimento_policia, procedimento_samu, procedimento_cit, descartaveis_atadura_tamanho, descartaveis_atadura_quant, descartaveis_cateter_oculos_quant, descartaveis_compressa_comum_quant, descartaveis_kits_tamanho, descartaveis_kits_quant, descartaveis_luvas_quant, descartaveis_mascara_quant, descartaveis_manta_aluminizada_quant, descartaveis_pas_dea_quant, descartaveis_sonda_aspiracao_quant, descartaveis_soro_fisiologico_quant, descartaveis_talas_pap_tamanho, descartaveis_talas_pap_quant, descartaveis_outros, deixados_hospital_base_estabilizador_quant, deixados_hospital_colar_tamanho, deixados_hospital_colar_quant, deixados_hospital_coxin_estabilizador_quant, deixados_hospital_ked_tamanho, deixados_hospital_ked_quant, deixados_hospital_maca_rigida_quant, deixados_hospital_ttf_tamanho, deixados_hospital_ttf_quant, deixados_hospital_tirante_aranha_quant, deixados_hospital_tirante_cabeca_quant, deixados_hospital_canula_quant, deixados_hospital_outro, observacoes, data_ocorrencia, hora_chegada)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmtAtendimento = $conn->prepare($sqlAtendimento);
 
 if ($stmtAtendimento === false) {
     die('Erro na preparação da consulta (atendimento): ' . $conn->error);
 }
 
-$stmtAtendimento->bind_param("ssssssssssssssssssssssssssssssssssssssss", $motorista, $socorrista1, $socorrista2, $socorrista3, $demandante, $equipe, $procedimentosEfetuados1, $procedimentoMeiosAuxiliares, $procedimentoPolicia, $procedimentoSamu, $procedimentoCit, $descartaveisAtaduraTamanho, $descartaveisAtaduraQuant, $descartaveisCateterOculosQuant, $descartaveisCompressaComumQuant, $descartaveisKitsTamanho, $descartaveisKitsQuant, $descartaveisLuvasQuant, $descartaveisMascaraQuant, $descartaveisMantaAluminizadaQuant, $descartaveisPasDeaQuant, $descartaveisSondaAspiracaoQuant, $descartaveisSoroFisiologicoQuant, $descartaveisTalasPapTamanho, $descartaveisTalasPapQuant, $descartaveisOutros, $deixadosHospitalBaseEstabilizadorQuant, $deixadosHospitalColarTamanho, $deixadosHospitalColarQuant, $deixadosHospitalCoxinEstabilizadorQuant, $deixadosHospitalKedTamanho, $deixadosHospitalKedQuant, $deixadosHospitalMacaRigidaQuant, $deixadosHospitalTtfTamanho, $deixadosHospitalTtfQuant, $deixadosHospitalTiranteAranhaQuant, $deixadosHospitalTiranteCabecaQuant, $deixadosHospitalCanulaQuant, $deixadosHospitalOutro, $observacoes);
+$stmtAtendimento->bind_param("ssssssssssssssssssssssssssssssssssssssssss", $motorista, $socorrista1, $socorrista2, $socorrista3, $demandante, $equipe, $procedimentosEfetuados1, $procedimentoMeiosAuxiliares, $procedimentoPolicia, $procedimentoSamu, $procedimentoCit, $descartaveisAtaduraTamanho, $descartaveisAtaduraQuant, $descartaveisCateterOculosQuant, $descartaveisCompressaComumQuant, $descartaveisKitsTamanho, $descartaveisKitsQuant, $descartaveisLuvasQuant, $descartaveisMascaraQuant, $descartaveisMantaAluminizadaQuant, $descartaveisPasDeaQuant, $descartaveisSondaAspiracaoQuant, $descartaveisSoroFisiologicoQuant, $descartaveisTalasPapTamanho, $descartaveisTalasPapQuant, $descartaveisOutros, $deixadosHospitalBaseEstabilizadorQuant, $deixadosHospitalColarTamanho, $deixadosHospitalColarQuant, $deixadosHospitalCoxinEstabilizadorQuant, $deixadosHospitalKedTamanho, $deixadosHospitalKedQuant, $deixadosHospitalMacaRigidaQuant, $deixadosHospitalTtfTamanho, $deixadosHospitalTtfQuant, $deixadosHospitalTiranteAranhaQuant, $deixadosHospitalTiranteCabecaQuant, $deixadosHospitalCanulaQuant, $deixadosHospitalOutro, $observacoes, $dataocorrencia, $horaChegada);
 $resultAtendimento = $stmtAtendimento->execute();
 
 if (!$resultAtendimento) {
     die('Erro ao executar a consulta (atendimento): ' . $stmtAtendimento->error);
-}
-
-$resultAtendimento = $stmtAtendimento->execute();
-
-if (!$resultAtendimento) {
-    die('Erro ao executar a consulta (atendimento): ' . $stmtAtendimento->error);
-}
-
-// Após inserir os dados do relatório no banco de dados
-// Certifique-se de substituir '$_SESSION['atendente_id']' pela variável que contém o ID do atendente
-// $atendente_id = $_SESSION['id_atendente'];
-
-// Verificar se há relatório associado ao atendente
-// $sqlVerificarRelatorio = "SELECT id, arquivo_pdf FROM relatorios WHERE atendente = ?";
-// $stmtVerificarRelatorio = $conn->prepare($sqlVerificarRelatorio);
-// $stmtVerificarRelatorio->bind_param("i", $atendente_id);
-// $stmtVerificarRelatorio->execute();
-// $stmtVerificarRelatorio->store_result();
-
-// if ($stmtVerificarRelatorio->num_rows > 0) {
-    // Já existe um relatório associado a este atendente
-//     echo "Já existe um relatório associado a este atendente.";
-// } else {
-//     // Inserir dados na tabela 'relatorios'
-//     $sqlRelatorio = "INSERT INTO relatorios (atendente, data_upload) VALUES (?, current_timestamp())";
-//     $stmtRelatorio = $conn->prepare($sqlRelatorio);
-//     $stmtRelatorio->bind_param("i", $atendente_id);
-//     $stmtRelatorio->execute();
-
-    // Obter o ID do relatório recém-inserido
-    // $idRelatorio = $stmtRelatorio->insert_id;
-
-    // $stmtRelatorio->close();
-
-    // Chamar a função para gerar e inserir o PDF
-    // gerarEInserirPDF($idRelatorio);
 }
 
 // Finalizando a função processarInfoOcorrencia()
@@ -250,5 +210,5 @@ $conn->close(); // Fechar a conexão com o banco de dados após a conclusão
 // Redirecionar para a página desejada após a conclusão do processo
 header("Location: telahome_admin.php?success=true");
 exit();
-
+}
 ?>
