@@ -57,18 +57,46 @@
     margin: 0 auto;
   }
 
-
+.tipoTrauma{
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #030060;
+}
   #colorSelector {
     display: grid;
-    margin: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    justify-content: space-around;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: right;
+    row-gap: 0.9rem;
     align-items: center;
     background-color: #fff;
     padding: 0.8rem;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #303030;
+  }
+
+  .legenda{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .nomestTraumas{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .trauma1{
+    display: flex;
+    margin: auto;
+    margin-top: 0.9rem;
+  }
+  .trauma{
+    display: flex;
+    margin: auto;
+    margin-top: 1.3rem;
   }
 
   .colorOption {
@@ -1106,12 +1134,20 @@
     cursor: pointer;
   }
 
-
+.nomeSinalSintoma{
+  display: flex;
+  margin: auto;
+  margin-top: 0.9rem;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #030060;
+  margin-top: 1.5rem;
+}
 
   .prob {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    margin-top: 1.5rem;
     border-radius: 1rem;
     background-color: #E5E6E7;
     padding: 0.3rem;
@@ -1122,7 +1158,6 @@
   .prob_psiq {
     /* display: grid; */
     grid-template-rows: 1fr 1fr;
-    margin-top: 2rem;
     border-radius: 1rem;
     background-color: #E5E6E7;
     padding: 0.70rem;

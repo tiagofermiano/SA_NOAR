@@ -1,94 +1,3 @@
-function toggleRespiratorio() {
-    var respiratorioCheckbox = document.querySelector('.main-checkbox-resp');
-    var checkboxesRespiratorio = document.querySelectorAll('.sub-checkbox-resp');
-
-    checkboxesRespiratorio.forEach(function (checkbox) {
-        if (respiratorioCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleDiabetes() {
-    var diabetesCheckbox = document.querySelector('.main-checkbox-diab');
-    var checkboxesDiabetes = document.querySelectorAll('.sub-checkbox-diab');
-
-    checkboxesDiabetes.forEach(function (checkbox) {
-        if (diabetesCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleObstetrico() {
-    var obstetricoCheckbox = document.querySelector('.main-checkbox-obst');
-    var checkboxesObstetrico = document.querySelectorAll('.sub-checkbox-obst');
-
-    checkboxesObstetrico.forEach(function (checkbox) {
-        if (obstetricoCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleTransporte() {
-    var transporteCheckbox = document.querySelector('.main-checkbox-transp');
-    var checkboxesTransporte = document.querySelectorAll('.sub-checkbox-transp');
-
-    checkboxesTransporte.forEach(function (checkbox) {
-        if (transporteCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleMeiosAuxiliares() {
-    var MeiosAuxiliaresCheckbox = document.querySelector('.main-checkbox-aux');
-    var checkboxesMeiosAuxiliares = document.querySelectorAll('.sub-checkbox-aux');
-
-    checkboxesMeiosAuxiliares.forEach(function (checkbox) {
-        if (MeiosAuxiliaresCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function togglePolicia() {
-    var PoliciaCheckbox = document.querySelector('.main-checkbox-policia');
-    var checkboxesPolicia = document.querySelectorAll('.sub-checkbox-policia');
-
-    checkboxesPolicia.forEach(function (checkbox) {
-        if (PoliciaCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleSamu() {
-    var SamuCheckbox = document.querySelector('.main-checkbox-Samu');
-    var checkboxesSamu = document.querySelectorAll('.sub-checkbox-Samu');
-
-    checkboxesSamu.forEach(function (checkbox) {
-        if (SamuCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
 function capitalizarPalavrasIniciais(input) {
     input.value = input.value.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
         return a.toUpperCase();
@@ -606,44 +515,7 @@ function validarDemandante(input) {
 }
 
 
-function toggleMeiosAuxiliares() {
-    var meiosCheckbox = document.querySelector('.main-checkbox-meios');
-    var checkboxesMeios = document.querySelectorAll('.sub-checkbox-meios');
 
-    checkboxesMeios.forEach(function (checkbox) {
-        if (meiosCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function togglePolicia() {
-    var policiaCheckbox = document.querySelector('.main-checkbox-policia');
-    var checkboxesPolicia = document.querySelectorAll('.sub-checkbox-policia');
-
-    checkboxesPolicia.forEach(function (checkbox) {
-        if (policiaCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function toggleSamu() {
-    var samuCheckbox = document.querySelector('.main-checkbox-samu');
-    var checkboxesSamu = document.querySelectorAll('.sub-checkbox-samu');
-
-    checkboxesSamu.forEach(function (checkbox) {
-        if (samuCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
 
 function toggleInputCit() {
     var checkbox = document.getElementById("myCheckbox");
@@ -653,153 +525,6 @@ function toggleInputCit() {
         input.disabled = false; // Habilita a caixa de texto
     } else {
         input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleHemorragia(checkbox) {
-    var checkboxesInternas = document.querySelectorAll('.sub-checkbox-resp.interna');
-    var checkboxesExternas = document.querySelectorAll('.sub-checkbox-resp.externa');
-
-    if (checkbox.checked) {
-        checkboxesInternas.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesExternas.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-    } else {
-        checkboxesInternas.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesExternas.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-    }
-}
-
-function toggleEdema(checkbox) {
-    var checkboxesGeneralizado = document.querySelectorAll('.sub-checkbox-resp.generalizado');
-    var checkboxesLocalizado = document.querySelectorAll('.sub-checkbox-resp.localizado');
-
-    if (checkbox.checked) {
-        checkboxesGeneralizado.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesLocalizado.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-    } else {
-        checkboxesGeneralizado.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesLocalizado.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-    }
-}
-
-function toggleParada(checkbox) {
-    var checkboxesCardiaca = document.querySelectorAll('.sub-checkbox-resp.cardiaca');
-    var checkboxesRespiratoria = document.querySelectorAll('.sub-checkbox-resp.respiratoria');
-
-    if (checkbox.checked) {
-        checkboxesCardiaca.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesRespiratoria.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-    } else {
-        checkboxesCardiaca.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesRespiratoria.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-    }
-}
-
-function toggleCianose(checkbox) {
-    var checkboxesLabios = document.querySelectorAll('.sub-checkbox-resp.labios');
-    var checkboxesExtremidade = document.querySelectorAll('.sub-checkbox-resp.extremidade');
-
-    if (checkbox.checked) {
-        checkboxesLabios.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesExtremidade.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-    } else {
-        checkboxesLabios.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesExtremidade.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-    }
-}
-
-function togglePupilas(checkbox) {
-    var checkboxesAnisocoria = document.querySelectorAll('.sub-checkbox-resp.anisocoria');
-    var checkboxesIsocoria = document.querySelectorAll('.sub-checkbox-resp.isocoria');
-    var checkboxesMidriase = document.querySelectorAll('.sub-checkbox-resp.midriase');
-    var checkboxesMiose = document.querySelectorAll('.sub-checkbox-resp.miose');
-    var checkboxesReagente = document.querySelectorAll('.sub-checkbox-resp.reagente');
-    var checkboxesNaoReagente = document.querySelectorAll('.sub-checkbox-resp.naoreagente');
-
-    if (checkbox.checked) {
-        checkboxesAnisocoria.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesIsocoria.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesMidriase.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesMiose.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesReagente.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-        checkboxesNaoReagente.forEach(function (cb) {
-            cb.removeAttribute('disabled');
-        });
-    } else {
-        checkboxesAnisocoria.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesIsocoria.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-        checkboxesMidriase.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesMiose.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
-        checkboxesReagente.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox interna
-        });
-        checkboxesNaoReagente.forEach(function (cb) {
-            cb.setAttribute('disabled', 'disabled');
-            cb.checked = false; // Desmarca a checkbox externa
-        });
     }
 }
 
@@ -1363,363 +1088,119 @@ document.getElementById('sexoSelect').addEventListener('change', function () {
     }
 });
 
-
-
 //funcao para selecionar tamanho Materiais descartáveis utilizados:
-function toggleAtadura() {
-    var AtaduraCheckbox = document.querySelector('.main-checkbox-atadura');
-    var checkboxesAtadura = document.querySelectorAll('.sub-checkbox-atadura');
-
-    checkboxesAtadura.forEach(function (checkbox) {
-        if (AtaduraCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesAtadura(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-atadura');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-27');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
-function toggleKits() {
-    var KitsCheckbox = document.querySelector('.main-checkbox-kits');
-    var checkboxesKits = document.querySelectorAll('.sub-checkbox-kits');
-
-    checkboxesKits.forEach(function (checkbox) {
-        if (KitsCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesKits(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-kits');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-30');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
-function toggleTalas() {
-    var talasCheckbox = document.querySelector('.main-checkbox-talas');
-    var checkboxestalas = document.querySelectorAll('.sub-checkbox-talas');
-
-    checkboxestalas.forEach(function (checkbox) {
-        if (talasCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesTalas(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-talas');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-37');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
-function toggleMateriais_descartaveis_outros() {
-    var checkbox = document.getElementById("materiaisOutrosCheckbox");
-    var input = document.getElementById("materiaisOutrosInput");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleColar() {
-    var colarCheckbox = document.querySelector('.main-checkbox-colar');
-    var checkboxescolar = document.querySelectorAll('.sub-checkbox-colar');
-
-    checkboxescolar.forEach(function (checkbox) {
-        if (colarCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesColar(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-colar');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-39');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
-function toggleSegundoColar() {
-    var segundocolarCheckbox = document.querySelector('.main-checkbox-segundocolar');
-    var checkboxessegundocolar = document.querySelectorAll('.sub-checkbox-segundocolar');
-
-    checkboxessegundocolar.forEach(function (checkbox) {
-        if (segundocolarCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesKed(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-ked');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-42');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
-function toggleKed() {
-    var kedCheckbox = document.querySelector('.main-checkbox-ked');
-    var checkboxesked = document.querySelectorAll('.sub-checkbox-ked');
-
-    checkboxesked.forEach(function (checkbox) {
-        if (kedCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
+function habilitarCheckboxesTTF(inputQuantidade) {
+    const checkboxes = document.querySelectorAll('.sub-checkbox-ttf');
+  
+    // Obtém o valor do input de quantidade
+    const quantidadeString = inputQuantidade.value;
+  
+    // Verifica se a quantidade contém apenas números
+    const quantidadeValida = /^[0-9]+$/.test(quantidadeString);
+  
+    // Habilita ou desabilita as checkboxes com base na validade da quantidade
+    checkboxes.forEach(checkbox => {
+      checkbox.disabled = !quantidadeValida || parseInt(quantidadeString, 10) <= 0;
     });
-}
-
-function togglettf() {
-    var ttfCheckbox = document.querySelector('.main-checkbox-ttf');
-    var checkboxesttf = document.querySelectorAll('.sub-checkbox-ttf');
-
-    checkboxesttf.forEach(function (checkbox) {
-        if (ttfCheckbox.checked) {
-            checkbox.removeAttribute('disabled');
-        } else {
-            checkbox.setAttribute('disabled', 'disabled');
-        }
-    });
-}
-
-function togglemateriais_deixados_outros1() {
-    var checkbox = document.getElementById("materiais_deixados_outros1Checkbox");
-    var input = document.getElementById("materiais_deixados_outros1Input");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function togglemateriais_deixados_outros2() {
-    var checkbox = document.getElementById("materiais_deixados_outros2Checkbox");
-    var input = document.getElementById("materiais_deixados_outros2Input");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-//funcao pra habilitar a caixa de texto quantidade somente se a checkbox de material for selecionada
-function toggleInputQuantidadeCateter() {
-    var checkbox = document.getElementById("cateter");
-    var input = document.getElementById("quantidadecateter");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeCompressa() {
-    var checkbox = document.getElementById("compressacomum");
-    var input = document.getElementById("quantidadecompressa");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeLuvas() {
-    var checkbox = document.getElementById("luvas");
-    var input = document.getElementById("quantidadeluvas");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeMascara() {
-    var checkbox = document.getElementById("mascara");
-    var input = document.getElementById("quantidademascara");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeManta() {
-    var checkbox = document.getElementById("manta");
-    var input = document.getElementById("quantidademanta");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadePas() {
-    var checkbox = document.getElementById("pas");
-    var input = document.getElementById("quantidadepas");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeSonda() {
-    var checkbox = document.getElementById("sonda");
-    var input = document.getElementById("quantidadesonda");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeSoro() {
-    var checkbox = document.getElementById("soro");
-    var input = document.getElementById("quantidadesoro");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeBase() {
-    var checkbox = document.getElementById("base");
-    var input = document.getElementById("quantidadebase");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeCoxins() {
-    var checkbox = document.getElementById("coxins");
-    var input = document.getElementById("quantidadecoxins");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeMaca() {
-    var checkbox = document.getElementById("maca");
-    var input = document.getElementById("quantidademaca");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeAranha() {
-    var checkbox = document.getElementById("aranha");
-    var input = document.getElementById("quantidadearanha");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeCabeca() {
-    var checkbox = document.getElementById("cabeca");
-    var input = document.getElementById("quantidadecabeca");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeAtadura() {
-    var checkbox = document.getElementById("atadura");
-    var input = document.getElementById("quantidadeatadura");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeKits() {
-    var checkbox = document.getElementById("kits");
-    var input = document.getElementById("quantidadekits");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeTalas() {
-    var checkbox = document.getElementById("talas");
-    var input = document.getElementById("quantidadetalas");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeColar() {
-    var checkbox = document.getElementById("colar");
-    var input = document.getElementById("quantidadecolar");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeSegundoColar() {
-    var checkbox = document.getElementById("segundocolar");
-    var input = document.getElementById("quantidadesegundocolar");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeKed() {
-    var checkbox = document.getElementById("ked");
-    var input = document.getElementById("quantidadeked");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeTtf() {
-    var checkbox = document.getElementById("ttf");
-    var input = document.getElementById("quantidadettf");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
-}
-
-function toggleInputQuantidadeCanula() {
-    var checkbox = document.getElementById("canula");
-    var input = document.getElementById("quantidadecanula");
-
-    if (checkbox.checked) {
-        input.disabled = false; // Habilita a caixa de texto
-    } else {
-        input.disabled = true; // Desabilita a caixa de texto
-    }
+  
+    // Exibe uma mensagem de erro se a quantidade for inválida
+    const mensagemErro = document.getElementById('mensagemErro-44');
+    mensagemErro.textContent = quantidadeValida && parseInt(quantidadeString, 10) > 0 ? '' : 'Apenas números.';
 }
 
 //funcao para permitir que o usuario digite apenas numeros na quantidade

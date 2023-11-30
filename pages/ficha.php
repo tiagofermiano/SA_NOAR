@@ -77,7 +77,7 @@ include('gerar_relatorio.php');
   <form class="form" name="formOcorrencia" id="envioFormulario" method="POST" submit="processarInfoOcorrencia.php">
     <div class="container">
 
-      <h1 class="title" id="info-paciente">Informações do paciente:</h1>
+    <h1 class="title" id="info-paciente">Informações do paciente:</h1>
     </div>
     <div class="boxinfopaciente">
 
@@ -111,7 +111,7 @@ include('gerar_relatorio.php');
         <label for="rgCpfPaciente">RG/CPF do paciente:</label>
         <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." oninput="formatarDocumento(this);">
         <p id="mensagemErro-3" style="color: red;"></p>
-    </div>
+      </div>
 
       <div class="input-caixatexto">
         <label for="nomeAcompanhante">Nome do acompanhante:</label>
@@ -134,61 +134,61 @@ include('gerar_relatorio.php');
       <div class="grid_vitima">
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Ciclista" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Ciclista" class="selectCheckVitimaEra" id="Ciclista" onclick="selectCheckVitimaEra(this)">
             <label for="ciclista">Ciclista</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="CondutorMoto" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Condutor moto" class="selectCheckVitimaEra" id="CondutorMoto" onclick="selectCheckVitimaEra(this)">
             <label for="CondutorMoto">Condutor moto</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Gestante" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Gestante" class="selectCheckVitimaEra" id="Gestante" onclick="selectCheckVitimaEra(this)">
             <label for="Gestante">Gestante</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Pas.Bco.Frente" onclick="selectCheckVitimaEra(this)">
-            <label for="Pas.BancoFrente">Pas.Bco.Frente</label>
+            <input type="checkbox" name="vitimaEra[]" value="Pas.Bco.Frente" class="selectCheckVitimaEra" id="PasBancoFrente" onclick="selectCheckVitimaEra(this)">
+            <label for="PasBancoFrente">Pas.Bco.Frente</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Pas.Moto" onclick="selectCheckVitimaEra(this)">
-            <label for="Pas.Moto">Pas.Moto</label>
+            <input type="checkbox" name="vitimaEra[]" value="Pas.Moto" class="selectCheckVitimaEra" id="PasMoto" onclick="selectCheckVitimaEra(this)">
+            <label for="PasMoto">Pas.Moto</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="CondutorCarro" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Condutor carro" class="selectCheckVitimaEra" id="CondutorCarro" onclick="selectCheckVitimaEra(this)">
             <label for="CondutorCarro">Condutor carro</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Clínico" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Clínico" class="selectCheckVitimaEra" id="Clínico" onclick="selectCheckVitimaEra(this)">
             <label for="clinico">Clínico</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Trauma" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Trauma" class="selectCheckVitimaEra" id="Trauma" onclick="selectCheckVitimaEra(this)">
             <label for="trauma">Trauma</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Pas.Bco.Trás" onclick="selectCheckVitimaEra(this)">
-            <label for="Pas.BancoTras">Pas.Bco.Trás</label>
+            <input type="checkbox" name="vitimaEra[]" value="Pas.Bco.Trás" class="selectCheckVitimaEra" id="PasBancoTras" onclick="selectCheckVitimaEra(this)">
+            <label for="PasBancoTras">Pas.Bco.Trás</label>
           </div>
         </div>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="vitimaEra[]" class="selectCheckVitimaEra" id="Pedestre" onclick="selectCheckVitimaEra(this)">
+            <input type="checkbox" name="vitimaEra[]" value="Pedestre" class="selectCheckVitimaEra" id="Pedestre" onclick="selectCheckVitimaEra(this)">
             <label for="Pedestre">Pedestre</label>
           </div>
         </div>
@@ -207,19 +207,6 @@ include('gerar_relatorio.php');
         </div>
       </div>
     </div>
-
-    <!-- 
-
-ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
-ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
-ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
-ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
-ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃO)
-
-
- -->
-
-
 
     <hr class="hr1">
 
@@ -272,7 +259,7 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <input type="text" id="kmfinal" name="kmfinal" placeholder="Digite..." oninput="autoCompleteKM(this)">
         <p id="mensagemErro-40" style="color: red;"></p>
 
-    </div>
+      </div>
 
       <div class="input-caixatexto">
         <label for="codIr">CÓD. IR:</label>
@@ -286,2215 +273,2075 @@ ESPAÇO PRA IDENTIFICAR ONDE JÁ FUNCIONA NO BANCO (ACIMA FUNCIONA, EM BAIXO NÃ
         <p id="mensagemErro-8" style="color: red;"></p>
       </div>
 
-  <div class="input-caixatexto">
-    <label for="codSiaSus">CÓD. SIA/SUS:</label>
-    <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
-    <p id="mensagemErro-9" style="color: red;"></p>
-  </div>
-
-
-  <div class="subtitulo"></div>
-  <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
-  <br>
-  <div class="grid_ocorrencia">
-
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Afogamento" onclick="selectCheckOcorrencia(this)">
-      <label for="Afogamento">Afogamento</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Agressão" onclick="selectCheckOcorrencia(this)">
-      <label for="Agressão">Agressão</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Atropelamento" onclick="selectCheckOcorrencia(this)">
-      <label for="Atropelamento">Atropelamento</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="ChoqueElétrico" onclick="selectCheckOcorrencia(this)">
-      <label for="Choque elétrico">Choque elétrico</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Desabamento" onclick="selectCheckOcorrencia(this)">
-      <label for="Desabamento">Desabamento</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Doméstico" onclick="selectCheckOcorrencia(this)">
-      <label for="Doméstico">Doméstico</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Esportivo" onclick="selectCheckOcorrencia(this)">
-      <label for="Esportivo">Esportivo</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="CausadoPorAnimais" onclick="selectCheckOcorrencia(this)">
-      <label for="CausadoPorAnimais">Causado por animais</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="ComMeiodeTransp." onclick="selectCheckOcorrencia(this)">
-      <label for="ComMeioTransporte">Com meio de transp.</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Desmor.Desliz." onclick="selectCheckOcorrencia(this)">
-      <label for="Desmor./Desliz.">Desmor./Desliz.</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Intoxicação" onclick="selectCheckOcorrencia(this)">
-      <label for="Intoxicação">Intoxicação</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="QuedaBicicleta" onclick="selectCheckOcorrencia(this)">
-      <label for="QuedaBicicleta">Queda bicicleta</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="QuedaMoto" onclick="selectCheckOcorrencia(this)">
-      <label for="QuedaMoto">Queda moto</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="QuedaNivelMenor" onclick="selectCheckOcorrencia(this)">
-      <label for="QuedaNivelMenor2M"> Queda nível &gt; 2M </label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Trabalho" onclick="selectCheckOcorrencia(this)">
-      <label for="Trabalho">Trabalho</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="Transferência" onclick="selectCheckOcorrencia(this)">
-      <label for="Transferência">Transferência</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="EmergênciaMédica" onclick="selectCheckOcorrencia(this)">
-      <label for="EmergenciaMedica">Emergência Médica</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="QuedaAlturaMaior" onclick="selectCheckOcorrencia(this)">
-      <label for="QuedaAlturaMaior2M">Queda de altura &lt; 2M</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="TentativaSuicídio" onclick="selectCheckOcorrencia(this)">
-      <label for="TentativadeSuicidio">Tentativa de suicídio</label>
-    </div>
-    <div>
-      <input type="checkbox" name="tipo_ocorrencia[]" class="selectCheckOcorrencia" id="QuedaPrópriaAltura" onclick="selectCheckOcorrencia(this)">
-      <label for="QuedaPropriaAltura">Queda própria altura</label>
-    </div>
-
-  </div>
-  <br>
-
-  <div class="subtitulo"></div>
-  <div class="texto">Avaliação de cinemática: </div>
-
-  <br>
-
-  <div class="grid_cinematica">
-    <!-- TEXTOS DAS CHECKBOX -->
-
-    <div class="grid_txt_cinematica">
-      <div class="txt_cinematica">
-        <p>Distúrbio comportamental</p>
+      <div class="input-caixatexto">
+        <label for="codSiaSus">CÓD. SIA/SUS:</label>
+        <input type="text" id="codSiaSus" name="codSiaSus" placeholder="Digite..." oninput="validarCodSIASUS(this)">
+        <p id="mensagemErro-9" style="color: red;"></p>
       </div>
-      <div class="txt_cinematica">
-        <p>Encontrado com capacete</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Encontrado de cinto</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Para-brisa avariado</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Caminhando na cena</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Painel avariado</p>
-      </div>
-      <div class="txt_cinematica">
-        <p>Volante torcido</p>
-      </div>
-    </div>
-
-    <!-- CHECKBOX SIM -->
-    <div class="grid_checkbox_sim_cinematica">
-      <div>
-        <input type="checkbox" name="disturbio[]" class="selectCheckDistúrbio" id="selectCheckDistúrbioSim" onclick="selectCheckDistúrbio(this)">
-        <label for="selectCheckDistúrbioSim">Sim</label>
-    </div>
-      <div>
-        <input type="checkbox" name="encontradoCapacete[]" class="selectCheckCapacete" id="selectCheckCapaceteSim" onclick="selectCheckCapacete(this)">
-        <label for="Sim">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="encontradoCinto[]" class="selectCheckCinto" id="selectCheckCintoSim" onclick="selectCheckCinto(this)">
-        <label for="Sim">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="parabrisaAvariado[]" class="selectCheckParabrisa" id="selectCheckParabrisaSim" onclick="selectCheckParabrisa(this)">
-        <label for="Sim">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="caminhandoCena[]" class="selectCheckCaminhando" id="selectCheckCaminhandoSim" onclick="selectCheckCaminhando(this)">
-        <label for="Sim">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="painelAvariado[]" class="selectCheckPainel" id="selectCheckPainelSim" onclick="selectCheckPainel(this)">
-        <label for="Sim">Sim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="volanteTorcido[]" class="selectCheckVolante" id="selectCheckVolanteSim" onclick="selectCheckVolante(this)">
-        <label for="Sim">Sim</label>
-      </div>
-    </div>
-
-    <!-- CHECKBOX NÃO -->
-
-    <div class="grid_checkbox_nao_cinematica">
-      <div>
-        <input type="checkbox" name="disturbio[]" class="selectCheckDistúrbio" id="selectCheckDistúrbioNao" onclick="selectCheckDistúrbio(this)">
-        <label for="selectCheckDistúrbioNao">Não</label>
-    </div>
-      <div>
-        <input type="checkbox" name="encontradoCapacete[]" class="selectCheckCapacete" id="selectCheckCapaceteNao" onclick="selectCheckCapacete(this)">
-        <label for="Não">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="encontradoCinto[]" class="selectCheckCinto" id="selectCheckCintoNao" onclick="selectCheckCinto(this)">
-        <label for="Não">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="parabrisaAvariado[]" class="selectCheckParabrisa" id="selectCheckParabrisaNao" onclick="selectCheckParabrisa(this)">
-        <label for="Não">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="caminhandoCena[]" class="selectCheckCaminhando" id="selectCheckCaminhandoNao" onclick="selectCheckCaminhando(this)">
-        <label for="Não">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="painelAvariado[]" class="selectCheckPainel" id="selectCheckPainelNao" onclick="selectCheckPainel(this)">
-        <label for="Não">Não</label>
-      </div>
-      <div>
-        <input type="checkbox" name="volanteTorcido[]" class="selectCheckVolante" id="selectCheckVolanteNao" onclick="selectCheckVolante(this)">
-        <label for="Não">Não</label>
-      </div>
-    </div>
-  </div>
 
 
-  <br>
-
-  </div>
-  <hr class="hr1">
-
-  <div class="container">
-    <h1 class="title" id="situacao-paciente">Situação do paciente:</h1>
-  </div>
-
-
-  <div class="boxsituacaopaciente">
-
-    <div class="input-caixatexto">
-      <label for="medidaPressao">Medida de Pressão:</label>
-      <input type="text" id="medidaPressao1" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
-      <p id="mensagemErro-26" style="color: red;"></p>
-    </div>
-
-
-
-    <div class="input-caixatexto">
-      <label for="numeroInput">Pulso:</label>
-      <input type="text" id="numeroInput" name="pulso" oninput="completePulso(this)" placeholder="___B.C.P.M.">
-      <p id="mensagemErro-23" style="color: red;"></p>
-    </div>
-
-
-
-    <div class="input-caixatexto">
-      <label for="repiracao">Respiração:</label>
-      <input type="text" id="formatarRespiration" name="respiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
-      <p id="mensagemErro-12" style="color: red;"></p>
-    </div>
-
-
-
-    <div class="input-caixatexto">
-      <label for="username">Saturação:</label>
-      <input type="text" id="username" name="saturacao" placeholder="___%" oninput="completeSaturacao(this)">
-      <p id="mensagemErro-22" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="username">HGT:</label>
-      <input type="text" id="username" name="hgt" placeholder="___mg/dL" oninput="completeWithHgt(this)">
-      <p id="mensagemErro-20" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="temperatura">Temperatura:</label>
-      <input type="text" id="username" name="temperatura" placeholder="___°C" oninput="NumeroTemperatura(this)">
-      <p id="mensagemErro-21" style="color: red;"></p>
-    </div>
-
-
-    <div class="input-caixatexto">
-      <label for="username">Perfusão:</label>
-    </div>
-
-    <div class="checkbox-texto">
-      <input type="checkbox" name="perfusao[]" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois1" onclick="selectCheckPerfusaoMaiorDois(this)">
-      <label for="Menor2seg">&gt;2 SEG</label>
-
-      <input type="checkbox" name="perfusao[]" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois2" onclick="selectCheckPerfusaoMaiorDois(this)">
-      <label for="Maior2seg">&lt; 2 SEG</label>
-    </div>
-
-
-
-    <div class="checkbox-texto">
-      <input type="checkbox" id="selectCheckNormalAnormal1" name="normalAnormal[]" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
-      <label for="checkbox-id-1">NORMAL</label>
-
-
-      <input type="checkbox" id="selectCheckNormalAnormal2" name="normalAnormal[]" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
-      <label for="checkbox-id-2">ANORMAL</label>
-    </div>
-
-    <div class="container-Maiores-de-5-anos hidden">
       <div class="subtitulo"></div>
-      <div class="texto" id="">Nível de consciência - Maiores de 5 anos </div>
+      <div class="texto">Tipo de ocorrência (Pré-hospitalar): </div>
       <br>
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="AberturaOcular">ABERTURA<br>OCULAR</label>
-        </div>
-        <div class="check_ocular">
+      <div class="grid_ocorrencia">
 
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5AberturOcularEspontânea" class="checkAberturaOcularMaior5" id="espontanea" onclick="selectAberturaOcularMaior5(this)">
-            <label for="Espontânea">Espontânea</label>
-            <div class="numeros_niveis"></div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Afogamento" class="selectCheckOcorrencia" id="Afogamento" onclick="selectCheckOcorrencia(this)">
+          <label for="Afogamento">Afogamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Agressão" class="selectCheckOcorrencia" id="Agressão" onclick="selectCheckOcorrencia(this)">
+          <label for="Agressão">Agressão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Atropelamento" class="selectCheckOcorrencia" id="Atropelamento" onclick="selectCheckOcorrencia(this)">
+          <label for="Atropelamento">Atropelamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Choque Elétrico" class="selectCheckOcorrencia" id="ChoqueElétrico" onclick="selectCheckOcorrencia(this)">
+          <label for="ChoqueElétrico">Choque elétrico</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Desabamento" class="selectCheckOcorrencia" id="Desabamento" onclick="selectCheckOcorrencia(this)">
+          <label for="Desabamento">Desabamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Doméstico" class="selectCheckOcorrencia" id="Doméstico" onclick="selectCheckOcorrencia(this)">
+          <label for="Doméstico">Doméstico</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Esportivo" class="selectCheckOcorrencia" id="Esportivo" onclick="selectCheckOcorrencia(this)">
+          <label for="Esportivo">Esportivo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Causado Por Animais" class="selectCheckOcorrencia" id="CausadoPorAnimais" onclick="selectCheckOcorrencia(this)">
+          <label for="CausadoPorAnimais">Causado por animais</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Com Meio de Transporte" class="selectCheckOcorrencia" id="ComMeiodeTransp." onclick="selectCheckOcorrencia(this)">
+          <label for="ComMeiodeTransp.">Com meio de transp.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Desmor./Desliz." class="selectCheckOcorrencia" id="Desmor.Desliz." onclick="selectCheckOcorrencia(this)">
+          <label for="Desmor./Desliz.">Desmor./Desliz.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Intoxicação" class="selectCheckOcorrencia" id="Intoxicação" onclick="selectCheckOcorrencia(this)">
+          <label for="Intoxicação">Intoxicação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Queda Bicicleta" class="selectCheckOcorrencia" id="QuedaBicicleta" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaBicicleta">Queda bicicleta</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Queda Moto" class="selectCheckOcorrencia" id="QuedaMoto" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaMoto">Queda moto</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Queda Nível > 2M" class="selectCheckOcorrencia" id="QuedaNivelMenor" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaNivelMenor2M">Queda nível > 2M</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Trabalho" class="selectCheckOcorrencia" id="Trabalho" onclick="selectCheckOcorrencia(this)">
+          <label for="Trabalho">Trabalho</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Transferência" class="selectCheckOcorrencia" id="Transferência" onclick="selectCheckOcorrencia(this)">
+          <label for="Transferência">Transferência</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Emergência Médica" class="selectCheckOcorrencia" id="EmergênciaMédica" onclick="selectCheckOcorrencia(this)">
+          <label for="EmergenciaMedica">Emergência Médica</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Queda de Altura < 2M" class="selectCheckOcorrencia" id="QuedaAlturaMaior" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaAlturaMaior2M">Queda de altura < 2M</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Tentativa de Suicídio" class="selectCheckOcorrencia" id="TentativaSuicídio" onclick="selectCheckOcorrencia(this)">
+          <label for="TentativadeSuicidio">Tentativa de suicídio</label>
+        </div>
+        <div>
+          <input type="checkbox" name="tipo_ocorrencia[]" value="Queda Própria Altura" class="selectCheckOcorrencia" id="QuedaPrópriaAltura" onclick="selectCheckOcorrencia(this)">
+          <label for="QuedaPropriaAltura">Queda própria altura</label>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="subtitulo"></div>
+      <div class="texto">Avaliação de cinemática: </div>
+
+      <br>
+
+      <div class="grid_cinematica">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica">
+          <div class="txt_cinematica">
+            <p>Distúrbio comportamental</p>
           </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5AberturOcularComandoVerbal" class="checkAberturaOcularMaior5" id="comandoverbal" onclick="selectAberturaOcularMaior5(this)">
-            <label for="ComandoVerbal">Comando verbal</label>
-            <div class="numeros_niveis"></div>
+          <div class="txt_cinematica">
+            <p>Encontrado com capacete</p>
           </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5AberturOcularEstimuloDoloroso" class="checkAberturaOcularMaior5" id="estimulodoloroso" onclick="selectAberturaOcularMaior5(this)">
-            <label for="EstímuloDoloroso">Estímulo doloroso</label>
-            <div class="numeros_niveis"></div>
+          <div class="txt_cinematica">
+            <p>Encontrado de cinto</p>
           </div>
-          <div class="checkbox">1
-            <input type="checkbox" name="Maior5AberturOcularNenhuma" class="checkAberturaOcularMaior5" id="nenhuma" onclick="selectAberturaOcularMaior5(this)">
-            <label for="Nenhuma">Nenhuma</label>
-            <div class="numeros_niveis"></div>
+          <div class="txt_cinematica">
+            <p>Para-brisa avariado</p>
           </div>
-          <div class="checkbox">
-            <input type="checkbox" name="Maior5AberturOcularNT" class="checkAberturaOcularMaior5" id="NT" onclick="selectAberturaOcularMaior5(this)">
-            <label for="NT">NT</label>
-            <div class="numeros_niveis"></div>
+          <div class="txt_cinematica">
+            <p>Caminhando na cena</p>
+          </div>
+          <div class="txt_cinematica">
+            <p>Painel avariado</p>
+          </div>
+          <div class="txt_cinematica">
+            <p>Volante torcido</p>
+          </div>
+        </div>
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="disturbio" value="Sim" class="selectCheckDistúrbio" id="selectCheckDistúrbioSim" onclick="selectCheckDistúrbio(this)">
+            <label for="selectCheckDistúrbioSim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="encontradoCapacete" value="Sim" class="selectCheckCapacete" id="selectCheckCapaceteSim" onclick="selectCheckCapacete(this)">
+            <label for="Sim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="encontradoCinto" value="Sim" class="selectCheckCinto" id="selectCheckCintoSim" onclick="selectCheckCinto(this)">
+            <label for="Sim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="parabrisaAvariado" value="Sim" class="selectCheckParabrisa" id="selectCheckParabrisaSim" onclick="selectCheckParabrisa(this)">
+            <label for="Sim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="caminhandoCena" value="Sim" class="selectCheckCaminhando" id="selectCheckCaminhandoSim" onclick="selectCheckCaminhando(this)">
+            <label for="Sim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="painelAvariado" value="Sim" class="selectCheckPainel" id="selectCheckPainelSim" onclick="selectCheckPainel(this)">
+            <label for="Sim"></label>
+          </div>
+          <div>
+            <input type="checkbox" name="volanteTorcido" value="Sim" class="selectCheckVolante" id="selectCheckVolanteSim" onclick="selectCheckVolante(this)">
+            <label for="Sim"></label>
           </div>
         </div>
       </div>
 
-      <hr class="hr2">
+
+      <br>
+
+    </div>
+    <hr class="hr1">
+
+    <div class="container">
+      <h1 class="title" id="situacao-paciente">Situação do paciente:</h1>
+    </div>
 
 
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="username">RESPOSTA<br>VERBAL</label>
-        </div>
-        <div class="check_ocular">
+    <div class="boxsituacaopaciente">
 
-          <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="Orientado" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Orientado">Orientado</label>
-          </div>
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="Confuso" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Confuso">Confuso</label>
-          </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="Palavras_Inapro." onclick="selectRespostaVerbalMaior5(this)">
-            <label for="PalavrasInapro.">Palavras Inapro.</label>
-          </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="Palavras_Incomp." onclick="selectRespostaVerbalMaior5(this)">
-            <label for="PalavrasIncomp.">Palavras Incomp.</label>
-          </div>
-          <div class="checkbox">1
-            <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="Nenhuma" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="Nenhuma">Nenhuma</label>
-          </div>
-          <div class="checkbox">
-            <input type="checkbox" name="Maior5RespostaVerbalNT" class="checkRespostaVerbalMaior5" id="NT" onclick="selectRespostaVerbalMaior5(this)">
-            <label for="NT">NT</label>
-            <div class="numeros_niveis"></div>
-          </div>
-        </div>
-
-
+      <div class="input-caixatexto">
+        <label for="medidaPressao">Medida de Pressão:</label>
+        <input type="text" id="medidaPressao1" name="medidapressao" oninput="formatarMedidaPressao(this)" placeholder="___x___mmHg">
+        <p id="mensagemErro-26" style="color: red;"></p>
       </div>
 
-      <hr class="hr2">
 
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="username">RESPOSTA<br>MOTORA</label>
-        </div>
-        <div class="check_ocular">
 
-          <div class="checkbox">6
-            <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="Obedece_comandos" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="ObedeceComandos">Obedece comandos</label>
-          </div>
-          <div class="checkbox">5
-            <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="Localiza_dor" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="LocalizaDor">Localiza dor</label>
-          </div>
-          <div class="checkbox">4
-            <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="Mov_retirada" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="Mov.deRetirada">Mov. de retirada</label>
-          </div>
-          <div class="checkbox">3
-            <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="Flexão_anormal" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="FlexãoAnormal">Flexão anormal</label>
-          </div>
-          <div class="checkbox">2
-            <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="ExtensãoAnormal" onclick="selectRespostaMotoraMaior5(this)">
-            <label for="ExtensãoAnormal">Extensão anormal</label>
+      <div class="input-caixatexto">
+        <label for="numeroInput">Pulso:</label>
+        <input type="text" id="numeroInput" name="pulso" oninput="completePulso(this)" placeholder="___B.C.P.M.">
+        <p id="mensagemErro-23" style="color: red;"></p>
+      </div>
 
+
+
+      <div class="input-caixatexto">
+        <label for="repiracao">Respiração:</label>
+        <input type="text" id="formatarRespiration" name="respiracao" placeholder="___M.R.M." oninput="formatRespiration(this)">
+        <p id="mensagemErro-12" style="color: red;"></p>
+      </div>
+
+
+
+      <div class="input-caixatexto">
+        <label for="username">Saturação:</label>
+        <input type="text" id="username" name="saturacao" placeholder="___%" oninput="completeSaturacao(this)">
+        <p id="mensagemErro-22" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="username">HGT:</label>
+        <input type="text" id="username" name="hgt" placeholder="___mg/dL" oninput="completeWithHgt(this)">
+        <p id="mensagemErro-20" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="temperatura">Temperatura:</label>
+        <input type="text" id="username" name="temperatura" placeholder="___°C" oninput="NumeroTemperatura(this)">
+        <p id="mensagemErro-21" style="color: red;"></p>
+      </div>
+
+
+      <div class="input-caixatexto">
+        <label for="username">Perfusão:</label>
+      </div>
+
+      <div class="checkbox-texto">
+        <input type="checkbox" name="perfusao[]" value="Menor" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois1" onclick="selectCheckPerfusaoMaiorDois(this)">
+        <label for="Menor2seg">&gt;2 SEG</label>
+
+        <input type="checkbox" name="perfusao[]" value="Maior" class="selectCheckPerfusaoMaiorDois" id="selectCheckPerfusaoMaiorDois2" onclick="selectCheckPerfusaoMaiorDois(this)">
+        <label for="Maior2seg">&lt; 2 SEG</label>
+      </div>
+
+
+
+      <div class="checkbox-texto">
+        <input type="checkbox" id="selectCheckNormalAnormal1" name="normalAnormal[]" value="Normal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
+        <label for="checkbox-id-1">NORMAL</label>
+
+
+        <input type="checkbox" id="selectCheckNormalAnormal2" name="normalAnormal[]" value="Anormal" class="selectCheckNormalAnormal" onclick="selectCheckNormalAnormal(this)" />
+        <label for="checkbox-id-2">ANORMAL</label>
+      </div>
+
+      <div class="container-Maiores-de-5-anos hidden">
+        <div class="subtitulo"></div>
+        <div class="texto" id="">Nível de consciência - Maiores de 5 anos </div>
+        <br>
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="AberturaOcular">ABERTURA<br>OCULAR</label>
+          </div>
+          <div class="check_ocular">
+
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5AberturOcularEspontânea" class="checkAberturaOcularMaior5" id="espontanea" onclick="selectAberturaOcularMaior5(this)">
+              <label for="Espontânea">Espontânea</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5AberturOcularComandoVerbal" class="checkAberturaOcularMaior5" id="comandoverbal" onclick="selectAberturaOcularMaior5(this)">
+              <label for="ComandoVerbal">Comando verbal</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5AberturOcularEstimuloDoloroso" class="checkAberturaOcularMaior5" id="estimulodoloroso" onclick="selectAberturaOcularMaior5(this)">
+              <label for="EstímuloDoloroso">Estímulo doloroso</label>
+              <div class="numeros_niveis"></div>
+            </div>
             <div class="checkbox">1
-              <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="Nenhuma">
+              <input type="checkbox" name="Maior5AberturOcularNenhuma" class="checkAberturaOcularMaior5" id="nenhuma" onclick="selectAberturaOcularMaior5(this)">
               <label for="Nenhuma">Nenhuma</label>
+              <div class="numeros_niveis"></div>
             </div>
             <div class="checkbox">
-              <input type="checkbox" name="Maior5RespostaMotoraNT" class="checkRespostaMotoraMaior5" id="NT" onclick="selectRespostaMotoraMaior5(this)">
+              <input type="checkbox" name="Maior5AberturOcularNT" class="checkAberturaOcularMaior5" id="NT" onclick="selectAberturaOcularMaior5(this)">
               <label for="NT">NT</label>
               <div class="numeros_niveis"></div>
             </div>
           </div>
         </div>
 
-
-      </div>
-
-      <hr class="hr2">
-
-      <div class="totalgcs">
-        <p>TOTAL (GCS) (3-15)
-          <input type="text" id="gcs" name="totalGcs" placeholder="Digite um valor..." maxlength="2">
-      </div>
-
-    </div>
+        <hr class="hr2">
 
 
-    <div class="container-Menor-de-5-anos hidden">
-      <div class="subtitulo"></div>
-      <div class="texto">Nível de consciência - Menores de 5 anos </div>
-
-      <br>
-
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="username">ABERTURA<br>OCULAR</label>
-        </div>
-        <div class="check_ocular">
-          <div class="checkbox-menor5-aberturaocular">4
-            <input type="checkbox"  class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Espontânea</label>
-            <div class="numeros_niveis"></div>
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="username">RESPOSTA<br>VERBAL</label>
           </div>
-          <div class="checkbox-menor5-aberturaocular">3
-            <input type="checkbox"  class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Comando verbal</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-aberturaocular">2
-            <input type="checkbox"  class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Estímulo doloroso</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-aberturaocular">1
-            <input type="checkbox"  class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">Nenhuma</label>
-            <div class="numeros_niveis"></div>
-          </div>
-          <div class="checkbox-menor5-nt1">
-            <input type="checkbox"  class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
-            <label for="checkbox-id-1">NT</label>
-            <div class="numeros_niveis"></div>
-          </div>
-        </div>
+          <div class="check_ocular">
 
-      </div>
-
-      <hr class="hr2">
-
-
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="username">RESPOSTA<br>VERBAL</label>
-        </div>
-        <div class="check_ocular">
-
-          <div class="checkbox-menor5-respostaverbal">5
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Palavras/Frase apropriadas</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">4
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Palavras inapropriadas</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">3
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Choro/gritos persistentes</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">2
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Sons incomprieensíveis</label>
-          </div>
-          <div class="checkbox-menor5-respostaverbal">1
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">Nenhuma resposta</label>
-          </div>
-          <div class="checkbox-menor5-nt">
-            <input type="checkbox"  class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
-            <label for="checkbox-id-1">NT</label>
-          </div>
-        </div>
-      </div>
-
-      <hr class="hr2">
-
-      <div class="grid_maior5">
-        <div class="input-consciencia">
-          <label for="username">RESPOSTA<br>MOTORA</label>
-        </div>
-        <div class="check_ocular">
-
-          <div class="checkbox-menor5-respostamotora">6
-            <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Obedece prontamente</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">5
-            <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Localiza dor/estímulo</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">4
-            <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Retirada do segmento est.</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">3
-            <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Flexão anormal</label>
-          </div>
-          <div class="checkbox-menor5-respostamotora">2
-            <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-            <label for="checkbox-id-1">Extensão anormal</label>
-            <div class="checkbox-menor5-respostamotora-ausencia">1
-              <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
-              <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
+            <div class="checkbox">5
+              <input type="checkbox" name="Maior5RespostaVerbalOrientado" class="checkRespostaVerbalMaior5" id="Orientado" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Orientado">Orientado</label>
             </div>
-            <div class="checkbox-menor5-nt">
-              <input type="checkbox"  class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5RespostaVerbalConfuso" class="checkRespostaVerbalMaior5" id="Confuso" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Confuso">Confuso</label>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5RespostaVerbalPalavrasInapro." class="checkRespostaVerbalMaior5" id="Palavras_Inapro." onclick="selectRespostaVerbalMaior5(this)">
+              <label for="PalavrasInapro.">Palavras Inapro.</label>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5RespostaPalavrasIncomp." class="checkRespostaVerbalMaior5" id="Palavras_Incomp." onclick="selectRespostaVerbalMaior5(this)">
+              <label for="PalavrasIncomp.">Palavras Incomp.</label>
+            </div>
+            <div class="checkbox">1
+              <input type="checkbox" name="Maior5RespostaVerbalNenhuma" class="checkRespostaVerbalMaior5" id="Nenhuma" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="Nenhuma">Nenhuma</label>
+            </div>
+            <div class="checkbox">
+              <input type="checkbox" name="Maior5RespostaVerbalNT" class="checkRespostaVerbalMaior5" id="NT" onclick="selectRespostaVerbalMaior5(this)">
+              <label for="NT">NT</label>
+              <div class="numeros_niveis"></div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <hr class="hr2">
+
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="username">RESPOSTA<br>MOTORA</label>
+          </div>
+          <div class="check_ocular">
+
+            <div class="checkbox">6
+              <input type="checkbox" name="Maior5RespostaMotoraObedeceComandos" class="checkRespostaMotoraMaior5" id="Obedece_comandos" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="ObedeceComandos">Obedece comandos</label>
+            </div>
+            <div class="checkbox">5
+              <input type="checkbox" name="Maior5RespostaMotoraLocalizaDor" class="checkRespostaMotoraMaior5" id="Localiza_dor" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="LocalizaDor">Localiza dor</label>
+            </div>
+            <div class="checkbox">4
+              <input type="checkbox" name="Maior5RespostaMotoraMov.Retirada" class="checkRespostaMotoraMaior5" id="Mov_retirada" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="Mov.deRetirada">Mov. de retirada</label>
+            </div>
+            <div class="checkbox">3
+              <input type="checkbox" name="Maior5RespostaMotoraFlexaoNormal" class="checkRespostaMotoraMaior5" id="Flexão_anormal" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="FlexãoAnormal">Flexão anormal</label>
+            </div>
+            <div class="checkbox">2
+              <input type="checkbox" name="Maior5RespostaMotoraExtensaoAnormal" class="checkRespostaMotoraMaior5" id="ExtensãoAnormal" onclick="selectRespostaMotoraMaior5(this)">
+              <label for="ExtensãoAnormal">Extensão anormal</label>
+
+              <div class="checkbox">1
+                <input type="checkbox" name="Maior5RespostaMotoraNenhuma" class="checkRespostaMotoraMaior5" id="Nenhuma">
+                <label for="Nenhuma">Nenhuma</label>
+              </div>
+              <div class="checkbox">
+                <input type="checkbox" name="Maior5RespostaMotoraNT" class="checkRespostaMotoraMaior5" id="NT" onclick="selectRespostaMotoraMaior5(this)">
+                <label for="NT">NT</label>
+                <div class="numeros_niveis"></div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <hr class="hr2">
+
+        <div class="totalgcs">
+          <p>TOTAL (GCS) (3-15)
+            <input type="text" id="gcs" name="totalGcs" placeholder="Digite um valor..." maxlength="2">
+        </div>
+
+      </div>
+
+
+      <div class="container-Menor-de-5-anos hidden">
+        <div class="subtitulo"></div>
+        <div class="texto">Nível de consciência - Menores de 5 anos </div>
+
+        <br>
+
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="username">ABERTURA<br>OCULAR</label>
+          </div>
+          <div class="check_ocular">
+            <div class="checkbox-menor5-aberturaocular">4
+              <input type="checkbox" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Espontânea</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">3
+              <input type="checkbox" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Comando verbal</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">2
+              <input type="checkbox" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Estímulo doloroso</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-aberturaocular">1
+              <input type="checkbox" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
+              <label for="checkbox-id-1">Nenhuma</label>
+              <div class="numeros_niveis"></div>
+            </div>
+            <div class="checkbox-menor5-nt1">
+              <input type="checkbox" class="checkAberturaOcularMenor5" id="checkbox-id-1" onclick="selectAberturaOcularMenor5(this)">
               <label for="checkbox-id-1">NT</label>
               <div class="numeros_niveis"></div>
             </div>
           </div>
+
         </div>
-      </div>
 
-      <hr class="hr2">
-
-      <div class="totalgcs">
-        <p>TOTAL (GCS) (3-15)
-          <input type="text" id="gcs" name="totalGcs" placeholder="Digite um valor..." maxlength="2">
-      </div>
+        <hr class="hr2">
 
 
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="username">RESPOSTA<br>VERBAL</label>
+          </div>
+          <div class="check_ocular">
 
-    </div>
-
-
-    <div class="subtitulo"></div>
-    <div class="texto" id="problemas-encontrados">Problemas Encontrados</div>
-
-
-    <div class="prob_psiq">
-      <label class="item-psiquiatrico">
-        <input type="checkbox"  name="problemaPsiquiatrico[]" class="main-checkbox-psiq"> Psiquiátrico
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input id="checkbox-id-768" type="checkbox" class="main-checkbox-resp" onchange="toggleRespiratorio()">
-        Respiratório
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaRespiratorio[]" class="sub-checkbox-resp" disabled> Inalação de fumaça
-      </label>
-      <label class="sub-item">
-        <input type="checkbox"  name="problemaRespiratorio[]"class="sub-checkbox-resp" disabled> DPOC
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-diab" onchange="toggleDiabetes()"> Diabetes
-      </label>
-      <label class="sub-item">
-        <input type="checkbox"  name="problemaDiabete[]" class="sub-checkbox-diab" disabled> Hiperglicemia
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaDiabete[]" class="sub-checkbox-diab" disabled> Hipoglicemia
-      </label>
-    </div>
-<br>
-    <div class="fundo-input-outros1">
-      <div class="input-ss">
-        <label for="username">OUTROS:</label>
-        <input type="text" id="username" name="problemaDiabeteOutros">
-      </div>
-    </div>
-
-
-
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-obst" onchange="toggleObstetrico()"> Obstétrico
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaObstetrico[]" class="sub-checkbox-obst" disabled> Parto Emergencial
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaObstetrico[]" class="sub-checkbox-obst" disabled> Gestante
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaObstetrico[]" class="sub-checkbox-obst" disabled> Hemor. Excessiva
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-transp" onchange="toggleTransporte()"> Transporte
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaTransporte[]" class="sub-checkbox-transp" disabled> Aéreo
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaTransporte[]" class="sub-checkbox-transp" disabled> Clínico
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaTransporte[]" class="sub-checkbox-transp" disabled> Emergencial
-      </label>
-      <label class="sub-item">
-        <input type="checkbox"  name="problemaTransporte[]" class="sub-checkbox-transp" disabled> Pós-trauma
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaTransporte[]" class="sub-checkbox-transp" disabled> SAMU
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="problemaTransporte[]" class="sub-checkbox-transp" disabled> Sem remoção
-      </label>
-
-    </div>
-<br>
-    <div class="fundo-input-outros2">
-      <div class="input-ss">
-        <label for="username">OUTROS:</label>
-        <input type="text" id="username" name="problemaTransporteOutros">
-      </div>
-    </div>
-
-
-    <div class="input-caixatexto">
-      <label for="username">Objetos recolhidos:</label>
-      <input type="text" id="username" name="problemaObjetosRecolhidos" placeholder="Digite...">
-    </div>
-
-    <div class="subtitulo"></div>
-    <div class="texto" id="localizacao-traumas">Localização dos traumas</div>
-
-    <br>
-
-    <banner>
-    <div class="col position-relative">
-      <canvas id="myCanvas" style="max-width: 100%;"></canvas>
-      <button id="undoButton" class="btn btn-primary mt-2" type="button">Desfazer</button>
-      <br>
-      <div class="center-text">
-        <label for="traumaType" class="mt-1 mb-2">Selecione o tipo de trauma:</label>
-    </div>
-      <div id="colorSelector"></div>
-</div>
-</banner>
-
-    <br>
-
-    <div class="grid_traumas">
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: purple; border-radius: 50%; margin-right: 5px;"></span>
-      Fraturas/Luxações/Entorses
-  </label>  
-</div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: red; border-radius: 50%; margin-right: 5px;"></span>
-      Queimadura 1°Grau
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: blue; border-radius: 50%; margin-right: 5px;"></span>
-      Hemorragias Int.
-  </label>
-  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: black; border-radius: 50%; margin-right: 5px;"></span>
-      Queimadura 2°Grau
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: green; border-radius: 50%; margin-right: 5px;"></span>
-      F.A.B./F.A.F.
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: darkorange; border-radius: 50%; margin-right: 5px;"></span>
-      Queimadura 3°Grau
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: rgb(243, 0, 138); border-radius: 50%; margin-right: 5px;"></span>
-      Ferimentos Diversos
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: rgb(0, 168, 174); border-radius: 50%; margin-right: 5px;"></span>
-      Esviceração
-  </label>  </div>
-
-  <div>
-    <label for="checkbox-id-1" style="display: flex; align-items: center;">
-      <span style="width: 10px; height: 10px; background-color: rgb(233, 221, 0); margin-right: 5px;"></span>
-      Hemorragias Ext.
-  </label>  </div>
-  </div>
-
-    <br>
-
-
-    <div class="subtitulo"></div>
-    <div class="texto">Ferimentos / fraturas / entorses / luxação / contusão</div>
-
-    <div class="table-container">
-      <table>
-        <tr>
-          <th>LOCAL</th>
-          <th>LADO</th>
-          <th>FACE</th>
-          <th>TIPO</th>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula1"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula2"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula3"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula4"></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula5"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula6"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula7"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula8"></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula9"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula10"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula11"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula12"></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula13"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula14"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula15"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula16"></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula17"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula18"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula19"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula20"></td>
-        </tr>
-        <tr>
-          <td><input type="text" name="tabelaTraumasLocal" id="celula21"></td>
-          <td><input type="text" name="tabelaTraumasLado" id="celula22"></td>
-          <td><input type="text" name="tabelaTraumasFace" id="celula23"></td>
-          <td><input type="text" name="tabelaTraumasTipo" id="celula24"></td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="subtitulo"></div>
-    <div class="texto" id="localizacao-traumas">Queimaduras</div>
-    <!-- <div class="table-container"> -->
-
-    <button id="abrir-popup" type="button" class="botao-grau" name="1graubtn">1° GRAU</button>
-
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <span class="fechar-popup" id="fechar-popup">&times;</span>
-        <table id="tabela-editavel1">
-          <tr>
-            <th name="CABEÇA-1°GRAU">CABEÇA</th>
-            <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
-            <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
-            <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
-            <th name="GENIT-1°GRAU">GENITAL.</th>
-            <th name="M.I.D.-1°GRAU">M.I.D.</th>
-            <th name="M.I.E.-1°GRAU">M.I.E.</th>
-            <th name="M.S.D.-1°GRAU">M.S.D.</th>
-            <th name="M.S.E.-1°GRAU">M.S.E.</th>
-          </tr>
-          <tr>
-            <td class="linha-tabela">1°</td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-          </tr>
-        </table>
-        <button id="salvar" type="button" class="botao-grau" name="submitInfo">Pronto</button>
-      </div>
-    </div>
-
-    <button id="abrir-popup2" type="button" class="botao-grau" name="2graubtn">2° GRAU</button>
-
-    <div id="popup2" class="popup2">
-      <div class="popup-content2">
-        <span class="fechar-popup2" id="fechar-popup2">&times;</span>
-        <table id="tabela-editavel2">
-          <tr>
-            <th name="CABEÇA-2°GRAU">CABEÇA</th>
-            <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
-            <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
-            <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
-            <th name="GENIT-2°GRAU">GENITAL.</th>
-            <th name="M.I.D.-2°GRAU">M.I.D.</th>
-            <th name="M.I.E.-2°GRAU">M.I.E.</th>
-            <th name="M.S.D.-2°GRAU">M.S.D.</th>
-            <th name="M.S.E.-2°GRAU">M.S.E.</th>
-          </tr>
-          <tr>
-            <td class="linha-tabela">2°</td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-          </tr>
-        </table>
-        <button id="salvar2" type="button" class="botao-grau" name="submitInfo">Pronto</button>
-      </div>
-    </div>
-
-    <button id="abrir-popup3" type="button" class="botao-grau" name="3graubtn">3° GRAU</button>
-<br>
-    <div id="popup3" class="popup3">
-      <div class="popup-content3">
-        <span class="fechar-popup3" id="fechar-popup3">&times;</span>
-        <table id="tabela-editavel3">
-          <tr>
-            <th>GRAU</th>
-            <th name="CABEÇA-3°GRAU">CABEÇA</th>
-            <th name="PESCOÇO-3°GRAU">PESCOÇO</th>
-            <th name="TORSO POS.-3°GRAU">TORSO POS.</th>
-            <th name="TORSO ANT.-3°GRAU">TORSO ANT.</th>
-            <th name="GENIT-3°GRAU">GENITAL.</th>
-            <th name="M.I.D.-3°GRAU">M.I.D.</th>
-            <th name="M.I.E.-3°GRAU">M.I.E.</th>
-            <th name="M.S.D.-3°GRAU">M.S.D.</th>
-            <th name="M.S.E.-3°GRAU">M.S.E.</th>
-          </tr>
-          <tr>
-            <td class="linha-tabela">3°</td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-            <td><input type="checkbox" name="queimadura"></td>
-          </tr>
-        </table>
-        <button id="salvar3" class="botao-grau" type="button" name="submitInfo">Pronto</button>
-      </div>
-    </div>
-
-    <div class="subtitulo"></div>
-    <div class="texto">Decisão transporte</div>
-
-    <br>
-    <div class="grid_transporte">
-      <div>
-        <input type="checkbox" name="decisaoTransporte[]" class="selectCheckTransporte" id="selectCheckTransporte1" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-1">Ruim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="decisaoTransporte[]" class="selectCheckTransporte" id="selectCheckTransporte2" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-2">Péssimo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="decisaoTransporte[]" class="selectCheckTransporte" id="selectCheckTransporte3" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-3">Bom</label>
-      </div>
-      <div>
-        <input type="checkbox" name="decisaoTransporte[]" class="selectCheckTransporte" id="selectCheckTransporte4" onclick="selectCheckTransporte(this)">
-        <label for="checkbox-id-4">Ótimo</label>
-      </div>
-    </div>
-
-
-    <div class="subtitulo"></div>
-    <div class="texto" id="sinais-sintomas">Sinais e sintomas</div>
-
-    <br>
-    <div class="grid_ocorrencia">
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Abdomen">
-        <label for="checkbox-id-1">Abdomen</label>sensível/rígido
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Afundamento">
-        <label for="checkbox-id-1">Afundamento</label> de crânio
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Agitação">
-        <label for="checkbox-id-1">Agitação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Amnésia">
-        <label for="checkbox-id-1">Amnésia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Angina">
-        <label for="checkbox-id-1">Angina de peito</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Apinéia">
-        <label for="checkbox-id-1">Apinéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Bradicardia">
-        <label for="checkbox-id-1">Bradicardia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Bradipnéia">
-        <label for="checkbox-id-1">Bradipnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Bronco">
-        <label for="checkbox-id-1">Bronco-Aspirando</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Cefaléia">
-        <label for="checkbox-id-1">Cefaléia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Enfisema">
-        <label for="checkbox-id-1">Enfisema subcutâneo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Êstase">
-        <label for="checkbox-id-1">Êstase de jugular</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Face">
-        <label for="checkbox-id-1">Face pálida</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="O.V.A.C.E">
-        <label for="checkbox-id-1">O.V.A.C.E</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Priaprismo">
-        <label for="checkbox-id-1">Priaprismo</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Prurido">
-        <label for="checkbox-id-1">Prurido na pele</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Sede">
-        <label for="checkbox-id-1">Sede</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Sinal">
-        <label for="checkbox-id-1">Sinal de battle</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Convulsão">
-        <label for="checkbox-id-1">Convulsão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Decorticação">
-        <label for="checkbox-id-1">Decorticação</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Deformidade">
-        <label for="checkbox-id-1">Deformidade</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Descerebração">
-        <label for="checkbox-id-1">Descerebração</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Desmaio">
-        <label for="checkbox-id-1">Desmaio</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Desvio">
-        <label for="checkbox-id-1">Desvio de traquéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Dispnéia">
-        <label for="checkbox-id-1">Dispnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Dor">
-        <label for="checkbox-id-1">Dor local</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="Otorréia">
-        <label for="checkbox-id-1">Otorréia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Otorragia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Óbito</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Hipertensão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Hipotensão</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Náusea e vômitos</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Nasoragia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sinal de guaxinim</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Sudorese</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Taquipnéia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Taquicardia</label>
-      </div>
-      <div>
-        <input type="checkbox" name="sinaisSintomas[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">Tontura</label>
-      </div>
-    </div>
-    <br><br><br><br>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleHemorragia(this)">
-        HEMORRAGIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="hemorragia" class="sub-checkbox-resp interna" disabled> INTERNA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="hemorragia" class="sub-checkbox-resp externa" disabled> EXTERNA
-      </label>
-    </div>
-
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleEdema(this)"> EDEMA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="edema" class="sub-checkbox-resp generalizado" disabled> GENERALIZADO
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="edema" class="sub-checkbox-resp localizado" disabled> LOCALIZADO
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleParada(this)"> PARADA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="parada" class="sub-checkbox-resp cardiaca" disabled> CARDÍACA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="parada" class="sub-checkbox-resp respiratoria" disabled> RESPIRATÓRIA
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="toggleCianose(this)"> CIANOSE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="cianose" class="sub-checkbox-resp labios" disabled> LÁBIOS
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="cianose" class="sub-checkbox-resp extremidade" disabled> EXTREMIDADE
-      </label>
-    </div>
-
-    <div class="prob">
-      <label class="item">
-        <input type="checkbox" id="checkbox-id-768" class="main-checkbox-resp" onchange="togglePupilas(this)"> PUPILAS
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp anisocoria" disabled> ANISOCORIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp isocoria" disabled> ISOCORIA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp midriase" disabled> MIDRIASE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp miose" disabled> MIOSE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp reagente" disabled> REAGENTE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="pupilas" class="sub-checkbox-resp naoreagente" disabled> Ñ REAGENTE
-      </label>
-    </div>
-
-    <div class="checkbox-container">
-    </div>
-    <br>
-    <div class="fundo-input">
-      <div class="input-ss">
-        <label for="username">OUTROS:</label>
-        <input type="text" id="username" name="outros">
-      </div>
-    </div>
-
-    <div id="anamnese"></div>
-
-    <div class="subtitulo"></div>
-    <div class="texto">Anamnese da Emergência Médica</div>
-<br>
-    <div class="fundo-anamnese">
-      <div class="input-anamnese">
-      </div>
-
-      <div class="actu">
-        <label for="username">O que aconteceu (sinais e sintomas)</label>
-      </div>
-
-      <div class="input-anamnese">
-        <textarea id="username" name="anamneseEmergencialOqueAconteceu" placeholder="   Digite..." class="textarea"></textarea>
-      </div>
-    </div>
-
-
-    <br>
-    <div class="grid_cinematica_aconteceu">
-      <!-- TEXTOS DAS CHECKBOX -->
-      <div class="grid_txt_cinematica_aconteceu">
-        <div class="txt_cinematica">
-          <p>Aconteceu outras vezes</p>
+            <div class="checkbox-menor5-respostaverbal">5
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Palavras/Frase apropriadas</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">4
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Palavras inapropriadas</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">3
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Choro/gritos persistentes</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">2
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Sons incomprieensíveis</label>
+            </div>
+            <div class="checkbox-menor5-respostaverbal">1
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">Nenhuma resposta</label>
+            </div>
+            <div class="checkbox-menor5-nt">
+              <input type="checkbox" class="checkRespostaVerbalMenor5" id="checkbox-id-1" onclick="selectRespostaVerbalMenor5(this)">
+              <label for="checkbox-id-1">NT</label>
+            </div>
+          </div>
         </div>
-      </div>
 
+        <hr class="hr2">
 
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAconteceuOutrasVezes[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-          <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
+        <div class="grid_maior5">
+          <div class="input-consciencia">
+            <label for="username">RESPOSTA<br>MOTORA</label>
+          </div>
+          <div class="check_ocular">
+
+            <div class="checkbox-menor5-respostamotora">6
+              <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Obedece prontamente</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">5
+              <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Localiza dor/estímulo</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">4
+              <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Retirada do segmento est.</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">3
+              <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Flexão anormal</label>
+            </div>
+            <div class="checkbox-menor5-respostamotora">2
+              <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+              <label for="checkbox-id-1">Extensão anormal</label>
+              <div class="checkbox-menor5-respostamotora-ausencia">1
+                <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+                <label for="checkbox-id-1">Ausência</label>(paralisia flácida,flatônia)
+              </div>
+              <div class="checkbox-menor5-nt">
+                <input type="checkbox" class="checkRespostaMotoraMenor5" id="checkbox-id-1" onclick="selectRespostaMotoraMenor5(this)">
+                <label for="checkbox-id-1">NT</label>
+                <div class="numeros_niveis"></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAconteceuOutrasVezes[]" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
-          <label for="checkbox-id-8">Não</label>
+        <hr class="hr2">
+
+        <div class="totalgcs">
+          <p>TOTAL (GCS) (3-15)
+            <input type="text" id="gcs" name="totalGcs" placeholder="Digite um valor..." maxlength="2">
         </div>
-      </div>
-    </div>
 
-    <div class="grid_cinematica_aconteceu_input">
-      <div class="container-aconteceu hidden">
-        <div class="input-anme_sn_QntTempoAconteceu">
-          <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
-          <input type="text" id="QuantoTempoAconteceu" name="anamneseQuantoTempo">
-        </div>
-      </div>
-    </div>
 
-    <div class="grid_cinematica_problemaSaude">
-      <!-- TEXTOS DAS CHECKBOX -->
-      <div class="grid_txt_cinematica_problemaSaude">
-        <div class="txt_cinematica">
-          <p>Possui algum problema de saúde</p>
-        </div>
+
       </div>
 
 
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseProblemaSaude[]" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1" onclick="selecionarCheckboxProblemaSaude(this); habilitarContainerPrbSaude(this)">
-          <label for="ProblemaSaude">Sim</label>
-        </div>
-      </div>
-
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseProblemaSaude[]" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2" onclick="selectCheckProblemaSaude(this); habilitarContainerPrbSaude(this)">
-          <label for="ProblemaSaude">Não</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_problemaSaude_input">
-      <div class="container-PrbSaude hidden">
-        <div class="input-anme_sn_Quais">
-          <label for="Quais">Qual?</label>
-          <input type="text" id="Quais" name="anamneseQuaisProblemas">
-        </div>
-      </div>
-    </div>
-    <br>
-
-
-    <div class="grid_cinematica_medicacao">
-      <!-- TEXTOS DAS CHECKBOX -->
-
-      <div class="grid_txt_cinematica_medicacao">
-        <div class="txt_cinematica">
-          <p>Faz uso de medicação</p>
-        </div>
-      </div>
-
-
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseUsoMedicacao[]" class="selectCheckMedicacao" id="selectCheckMedicacao1" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
-          <label for="Medicacao">Sim</label>
-        </div>
-      </div>
-
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseUsoMedicacao[]" class="selectCheckMedicacao" id="selectCheckMedicacao2" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
-          <label for="Medicacao">Não</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_medicacao_input">
-      <div class="container-medicacao hidden">
-        <div class="input-anme_sn_HorarioMedicacao">
-          <label for="username">Ultima medicação:</label>
-          <input type="time" id="HorarioMedicacao" name="anamneseHoraUltimaMedicacao">
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_medicacao_input">
-      <div class="container-medicacao-quais hidden">
-        <div class="input-anme_sn_HorarioMedicacao">
-          <label for="QuaisMedicacao">Qual?</label>
-          <input type="text" id="QuaisMedicacao" name="anamneseQualMedicacao">
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_alergico">
-      <!-- TEXTOS DAS CHECKBOX -->
-
-      <div class="grid_txt_cinematica_alergico">
-        <div class="txt_cinematica">
-          <p>Alérgico a alguma coisa?</p>
-        </div>
-      </div>
-
-
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAlergico" class="selectCheckAlergico" id="selectCheckAlergico1" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-          <label for="Alergico">Sim</label>
-        </div>
-      </div>
-
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAlergico" class="selectCheckAlergico" id="selectCheckAlergico2" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
-          <label for="Alergico">Não</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_alergico_input">
-      <div class="container-Alergico hidden">
-        <div class="input-anme_sn_Especifique">
-          <label for="Quais">Qual?</label>
-          <input type="text" id="Quais" name="anamneseQualAlergia">
-        </div>
-      </div>
-    </div>
-    <br>
-
-
-    <div class="grid_cinematica_alimento">
-      <!-- TEXTOS DAS CHECKBOX -->
-
-      <div class="grid_txt_cinematica_alimento">
-        <div class="txt_cinematica">
-          <p>Inseriu alimento ou líquido a 6 horas ou mais?</p>
-        </div>
-      </div>
-
-
-      <!-- CHECKBOX SIM -->
-      <div class="grid_checkbox_sim_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAlimento6Horas[]" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
-          <label for="checkbox-id-1">Sim</label>
-        </div>
-      </div>
-
-      <div class="grid_checkbox_nao_cinematica">
-        <div>
-          <input type="checkbox" name="anamneseAlimento6Horas[]" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
-          <label for="checkbox-id-8">Não</label>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="grid_cinematica_alimento_input">
-      <div class="container-alimento-espec hidden">
-        <div class="input-anme_sn">
-          <label for="username">Se sim, especifique:</label>
-          <input type="text" id="username" name="anamneseEspecifique" placeholder="________________">
-        </div>
-      </div>
-    </div>
-
-    <div class="grid_cinematica_alimento_input">
-      <div class="container-alimento-horas hidden">
-        <div class="input-anme_sn">
-          <label for="username">Que horas?</label>
-          <input type="time" id="username" name="anamneseQueHoras" placeholder="________________">
-        </div>
-      </div>
-    </div>
-
-    <div class="gestacional hidden">
       <div class="subtitulo"></div>
-      <div class="texto">Anamnese Gestacional</div>
+      <div class="texto" id="problemas-encontrados">Problemas Encontrados</div>
+
+      <div class="nomeSinalSintoma">Psiquiátrico</div>
+      <div class="prob_psiq">
+        <label class="item-psiquiatrico">
+          <input type="checkbox" name="problemaPsiquiatrico[]" value="Psiquiátrico" class="main-checkbox-psiq"> Psiquiátrico
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Respiratório</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="problemaRespiratorio[]" value="Inalação de fumaça" class="sub-checkbox-resp"> Inalação de fumaça
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaRespiratorio[]" value="DPOC" class="sub-checkbox-resp"> DPOC
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Diabetes</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="problemaDiabete[]" value="Hiperglicemia" class="sub-checkbox-diab"> Hiperglicemia
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaDiabete[]" value="Hipoglicemia" class="sub-checkbox-diab"> Hipoglicemia
+        </label>
+      </div>
+      <br>
+      <div class="fundo-input-outros1">
+        <div class="input-ss">
+          <label for="username">OUTROS:</label>
+          <input type="text" id="username" name="problemaDiabeteOutros">
+        </div>
+      </div>
+
+
+
+      <div class="nomeSinalSintoma">Obstétrico</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="problemaObstetrico[]" value="Parto Emergencial" class="sub-checkbox-obst"> Parto Emergencial
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaObstetrico[]" value="Gestante" class="sub-checkbox-obst"> Gestante
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaObstetrico[]" value="Hemor. Excessiva" class="sub-checkbox-obst"> Hemor. Excessiva
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Transporte</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="Aéreo" class="sub-checkbox-transp"> Aéreo
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="Clínico" class="sub-checkbox-transp"> Clínico
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="Emergencial" class="sub-checkbox-transp"> Emergencial
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="Pós-trauma" class="sub-checkbox-transp"> Pós-trauma
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="SAMU" class="sub-checkbox-transp"> SAMU
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="problemaTransporte[]" value="Sem remoção" class="sub-checkbox-transp"> Sem remoção
+        </label>
+      </div>
+      <br>
+      <div class="fundo-input-outros2">
+        <div class="input-ss">
+          <label for="username">OUTROS:</label>
+          <input type="text" id="username" name="problemaTransporteOutros">
+        </div>
+      </div>
+
+
+      <div class="input-caixatexto">
+        <label for="username">Objetos recolhidos:</label>
+        <input type="text" id="username" name="problemaObjetosRecolhidos" placeholder="Digite...">
+      </div>
+
+      <div class="subtitulo"></div>
+      <div class="texto" id="localizacao-traumas">Localização dos traumas</div>
+
+      <br>
+
+      <banner>
+        <div class="col position-relative">
+          <canvas id="myCanvas" style="max-width: 100%;"></canvas>
+          <button id="undoButton" class="btn btn-primary mt-2" type="button">Desfazer</button>
+          <br>
+          <div class="center-text">
+            <label for="traumaType" class="tipoTrauma">Selecione o tipo de trauma:</label>
+          </div>
+          <div class="legenda">
+            <div id="colorSelector"></div>
+            <div class="nomesTraumas">
+              <p class="trauma1">Fraturas/Luxações/Entorses</p>
+              <p class="trauma">Queimadura 1°Grau</p>
+              <p class="trauma">Hemorragias Int.</p>
+              <p class="trauma">Queimadura 2°Grau</p>
+              <p class="trauma">F.A.B./F.A.F.</p>
+              <p class="trauma">Queimadura 3°Grau</p>
+              <p class="trauma">Ferimentos Diversos</p>
+              <p class="trauma">Esviceração</p>
+              <p class="trauma">Hemorragias Ext.</p>
+            </div>
+          </div>
+        </div>
+      </banner>
+
+
+      <br>
+
+
+      <div class="subtitulo"></div>
+      <div class="texto">Ferimentos / fraturas / entorses / luxação / contusão</div>
+
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>LOCAL</th>
+            <th>LADO</th>
+            <th>FACE</th>
+            <th>TIPO</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula1"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula2"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula3"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula4"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula5"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula6"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula7"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula8"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula9"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula10"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula11"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula12"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula13"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula14"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula15"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula16"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula17"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula18"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula19"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula20"></td>
+          </tr>
+          <tr>
+            <td><input type="text" name="tabelaTraumasLocal" id="celula21"></td>
+            <td><input type="text" name="tabelaTraumasLado" id="celula22"></td>
+            <td><input type="text" name="tabelaTraumasFace" id="celula23"></td>
+            <td><input type="text" name="tabelaTraumasTipo" id="celula24"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="subtitulo"></div>
+      <div class="texto" id="localizacao-traumas">Queimaduras</div>
+      <!-- <div class="table-container"> -->
+
+      <button id="abrir-popup" type="button" class="botao-grau" name="1graubtn">1° GRAU</button>
+
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="fechar-popup" id="fechar-popup">&times;</span>
+          <table id="tabela-editavel1">
+            <tr>
+              <th name="CABEÇA-1°GRAU">CABEÇA</th>
+              <th name="PESCOÇO-1°GRAU">PESCOÇO</th>
+              <th name="TORSO POS.-1°GRAU">TORSO POS.</th>
+              <th name="TORSO ANT.-1°GRAU">TORSO ANT.</th>
+              <th name="GENIT-1°GRAU">GENITAL.</th>
+              <th name="M.I.D.-1°GRAU">M.I.D.</th>
+              <th name="M.I.E.-1°GRAU">M.I.E.</th>
+              <th name="M.S.D.-1°GRAU">M.S.D.</th>
+              <th name="M.S.E.-1°GRAU">M.S.E.</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" value="Cabeça" name="queimadura"></td>
+              <td><input type="checkbox" value="Pescoço" name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Pos." name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Ant." name="queimadura"></td>
+              <td><input type="checkbox" value="Genital." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.D." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.E." name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.D" name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.E" name="queimadura"></td>
+            </tr>
+          </table>
+          <button id="salvar" type="button" class="botao-grau" name="submitInfo">Pronto</button>
+        </div>
+      </div>
+
+      <button id="abrir-popup2" type="button" class="botao-grau" name="2graubtn">2° GRAU</button>
+
+      <div id="popup2" class="popup2">
+        <div class="popup-content2">
+          <span class="fechar-popup2" id="fechar-popup2">&times;</span>
+          <table id="tabela-editavel2">
+            <tr>
+            <tr>
+              <th name="CABEÇA-2°GRAU">CABEÇA</th>
+              <th name="PESCOÇO-2°GRAU">PESCOÇO</th>
+              <th name="TORSO POS.-2°GRAU">TORSO POS.</th>
+              <th name="TORSO ANT.-2°GRAU">TORSO ANT.</th>
+              <th name="GENIT-2°GRAU">GENITAL.</th>
+              <th name="M.I.D.-2°GRAU">M.I.D.</th>
+              <th name="M.I.E.-2°GRAU">M.I.E.</th>
+              <th name="M.S.D.-2°GRAU">M.S.D.</th>
+              <th name="M.S.E.-2°GRAU">M.S.E.</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" value="Cabeça" name="queimadura"></td>
+              <td><input type="checkbox" value="Pescoço" name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Pos." name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Ant." name="queimadura"></td>
+              <td><input type="checkbox" value="Genital." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.D." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.E." name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.D" name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.E" name="queimadura"></td>
+            </tr>
+          </table>
+          <button id="salvar2" type="button" class="botao-grau" name="submitInfo">Pronto</button>
+        </div>
+      </div>
+
+      <button id="abrir-popup3" type="button" class="botao-grau" name="3graubtn">3° GRAU</button>
+      <br>
+      <div id="popup3" class="popup3">
+        <div class="popup-content3">
+          <span class="fechar-popup3" id="fechar-popup3">&times;</span>
+          <table id="tabela-editavel3">
+            <tr>
+              <th name="CABEÇA-3°GRAU">CABEÇA</th>
+              <th name="PESCOÇO-3°GRAU">PESCOÇO</th>
+              <th name="TORSO POS.-3°GRAU">TORSO POS.</th>
+              <th name="TORSO ANT.-3°GRAU">TORSO ANT.</th>
+              <th name="GENIT-3°GRAU">GENITAL.</th>
+              <th name="M.I.D.-3°GRAU">M.I.D.</th>
+              <th name="M.I.E.-3°GRAU">M.I.E.</th>
+              <th name="M.S.D.-3°GRAU">M.S.D.</th>
+              <th name="M.S.E.-3°GRAU">M.S.E.</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" value="Cabeça" name="queimadura"></td>
+              <td><input type="checkbox" value="Pescoço" name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Pos." name="queimadura"></td>
+              <td><input type="checkbox" value="Torso Ant." name="queimadura"></td>
+              <td><input type="checkbox" value="Genital." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.D." name="queimadura"></td>
+              <td><input type="checkbox" value="M.I.E." name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.D" name="queimadura"></td>
+              <td><input type="checkbox" value="M.S.E" name="queimadura"></td>
+            </tr>
+          </table>
+          <button id="salvar3" class="botao-grau" type="button" name="submitInfo">Pronto</button>
+        </div>
+      </div>
+
+      <div class="subtitulo"></div>
+      <div class="texto">Decisão transporte</div>
+
+      <br>
+      <div class="grid_transporte">
+        <div>
+          <input type="checkbox" name="decisaoTransporte[]" value="Ruim" class="selectCheckTransporte" id="selectCheckTransporte1" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-1">Ruim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="decisaoTransporte[]" value="Péssimo" class="selectCheckTransporte" id="selectCheckTransporte2" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-2">Péssimo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="decisaoTransporte[]" value="Bom" class="selectCheckTransporte" id="selectCheckTransporte3" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-3">Bom</label>
+        </div>
+        <div>
+          <input type="checkbox" name="decisaoTransporte[]" value="Ótimo" class="selectCheckTransporte" id="selectCheckTransporte4" onclick="selectCheckTransporte(this)">
+          <label for="checkbox-id-4">Ótimo</label>
+        </div>
+      </div>
+
+
+      <div class="subtitulo"></div>
+      <div class="texto" id="sinais-sintomas">Sinais e sintomas</div>
+
+      <br>
+      <div class="grid_ocorrencia">
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Abdomen sensível/rígido" class="checkbox-block" id="Abdomen">
+          <label for="checkbox-id-1">Abdomen</label>sensível/rígido
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Afundamento de crânio" class="checkbox-block" id="Afundamento">
+          <label for="checkbox-id-1">Afundamento</label> de crânio
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Agitação" class="checkbox-block" id="Agitação">
+          <label for="checkbox-id-1">Agitação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Amnésia" class="checkbox-block" id="Amnésia">
+          <label for="checkbox-id-1">Amnésia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Angina de peito" class="checkbox-block" id="Angina">
+          <label for="checkbox-id-1">Angina de peito</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Apinéia" class="checkbox-block" id="Apinéia">
+          <label for="checkbox-id-1">Apinéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Bradicardia" class="checkbox-block" id="Bradicardia">
+          <label for="checkbox-id-1">Bradicardia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Bradipnéia" class="checkbox-block" id="Bradipnéia">
+          <label for="checkbox-id-1">Bradipnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Bronco-Aspirando" class="checkbox-block" id="Bronco">
+          <label for="checkbox-id-1">Bronco-Aspirando</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Cefaléia" class="checkbox-block" id="Cefaléia">
+          <label for="checkbox-id-1">Cefaléia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Enfisema subcutâneo" class="checkbox-block" id="Enfisema">
+          <label for="checkbox-id-1">Enfisema subcutâneo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Êstase de jugular" class="checkbox-block" id="Êstase">
+          <label for="checkbox-id-1">Êstase de jugular</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Face pálida" class="checkbox-block" id="Face">
+          <label for="checkbox-id-1">Face pálida</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="O.V.A.C.E" class="checkbox-block" id="O.V.A.C.E">
+          <label for="checkbox-id-1">O.V.A.C.E</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Priaprismo" class="checkbox-block" id="Priaprismo">
+          <label for="checkbox-id-1">Priaprismo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Prurido na pele" class="checkbox-block" id="Prurido">
+          <label for="checkbox-id-1">Prurido na pele</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Sede" class="checkbox-block" id="Sede">
+          <label for="checkbox-id-1">Sede</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Sinal de battle" class="checkbox-block" id="Sinal">
+          <label for="checkbox-id-1">Sinal de battle</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Convulsão" class="checkbox-block" id="Convulsão">
+          <label for="checkbox-id-1">Convulsão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Decorticação" class="checkbox-block" id="Decorticação">
+          <label for="checkbox-id-1">Decorticação</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Deformidade" class="checkbox-block" id="Deformidade">
+          <label for="checkbox-id-1">Deformidade</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Descerebração" class="checkbox-block" id="Descerebração">
+          <label for="checkbox-id-1">Descerebração</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Desmaio" class="checkbox-block" id="Desmaio">
+          <label for="checkbox-id-1">Desmaio</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Desvio de traquéia" class="checkbox-block" id="Desvio">
+          <label for="checkbox-id-1">Desvio de traquéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Dispnéia" class="checkbox-block" id="Dispnéia">
+          <label for="checkbox-id-1">Dispnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Dor local" class="checkbox-block" id="Dor">
+          <label for="checkbox-id-1">Dor local</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Otorréia" class="checkbox-block" id="Otorréia">
+          <label for="checkbox-id-1">Otorréia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Otorragia" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Otorragia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Óbito" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Óbito</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Hipertensão" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Hipertensão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Hipotensão" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Hipotensão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Náusea e vômitos" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Náusea e vômitos</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Nasoragia" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Nasoragia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Sinal de guaxinim" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sinal de guaxinim</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Sudorese" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Sudorese</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Taquipnéia" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Taquipnéia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Taquicardia" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Taquicardia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sinaisSintomas[]" value="Tontura" class="checkbox-block" id="checkbox-id-1">
+          <label for="checkbox-id-1">Tontura</label>
+        </div>
+      </div>
+      <br><br><br><br>
+
+      <div class="nomeSinalSintoma">Hemorragia</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="hemorragia" class="sub-checkbox-resp interna" value="Interna"> Interna
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="hemorragia" class="sub-checkbox-resp externa" value="Externa"> Externa
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Edema</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="edema" class="sub-checkbox-resp generalizado" value="Generalizado"> Generalizado
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="edema" class="sub-checkbox-resp localizado" value="Localizado"> Localizado
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Parada</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="parada" class="sub-checkbox-resp cardiaca" value="Cardíaca"> Cardíaca
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="parada" class="sub-checkbox-resp respiratoria" value="Respiratória"> Respiratória
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Cianose</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="cianose" class="sub-checkbox-resp labios" value="Lábios"> Lábios
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="cianose" class="sub-checkbox-resp extremidade" value="Extremidade"> Extremidade
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Pupilas</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp anisocoria" value="Anisocoria"> ANISOCORIA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp isocoria" value="Isocoria"> ISOCORIA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp midriase" value="Midriase"> MIDRIASE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp miose" value="Miose"> MIOSE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp reagente" value="Reagente"> REAGENTE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="pupilas" class="sub-checkbox-resp naoreagente" value="Ñ Reagente"> Ñ REAGENTE
+        </label>
+      </div>
+      <br>
+      <div class="checkbox-container">
+        <div class="fundo-input">
+          <div class="input-ss">
+            <label for="username">OUTROS:</label>
+            <input type="text" id="username" name="outros">
+          </div>
+        </div>
+      </div>
+
+      <div id="anamnese"></div>
+
+      <div class="subtitulo"></div>
+      <div class="texto">Anamnese da Emergência Médica</div>
+      <br>
+      <div class="fundo-anamnese">
+        <div class="input-anamnese">
+        </div>
+
+        <div class="actu">
+          <label for="username">O que aconteceu (sinais e sintomas)</label>
+        </div>
+
+        <div class="input-anamnese">
+          <textarea id="username" name="anamneseEmergencialOqueAconteceu" placeholder="   Digite..." class="textarea"></textarea>
+        </div>
+      </div>
+
+
+      <br>
+      <div class="grid_cinematica_aconteceu">
+        <!-- TEXTOS DAS CHECKBOX -->
+        <div class="grid_txt_cinematica_aconteceu">
+          <div class="txt_cinematica">
+            <p>Aconteceu outras vezes</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAconteceuOutrasVezes[]" value="Sim" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes1" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+            <label for="selectCheckAconteceuOutrasVezes1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAconteceuOutrasVezes[]" value="Não" class="selectCheckAconteceuOutrasVezes" id="selectCheckAconteceuOutrasVezes2" onclick="selecionarCheckboxAconteceuOutrasVezes(this); habilitarContainerAconteceu(this)">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_aconteceu_input">
+        <div class="container-aconteceu hidden">
+          <div class="input-anme_sn_QntTempoAconteceu">
+            <label for="QuantoTempoAconteceu" class="texto-medico">A quanto tempo aconteceu?</label>
+            <input type="text" id="QuantoTempoAconteceu" name="anamneseQuantoTempo">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_problemaSaude">
+        <!-- TEXTOS DAS CHECKBOX -->
+        <div class="grid_txt_cinematica_problemaSaude">
+          <div class="txt_cinematica">
+            <p>Possui algum problema de saúde</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseProblemaSaude[]" value="Sim" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude1" onclick="selecionarCheckboxProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseProblemaSaude[]" value="Não" class="selectCheckProblemaSaude" id="selectCheckProblemaSaude2" onclick="selectCheckProblemaSaude(this); habilitarContainerPrbSaude(this)">
+            <label for="ProblemaSaude">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_problemaSaude_input">
+        <div class="container-PrbSaude hidden">
+          <div class="input-anme_sn_Quais">
+            <label for="Quais">Qual?</label>
+            <input type="text" id="Quais" name="anamneseQuaisProblemas">
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="grid_cinematica_medicacao">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica_medicacao">
+          <div class="txt_cinematica">
+            <p>Faz uso de medicação</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseUsoMedicacao[]" value="Sim" class="selectCheckMedicacao" id="selectCheckMedicacao1" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseUsoMedicacao[]" value="Não" class="selectCheckMedicacao" id="selectCheckMedicacao2" onclick="selecionarCheckboxMedicacao(this); habilitarContainerMedicacao(this); habilitarContainerMedicacaoQuais(this)">
+            <label for="Medicacao">Não</label>
+          </div>
+        </div>
+      </div>
 
       <div class="grid_cinematica_medicacao_input">
+        <div class="container-medicacao hidden">
+          <div class="input-anme_sn_HorarioMedicacao">
+            <label for="username">Ultima medicação:</label>
+            <input type="time" id="HorarioMedicacao" name="anamneseHoraUltimaMedicacao">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_medicacao_input">
+        <div class="container-medicacao-quais hidden">
+          <div class="input-anme_sn_HorarioMedicacao">
+            <label for="QuaisMedicacao">Qual?</label>
+            <input type="text" id="QuaisMedicacao" name="anamneseQualMedicacao">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_alergico">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica_alergico">
+          <div class="txt_cinematica">
+            <p>Alérgico a alguma coisa?</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAlergico" value="Sim" class="selectCheckAlergico" id="selectCheckAlergico1" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAlergico" value="Não" class="selectCheckAlergico" id="selectCheckAlergico2" onclick="selecionarCheckboxAlergico(this); habilitarContainerAlergico(this)">
+            <label for="Alergico">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_alergico_input">
+        <div class="container-Alergico hidden">
+          <div class="input-anme_sn_Especifique">
+            <label for="Quais">Qual?</label>
+            <input type="text" id="Quais" name="anamneseQualAlergia">
+          </div>
+        </div>
+      </div>
+      <br>
+
+
+      <div class="grid_cinematica_alimento">
+        <!-- TEXTOS DAS CHECKBOX -->
+
+        <div class="grid_txt_cinematica_alimento">
+          <div class="txt_cinematica">
+            <p>Inseriu alimento ou líquido a 6 horas ou mais?</p>
+          </div>
+        </div>
+
+
+        <!-- CHECKBOX SIM -->
+        <div class="grid_checkbox_sim_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAlimento6Horas[]" value="Sim" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas1" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
+            <label for="checkbox-id-1">Sim</label>
+          </div>
+        </div>
+
+        <div class="grid_checkbox_nao_cinematica">
+          <div>
+            <input type="checkbox" name="anamneseAlimento6Horas[]" value="Não" class="selectCheckAlimento6horas" id="selectCheckAlimento6horas2" onclick="selectCheckAlimento6horas(this); habilitarContainerAlimento_espec(this); habilitarContainerAlimento_horas(this)">
+            <label for="checkbox-id-8">Não</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="grid_cinematica_alimento_input">
+        <div class="container-alimento-espec hidden">
+          <div class="input-anme_sn">
+            <label for="username">Se sim, especifique:</label>
+            <input type="text" id="username" name="anamneseEspecifique" placeholder="________________">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid_cinematica_alimento_input">
+        <div class="container-alimento-horas hidden">
+          <div class="input-anme_sn">
+            <label for="username">Que horas?</label>
+            <input type="time" id="username" name="anamneseQueHoras" placeholder="________________">
+          </div>
+        </div>
+      </div>
+
+      <div class="gestacional hidden">
+        <div class="subtitulo"></div>
+        <div class="texto">Anamnese Gestacional</div>
+
+        <div class="grid_cinematica_medicacao_input">
+          <div class="input-anme_sn">
+            <label for="username">Período da gestação:</label>
+            <input type="text" id="username" name="gestacionalPeriodoGestacao" placeholder="________________">
+          </div>
+        </div>
+
+        <div class="grid_cinematica_pre_natal">
+          <!-- TEXTOS DAS CHECKBOX -->
+          <div class="input-anme_sn">
+            <div class="txt_cinematica">
+              <p>Fez pré-natal?</p>
+            </div>
+          </div>
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPreNatal[]" value="Sim" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selecionarCheckbox(this); habilitarContainer(this);">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <!-- CHECKBOX NÃO -->
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPreNatal[]" value="Não" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this); habilitarContainer(this);">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="grid_cinematica_pre_natal_input">
+          <div class="container-nome-medico hidden">
+            <div class="input-anme_sn_nomemedico">
+              <label for="username" class="texto-medico">Nome do médico:</label>
+              <input type="text" id="nomeMedico" name="gestacionalNomeMedico" oninput="capitalizarPalavrasIniciais(this);">
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Possibilidade de complicações?
+              </p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPossibilidadeComplicacao[]" value="Sim" class="selectCheckComplicacoes" id="selectCheckComplicacoes1" onclick="selectCheckComplicacoes(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPossibilidadeComplicacao[]" value="Não" class="selectCheckComplicacoes" id="selectCheckComplicacoes2" onclick="selectCheckComplicacoes(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="grid_cinematica_primeiro_filho">
+          <!-- TEXTOS DAS CHECKBOX -->
+          <div class="grid_txt_cinematica_primeiro_filho">
+            <div class="txt_cinematica">
+              <p>É o primeiro filho?</p>
+            </div>
+          </div>
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPrimeiroFilho[]" value="Sim" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+              <label for="selectCheckPrimeiroFilho1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPrimeiroFilho[]" value="Não" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
+              <label for="selectCheckPrimeiroFilho2">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid_cinematica_primeiro_filho_input">
+          <div class="container-quantos hidden">
+            <div class="input-anme_sn_quantos">
+              <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
+              <input type="text" id="QuantosFilhos" name="gestacionalQuantos">
+            </div>
+          </div>
+        </div>
+
+
         <div class="input-anme_sn">
-          <label for="username">Período da gestação:</label>
-          <input type="text" id="username" name="gestacionalPeriodoGestacao" placeholder="________________">
+          <label for="username">Que horas iniciaram as contrações?</label>
+          <input type="time" id="username" name="gestacionalHoraContracao" placeholder="________________">
         </div>
-      </div>
 
-      <div class="grid_cinematica_pre_natal">
-        <!-- TEXTOS DAS CHECKBOX -->
+        <br>
+
         <div class="input-anme_sn">
-          <div class="txt_cinematica">
-            <p>Fez pré-natal?</p>
+          <label for="username">Tempo das contrações:</label>
+          <input type="text" id="username" name="gestacionalDuracaoContracao" placeholder="Duração...">
+          <input type="text" id="username" name="gestacionalIntervaloContracao" placeholder="Intervalo...">
+        </div>
+
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Sente pressão na região do quadril ou vontade de evacuar?
+              </p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPressaoQuadril[]" value="Sim" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar1" onclick="selectCheckPressaoEvacuar(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPressaoQuadril[]" value="Não" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar2" onclick="selectCheckPressaoEvacuar(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
         </div>
 
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPreNatal[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao1" onclick="selecionarCheckbox(this); habilitarContainer(this);">
-            <label for="checkbox-id-1">Sim</label>
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Já houve ruptura da bolsa?
+              </p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalRupturaBolsa[]" value="Sim" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa1" onclick="selectCheckRupturaBolsa(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalRupturaBolsa[]" value="Não" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa2" onclick="selectCheckRupturaBolsa(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
         </div>
 
-        <!-- CHECKBOX NÃO -->
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPreNatal[]" class="selectCheckPreNatal_simnao" id="selectCheckPreNatal_simnao2" onclick="selecionarCheckbox(this); habilitarContainer(this);">
-            <label for="checkbox-id-8">Não</label>
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Foi feito inspeção visual?
+              </p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalInspecaoVisual[]" value="Sim" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual1" onclick="selectCheckInspecaoVisual(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalInspecaoVisual[]" value="Não" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual2" onclick="selectCheckInspecaoVisual(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
           </div>
         </div>
 
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Parto realizado?
+              </p>
+            </div>
+          </div>
+
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPartoRealizado[]" value="Sim" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado1" onclick="selectCheckPartoRealizado(this)">
+              <label for="checkbox-id-1">Sim</label>
+            </div>
+          </div>
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalPartoRealizado[]" value="Não" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado2" onclick="selectCheckPartoRealizado(this)">
+              <label for="checkbox-id-8">Não</label>
+            </div>
+          </div>
+        </div>
+
+        <br>
+
+        <div class="grid_cinematica">
+          <!-- TEXTOS DAS CHECKBOX -->
+
+          <div class="grid_txt_cinematica">
+            <div class="txt_cinematica">
+              <p>Sexo do bebê:
+              </p>
+            </div>
+          </div>
+
+          <!-- CHECKBOX SIM -->
+          <div class="grid_checkbox_sim_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalSexoBebe[]" value="Feminino" class="selectCheckSexoBebe" id="selectCheckSexoBebe1" onclick="selectCheckSexoBebe(this)">
+              <label for="checkbox-id-1">Fem</label>
+            </div>
+          </div>
+
+
+          <div class="grid_checkbox_nao_cinematica">
+            <div>
+              <input type="checkbox" name="gestacionalSexoBebe[]" value="Masculino" class="selectCheckSexoBebe" id="selectCheckSexoBebe2" onclick="selectCheckSexoBebe(this)">
+              <label for="checkbox-id-8">Mas</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-anme_sn">
+          <label for="username">Nome do bebê:</label>
+          <input type="text" id="username" name="gestacionalNomeBebe" placeholder="________________">
+        </div>
+      </div>
+    </div>
+
+    <hr class="hr1">
+
+    <div class="container">
+      <h1 class="title" id="atendimento">Atendimento</h1>
+    </div>
+
+    <div class="boxatendimento">
+
+      <div class="input-caixatexto">
+        <label for="username">M:</label>
+        <input type="text" id="username" name="motorista" oninput="validarAtendimentoM(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+        <p id="mensagemErro-14" style="color: red;"></p>
       </div>
 
-      <div class="grid_cinematica_pre_natal_input">
-        <div class="container-nome-medico hidden">
-          <div class="input-anme_sn_nomemedico">
-            <label for="username" class="texto-medico">Nome do médico:</label>
-            <input type="text" id="nomeMedico" name="gestacionalNomeMedico" oninput="capitalizarPalavrasIniciais(this);">
-          </div>
+      <div class="input-caixatexto">
+        <label for="username">S1:</label>
+        <input type="text" id="username" name="socorrista1" oninput="validarS1(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+        <p id="mensagemErro-15" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="username">S2:</label>
+        <input type="text" id="username" name="socorrista2" oninput="validarS2(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+        <p id="mensagemErro-16" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="username">S3:</label>
+        <input type="text" id="username" name="socorrista3" oninput="validarS3(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+        <p id="mensagemErro-17" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="username">Demandante:</label>
+        <input type="text" id="username" name="demandante" oninput="validarDemandante(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
+        <p id="mensagemErro-18" style="color: red;"></p>
+      </div>
+
+      <div class="input-caixatexto">
+        <label for="username">Equipe:</label>
+        <input type="text" id="username" name="equipe" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
+      </div>
+
+      <div class="subtitulo"></div>
+      <div class="texto">Procedimentos efetuados: </div>
+
+      <br>
+      <div class="grid_procedimentosefetuados">
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1" value="Aspiração">
+          <label for="checkbox-id-1">Aspiração</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-2" value="Curativos">
+          <label for="checkbox-id-2">Curativos</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-3" value="Avaliação Inicial">
+          <label for="checkbox-id-3">Avaliação Inicial</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-4" value="Compressivo">
+          <label for="checkbox-id-4">Compressivo</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-5" value="Avaliação Dirigida">
+          <label for="checkbox-id-5">Avaliação Dirigida</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-6" value="Encravamento">
+          <label for="checkbox-id-6">Encravamento</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-7" value="Avaliação Contin.">
+          <label for="checkbox-id-7">Avaliação Contin.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-8" value="Ocular">
+          <label for="checkbox-id-8">Ocular</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-9" value="Chave de Rautek">
+          <label for="checkbox-id-9">Chave de Rautek</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-10" value="Queimadura">
+          <label for="checkbox-id-10">Queimadura</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-11" value="Cânula de Guedel">
+          <label for="checkbox-id-11">Cânula de Guedel</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-12" value="Simples">
+          <label for="checkbox-id-12">Simples</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-13" value="Desobstrução de V.A.">
+          <label for="checkbox-id-13">Desobstrução de V.A.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-14" value="3 Pontas">
+          <label for="checkbox-id-14">3 Pontas</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-15" value="Emprego do D.E.A.">
+          <label for="checkbox-id-15">Emprego do D.E.A.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-16" value="Imobilizações">
+          <label for="checkbox-id-16">Imobilizações</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-17" value="Gestão de Riscos">
+          <label for="checkbox-id-17">Gestão de Riscos</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-18" value="Cervical">
+          <label for="checkbox-id-18">Cervical</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-19" value="Limpeza de Ferimen.">
+          <label for="checkbox-id-19">Limpeza de Ferimen.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-20" value="Maca Sob. Rodas">
+          <label for="checkbox-id-20">Maca Sob. Rodas</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-21" value="Membro Inf.Dir.">
+          <label for="checkbox-id-21">Membro Inf.Dir.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-22" value="Maca Rígida">
+          <label for="checkbox-id-22">Maca Rígida</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-23" value="Membro Inf. Esq.">
+          <label for="checkbox-id-23">Membro Inf. Esq.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-24" value="Ponte">
+          <label for="checkbox-id-24">Ponte</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-25" value="Membro Sup.Dir.">
+          <label for="checkbox-id-25">Membro Sup.Dir.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-26" value="Retira Capacete">
+          <label for="checkbox-id-26">Retira Capacete</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-27" value="Membro Sup.Esq.">
+          <label for="checkbox-id-27">Membro Sup.Esq.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-28" value="R.C.P.">
+          <label for="checkbox-id-28">R.C.P.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-29" value="Quadril">
+          <label for="checkbox-id-29">Quadril</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-30" value="Rolamento 90°">
+          <label for="checkbox-id-30">Rolamento 90°</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-31" value="Tomada Decisão">
+          <label for="checkbox-id-31">Tomada Decisão</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-32" value="Rolamento 180°">
+          <label for="checkbox-id-32">Rolamento 180°</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-33" value="Tratado Choque">
+          <label for="checkbox-id-33">Tratado Choque</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-34" value="Uso KED">
+          <label for="checkbox-id-34">Uso KED</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-35" value="Uso Colar">
+          <label for="checkbox-id-35">Uso Colar</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-36" value="Uso TTF">
+          <label for="checkbox-id-36">Uso TTF</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-37" value="Oxigenioterapia">
+          <label for="checkbox-id-37">Oxigenioterapia</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-38" value="Ventil. Supo.">
+          <label for="checkbox-id-38">Ventil. Supo.</label>
+        </div>
+        <div>
+          <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-39" value="Reanimador">
+          <label for="checkbox-id-39">Reanimador</label>
+        </div>
+      </div>
+
+      <br><br>
+      <div class="nomeSinalSintoma">Meios Auxiliares</div>
+      <div class="prob">
+        <label class="sub-item_meiosauxiliares">
+          <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" value="CELESC"> CELESC
+        </label>
+        <label class="sub-item_meiosauxiliares">
+          <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" value="Def. Civil"> Def. Civil
+        </label>
+        <label class="sub-item_meiosauxiliares">
+          <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" value="IGP / PC"> IGP / PC
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">Polícia</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" value="Civil"> Civil
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" value="Militar"> Militar
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" value="PRE"> PRE
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" value="PRF"> PRF
+        </label>
+      </div>
+
+      <div class="nomeSinalSintoma">SAMU</div>
+      <div class="prob">
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentosamu[]" class="sub-checkbox-samu" value="USA"> USA
+        </label>
+        <label class="sub-item">
+          <input type="checkbox" name="procedimentosamu[]" class="sub-checkbox-samu" value="USB"> USB
+        </label>
+      </div>
+
+      <div class="cit">
+          CIT
+        <div class="cit-input">
+          <input type="text" name="procedimentocit" id="myInput">
         </div>
       </div>
 
 
+      <div class="subtitulo"></div>
+      <div class="texto">Materiais descartáveis utilizados: </div>
 
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
+      <br>
+      <div class="grid_procedimentos">
+        <div class="legenda-materiais">Material
+        </div>
+        <div class="legenda-materiais">Quantidade
+        </div>
+        <hr class="hr2">
+        <hr class="hr2">
 
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Possibilidade de complicações?
-            </p>
-          </div>
+        <div>
+          <label class="item">ATADURA</label><br>
+          <input type="checkbox" name="descartaveisataduratamanho[]" value="8" class="sub-checkbox-atadura" disabled> 8
+          <input type="checkbox" name="descartaveisataduratamanho[]" value="12" class="sub-checkbox-atadura" disabled> 12
+          <input type="checkbox" name="descartaveisataduratamanho[]" value="20" class="sub-checkbox-atadura" disabled> 20
+        </div>
+
+        <div class="inputquantidade">
+          <input type="text" name="descartaveisataduraquant" id="quantidadeatadura" oninput="habilitarCheckboxesAtadura(this)">
+          <p id="mensagemErro-27" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+
+        <div>
+          <label class="item">CATETER TP. OCÚLOS</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveiscateteroculosquant" id="quantidadecateter" oninput="validarNumeroQuantidadeCateter(this)" >
+          <p id="mensagemErro-28" style="color: red; font-size: 12px;"></p>
         </div>
 
 
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPossibilidadeComplicacao[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes1" onclick="selectCheckComplicacoes(this)">
-            <label for="checkbox-id-1">Sim</label>
-          </div>
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">COMPRESSA COMUM</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveiscompressacomumquant" id="quantidadecompressa" oninput="validarNumeroQuantidadeCompressa(this)" >
+          <p id="mensagemErro-29" style="color: red; font-size: 12px;"></p>
         </div>
 
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPossibilidadeComplicacao[]" class="selectCheckComplicacoes" id="selectCheckComplicacoes2" onclick="selectCheckComplicacoes(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+          <label class="item">KIT'S</label><br>
+          <input type="checkbox"  name="descartaveiskitstamanho[]" value="H" class="sub-checkbox-kits" disabled> H
+          <input type="checkbox" name="descartaveiskitstamanho[]" value="P" class="sub-checkbox-kits" disabled> P
+          <input type="checkbox" name="descartaveiskitstamanho[]" value="Q" class="sub-checkbox-kits" disabled> Q
+        </div>
+
+        <div class="inputquantidade">
+          <input type="text" name="descartaveiskitsquant" id="quantidadekits" oninput="habilitarCheckboxesKits(this)">
+          <p id="mensagemErro-30" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">LUVAS DESC. (PARES)</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveisluvasquant" id="quantidadeluvas" oninput="validarNumeroQuantidadeLuvas(this)" >
+          <p id="mensagemErro-31" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">MÁSCARA DESC.</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveismascaraquant" id="quantidademascara" oninput="validarNumeroQuantidadeMascara(this)" >
+          <p id="mensagemErro-32" style="color: red; font-size: 12px;"></p>
+        </div>
+
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">MANTA ALUMINIZADA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveismantaaluminizadaquant" id="quantidademanta" oninput="validarNumeroQuantidadeManta(this)" >
+          <p id="mensagemErro-33" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">PÁS DO DEA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveispasdeaquant" id="quantidadepas" oninput="validarNumeroQuantidadePas(this)" >
+          <p id="mensagemErro-34" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">SONDA DE ASPIRAÇÃO</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveissondaaspiracaoquant" id="quantidadesonda" oninput="validarNumeroQuantidadeSonda(this)" >
+          <p id="mensagemErro-35" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">SORO FISIOLÓGICO</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="descartaveissorofisiologicoquant" id="quantidadesoro" oninput="validarNumeroQuantidadeSoro(this)" >
+          <p id="mensagemErro-36" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">TALAS PAP.</label><br>
+          <input type="checkbox" name="descartaveistalaspaptamanho[]" value="P" class="sub-checkbox-talas" disabled> P
+          <input type="checkbox" name="descartaveistalaspaptamanho[]" value="G" class="sub-checkbox-talas" disabled> G
+        </div>
+
+
+        <div class="inputquantidade">
+          <input type="text" name="descartaveistalaspapquant" id="quantidadetalas" oninput="habilitarCheckboxesTalas(this)">
+          <p id="mensagemErro-37" style="color: red; font-size: 12px;"></p>
+        </div>
+      </div>
+
+      <br><br><br><br><br>
+
+      <div class="materiais_descartaveis_outros">
+        <div class="materiais_descartaveis_outros-input">
+          <input type="text" name="descartaveisoutros" id="materiaisOutrosInput" >
+        </div>
+      </div>
+      <br>
+
+
+      <div class="subtitulo"></div>
+      <div class="texto">Materiais utilizados deixados no hospital:</div>
+
+      <br>
+      <div class="grid_procedimentos">
+        <div class="legenda-materiais">Material
+        </div>
+        <div class="legenda-materiais">Quantidade
+        </div>
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">BASE DO ESTABILIZA.</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalbaseestabilizadorquant" id="quantidadebase" oninput="validarNumeroQuantidadeBase(this)" >
+          <p id="mensagemErro-38" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+          <label class="item">COLAR</label><br>
+          <input type="checkbox" name="deixadoshospitalcolartamanho[]" value="PP" class="sub-checkbox-colar" disabled> PP
+          <input type="checkbox" name="deixadoshospitalcolartamanho[]" value="P" class="sub-checkbox-colar" disabled> P
+          <input type="checkbox" name="deixadoshospitalcolartamanho[]" value="M" class="sub-checkbox-colar" disabled> M
+          <input type="checkbox" name="deixadoshospitalcolartamanho[]" value="G" class="sub-checkbox-colar" disabled> G
+          <input type="checkbox" name="deixadoshospitalcolartamanho[]" value="GG" class="sub-checkbox-colar" disabled> GG
+        </div>
+
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalcolarquant" id="quantidadecolar" oninput="habilitarCheckboxesColar(this)">
+          <p id="mensagemErro-39" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">COXINS ESTABILIZA.</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalcoxinestabilizadorquant" id="quantidadecoxins" oninput="validarNumeroQuantidadeCoxins(this)" >
+          <p id="mensagemErro-41" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+          <label class="item">KED</label><br>
+          <input type="checkbox" name="deixadoshospitalkedtamanho[]" value="Adult." class="sub-checkbox-ked" disabled> ADULT.
+          <input type="checkbox" name="deixadoshospitalkedtamanho[]" value="Infa." class="sub-checkbox-ked" disabled> INFA.
+        </div>
+
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalkedQquant" id="quantidadeked" oninput="habilitarCheckboxesKed(this)">
+          <p id="mensagemErro-42" style="color: red; font-size: 12px;"></p>
+        </div>
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">MACA RÍGIDA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalmacarigidaquant" id="quantidademaca" oninput="validarNumeroQuantidadeMaca(this)" >
+          <p id="mensagemErro-43" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+          <label class="item"> T.T.F.</label><br>
+          <input type="checkbox" name="deixadoshospitalttftamanho[]" value="Adult." class="sub-checkbox-ttf" disabled> ADULT.
+          <input type="checkbox" name="deixadoshospitalttftamanho[]" value="Infa." class="sub-checkbox-ttf" disabled> INFA.
+        </div>
+
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalttfquant" id="quantidadettf" oninput="habilitarCheckboxesTTF(this)">
+          <p id="mensagemErro-44" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">TIRANTE ARANHA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitaltirantearanhaquant" id="quantidadearanha" oninput="validarNumeroQuantidadeAranha(this)" >
+          <p id="mensagemErro-45" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+
+        <div>
+        <label class="item">TIRANTE DE CABEÇA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitaltirantecabecaquant" id="quantidadecabeca" oninput="validarNumeroQuantidadeCabeca(this)" >
+          <p id="mensagemErro-46" style="color: red; font-size: 12px;"></p>
+        </div>
+
+        <hr class="hr2">
+        <hr class="hr2">
+        <div>
+        <label class="item">CÂNULA</label>
+        </div>
+        <div class="inputquantidade">
+          <input type="text" name="deixadoshospitalcanulaquant" id="quantidadecanula" oninput="validarNumeroQuantidadeCanula(this)" >
+          <p id="mensagemErro-47" style="color: red; font-size: 12px;"></p>
+        </div>
+      </div>
+      <br><br><br><br>
+
+      <div class="materiais_deixados_outros1">
+        <div class="materiais_deixados_outros1-input">
+          <input type="text" name="deixadoshospitaloutro" id="materiais_deixados_outros1Input">
         </div>
       </div>
 
       <br>
-
-      <div class="grid_cinematica_primeiro_filho">
-        <!-- TEXTOS DAS CHECKBOX -->
-        <div class="grid_txt_cinematica_primeiro_filho">
-          <div class="txt_cinematica">
-            <p>É o primeiro filho?</p>
-          </div>
+      <div class="fundo-obsimp">
+        <div class="input-obsimp">
+          <label for="username">Observações importantes:</label>
         </div>
 
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPrimeiroFilho[]" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho1" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
-            <label for="selectCheckPrimeiroFilho1">Sim</label>
-          </div>
+        <div class="input-obsimp">
+          <textarea id="username" name="observacoes" placeholder="   Digite..." class="textarea"></textarea>
         </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPrimeiroFilho[]" class="selectCheckPrimeiroFilho" id="selectCheckPrimeiroFilho2" onclick="selecionarCheckboxPrimeiroFilho(this); habilitarContainerQuantos(this);">
-            <label for="selectCheckPrimeiroFilho2">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid_cinematica_primeiro_filho_input">
-        <div class="container-quantos hidden">
-          <div class="input-anme_sn_quantos">
-            <label for="QuantosFilhos" class="texto-medico">Quantos?</label>
-            <input type="text" id="QuantosFilhos" name="gestacionalQuantos">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="input-anme_sn">
-        <label for="username">Que horas iniciaram as contrações?</label>
-        <input type="time" id="username" name="gestacionalHoraContracao" placeholder="________________">
-      </div>
-
-      <br>
-
-      <div class="input-anme_sn">
-        <label for="username">Tempo das contrações:</label>
-        <input type="text" id="username" name="gestacionalDuracaoContracao" placeholder="Duração...">
-        <input type="text" id="username" name="gestacionalIntervaloContracao" placeholder="Intervalo...">
-      </div>
-
-      <br>
-
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Sente pressão na região do quadril ou vontade de evacuar?
-            </p>
-          </div>
-        </div>
-
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPressaoQuadril[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar1" onclick="selectCheckPressaoEvacuar(this)">
-            <label for="checkbox-id-1">Sim</label>
-          </div>
-        </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPressaoQuadril[]" class="selectCheckPressaoEvacuar" id="selectCheckPressaoEvacuar2" onclick="selectCheckPressaoEvacuar(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Já houve ruptura da bolsa?
-            </p>
-          </div>
-        </div>
-
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalRupturaBolsa[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa1" onclick="selectCheckRupturaBolsa(this)">
-            <label for="checkbox-id-1">Sim</label>
-          </div>
-        </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalRupturaBolsa[]" class="selectCheckRupturaBolsa" id="selectCheckRupturaBolsa2" onclick="selectCheckRupturaBolsa(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Foi feito inspeção visual?
-            </p>
-          </div>
-        </div>
-
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalInspecaoVisual[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual1" onclick="selectCheckInspecaoVisual(this)">
-            <label for="checkbox-id-1">Sim</label>
-          </div>
-        </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalInspecaoVisual[]" class="selectCheckInspecaoVisual" id="selectCheckInspecaoVisual2" onclick="selectCheckInspecaoVisual(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Parto realizado?
-            </p>
-          </div>
-        </div>
-
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPartoRealizado[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado1" onclick="selectCheckPartoRealizado(this)">
-            <label for="checkbox-id-1">Sim</label>
-          </div>
-        </div>
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalPartoRealizado[]" class="selectCheckPartoRealizado" id="selectCheckPartoRealizado2" onclick="selectCheckPartoRealizado(this)">
-            <label for="checkbox-id-8">Não</label>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="grid_cinematica">
-        <!-- TEXTOS DAS CHECKBOX -->
-
-        <div class="grid_txt_cinematica">
-          <div class="txt_cinematica">
-            <p>Sexo do bebê:
-            </p>
-          </div>
-        </div>
-
-        <!-- CHECKBOX SIM -->
-        <div class="grid_checkbox_sim_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalSexoBebe[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe1" onclick="selectCheckSexoBebe(this)">
-            <label for="checkbox-id-1">Fem</label>
-          </div>
-        </div>
-
-
-        <div class="grid_checkbox_nao_cinematica">
-          <div>
-            <input type="checkbox" name="gestacionalSexoBebe[]" class="selectCheckSexoBebe" id="selectCheckSexoBebe2" onclick="selectCheckSexoBebe(this)">
-            <label for="checkbox-id-8">Mas</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="input-anme_sn">
-        <label for="username">Nome do bebê:</label>
-        <input type="text" id="username" name="gestacionalNomeBebe" placeholder="________________">
       </div>
     </div>
-  </div>
-
-  <hr class="hr1">
-
-  <div class="container">
-    <h1 class="title" id="atendimento">Atendimento</h1>
-  </div>
-
-  <div class="boxatendimento">
-
-    <div class="input-caixatexto">
-      <label for="username">M:</label>
-      <input type="text" id="username" name="motorista" oninput="validarAtendimentoM(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-      <p id="mensagemErro-14" style="color: red;"></p>
     </div>
 
-    <div class="input-caixatexto">
-      <label for="username">S1:</label>
-      <input type="text" id="username" name="socorrista1" oninput="validarS1(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-      <p id="mensagemErro-15" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="username">S2:</label>
-      <input type="text" id="username" name="socorrista2" oninput="validarS2(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-      <p id="mensagemErro-16" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="username">S3:</label>
-      <input type="text" id="username" name="socorrista3" oninput="validarS3(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-      <p id="mensagemErro-17" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="username">Demandante:</label>
-      <input type="text" id="username" name="demandante" oninput="validarDemandante(this); capitalizarPalavrasIniciais(this);" placeholder="Digite...">
-      <p id="mensagemErro-18" style="color: red;"></p>
-    </div>
-
-    <div class="input-caixatexto">
-      <label for="username">Equipe:</label>
-      <input type="text" id="username" name="equipe" placeholder="Digite..." oninput="capitalizarPalavrasIniciais(this);">
-    </div>
-
-    <div class="subtitulo"></div>
-    <div class="texto">Procedimentos efetuados: </div>
-
-    <br>
-    <div class="grid_procedimentosefetuados">
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">ASPIRAÇÃO</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">CURATIVOS</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">AVALIAÇÃO INICIAL</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">COMPRESSIVO</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">AVALIAÇÃO DIRIGIDA</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">ENCRAVAMENTO</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">AVALIAÇÃO CONTIN.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">OCULAR</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">CHAVE DE RAUTEK</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">QUEIMADURA</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">CÂNULA DE GUEDEL</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">SIMPLES</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">DESOBSTRUÇÃO DE V.A.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">3 PONTAS</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">EMPREGO DO D.E.A.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">IMOBILIZAÇÕES</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">GESTÃO DE RISCOS</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">CERVICAL</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">LIMPEZA DE FERIMEN.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MACA</label> SOB. RODAS
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MEMBRO INF.DIR.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MACA RÍGIDA</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MEMBRO INF. ESQ.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">PONTE</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MEMBRO SUP.DIR.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">RETIRA CAPACETE</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">MEMBRO SUP.ESQ.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">R.C.P.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">QUADRIL</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">ROLAMENTO 90°</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TOMADA DECISÃO</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">ROLAMENTO 180°</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">TRATADO CHOQUE</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">USO KED</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">USO COLAR</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">USO TTF</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">OXIGENIOTERAPIA</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">VENTIL. SUPO.</label>
-      </div>
-      <div>
-        <input type="checkbox" name="procedimentosefetuados1[]" class="checkbox-block" id="checkbox-id-1">
-        <label for="checkbox-id-1">REANIMADOR</label>
-      </div>
-    </div>
-
-    <br><br>
-
-    <div class="proced">
-      <label class="item_meiosauxiliares">
-        <input type="checkbox" class="main-checkbox-meios" onchange="toggleMeiosAuxiliares()"> Meios Auxiliares
-      </label>
-      <label class="sub-item_meiosauxiliares">
-        <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" disabled> CELESC
-      </label>
-      <label class="sub-item_meiosauxiliares">
-        <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" disabled> Def. Civil
-      </label>
-      <label class="sub-item_meiosauxiliares">
-        <input type="checkbox" name="procedimentomeiosauxiliares[]" class="sub-checkbox-meios" disabled> IGP / PC
-      </label>
-    </div>
-
-    <div class="proced">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-policia" onchange="togglePolicia()"> Polícia
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" disabled> Civil
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" disabled> Militar
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" disabled> PRE
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentopolicia[]" class="sub-checkbox-policia" disabled> PRF
-      </label>
-    </div>
-
-    <div class="proced">
-      <label class="item">
-        <input type="checkbox" class="main-checkbox-samu" onchange="toggleSamu()"> SAMU
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentosamu[]" class="sub-checkbox-samu" disabled> USA
-      </label>
-      <label class="sub-item">
-        <input type="checkbox" name="procedimentosamu[]" class="sub-checkbox-samu" disabled> USB
-      </label>
-    </div>
-
-    <div class="cit">
-      <div class="cit-checkbox">
-        <input type="checkbox" id="myCheckbox" onclick="toggleInputCit()">
-        CIT
-      </div>
-      <div class="cit-input">
-        <input type="text" name="procedimentocit" id="myInput" disabled>
-      </div>
-    </div>
-
-    
-    <div class="subtitulo"></div>
-    <div class="texto">Materiais descartáveis utilizados: </div>
-
-    <br>
-    <div class="grid_procedimentos">
-      <div class="legenda-materiais">Material
-      </div>
-      <div class="legenda-materiais">Quantidade
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-atadura" id="atadura" onclick="toggleInputQuantidadeAtadura()" ; onchange="toggleAtadura()"> ATADURA</label><br>
-        <input type="checkbox" name="descartaveisataduratamanho[]" class="sub-checkbox-atadura" disabled> 8
-        <input type="checkbox" name="descartaveisataduratamanho[]" class="sub-checkbox-atadura" disabled> 12
-        <input type="checkbox" name="descartaveisataduratamanho[]" class="sub-checkbox-atadura" disabled> 20
-
-      </div>
-
-      <div class="inputquantidade">
-        <input type="text" name="descartaveisataduraquant"  id="quantidadeatadura" oninput="validarNumeroQuantidadeAtadura(this)" disabled>
-        <p id="mensagemErro-27" style="color: red; font-size: 12px;"></p>
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-
-
-      <div>
-        <input type="checkbox" id="cateter" onclick="toggleInputQuantidadeCateter()">
-        <label for="cateter">CATETER TP. OCÚLOS</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveiscateteroculosquant" id="quantidadecateter" oninput="validarNumeroQuantidadeCateter(this)" disabled>
-        <p id="mensagemErro-28" style="color: red; font-size: 12px;"></p>
-      </div>
-
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="compressacomum" onclick="toggleInputQuantidadeCompressa()">
-        <label for="compressacomum">COMPRESSA COMUM</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveiscompressacomumquant" id="quantidadecompressa" oninput="validarNumeroQuantidadeCompressa(this)" disabled>
-        <p id="mensagemErro-29" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-kits" id="kits" onclick="toggleInputQuantidadeKits()" ; onchange="toggleKits()"> KIT'S</label><br>
-        <input type="checkbox" name="descartaveiskitstamanho[]" class="sub-checkbox-kits" disabled> H
-        <input type="checkbox" name="descartaveiskitstamanho[]" class="sub-checkbox-kits" disabled> P
-        <input type="checkbox" name="descartaveiskitstamanho[]" class="sub-checkbox-kits" disabled> Q
-      </div>
-
-      <div class="inputquantidade">
-        <input type="text" name="descartaveiskitsquant" id="quantidadekits" oninput="validarNumeroQuantidadeKits(this)" disabled>
-        <p id="mensagemErro-30" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="luvas" onclick="toggleInputQuantidadeLuvas()">
-        <label for="luvas">LUVAS DESC. (PARES)</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveisluvasquant" id="quantidadeluvas" oninput="validarNumeroQuantidadeLuvas(this)" disabled>
-        <p id="mensagemErro-31" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="mascara" onclick="toggleInputQuantidadeMascara()">
-        <label for="mascara">MÁSCARA DESC.</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveismascaraquant" id="quantidademascara" oninput="validarNumeroQuantidadeMascara(this)" disabled>
-        <p id="mensagemErro-32" style="color: red; font-size: 12px;"></p>
-      </div>
-
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="manta" onclick="toggleInputQuantidadeManta()">
-        <label for="manta">MANTA ALUMINIZADA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveismantaaluminizadaquant" id="quantidademanta" oninput="validarNumeroQuantidadeManta(this)" disabled>
-        <p id="mensagemErro-33" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="pas" onclick="toggleInputQuantidadePas()">
-        <label for="pas">PÁS DO DEA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveispasdeaquant" id="quantidadepas" oninput="validarNumeroQuantidadePas(this)" disabled>
-        <p id="mensagemErro-34" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="sonda" onclick="toggleInputQuantidadeSonda()">
-        <label for="sonda">SONDA DE ASPIRAÇÃO</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveissondaaspiracaoquant" id="quantidadesonda" oninput="validarNumeroQuantidadeSonda(this)" disabled>
-        <p id="mensagemErro-35" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="soro" onclick="toggleInputQuantidadeSoro()">
-        <label for="soro">SORO FISIOLÓGICO</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="descartaveissorofisiologicoquant" id="quantidadesoro" oninput="validarNumeroQuantidadeSoro(this)" disabled>
-        <p id="mensagemErro-36" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-talas" id="talas" onclick="toggleInputQuantidadeTalas()" ; onchange="toggleTalas()"> TALAS PAP.</label><br>
-        <input type="checkbox" name="descartaveistalaspaptamanho[]" class="sub-checkbox-talas" disabled> P
-        <input type="checkbox" name="descartaveistalaspaptamanho[]" class="sub-checkbox-talas" disabled> G
-      </div>
-
-
-      <div class="inputquantidade">
-        <input type="text" name="descartaveistalaspapquant" id="quantidadetalas" oninput="validarNumeroQuantidadeTalas(this)" disabled>
-        <p id="mensagemErro-37" style="color: red; font-size: 12px;"></p>
-      </div>
-    </div>
-
-    <br><br><br><br><br>
-
-    <div class="materiais_descartaveis_outros">
-      <div class="materiais_descartaveis_outros-checkbox">
-        <input type="checkbox" id="materiaisOutrosCheckbox" onclick="toggleMateriais_descartaveis_outros()">
-      </div>
-      <div class="materiais_descartaveis_outros-input">
-        <input type="text" name="descartaveisoutros" id="materiaisOutrosInput" disabled>
-      </div>
-    </div>
-
-
-    <div class="subtitulo"></div>
-    <div class="texto">Materiais utilizados deixados no hospital:</div>
-
-    <br>
-    <div class="grid_procedimentos">
-      <div class="legenda-materiais">Material
-      </div>
-      <div class="legenda-materiais">Quantidade
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="base" onclick="toggleInputQuantidadeBase()">
-        <label for="base">BASE DO ESTABILIZA.</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalbaseestabilizadorquant" id="quantidadebase" oninput="validarNumeroQuantidadeBase(this)" disabled>
-        <p id="mensagemErro-38" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-colar" id="colar" onclick="toggleInputQuantidadeColar()" ; onchange="toggleColar()"> COLAR</label><br>
-        <input type="checkbox" name="deixadoshospitalcolartamanho[]" class="sub-checkbox-colar" disabled> PP
-        <input type="checkbox" name="deixadoshospitalcolartamanho[]" class="sub-checkbox-colar" disabled> P
-        <input type="checkbox" name="deixadoshospitalcolartamanho[]" class="sub-checkbox-colar" disabled> M
-        <input type="checkbox" name="deixadoshospitalcolartamanho[]" class="sub-checkbox-colar" disabled> G
-        <input type="checkbox" name="deixadoshospitalcolartamanho[]" class="sub-checkbox-colar" disabled> GG
-      </div>
-
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalcolarquant" id="quantidadecolar" oninput="validarNumeroQuantidadeColar(this)" disabled>
-        <p id="mensagemErro-39" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="coxins" onclick="toggleInputQuantidadeCoxins()">
-        <label for="coxins">COXINS ESTABILIZA.</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalcoxinestabilizadorquant" id="quantidadecoxins" oninput="validarNumeroQuantidadeCoxins(this)" disabled>
-        <p id="mensagemErro-41" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-ked" id="ked" onclick="toggleInputQuantidadeKed()" ; onchange="toggleKed()"> KED</label><br>
-        <input type="checkbox" name="deixadoshospitalkedtamanho[]" class="sub-checkbox-ked" disabled> ADULT.
-        <input type="checkbox" name="deixadoshospitalkedtamanho[]" class="sub-checkbox-ked" disabled> INFA.
-      </div>
-
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalkedQquant" id="quantidadeked" oninput="validarNumeroQuantidadeKed(this)" disabled>
-        <p id="mensagemErro-42" style="color: red; font-size: 12px;"></p>
-      </div>
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="maca" onclick="toggleInputQuantidadeMaca()">
-        <label for="maca">MACA RÍGIDA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalmacarigidaquant" id="quantidademaca" oninput="validarNumeroQuantidadeMaca(this)" disabled>
-        <p id="mensagemErro-43" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <label class="item">
-          <input type="checkbox" class="main-checkbox-ttf" id="ttf" onclick="toggleInputQuantidadeTtf()" ; onchange="togglettf()"> T.T.F.</label><br>
-        <input type="checkbox" name="deixadoshospitalttftamanho[]"  class="sub-checkbox-ttf" disabled> ADULT.
-        <input type="checkbox" name="deixadoshospitalttftamanho[]" class="sub-checkbox-ttf" disabled> INFA.
-      </div>
-
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalttfquant" id="quantidadettf" oninput="validarNumeroQuantidadeTtf(this)" disabled>
-        <p id="mensagemErro-44" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="aranha" onclick="toggleInputQuantidadeAranha()">
-        <label for="aranha">TIRANTE ARANHA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitaltirantearanhaquant" id="quantidadearanha" oninput="validarNumeroQuantidadeAranha(this)" disabled>
-        <p id="mensagemErro-45" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-
-      <div>
-        <input type="checkbox" id="cabeca" onclick="toggleInputQuantidadeCabeca()">
-        <label for="cabeca">TIRANTE DE CABEÇA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitaltirantecabecaquant" id="quantidadecabeca" oninput="validarNumeroQuantidadeCabeca(this)" disabled>
-        <p id="mensagemErro-46" style="color: red; font-size: 12px;"></p>
-      </div>
-
-      <hr class="hr2">
-      <hr class="hr2">
-      <div>
-        <input type="checkbox" id="canula" onclick="toggleInputQuantidadeCanula()">
-        <label for="canula">CÂNULA</label>
-      </div>
-      <div class="inputquantidade">
-        <input type="text" name="deixadoshospitalcanulaquant" id="quantidadecanula" oninput="validarNumeroQuantidadeCanula(this)" disabled>
-        <p id="mensagemErro-47" style="color: red; font-size: 12px;"></p>
-      </div>
-    </div>
-    <br><br><br><br>
-
-    <div class="materiais_deixados_outros1">
-      <div class="materiais_deixados_outros1-checkbox">
-        <input type="checkbox" id="materiais_deixados_outros1Checkbox" onclick="togglemateriais_deixados_outros1()">
-      </div>
-      
-      
-      <div class="materiais_deixados_outros1-input">
-        <input type="text" name="deixadoshospitaloutro" id="materiais_deixados_outros1Input" disabled>
-      </div>
-    </div>
-
-<br>
-    <div class="fundo-obsimp">
-      <div class="input-obsimp">
-        <label for="username">Observações importantes:</label>
-      </div>
-
-      <div class="input-obsimp">
-        <textarea id="username" name="observacoes" placeholder="   Digite..." class="textarea"></textarea>
-      </div>
-    </div>
-  </div>
-  </div>
 
 
   <button type="submit" name="submitInfos">Enviar relatório</button>

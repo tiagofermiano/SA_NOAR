@@ -35,10 +35,8 @@ include('conexao.php');
         <button type="button" class="perfil" name="perfil_button" onclick="redirecionar('connect_perfil.php')">
           Perfil
         </button>
-      </form>
 
-      <form method="post" action="connect_inicio.php">
-        <button type="button" class="inicio" name="inicio_button" onclick="redirecionar('connect_perfil.php')">
+        <button type="button" class="inicio" name="inicio_button" onclick="redirecionar('connect_inicio.php')">
           Início
         </button>
       </form>
