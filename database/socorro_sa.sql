@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/11/2023 às 07:26
+-- Tempo de geração: 01/12/2023 às 05:53
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -42,8 +42,8 @@ CREATE TABLE `atendente` (
 --
 
 INSERT INTO `atendente` (`id_atendente`, `nome`, `cpf`, `email`, `senha`, `data_cadastro`, `tipo`) VALUES
-(2, 'admin', '12345678900', 'admin@gmail.com', '123', '2023-10-18 09:04:35', 'Administrador'),
-(5, 'tiago m', '13198160960', 'tiago@gmail.com', '123', '2023-11-19 19:46:14', 'Bombeiro');
+(1, 'admin', '12345678900', 'admin@gmail.com', '123', '2023-10-18 09:04:35', 'Administrador'),
+(2, 'tiago m', '13198160960', 'tiago@gmail.com', '123', '2023-11-19 19:46:14', 'Bombeiro');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,8 @@ CREATE TABLE `atendimento` (
   `deixados_hospital_outro` varchar(100) NOT NULL,
   `observacoes` varchar(200) NOT NULL,
   `data_ocorrencia` date NOT NULL,
-  `hora_chegada` time(4) NOT NULL
+  `hora_chegada` time(4) NOT NULL,
+  `id_atendente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -123,7 +124,8 @@ CREATE TABLE `info_ocorrencia` (
   `cinematica_parabrisa_avariado` varchar(100) NOT NULL,
   `cinematica_caminhando_cena` varchar(100) NOT NULL,
   `cinematica_painel_avariado` varchar(100) NOT NULL,
-  `cinematica_volante_torcido` varchar(100) NOT NULL
+  `cinematica_volante_torcido` varchar(100) NOT NULL,
+  `id_atendente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -137,13 +139,14 @@ CREATE TABLE `info_paciente` (
   `nome_paciente` varchar(100) NOT NULL,
   `idade_paciente` varchar(3) NOT NULL,
   `sexo_paciente` set('Masculino','Feminino') NOT NULL,
-  `rg_cpf_paciente` varchar(14) NOT NULL,
+  `rg_cpf_paciente` varchar(25) NOT NULL,
   `nome_acompanhante` text NOT NULL,
   `idade_acompanhante` varchar(3) NOT NULL,
   `vitima_era` varchar(30) NOT NULL,
   `forma_conducao` varchar(30) NOT NULL,
   `data_ocorrencia` date NOT NULL,
-  `hora_chegada` time(4) NOT NULL
+  `hora_chegada` time(4) NOT NULL,
+  `id_atendente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -179,7 +182,7 @@ CREATE TABLE `situacao_paciente` (
   `decisao_transporte` varchar(30) NOT NULL,
   `sinais_sintomas` varchar(400) NOT NULL,
   `hemorragia` varchar(100) NOT NULL,
-  `edema` int(100) NOT NULL,
+  `edema` varchar(100) NOT NULL,
   `parada` varchar(100) NOT NULL,
   `cianose` varchar(100) NOT NULL,
   `pupilas` varchar(100) NOT NULL,
@@ -213,7 +216,8 @@ CREATE TABLE `situacao_paciente` (
   `gestacional_sexo_bebe` varchar(100) NOT NULL,
   `gestacional_nome_bebe` varchar(100) NOT NULL,
   `data_ocorrencia` date NOT NULL,
-  `hora_chegada` time(4) NOT NULL
+  `hora_chegada` time(4) NOT NULL,
+  `id_atendente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -230,25 +234,29 @@ ALTER TABLE `atendente`
 -- Índices de tabela `atendimento`
 --
 ALTER TABLE `atendimento`
-  ADD PRIMARY KEY (`id_atendimento`);
+  ADD PRIMARY KEY (`id_atendimento`),
+  ADD KEY `fk_id_atendente4` (`id_atendente`);
 
 --
 -- Índices de tabela `info_ocorrencia`
 --
 ALTER TABLE `info_ocorrencia`
-  ADD PRIMARY KEY (`id_info_ocorrencia`);
+  ADD PRIMARY KEY (`id_info_ocorrencia`),
+  ADD KEY `fk_id_atendente2` (`id_atendente`);
 
 --
 -- Índices de tabela `info_paciente`
 --
 ALTER TABLE `info_paciente`
-  ADD PRIMARY KEY (`id_info_paciente`);
+  ADD PRIMARY KEY (`id_info_paciente`),
+  ADD KEY `fk_id_atendente` (`id_atendente`);
 
 --
 -- Índices de tabela `situacao_paciente`
 --
 ALTER TABLE `situacao_paciente`
-  ADD PRIMARY KEY (`id_situacao_paciente`);
+  ADD PRIMARY KEY (`id_situacao_paciente`),
+  ADD KEY `fk_id_atendente3` (`id_atendente`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -258,31 +266,59 @@ ALTER TABLE `situacao_paciente`
 -- AUTO_INCREMENT de tabela `atendente`
 --
 ALTER TABLE `atendente`
-  MODIFY `id_atendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_atendente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `atendimento`
 --
 ALTER TABLE `atendimento`
-  MODIFY `id_atendimento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_atendimento` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `info_ocorrencia`
 --
 ALTER TABLE `info_ocorrencia`
-  MODIFY `id_info_ocorrencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_info_ocorrencia` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `info_paciente`
 --
 ALTER TABLE `info_paciente`
-  MODIFY `id_info_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_info_paciente` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `situacao_paciente`
 --
 ALTER TABLE `situacao_paciente`
-  MODIFY `id_situacao_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_situacao_paciente` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `atendimento`
+--
+ALTER TABLE `atendimento`
+  ADD CONSTRAINT `fk_id_atendente4` FOREIGN KEY (`id_atendente`) REFERENCES `atendente` (`id_atendente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para tabelas `info_ocorrencia`
+--
+ALTER TABLE `info_ocorrencia`
+  ADD CONSTRAINT `fk_id_atendente2` FOREIGN KEY (`id_atendente`) REFERENCES `atendente` (`id_atendente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para tabelas `info_paciente`
+--
+ALTER TABLE `info_paciente`
+  ADD CONSTRAINT `fk_id_atendente` FOREIGN KEY (`id_atendente`) REFERENCES `atendente` (`id_atendente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Restrições para tabelas `situacao_paciente`
+--
+ALTER TABLE `situacao_paciente`
+  ADD CONSTRAINT `fk_id_atendente3` FOREIGN KEY (`id_atendente`) REFERENCES `atendente` (`id_atendente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
