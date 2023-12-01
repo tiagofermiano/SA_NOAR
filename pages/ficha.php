@@ -1,7 +1,6 @@
 <?php
 include('protect.php');
 include('processarInfoOcorrencia.php');
-include('gerar_relatorio.php');
 ?>
 
 
@@ -97,7 +96,7 @@ include('gerar_relatorio.php');
       <div class="sexo_container">
         <label for="sexoSelect">Sexo:</label>
         <div class="custom-select">
-          <select class="sexo" id="sexoSelect" name="sexoSelect" onchange="mostrarOcultarDiv()">
+          <select class="sexo" id="sexoSelect" name="sexoPaciente" onchange="mostrarOcultarDiv()">
             <option selected="selected"></option>
             <option class="opcao" value="Feminino">Feminino</option>
             <option value="Masculino">Masculino</option>
@@ -109,7 +108,7 @@ include('gerar_relatorio.php');
 
       <div class="input-caixatexto">
         <label for="rgCpfPaciente">RG/CPF do paciente:</label>
-        <input type="text" id="rgCpfPaciente" name="rgCpfPaciente" placeholder="Digite..." oninput="formatarDocumento(this);">
+        <input type="text" id="rgCpfPaciente" name="rgcpfPaciente" placeholder="Digite..." oninput="formatarDocumento(this);">
         <p id="mensagemErro-3" style="color: red;"></p>
       </div>
 
@@ -251,7 +250,7 @@ include('gerar_relatorio.php');
 
       <div class="input-caixatexto">
         <label for="horachegada">Hora Chegada:</label>
-        <input type="time" id="horachegada" name="horachegada" min="01:00" max="00:00" required />
+        <input type="time" id="horachegada" name="horachegada" min="01:00" max="00:59" required />
       </div>
 
       <div class="input-caixatexto">

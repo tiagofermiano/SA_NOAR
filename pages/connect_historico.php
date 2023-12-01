@@ -3,19 +3,18 @@ include('conexao.php');
 include('protect.php');
 
 // Variáveis para armazenar dados
-$data_ocorrencia = $atendimento = $info_ocorrencia = $info_paciente = $situacao_paciente = "";
+$hora_chegada = $atendimento = $info_ocorrencia = $info_paciente = $situacao_paciente = "";
 
 // Verifica se foi feita uma solicitação POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $data_ocorrencia = $_POST["data_ocorrencia"];
+    $hora_chegada = $_POST["hora_chegada"];
 
     // Passo 3: Executar a consulta SQL
     $sql = "SELECT * FROM atendimento
-            LEFT JOIN info_ocorrencia ON atendimento.data_ocorrencia = info_ocorrencia.data_ocorrencia
-            LEFT JOIN info_paciente ON atendimento.data_ocorrencia = info_paciente.data_ocorrencia
-            LEFT JOIN situacao_paciente ON atendimento.data_ocorrencia = situacao_paciente.data_ocorrencia
-            WHERE atendimento.data_ocorrencia = '$data_ocorrencia'";
-
+            LEFT JOIN info_ocorrencia ON atendimento.hora_chegada = info_ocorrencia.hora_chegada
+            LEFT JOIN info_paciente ON atendimento.hora_chegada = info_paciente.hora_chegada
+            LEFT JOIN situacao_paciente ON atendimento.hora_chegada = situacao_paciente.hora_chegada
+            WHERE atendimento.hora_chegada = '$hora_chegada'";
     $result = $conn->query($sql);
 
     if (!$result) {
@@ -27,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc(); // Apenas uma linha, já que estamos buscando por uma data específica
 
         // Atribuir valores às variáveis
-        $data_ocorrencia = $row["data_ocorrencia"];
+        $hora_chegada = $row["hora_chegada"];
         $atendimento = $row; // Pode ser útil para utilizar diretamente os dados do atendimento
         $info_ocorrencia = $row; // Adapte conforme a estrutura real do seu banco de dados
         $info_paciente = $row; // Adapte conforme a estrutura real do seu banco de dados
@@ -40,8 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Pode ser útil redirecionar para outra página ou realizar outra ação em caso de nenhum resultado
     }
 }
-
-// Agora você pode usar as variáveis em seu código HTML
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +140,7 @@ p {
   padding: 1rem;
 }
 
-/*titulo "Login"*/
+
 .titulo {
     text-align: center;
     font-size: 2rem;
@@ -232,7 +229,7 @@ p {
         <!-- Seu código HTML para o cabeçalho permanece o mesmo -->
     </header>
 
-    <a href="historico.php"><div class="inicio">
+    <a href="relatorios_admin.php"><div class="inicio">
         Voltar
     </div></a>
 

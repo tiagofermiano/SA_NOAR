@@ -25,7 +25,7 @@
 
   <header>  
     <div class="historico">
-        <a href="historico.html">Histórico</a>
+        <a href="historico.php">Histórico</a>
     </div>
     <div class="inicio">
         <a href="telahome.php">Início</a>

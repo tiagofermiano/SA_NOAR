@@ -22,7 +22,7 @@ body {
 .form-caixa {
   display: block;
   background-color: #fff;
-  width: 45%;
+  width: 75%;
   margin:auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -76,6 +76,26 @@ body {
 
 .relatorios:hover, .perfil:hover, .inicio:hover, .pesquisar_button:hover {
     background-color: #1b40af; /* Cor do fundo ao passar o mouse */
+}
+
+.editar{
+  position: static;
+  top: 0;
+  padding: 0.4rem;
+  margin: 5px;
+  background-color: #030060;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+
+.editar:hover {
+  background-color: #1b40af; /* Cor do fundo ao passar o mouse */
 }
 
 .pesquisar_button {

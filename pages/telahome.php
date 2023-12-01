@@ -37,9 +37,11 @@ include('protect.php');
 
     <div class="container">
         <div class="button-group">
-            <a id="botaoEditar"href="historico.php">
+
+        <a id="botaoEditar"href="relatorios.php">
                     <p>Ver Histórico</p>
             </a>
+
             <a id="botaoEditar" href="<?php echo isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ? 'index.php' : 'telaperfil.php'; ?>">
                     <p>Ver Perfil</p>
             </a>
