@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+  <base href="/pages/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOAR</title>
 
-  <script src="/scripts/login.js"></script>
+  <script src="login.js"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -23,7 +24,8 @@
 
 <body>
 
-  <header>  
+  <header>
+  <base href="/pages/">  
     <div class="historico">
         <a href="historico.php">Histórico</a>
     </div>

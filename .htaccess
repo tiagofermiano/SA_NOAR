@@ -1,0 +1,10 @@
+# Home em pages/index.php
+DirectoryIndex pages/index.php
+
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<FilesMatch "\.(sql|ini|log|sh|md)$">
+  Require all denied
+</FilesMatch>
